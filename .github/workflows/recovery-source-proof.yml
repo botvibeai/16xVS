@@ -1,0 +1,57 @@
+name: 16xVS Recovery Source Proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release/monday-recovery-candidate-2026-07-20
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout recovery candidate
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Run complete tracked test suite
+        run: npm test
+
+      - name: Reproduce V30 commercial baseline
+        run: npm run proof:commercial:v30
+
+      - name: Record recovery source identity
+        shell: bash
+        run: |
+          mkdir -p recovery-ci
+          {
+            echo "branch=${GITHUB_REF_NAME}"
+            echo "commit=${GITHUB_SHA}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "verified_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } | tee recovery-ci/source-proof.txt
+
+      - name: Upload proof outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 16xvs-recovery-source-proof-${{ github.sha }}
+          path: |
+            recovery-ci/source-proof.txt
+            bench/fortify-2026-07-17-v30-commercial-baseline/**
+          if-no-files-found: warn
+          retention-days: 90
