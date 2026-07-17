@@ -1,0 +1,18 @@
+# Dependencies and caches
+node_modules/
+.npm-cache/
+.wrangler/
+
+# Local secrets
+.env
+.dev.vars
+*.local
+
+# Generated heavyweight artifacts kept outside Git
+models/
+vault-snapshots/
+*.zip
+
+# OS/editor noise
+Thumbs.db
+.DS_Store

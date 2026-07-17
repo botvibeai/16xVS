@@ -1,0 +1,24 @@
+label=single-blind-holdout-blindSplitV26
+startedAt=2026-05-25T19:01:06.575Z
+endedAt=2026-05-25T19:01:07.641Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "bench/blind-holdout-2026-04-20.txt",
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/single-head/blind-holdout-v26-blindSplitV26-single-head.json",
+  "encoderModel": "models/learned-hybrid-prototype-v26-blind-split-repair-hierarchical-packer-v2.json",
+  "entries": 30,
+  "patchesPerToken": 0.2381,
+  "avgPatchesPerEntry": 1,
+  "singlePatchCount": 30,
+  "singlePatchRate": 1,
+  "patchHistogram": [
+    {
+      "patchCount": 1,
+      "entries": 30
+    }
+  ],
+  "semanticAllPositive": false,
+  "minSemanticMargin": -17.5
+}

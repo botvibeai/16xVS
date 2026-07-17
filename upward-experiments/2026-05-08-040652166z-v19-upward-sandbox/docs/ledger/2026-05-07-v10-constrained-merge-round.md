@@ -1,0 +1,59 @@
+# EXP-2026-05-07-004 V10 Constrained Merge Round
+
+- `id`: `EXP-2026-05-07-004`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/booklike-corpus-2026-04-25.txt` with `bench/booklike-semantic-2026-04-25.json`, `bench/mega-book-corpus-2026-05-06.txt`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`, plus the frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Reused the trained `v9` merge weights and re-derived them with the explicit `hierarchical` packing constraint used by the successful `v3`, `v7`, and `v8` fold rounds. This tests whether the `v9` merge failure was caused by the learned semantic surface itself or by the entry-mode packer configuration that let long passages fragment into sentence and clause windows.
+- `implementation_path`: `learned hybrid prototype v10 constrained merge hierarchical packer v2`
+- `baseline`: `v3-hierarchical-packer-v2`, `v8-control-bridge`, and `v9-merge-bridge-governance`
+- `metrics`:
+  - `bookRoot.avgPatchesPerEntry`: `3`
+  - `bookRoot.patchesPerToken`: `0.0085`
+  - `bookRoot.semantic.minMargin`: `-2.5`
+  - `bookRoot.economics.margin`: `3.5`
+  - `bookRoot.systems.margin`: `12`
+  - `bookRoot.control.margin`: `-2.5`
+  - `booklike.avgPatchesPerEntry`: `3`
+  - `booklike.semantic.minMargin`: `-18.5`
+  - `megaBook.avgPatchesPerEntry`: `3`
+  - `governanceAdversarial.avgPatchesPerEntry`: `2.8333`
+  - `governanceAdversarial.minMargin`: `-1`
+  - `archivePressure.avgPatchesPerEntry`: `3`
+  - `archivePressure.minMargin`: `1.5`
+  - `controlled_phrase.minMargin`: `5.4167`
+  - `controlled_multilingual.minMargin`: `0.8095`
+  - `paraphrase_holdout.minMargin`: `8.4`
+  - `blind_holdout.minMargin`: `-15.5`
+  - `stress_100.minMargin`: `-28.6444`
+  - `projection.aggregate.rawReductionPercent`: `94.8945`
+  - `projection.aggregate.inputGbNeededForTargetOutputGb`: `24.4833`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The constrained derivation fully restores the book-fold storage shape: `3` patches per entry at chapter, synthetic book-root, synthetic mega-book, and archive-pressure scale.
+  - The `v10` candidate keeps the controlled multilingual suite and paraphrase holdout positive while restoring the fold.
+  - The archive-pressure corpus now passes with all groups positive while keeping `3` patches per entry.
+  - The governance-adversarial boundary is almost recovered under the fold constraint; only `audit_evidence_adversarial` remains slightly negative at `-1`.
+  - The prior `v9` storage collapse is now explained as an entry-mode packer configuration problem rather than proof that the merge weights inherently destroy the fold.
+- `claim_not_supported`:
+  - `v10` is still not the new overall baseline. Synthetic `book-root` remains negative because `control_book_root` is `-2.5`.
+  - The older chapter-style `booklike` corpus remains negative with three failing themes: `multilingual_equity_booklike`, `hardware_edge_booklike`, and `governance_evidence_booklike`.
+  - The blind holdout and stress suite still fail.
+  - The governance adversarial holdout is not fully cleared because `audit_evidence_adversarial` is slightly negative.
+  - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [v10 constrained hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [book-root v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [booklike v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [mega-book v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [governance adversarial v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [archive pressure v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [book-fold storage projection v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-folding-storage-projection-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [frozen suite summary v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2\suite-summary.json)
+  - [v9 merge bridge governance round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v9-merge-bridge-governance-round.md)
+- `notes`:
+  - `v10` is the best combined storage-plus-merge result so far. It keeps the fold, clears archive pressure, keeps controlled multilingual and paraphrase positive, and brings governance adversarial within one point of passing.
+  - The remaining hard conflict is now narrow: `control_book_root` and `audit_evidence_adversarial` need help without disturbing the fold.
+  - The older chapter-style `booklike` corpus remains a broader long-form semantic weakness.
+- `next_action`:
+  - Treat `v10` as the best constrained merge candidate so far, but not as the promoted baseline.
+  - A next round should target only `control_book_root` and `audit_evidence_adversarial` while keeping the explicit hierarchical packing constraint fixed.

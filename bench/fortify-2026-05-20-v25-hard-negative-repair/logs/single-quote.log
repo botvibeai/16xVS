@@ -1,0 +1,24 @@
+label=single-quote
+startedAt=2026-05-20T11:24:38.955Z
+endedAt=2026-05-20T11:24:40.978Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "bench/quote-corpus-2026-04-25.txt",
+  "output": "bench/fortify-2026-05-20-v25-hard-negative-repair/single-head/quote-v25-single-head.json",
+  "encoderModel": "models/learned-hybrid-prototype-v25-hard-negative-repair-hierarchical-packer-v2.json",
+  "entries": 25,
+  "patchesPerToken": 0.1656,
+  "avgPatchesPerEntry": 1,
+  "singlePatchCount": 25,
+  "singlePatchRate": 1,
+  "patchHistogram": [
+    {
+      "patchCount": 1,
+      "entries": 25
+    }
+  ],
+  "semanticAllPositive": false,
+  "minSemanticMargin": -19
+}

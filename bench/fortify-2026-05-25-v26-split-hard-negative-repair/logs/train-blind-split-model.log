@@ -1,0 +1,22 @@
+label=train-blind-split-model
+startedAt=2026-05-25T18:51:24.350Z
+endedAt=2026-05-25T18:56:10.709Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-pairs-v26-blind-split-repair.json",
+  "output": "models/learned-hybrid-prototype-v26-blind-split-repair-base.json",
+  "stage": "learned-hybrid-prototype",
+  "trainingSummary": {
+    "positivePairCount": 781,
+    "negativePairCount": 2248,
+    "averagePositiveSimilarity": 0.759297,
+    "averageNegativeSimilarity": 0.170791,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25
+  },
+  "dimensions": 256
+}

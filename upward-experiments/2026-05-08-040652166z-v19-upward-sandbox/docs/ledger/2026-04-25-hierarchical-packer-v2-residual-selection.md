@@ -1,0 +1,64 @@
+# EXP-2026-04-25-009 Hierarchical Packer V2 Residual Selection
+
+- `id`: `EXP-2026-04-25-009`
+- `date`: `2026-04-25`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json`, `bench/protocol-longform-2026-04-25.txt`, `bench/booklike-corpus-2026-04-25.txt`, and the aggregate storage projection across quote, quote-paragraph, protocol-longform, and booklike corpora
+- `method`: Improved the hierarchical packer by replacing the full-entry macro patch with a representative macro sketch and by selecting diverse residuals with content overlap penalties, then re-derived the `hierarchical-packer-v2` model from `learned-hybrid-prototype-v3.json` and re-ran the frozen suite, protocol-longform benchmark, booklike benchmark, and aggregate storage projection without retraining embedding weights.
+- `implementation_path`: `learned hybrid prototype v3 hierarchical packer v2`
+- `baseline`: `hierarchical packer v1`
+- `metrics`:
+  - `controlled_phrase.patchesPerToken`: `0.3226`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_multilingual.patchesPerToken`: `0.1438`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.patchesPerToken`: `0.2381`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.patchesPerToken`: `0.2564`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `stress_100.patchesPerToken`: `0.1236`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `protocolLongform.avgPatchesPerEntry`: `3`
+  - `protocolLongform.semantic.minMargin`: `7.5`
+  - `protocolLongform.patchesPerToken`: `0.0227`
+  - `booklike.avgPatchesPerEntry`: `3`
+  - `booklike.semantic.minMargin`: `-11.5`
+  - `booklike.negativeGroups.count`: `3`
+  - `booklike.negativeGroups.names`: `multilingual_equity_booklike, storage_economics_booklike, pricing_operations_booklike`
+  - `booklike.hardware_edge.margin`: `0.5`
+  - `booklike.governance_evidence.margin`: `3`
+  - `booklike.retrieval.avgNearestSignatureDistance`: `68.3333`
+  - `booklike.collapseFlags`: `false`
+  - `v1.booklike.negativeGroups.count`: `4`
+  - `aggregate.rawReductionPercent`: `83.1534`
+  - `aggregate.rawBinaryVsSourceRatio`: `0.168466`
+  - `aggregate.inputGbNeededForTargetOutputGb`: `7.4199`
+  - `all collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can improve hierarchical residual selection without retraining the learned semantic model.
+  - The `hierarchical-packer-v2` line preserves the current long-form storage profile: `3` patches per entry on both protocol-longform and booklike corpora.
+  - The current tested aggregate raw-source reduction stays at `83.1534%` across quotes, quote-paragraphs, protocol-longform, and booklike corpora.
+  - The residual-selection change improves the booklike grouped-separation detail from `4` negative groups under `v1` to `3` negative groups under `v2`.
+  - The `hardware_edge_booklike` group moves from negative to positive while collapse checks remain clean.
+- `claim_not_supported`:
+  - The residual-selection change does not pass the blind unseen-domain holdout.
+  - The residual-selection change does not pass the mixed-format stress suite.
+  - The residual-selection change does not restore the controlled multilingual suite.
+  - The residual-selection change does not support the `99.99%` raw-storage reduction claim.
+  - The residual-selection change does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [hierarchical packer v2 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
+  - [hierarchical packer v2 suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2\suite-summary.json)
+  - [hierarchical v2 protocol longform report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v2.json)
+  - [hierarchical v2 booklike report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
+  - [hierarchical v2 booklike storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-hierarchical-packer-v2-booklike.json)
+  - [hierarchical packer v1 suite ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+  - [booklike storage pressure ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-booklike-storage-pressure.md)
+- `notes`:
+  - The main gain here is structural cleanliness, not a new order-of-magnitude storage jump.
+  - `v2` keeps the same headline storage numbers as `v1` while slightly reducing semantic bleed on the larger booklike corpus.
+  - The frozen-suite gate picture is unchanged, so this remains a storage-side refinement rather than a semantic breakthrough.
+- `next_action`:
+  - Treat `hierarchical-packer-v2` as the current storage-focused baseline for longer passages.
+  - Keep the base `v3` path as the semantic baseline.
+  - Cut a fresh vault snapshot so the `v2` artifacts, docs, and model files are preserved remotely.

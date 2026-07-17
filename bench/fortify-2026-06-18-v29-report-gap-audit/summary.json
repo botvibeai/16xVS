@@ -1,0 +1,91 @@
+{
+  "title": "V29 Report Gap Audit",
+  "generatedAt": "2026-06-18T07:33:47.617Z",
+  "outputDir": "bench/fortify-2026-06-18-v29-report-gap-audit",
+  "claimLevel": "evidence-governance-gap-audit",
+  "source": {
+    "path": "C:\\Users\\BotVi\\Downloads\\16xVS 6-13-2026.md",
+    "rawSha256": "fee76ccb42e792faeca8e2a231293f6246e035ae00fcd8837374d0b3575711f9",
+    "normalizedSha256": "ac5a9cbbf864c8062747ee26675e6abda876d3433de1ac045bcac42de70f1e39",
+    "rawBytes": 16294,
+    "normalizedBytes": 16133
+  },
+  "rawReport": "bench/fortify-2026-06-18-v29-report-gap-audit/raw-report.md",
+  "normalizedReport": "bench/fortify-2026-06-18-v29-report-gap-audit/normalized-report.md",
+  "audit": "bench/fortify-2026-06-18-v29-report-gap-audit/gap-audit.json",
+  "sections": {
+    "schemaVersion": "v29-report-section-detection-v1",
+    "detectedSectionIds": [
+      "architecture-10",
+      "bart-pipeline",
+      "memory-architecture",
+      "scaling-behavior",
+      "fold-mechanism",
+      "cognitive-stack"
+    ],
+    "missingSectionIds": [],
+    "architectureItems": [
+      {
+        "id": "hard-route-gating",
+        "title": "Hard-Constraint Route Gating",
+        "detected": true
+      },
+      {
+        "id": "wasm-simd-hamming",
+        "title": "SIMD-Accelerated Hamming Distance Kernels",
+        "detected": true
+      },
+      {
+        "id": "matryoshka-compaction",
+        "title": "Matryoshka-Style Embedding Compaction",
+        "detected": true
+      },
+      {
+        "id": "h-mhsa",
+        "title": "Intra-Lane Local-Relationship Modeling",
+        "detected": true
+      },
+      {
+        "id": "lane-ownership-policies",
+        "title": "Explicit Lane-Ownership Policies",
+        "detected": true
+      },
+      {
+        "id": "ste-temperature-decay",
+        "title": "STE Gradient Fine-Tuning",
+        "detected": true
+      },
+      {
+        "id": "zero-copy-typedarray",
+        "title": "Zero-Copy Typed Array Buffering",
+        "detected": true
+      },
+      {
+        "id": "durable-object-sharding",
+        "title": "Durable Object Sharded State Coordination",
+        "detected": true
+      },
+      {
+        "id": "qjl-error-correction",
+        "title": "QJL Error-Correction",
+        "detected": true
+      },
+      {
+        "id": "cold-path-fallback",
+        "title": "Cold-Path Failure Fallback",
+        "detected": true
+      }
+    ]
+  },
+  "statusCounts": {
+    "proven": 0,
+    "directional": 1,
+    "local-proof-only": 4,
+    "deferred": 10,
+    "unsupported": 1
+  },
+  "claimsNotAllowedCount": 6,
+  "noDeploy": true,
+  "noExternalCalls": true,
+  "read": "V29 maps the supplied report to current evidence. It is an audit layer only and does not implement deferred report ideas."
+}

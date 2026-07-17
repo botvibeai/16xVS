@@ -1,0 +1,1118 @@
+{
+  "generatedAt": "2026-05-08T19:59:55.576Z",
+  "input": "bench\\booklike-corpus-2026-04-25.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 28,
+      "residualMaxCharsPerPatch": 180
+    },
+    "trainingSummary": {
+      "positivePairCount": 1093,
+      "negativePairCount": 1856,
+      "averagePositiveSimilarity": 0.730986,
+      "averageNegativeSimilarity": 0.22789,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 12,
+    "words": 1831,
+    "codepoints": 11903,
+    "sourceBytes": 11903,
+    "tiktokenCount": 2123,
+    "fixtureGlyphCount": 11903,
+    "fixtureBinaryBytes": 380896,
+    "experimentalPatchCount": 36,
+    "experimentalBinaryBytes": 1152,
+    "avgTiktokenPerEntry": 176.9167,
+    "avgGlyphsPerEntry": 991.9167,
+    "avgExperimentalPatchesPerEntry": 3,
+    "glyphsPerToken": 5.6067,
+    "binaryBytesPerToken": 179.414,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.017,
+    "experimentalBinaryBytesPerToken": 0.5426,
+    "experimentalBinaryVsSourceRatio": 0.0968
+  },
+  "semantic": {
+    "input": "bench\\booklike-semantic-2026-04-25.json",
+    "groups": [
+      {
+        "group": "multilingual_equity_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 54,
+        "avgTokenOverlap": 0.1909,
+        "entries": [
+          {
+            "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+            "tiktokenCount": 213,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second multilingual-equity chapter pushes the same point from a deployment angle. If a system depends on retraining large embedding tables every time a new notation, script extension, or niche industry symbol enters production, the vendor keeps paying for language drift forever. The 16xVS direction argues that a renderer update should be enough for new symbols, because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index. That turns part of the out-of-vocabulary problem into software maintenance instead of repeated model surgery. For a long document archive, the value is cumulative: historical records, regional operating manuals, regulatory annexes, and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. A chapter-scale corpus is the first place where this matters operationally, because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+            "tiktokenCount": 188,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "storage_economics_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 67,
+        "avgTokenOverlap": 0.1905,
+        "entries": [
+          {
+            "text": "The first storage-economics chapter is about replication, not only compression. A 16xVS system that stores one live copy, one fallback copy, and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source. That is why the current repo keeps measuring patch count, binary bytes, and quorum-safe replication together. A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers. The long-form question is whether a chapter-sized passage can be represented as one macro code with a small residual budget instead of exploding back into window-level fragments. If it can, then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead.",
+            "tiktokenCount": 178,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second storage-economics chapter separates two claims that often get mixed. Replacing a dense float32 vector with a 256-bit code is a storage-model comparison, while reducing raw-source text into compact binary records is a source-compression comparison. The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree. The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number. For a book-like benchmark, this separation matters even more. The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The correct pressure test is therefore not only whether the binary record is small, but whether the combined macro code, residual budget, and durability copies remain meaningfully below the source size when the entries become long and varied.",
+            "tiktokenCount": 182,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "retrieval_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 51,
+        "avgTokenOverlap": 0.1848,
+        "entries": [
+          {
+            "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+            "tiktokenCount": 176,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+            "tiktokenCount": 165,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "pricing_operations_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 49,
+        "avgTokenOverlap": 0.1908,
+        "entries": [
+          {
+            "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+            "tiktokenCount": 173,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+            "tiktokenCount": 164,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "hardware_edge_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 56,
+        "avgTokenOverlap": 0.2108,
+        "entries": [
+          {
+            "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+            "tiktokenCount": 177,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+            "tiktokenCount": 171,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "governance_evidence_booklike",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 39,
+        "avgTokenOverlap": 0.1813,
+        "entries": [
+          {
+            "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+            "tiktokenCount": 177,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+            "tiktokenCount": 159,
+            "experimentalPatchCount": 3
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "multilingual_equity_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 54,
+        "avgNearestOutsideSignatureDistance": 65,
+        "separationMargin": 11,
+        "examples": [
+          {
+            "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+            "nearestOutside": {
+              "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+              "signatureDistance": 68
+            }
+          },
+          {
+            "text": "The second multilingual-equity chapter pushes the same point from a deployment angle. If a system depends on retraining large embedding tables every time a new notation, script extension, or niche industry symbol enters production, the vendor keeps paying for language drift forever. The 16xVS direction argues that a renderer update should be enough for new symbols, because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index. That turns part of the out-of-vocabulary problem into software maintenance instead of repeated model surgery. For a long document archive, the value is cumulative: historical records, regional operating manuals, regulatory annexes, and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. A chapter-scale corpus is the first place where this matters operationally, because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+            "nearestOutside": {
+              "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+              "signatureDistance": 62
+            }
+          }
+        ]
+      },
+      {
+        "group": "storage_economics_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 67,
+        "avgNearestOutsideSignatureDistance": 77.5,
+        "separationMargin": 10.5,
+        "examples": [
+          {
+            "text": "The first storage-economics chapter is about replication, not only compression. A 16xVS system that stores one live copy, one fallback copy, and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source. That is why the current repo keeps measuring patch count, binary bytes, and quorum-safe replication together. A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers. The long-form question is whether a chapter-sized passage can be represented as one macro code with a small residual budget instead of exploding back into window-level fragments. If it can, then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead.",
+            "nearestOutside": {
+              "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+              "signatureDistance": 82
+            }
+          },
+          {
+            "text": "The second storage-economics chapter separates two claims that often get mixed. Replacing a dense float32 vector with a 256-bit code is a storage-model comparison, while reducing raw-source text into compact binary records is a source-compression comparison. The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree. The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number. For a book-like benchmark, this separation matters even more. The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The correct pressure test is therefore not only whether the binary record is small, but whether the combined macro code, residual budget, and durability copies remain meaningfully below the source size when the entries become long and varied.",
+            "nearestOutside": {
+              "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+              "signatureDistance": 73
+            }
+          }
+        ]
+      },
+      {
+        "group": "retrieval_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 51,
+        "avgNearestOutsideSignatureDistance": 64.5,
+        "separationMargin": 13.5,
+        "examples": [
+          {
+            "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+            "nearestOutside": {
+              "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+            "nearestOutside": {
+              "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+              "signatureDistance": 65
+            }
+          }
+        ]
+      },
+      {
+        "group": "pricing_operations_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 49,
+        "avgNearestOutsideSignatureDistance": 56.5,
+        "separationMargin": 7.5,
+        "examples": [
+          {
+            "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+            "nearestOutside": {
+              "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+              "signatureDistance": 63
+            }
+          },
+          {
+            "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+            "nearestOutside": {
+              "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+              "signatureDistance": 50
+            }
+          }
+        ]
+      },
+      {
+        "group": "hardware_edge_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 56,
+        "avgNearestOutsideSignatureDistance": 64.5,
+        "separationMargin": 8.5,
+        "examples": [
+          {
+            "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+            "nearestOutside": {
+              "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+              "signatureDistance": 65
+            }
+          },
+          {
+            "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+            "nearestOutside": {
+              "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+              "signatureDistance": 64
+            }
+          }
+        ]
+      },
+      {
+        "group": "governance_evidence_booklike",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 39,
+        "avgNearestOutsideSignatureDistance": 50.5,
+        "separationMargin": 11.5,
+        "examples": [
+          {
+            "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+            "nearestOutside": {
+              "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+              "signatureDistance": 50
+            }
+          },
+          {
+            "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+            "nearestOutside": {
+              "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+              "signatureDistance": 51
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 12,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 52.6667,
+    "avgNearestTokenOverlap": 0.1915,
+    "examples": [
+      {
+        "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second multilingual-equity chapter pushes the same point from a deployment angle. If a system depends on retraining large embedding tables every time a new notation, script extension, or niche industry symbol enters production, the vendor keeps paying for language drift forever. The 16xVS direction argues that a renderer update should be enough for new symbols, because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index. That turns part of the out-of-vocabulary problem into software maintenance instead of repeated model surgery. For a long document archive, the value is cumulative: historical records, regional operating manuals, regulatory annexes, and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. A chapter-scale corpus is the first place where this matters operationally, because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+          "signatureDistance": 54,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1909
+        }
+      },
+      {
+        "text": "The second multilingual-equity chapter pushes the same point from a deployment angle. If a system depends on retraining large embedding tables every time a new notation, script extension, or niche industry symbol enters production, the vendor keeps paying for language drift forever. The 16xVS direction argues that a renderer update should be enough for new symbols, because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index. That turns part of the out-of-vocabulary problem into software maintenance instead of repeated model surgery. For a long document archive, the value is cumulative: historical records, regional operating manuals, regulatory annexes, and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. A chapter-scale corpus is the first place where this matters operationally, because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+          "signatureDistance": 54,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1909
+        }
+      },
+      {
+        "text": "The first storage-economics chapter is about replication, not only compression. A 16xVS system that stores one live copy, one fallback copy, and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source. That is why the current repo keeps measuring patch count, binary bytes, and quorum-safe replication together. A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers. The long-form question is whether a chapter-sized passage can be represented as one macro code with a small residual budget instead of exploding back into window-level fragments. If it can, then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second storage-economics chapter separates two claims that often get mixed. Replacing a dense float32 vector with a 256-bit code is a storage-model comparison, while reducing raw-source text into compact binary records is a source-compression comparison. The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree. The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number. For a book-like benchmark, this separation matters even more. The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The correct pressure test is therefore not only whether the binary record is small, but whether the combined macro code, residual budget, and durability copies remain meaningfully below the source size when the entries become long and varied.",
+          "signatureDistance": 67,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1905
+        }
+      },
+      {
+        "text": "The second storage-economics chapter separates two claims that often get mixed. Replacing a dense float32 vector with a 256-bit code is a storage-model comparison, while reducing raw-source text into compact binary records is a source-compression comparison. The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree. The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number. For a book-like benchmark, this separation matters even more. The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The correct pressure test is therefore not only whether the binary record is small, but whether the combined macro code, residual budget, and durability copies remain meaningfully below the source size when the entries become long and varied.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first storage-economics chapter is about replication, not only compression. A 16xVS system that stores one live copy, one fallback copy, and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source. That is why the current repo keeps measuring patch count, binary bytes, and quorum-safe replication together. A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers. The long-form question is whether a chapter-sized passage can be represented as one macro code with a small residual budget instead of exploding back into window-level fragments. If it can, then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead.",
+          "signatureDistance": 67,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1905
+        }
+      },
+      {
+        "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+          "signatureDistance": 51,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1848
+        }
+      },
+      {
+        "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+          "signatureDistance": 51,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1848
+        }
+      },
+      {
+        "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+          "signatureDistance": 49,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1908
+        }
+      },
+      {
+        "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+          "signatureDistance": 49,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1908
+        }
+      },
+      {
+        "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+          "signatureDistance": 56,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2108
+        }
+      },
+      {
+        "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+          "signatureDistance": 56,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2108
+        }
+      },
+      {
+        "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+          "signatureDistance": 39,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1813
+        }
+      },
+      {
+        "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+          "signatureDistance": 39,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1813
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost. Legacy tokenizers fragment meaning differently depending on whether the source text is English, Mandarin, Arabic, or a mixed enterprise record full of symbols and domain markers. In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them. If the renderer can turn a symbol stream into a stable patch grammar, then the compute layer no longer needs to inherit the assumptions of an English-first vocabulary table. The point is not ideological fairness; the point is operational predictability for markets that were structurally overpriced by the old token tax. In a book-length system, this matters because the cost distortion compounds over pages, chapters, retrieval history, and cached context, turning what looked like a marginal tokenizer detail into a foundational business penalty.",
+      "words": 185,
+      "codepoints": 1198,
+      "sourceBytes": 1198,
+      "tiktokenCount": 213,
+      "fixtureGlyphCount": 1198,
+      "fixtureBinaryBytes": 38336,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6244,
+      "binaryBytesPerToken": 179.9812,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0141,
+      "experimentalBinaryBytesPerToken": 0.4507,
+      "experimentalBinaryVsSourceRatio": 0.0801,
+      "experimentalPatches": [
+        "In practice that means two customers can ask for the same business outcome and be charged different context-window and inference costs because the tokenizer likes one script more than the other. this matters because the cost distortion compounds over pages,",
+        "A visual patch approach tries to break that dependency by forcing all scripts through one neutral representation before the rest of the system reasons over them.",
+        "The first chapter of the 16xVS storage story starts with the claim that language should not dictate compute cost."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.271753,
+      "experimentalSignatureHex": "5a089ffac61da0548a0da195565e6de66abbc4bfbd09e0ab044a33bf2c24e535"
+    },
+    {
+      "text": "The second multilingual-equity chapter pushes the same point from a deployment angle. If a system depends on retraining large embedding tables every time a new notation, script extension, or niche industry symbol enters production, the vendor keeps paying for language drift forever. The 16xVS direction argues that a renderer update should be enough for new symbols, because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index. That turns part of the out-of-vocabulary problem into software maintenance instead of repeated model surgery. For a long document archive, the value is cumulative: historical records, regional operating manuals, regulatory annexes, and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. A chapter-scale corpus is the first place where this matters operationally, because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+      "words": 155,
+      "codepoints": 1067,
+      "sourceBytes": 1067,
+      "tiktokenCount": 188,
+      "fixtureGlyphCount": 1067,
+      "fixtureBinaryBytes": 34144,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6755,
+      "binaryBytesPerToken": 181.617,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.016,
+      "experimentalBinaryBytesPerToken": 0.5106,
+      "experimentalBinaryVsSourceRatio": 0.09,
+      "experimentalPatches": [
+        "and multilingual support notes can all enter the same storage and retrieval layer without an ever-expanding text tokenizer dictating who pays more. because the downstream stack should consume a normalized visual patch rather than a brittle vocabulary index.",
+        "because the representation has to stay compact while language variety increases instead of shrinking only on short benchmark phrases.",
+        "A chapter-scale corpus is the first place where this matters operationally,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.18156,
+      "experimentalSignatureHex": "d9081ffa46078160ae87a1940e6c6cec587ac5fd1d99e0ae865a32af6c64a411"
+    },
+    {
+      "text": "The first storage-economics chapter is about replication, not only compression. A 16xVS system that stores one live copy, one fallback copy, and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source. That is why the current repo keeps measuring patch count, binary bytes, and quorum-safe replication together. A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers. The long-form question is whether a chapter-sized passage can be represented as one macro code with a small residual budget instead of exploding back into window-level fragments. If it can, then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead.",
+      "words": 151,
+      "codepoints": 962,
+      "sourceBytes": 962,
+      "tiktokenCount": 178,
+      "fixtureGlyphCount": 962,
+      "fixtureBinaryBytes": 30784,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4045,
+      "binaryBytesPerToken": 172.9438,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0169,
+      "experimentalBinaryBytesPerToken": 0.5393,
+      "experimentalBinaryVsSourceRatio": 0.0998,
+      "experimentalPatches": [
+        "then the same durability policy that already exists in the Worker can plausibly scale to larger evidence sets without reintroducing the bulk of the storage cost through replication overhead. The first storage-economics chapter is about replication,",
+        "and one deep archive copy only improves the economics if the unit being copied is already compact and if repair can rebuild degraded tiers without reprocessing the entire source.",
+        "A storage claim is empty if a system compresses one benchmark file but becomes expensive again as soon as it has to maintain multiple durability tiers."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.198902,
+      "experimentalSignatureHex": "580a9fd8211ba24ec68f3cbacbbae0daa3cb423f4ee69c6b2643bb2b243865a1"
+    },
+    {
+      "text": "The second storage-economics chapter separates two claims that often get mixed. Replacing a dense float32 vector with a 256-bit code is a storage-model comparison, while reducing raw-source text into compact binary records is a source-compression comparison. The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree. The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number. For a book-like benchmark, this separation matters even more. The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The correct pressure test is therefore not only whether the binary record is small, but whether the combined macro code, residual budget, and durability copies remain meaningfully below the source size when the entries become long and varied.",
+      "words": 155,
+      "codepoints": 1003,
+      "sourceBytes": 1003,
+      "tiktokenCount": 182,
+      "fixtureGlyphCount": 1003,
+      "fixtureBinaryBytes": 32096,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.511,
+      "binaryBytesPerToken": 176.3516,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0165,
+      "experimentalBinaryBytesPerToken": 0.5275,
+      "experimentalBinaryVsSourceRatio": 0.0957,
+      "experimentalPatches": [
+        "The storage layer can look strong when judged against dense vectors and still fail to justify claims about collapsing a library-scale archive into a tiny raw byte footprint. The second storage-economics chapter separates two claims that often get mixed.",
+        "The repo now enforces that distinction in its ledger because too many strategy narratives collapse them into one number.",
+        "The first can show very large percentage savings per stored code and still say nothing about whether the full corpus shrinks to the same degree."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.212282,
+      "experimentalSignatureHex": "58488ff880132a5eca0fbaba4bfee8e20abde5af4d95a4eba223b9bf242da5d1"
+    },
+    {
+      "text": "The first retrieval chapter focuses on why exact search survives only if the representation stays compact. A binary code is useful because Hamming comparison remains cheap enough to rerank candidates exactly, but that advantage erodes if long passages require too many local fragments before search begins. A chapter-sized passage therefore stresses the packer more than a short quote does. If the system falls back to ten or twelve windows for every long entry, the storage story weakens and the retrieval path starts to inherit the same scaling pain it was trying to avoid. The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low. This is still a controlled benchmark, but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide.",
+      "words": 161,
+      "codepoints": 986,
+      "sourceBytes": 986,
+      "tiktokenCount": 176,
+      "fixtureGlyphCount": 986,
+      "fixtureBinaryBytes": 31552,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6023,
+      "binaryBytesPerToken": 179.2727,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.017,
+      "experimentalBinaryBytesPerToken": 0.5455,
+      "experimentalBinaryVsSourceRatio": 0.0974,
+      "experimentalPatches": [
+        "but it is closer to the archive use case than the earlier phrase and quote sets because it measures the representation under a longer sequence where storage and search pressures collide. This is still a controlled benchmark,",
+        "The hierarchical experiment in this repo is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the object count low.",
+        "The first retrieval chapter focuses on why exact search survives only if the representation stays compact."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.205279,
+      "experimentalSignatureHex": "f90c8ff8e429b1d20e0fa9b24a5e6a888cb0e5a57c0ce4a9e24a52bf1a78b5b1"
+    },
+    {
+      "text": "The second retrieval chapter frames the same problem from the edge. An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, operating procedures, and long-form reference material. That means the representation has to survive three simultaneous pressures: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. A good storage result that breaks retrieval quality is not a win, and a good semantic grouping result that requires too many patches is not a win either. The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time. If a chapter still needs only a small patch budget while maintaining positive controlled separation, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+      "words": 145,
+      "codepoints": 952,
+      "sourceBytes": 952,
+      "tiktokenCount": 165,
+      "fixtureGlyphCount": 952,
+      "fixtureBinaryBytes": 30464,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.7697,
+      "binaryBytesPerToken": 184.6303,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0182,
+      "experimentalBinaryBytesPerToken": 0.5818,
+      "experimentalBinaryVsSourceRatio": 0.1008,
+      "experimentalPatches": [
+        "An edge-native system only wins if search remains cheap when the corpus stops looking like toy prompts and starts looking like real policy passages, that is a directional storage signal worth preserving even if the broader blind holdout remains unsolved.",
+        "and compact storage under exact or near-exact binary comparison.",
+        "The current benchmark therefore uses labeled long-form themes so the representation is forced to compress and separate at the same time."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.187824,
+      "experimentalSignatureHex": "f80c86f8a41b80624a0da9925a5eeaa88eb2c5395d08e1aa241836bd1979bcb3"
+    },
+    {
+      "text": "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride. If a system can reduce the size of the operational unit before replication, then every downstream cost tied to storage, transfer, and retention inherits that gain. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry: the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. That is why the repo keeps distinguishing between directional evidence and unsupported claims. A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from; it is not useful if it is treated as proof of terminal economics before the broader corpus tests exist. The point of this chapter benchmark is to make that discipline concrete and keep the evidence chain ahead of the narrative.",
+      "words": 151,
+      "codepoints": 986,
+      "sourceBytes": 986,
+      "tiktokenCount": 173,
+      "fixtureGlyphCount": 986,
+      "fixtureBinaryBytes": 31552,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6994,
+      "binaryBytesPerToken": 182.3815,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0173,
+      "experimentalBinaryBytesPerToken": 0.5549,
+      "experimentalBinaryVsSourceRatio": 0.0974,
+      "experimentalPatches": [
+        "the provider needs enough structural margin to offer disruptive pricing without immediately handing it back through hidden storage overhead. The Trojan-horse logic in the broader 16xVS thesis depends on exactly this kind of cost asymmetry:",
+        "The first pricing-and-operations chapter explains why storage efficiency matters to the business model rather than only to engineering pride.",
+        "A chapter-length benchmark that compresses cleanly is useful because it shows where the margin story might come from;"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.267269,
+      "experimentalSignatureHex": "c14497b8a48f6a1c9a8d30ba5ba8e2e262d2c5db2da1846f84ab31292069e5bd"
+    },
+    {
+      "text": "The second pricing-and-operations chapter moves from economics to operating discipline. Once the system starts producing many reports, models, ledgers, and variant files, the work itself becomes a storage problem. If those gains are not preserved, the benchmark surface degrades and each round effectively starts from memory instead of evidence. That is why this repo now snapshots code, models, reports, and docs into a vault flow rather than relying on scattered local files. Operationally, the archive path matters for the same reason the storage model matters: gains should survive across rounds without requiring reconstruction. In a long-form benchmark program, the evidence trail is part of the product work because every new claim has to map back to a stored artifact. The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system.",
+      "words": 138,
+      "codepoints": 890,
+      "sourceBytes": 890,
+      "tiktokenCount": 164,
+      "fixtureGlyphCount": 890,
+      "fixtureBinaryBytes": 28480,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4268,
+      "binaryBytesPerToken": 173.6585,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0183,
+      "experimentalBinaryBytesPerToken": 0.5854,
+      "experimentalBinaryVsSourceRatio": 0.1079,
+      "experimentalPatches": [
+        "The storage argument is stronger when the repo itself obeys the same discipline it expects from the final system. the evidence trail is part of the product work because every new claim has to map back to a stored artifact.",
+        "the benchmark surface degrades and each round effectively starts from memory instead of evidence.",
+        "and docs into a vault flow rather than relying on scattered local files."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.267349,
+      "experimentalSignatureHex": "d24e97b8821eea5dda8d319a8a2ce8e062bac05b3da164eb16aa23a925e9e7bd"
+    },
+    {
+      "text": "The first hardware-and-edge chapter is about matching representation to cheaper compute. A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. The broader 16xVS thesis points toward CPU-friendly comparison, low-power inference, and eventually tighter alignment with ternary or quantized model paths, but the current repo is not yet proving those hardware claims. What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible. If a book-like entry can be represented with a small macro-plus-residual budget, the retrieval path remains in range for inexpensive bitwise comparison. If it needs too many fragments, the hardware story weakens before any accelerator roadmap even matters. That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+      "words": 149,
+      "codepoints": 1042,
+      "sourceBytes": 1042,
+      "tiktokenCount": 177,
+      "fixtureGlyphCount": 1042,
+      "fixtureBinaryBytes": 33344,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.887,
+      "binaryBytesPerToken": 188.3842,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0169,
+      "experimentalBinaryBytesPerToken": 0.5424,
+      "experimentalBinaryVsSourceRatio": 0.0921,
+      "experimentalPatches": [
+        "A binary or near-binary representation only becomes strategically valuable if it can be processed on inexpensive hardware without collapsing under realistic sequence lengths. the retrieval path remains in range for inexpensive bitwise comparison.",
+        "That is why the current chapter tests are less about hardware performance numbers and more about whether the representation shape is compatible with the intended compute regime.",
+        "What it can test today is whether longer passages remain compact enough that an edge-native retrieval loop stays plausible."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.175821,
+      "experimentalSignatureHex": "eb4d9ef2ec3b20722e0da93a5a3e2ab68ea8c1a57d8f8c2e240035bf8874d1b3"
+    },
+    {
+      "text": "The second hardware-and-edge chapter focuses on what failure would look like. A system can talk about one-bit reasoning, NPUs, or energy efficiency all day, but if the stored representation still balloons with longer text, the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. The reason to test chapter-like passages now is that they expose exactly this failure mode. Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines. The current hierarchical variant is therefore a structural test, not a final architecture claim. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic. That is a narrower claim than the full hardware vision, but it is the right one to prove first.",
+      "words": 150,
+      "codepoints": 927,
+      "sourceBytes": 927,
+      "tiktokenCount": 171,
+      "fixtureGlyphCount": 927,
+      "fixtureBinaryBytes": 29664,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4211,
+      "binaryBytesPerToken": 173.4737,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0175,
+      "experimentalBinaryBytesPerToken": 0.5614,
+      "experimentalBinaryVsSourceRatio": 0.1036,
+      "experimentalPatches": [
+        "the edge story will be eaten alive by memory movement and object-count growth before arithmetic efficiency has a chance to help. It asks whether a larger textual unit can remain small enough to justify continued investment in edge-native retrieval logic.",
+        "Long text forces the packer to reveal whether it truly has a compact macro representation or whether it is only pretending to compress by succeeding on short lines.",
+        "The reason to test chapter-like passages now is that they expose exactly this failure mode."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.233094,
+      "experimentalSignatureHex": "fb448ffae419105a1e09a9125e9a2fab0cb0c5216d8daaae8429313f0a70549b"
+    },
+    {
+      "text": "The first governance-and-evidence chapter is about preventing the benchmark program from lying to itself. Once a project starts generating optimistic strategy documents and large claims, the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. The ledger system in this repo exists to stop that drift. Every report, storage projection, and holdout failure is supposed to land in a dated record with explicit claim boundaries. For a book-like corpus, this discipline matters because the temptation to extrapolate from a few good long-form numbers is high. The current evidence rules force the repo to say what the benchmark really shows: storage-side improvement on controlled chapter-style passages, not a solved general tokenizer or a validated library-scale collapse claim. That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+      "words": 154,
+      "codepoints": 1012,
+      "sourceBytes": 1012,
+      "tiktokenCount": 177,
+      "fixtureGlyphCount": 1012,
+      "fixtureBinaryBytes": 32384,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.7175,
+      "binaryBytesPerToken": 182.9605,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0169,
+      "experimentalBinaryBytesPerToken": 0.5424,
+      "experimentalBinaryVsSourceRatio": 0.0949,
+      "experimentalPatches": [
+        "the easiest failure mode is to let theory and implementation blend until every directional result is described as if it were already proven. Once a project starts generating optimistic strategy documents and large claims,",
+        "That governance layer is part of the technical work because it determines which decisions are made on evidence and which are made on narrative momentum.",
+        "storage-side improvement on controlled chapter-style passages,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.298233,
+      "experimentalSignatureHex": "da46d7d8961fca798e8d21910a6ae4f262bac57b3da0e06e060b23bd29690599"
+    },
+    {
+      "text": "The second governance-and-evidence chapter applies the same discipline to archival durability. A benchmark that produces real gains but loses the artifacts is not operationally serious, especially when the work spans many rounds, models, and variant packers. The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports, more derived models, and more ways to accidentally lose the comparison set. The archive flow does not make the tokenizer better, but it makes the evidence set trustworthy across time. In the current state of the project, that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+      "words": 137,
+      "codepoints": 878,
+      "sourceBytes": 878,
+      "tiktokenCount": 159,
+      "fixtureGlyphCount": 878,
+      "fixtureBinaryBytes": 28096,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.522,
+      "binaryBytesPerToken": 176.7044,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0189,
+      "experimentalBinaryBytesPerToken": 0.6038,
+      "experimentalBinaryVsSourceRatio": 0.1093,
+      "experimentalPatches": [
+        "The repo now treats snapshots as first-class evidence so the exact state of a winning or losing round can be preserved in the vault instead of reconstructed from memory later. This matters for long-form testing because bigger corpora produce bigger reports,",
+        "that is a proven operational win and a prerequisite for taking larger storage or retrieval claims seriously as the corpora continue to grow.",
+        "A benchmark that produces real gains but loses the artifacts is not operationally serious,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.226209,
+      "experimentalSignatureHex": "d90657da96174a589a8fa9900a2cede04abac5fb3d20e0ea16ca332d27692599"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.017,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 6,
+      "groups": [
+        {
+          "group": "multilingual_equity_booklike",
+          "separationMargin": 11
+        },
+        {
+          "group": "storage_economics_booklike",
+          "separationMargin": 10.5
+        },
+        {
+          "group": "retrieval_booklike",
+          "separationMargin": 13.5
+        },
+        {
+          "group": "pricing_operations_booklike",
+          "separationMargin": 7.5
+        },
+        {
+          "group": "hardware_edge_booklike",
+          "separationMargin": 8.5
+        },
+        {
+          "group": "governance_evidence_booklike",
+          "separationMargin": 11.5
+        }
+      ],
+      "minSeparationMargin": 7.5,
+      "maxSeparationMargin": 13.5,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 52.6667,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "Controlled labeled semantic groups are closer internally than to other labeled groups in this run.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  },
+  "validatedHeadCandidate": {
+    "headId": "booklikeRepair",
+    "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json"
+  },
+  "autoRoute": {
+    "routeId": "default",
+    "candidateRouteId": "bookRoot",
+    "lexicalSelectedHead": "default",
+    "selectedHead": "booklikeRepair",
+    "scores": {
+      "bookRoot": 169,
+      "governance": 0,
+      "archive": 73
+    },
+    "ranked": [
+      {
+        "routeId": "bookRoot",
+        "score": 169
+      },
+      {
+        "routeId": "archive",
+        "score": 73
+      },
+      {
+        "routeId": "governance",
+        "score": 0
+      }
+    ],
+    "minimumScore": 6,
+    "confidenceGuard": {
+      "enabled": true,
+      "accepted": false,
+      "reason": "bookRoot corpus shape below folded-entry threshold",
+      "thresholds": {
+        "bookRootMinimumAverageWordsPerEntry": 240,
+        "bookRootMinimumMinWordsPerEntry": 220
+      },
+      "corpusShape": {
+        "entries": 12,
+        "totalWords": 1831,
+        "averageWordsPerEntry": 152.5833,
+        "minWordsPerEntry": 137,
+        "maxWordsPerEntry": 185
+      }
+    },
+    "selectedModel": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+    "selectionPolicy": "ranked-accepted-head"
+  },
+  "headValidation": {
+    "selectedHeadId": "booklikeRepair",
+    "policy": "ranked-accepted-head",
+    "reason": "best ranked accepted head selected over v19 route selection",
+    "candidateHeadId": "default",
+    "fallbackHeadId": "default",
+    "legacySelection": {
+      "selectedHeadId": "default",
+      "reason": "candidate and fallback failed validation; preserving routed candidate for inspection",
+      "candidateHeadId": "default",
+      "fallbackHeadId": "default",
+      "candidateValidation": {
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      },
+      "fallbackValidation": {
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      }
+    },
+    "selectedValidation": {
+      "accepted": true,
+      "reasons": [],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 7.5,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 52.6667,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.0968
+      }
+    },
+    "fullHeadRanking": [
+      {
+        "rank": 1,
+        "headId": "booklikeRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 7.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 52.6667,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 7.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 52.6667,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.0968
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "headId": "governance",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -12.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 69.75,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -12.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 69.75,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.0968
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "headId": "default",
+        "routeFitRole": "candidate",
+        "routeFitScore": 2,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -18.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 78.5,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.0968
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "headId": "bookRoot",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -23.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.1667,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -23.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 78.1667,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.0968
+          }
+        }
+      }
+    ],
+    "selectionPolicy": "ranked-accepted-head",
+    "reports": {
+      "default": {
+        "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.5,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      },
+      "bookRoot": {
+        "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -23.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 78.1667,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      },
+      "governance": {
+        "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -12.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 69.75,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      },
+      "booklikeRepair": {
+        "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 7.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 52.6667,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968
+        }
+      }
+    }
+  },
+  "multiHeadStorage": {
+    "storedHeadCount": 4,
+    "codeBytesPerPatch": 32,
+    "selectedHeadBinaryBytes": 1152,
+    "allHeadsBinaryBytes": 4608,
+    "selectedHeadBinaryVsSourceRatio": 0.0968,
+    "allHeadsBinaryVsSourceRatio": 0.3871
+  }
+}

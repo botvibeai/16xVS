@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-04-24T04:50:27.350Z",
+  "manifest": "data/eval/frozen-eval-suite.json",
+  "encoderModel": "models/learned-hybrid-prototype-v3.json",
+  "suiteCount": 7,
+  "suites": [
+    {
+      "id": "sample_baseline",
+      "label": "Sample Baseline",
+      "input": "bench/sample-corpus.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/sample_baseline-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.5882,
+      "allSemanticMarginsPositive": null,
+      "signatureCollapse": false
+    },
+    {
+      "id": "google_1000_count",
+      "label": "Google 1000 Count",
+      "input": "bench/google-10000-english-usa.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/google_1000_count-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.9183,
+      "allSemanticMarginsPositive": null,
+      "signatureCollapse": false
+    },
+    {
+      "id": "controlled_phrase",
+      "label": "Controlled Phrase",
+      "input": "bench/phrase-corpus.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/controlled_phrase-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.5699,
+      "allSemanticMarginsPositive": true,
+      "signatureCollapse": false
+    },
+    {
+      "id": "controlled_multilingual",
+      "label": "Controlled Multilingual",
+      "input": "bench/multilingual-phrases.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/controlled_multilingual-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.1918,
+      "allSemanticMarginsPositive": false,
+      "signatureCollapse": false
+    },
+    {
+      "id": "blind_holdout",
+      "label": "Blind Holdout",
+      "input": "bench/blind-holdout-2026-04-20.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/blind_holdout-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.4206,
+      "allSemanticMarginsPositive": false,
+      "signatureCollapse": false
+    },
+    {
+      "id": "paraphrase_holdout",
+      "label": "Paraphrase Holdout",
+      "input": "bench/paraphrase-holdout-2026-04-23.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/paraphrase_holdout-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.5214,
+      "allSemanticMarginsPositive": true,
+      "signatureCollapse": false
+    },
+    {
+      "id": "stress_100",
+      "label": "Stress 100",
+      "input": "bench/stress-100-phrases-2026-04-23.txt",
+      "output": "bench/eval-suite-learned-hybrid-v3/stress_100-report.json",
+      "evidenceLabel": "directional",
+      "encoderStage": "learned-hybrid-prototype",
+      "patchesPerToken": 0.2287,
+      "allSemanticMarginsPositive": false,
+      "signatureCollapse": false
+    }
+  ]
+}

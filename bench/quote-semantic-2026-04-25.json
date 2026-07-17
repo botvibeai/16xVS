@@ -1,0 +1,52 @@
+[
+  {
+    "group": "discipline_quotes",
+    "items": [
+      "Start now.",
+      "Do the hard part first.",
+      "Discipline outlasts motivation.",
+      "Small steps beat perfect plans.",
+      "Finish what you begin."
+    ]
+  },
+  {
+    "group": "truth_quotes",
+    "items": [
+      "Say the plain thing.",
+      "Truth survives delay.",
+      "Clear words cut fog.",
+      "Facts do not bend for comfort.",
+      "Name the problem exactly."
+    ]
+  },
+  {
+    "group": "patience_quotes",
+    "items": [
+      "Wait, then move.",
+      "Patience protects good work.",
+      "Slow decisions can save fast systems.",
+      "Rush invites repair bills.",
+      "Time clarifies weak ideas."
+    ]
+  },
+  {
+    "group": "courage_quotes",
+    "items": [
+      "Choose the hard truth.",
+      "Stand up before you are ready.",
+      "Fear shrinks after the first step.",
+      "Courage is action under pressure.",
+      "Go where the risk matters."
+    ]
+  },
+  {
+    "group": "craft_quotes",
+    "items": [
+      "Measure twice, ship once.",
+      "Good systems reward clean thinking.",
+      "Design must survive contact with use.",
+      "Quality is built in small corrections.",
+      "Tools matter, but judgment matters more."
+    ]
+  }
+]

@@ -1,0 +1,81 @@
+# EXP-2026-05-05-001 Mixed-Objective V5 Round
+
+- `id`: `EXP-2026-05-05-001`
+- `date`: `2026-05-05`
+- `corpus`: `data/training/embedding-training-spec-v4.json` for training, evaluated against `data/eval/frozen-eval-suite.json`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, and `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`
+- `method`: Built a mixed-objective training spec that preserved the broader `v3` groups, added governance groups, added a small amount of archive-pressure language to storage and retrieval, and replaced `all-cross` negatives with targeted hard-negative group pairs. Trained a base hybrid encoder with the `v3` hyperparameters, derived a hierarchical storage variant, then ran the frozen suite plus the governance and archive-pressure corpora.
+- `implementation_path`: `learned hybrid prototype v5 mixed-objective hierarchical packer v1`
+- `baseline`: `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` and `learned-hybrid-prototype-v4-governance-hierarchical-packer-v1.json`
+- `training_config`:
+  - `trainingSpec`: `data/training/embedding-training-spec-v4.json`
+  - `groupCount`: `12`
+  - `itemCount`: `103`
+  - `positivePairCount`: `398`
+  - `negativePairCount`: `576`
+  - `negativeMode`: `explicit`
+  - `negativeSampleLimitPerPair`: `18`
+  - `dimensions`: `256`
+  - `epochs`: `40`
+  - `learningRate`: `0.05`
+  - `negativeMargin`: `0.15`
+  - `seed`: `19`
+  - `learnedBlendWeight`: `1`
+  - `heuristicBlendWeight`: `0.6`
+  - `prototypeLearningRate`: `0.03`
+  - `prototypeNegativeMargin`: `0.25`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.762632`
+  - `training.averageNegativeSimilarity`: `0.265362`
+  - `governance.avgPatchesPerEntry`: `2.8333`
+  - `governance.patchesPerToken`: `0.0297`
+  - `governance.semantic.minMargin`: `-5.5`
+  - `governance.semantic.allPositive`: `false`
+  - `governance.retention_policy.margin`: `21.5`
+  - `governance.legal_hold.margin`: `-5.5`
+  - `governance.audit_evidence.margin`: `15.5`
+  - `governance.access_review.margin`: `13.5`
+  - `governance.deletion_exception.margin`: `15`
+  - `governance.compliance_attestation.margin`: `25`
+  - `archivePressure.avgPatchesPerEntry`: `3`
+  - `archivePressure.patchesPerToken`: `0.0214`
+  - `archivePressure.semantic.minMargin`: `-8`
+  - `archivePressure.semantic.allPositive`: `false`
+  - `archivePressure.negativeGroups`: `archive_catalog_pressure, replication_repair_pressure, retention_governance_pressure`
+  - `suite.controlled_phrase.minMargin`: `4.0833`
+  - `suite.controlled_phrase.allPositive`: `true`
+  - `suite.controlled_multilingual.minMargin`: `-7.7619`
+  - `suite.controlled_multilingual.allPositive`: `false`
+  - `suite.blind_holdout.minMargin`: `-15.25`
+  - `suite.blind_holdout.allPositive`: `false`
+  - `suite.paraphrase_holdout.minMargin`: `0.8`
+  - `suite.paraphrase_holdout.allPositive`: `true`
+  - `suite.stress_100.minMargin`: `-31.2889`
+  - `suite.stress_100.allPositive`: `false`
+  - `all suite collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - A targeted hard-negative schedule can rebalance the governance-overfit `v4` round and recover the paraphrase holdout without giving up the compact hierarchical storage shape.
+  - The mixed-objective round improves controlled multilingual and blind-holdout margins relative to `v4`, and it reduces the governance-adversarial failure set from four groups under the old baseline and zero broad regressions under `v4` to a single `legal_hold` miss.
+  - The evaluation harness can now measure specialization-vs-balance tradeoffs explicitly across governance, archive-pressure, and the frozen suite.
+- `claim_not_supported`:
+  - This round does not become the new overall baseline.
+  - The controlled multilingual suite still fails across all three groups.
+  - The blind holdout and stress suite still fail.
+  - The archive-pressure corpus regresses to three negative groups and does not become a pass.
+  - This run does not support broad tokenizer-superiority claims.
+- `artifacts`:
+  - [training spec v4](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v4.json)
+  - [training pairs v4](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v4.json)
+  - [v5 mixed-objective base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v5-mixed-objective-base.json)
+  - [v5 mixed-objective hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v5 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v5-mixed-objective-hierarchical-packer-v1\suite-summary.json)
+  - [v5 governance adversarial report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-governance-adversarial-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v5 archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-archive-pressure-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v4 governance round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+- `notes`:
+  - This is a compromise result, not a breakthrough.
+  - Relative to `v4`, the model is broader and less overfit.
+  - Relative to the current storage baseline, the archive-pressure and multilingual walls remain unresolved.
+- `next_action`:
+  - Keep the current overall storage baseline unchanged.
+  - If another semantic round is attempted, focus on the `legal_hold` miss and the archive-pressure regressions without reopening the paraphrase gain.

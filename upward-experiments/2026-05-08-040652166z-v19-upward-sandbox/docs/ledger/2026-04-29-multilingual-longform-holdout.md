@@ -1,0 +1,41 @@
+# EXP-2026-04-29-001 Multilingual Longform Holdout
+
+- `id`: `EXP-2026-04-29-001`
+- `date`: `2026-04-29`
+- `corpus`: `bench/multilingual-longform-holdout-2026-04-29.txt` with `bench/multilingual-longform-semantic-2026-04-29.json`
+- `method`: Ran the current storage-focused baseline `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` against a new long-form multilingual holdout built around shared launch, storage, and search themes expressed with mixed English, Spanish, French, German, and Chinese surface forms.
+- `implementation_path`: `learned hybrid prototype v3 hierarchical packer v2`
+- `baseline`: `current controlled multilingual phrase suite and prior long-form corpora`
+- `metrics`:
+  - `entries`: `6`
+  - `patchesPerToken`: `0.0234`
+  - `avgPatchesPerEntry`: `3`
+  - `singlePatchRate`: `0`
+  - `semantic.minMargin`: `23.5`
+  - `semantic.allPositive`: `true`
+  - `launch_multilingual_longform.margin`: `34.5`
+  - `storage_multilingual_longform.margin`: `23.5`
+  - `search_multilingual_longform.margin`: `41`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `58.3333`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The current `hierarchical-packer-v2` baseline can keep a new long-form multilingual mixed-script holdout at `3` patches per entry with clean collapse checks.
+  - The new multilingual long-form holdout shows positive grouped separation across launch, storage, and search themes.
+  - This is stronger multilingual evidence than the short controlled phrase suite alone because the passages are longer and theme-bearing rather than label-only.
+- `claim_not_supported`:
+  - This run does not repair the frozen controlled multilingual suite.
+  - This run does not prove broad multilingual superiority in real-world use.
+  - This run does not validate the larger `99.99%` or `1.25 GB` raw-source claims.
+- `artifacts`:
+  - [multilingual longform corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-longform-holdout-2026-04-29.txt)
+  - [multilingual longform semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-longform-semantic-2026-04-29.json)
+  - [multilingual longform report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-multilingual-longform-holdout-v3-hierarchical-packer-v2.json)
+  - [current hierarchical baseline model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
+- `notes`:
+  - The passages are still benchmark-authored and controlled.
+  - The result is useful because it shows the current baseline can carry multilingual theme structure on longer mixed-script records even though the older frozen multilingual gate still has one failing group.
+- `next_action`:
+  - Keep this corpus as an additional multilingual regression test.
+  - Use it to compare future semantic changes against both the frozen multilingual suite and longer mixed-script passages.

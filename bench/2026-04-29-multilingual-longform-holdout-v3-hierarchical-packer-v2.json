@@ -1,0 +1,466 @@
+{
+  "generatedAt": "2026-04-29T05:38:54.538Z",
+  "input": "bench\\multilingual-longform-holdout-2026-04-29.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 28,
+      "residualMaxCharsPerPatch": 180
+    },
+    "trainingSummary": {
+      "positivePairCount": 192,
+      "negativePairCount": 720,
+      "averagePositiveSimilarity": 0.823585,
+      "averageNegativeSimilarity": 0.187133,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 6,
+    "words": 616,
+    "codepoints": 4156,
+    "sourceBytes": 4156,
+    "tiktokenCount": 770,
+    "fixtureGlyphCount": 4156,
+    "fixtureBinaryBytes": 132992,
+    "experimentalPatchCount": 18,
+    "experimentalBinaryBytes": 576,
+    "avgTiktokenPerEntry": 128.3333,
+    "avgGlyphsPerEntry": 692.6667,
+    "avgExperimentalPatchesPerEntry": 3,
+    "glyphsPerToken": 5.3974,
+    "binaryBytesPerToken": 172.7169,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.0234,
+    "experimentalBinaryBytesPerToken": 0.7481,
+    "experimentalBinaryVsSourceRatio": 0.1386
+  },
+  "semantic": {
+    "input": "bench\\multilingual-longform-semantic-2026-04-29.json",
+    "groups": [
+      {
+        "group": "launch_multilingual_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 51,
+        "avgTokenOverlap": 0.2574,
+        "entries": [
+          {
+            "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+            "tiktokenCount": 146,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "A second launch passage uses the same business meaning with a different surface mix. The document header says \"liste de lancement\", the regional appendix says \"lista de lanzamiento\", and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams. Even though the scripts and spellings vary, the record still describes one release-control routine: readiness review, rollback planning, sign-off routing, and a final go-live decision. If the representation is stable, these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, not because the benchmark was tuned around one preferred language.",
+            "tiktokenCount": 129,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "storage_multilingual_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 66,
+        "avgTokenOverlap": 0.1806,
+        "entries": [
+          {
+            "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+            "tiktokenCount": 133,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+            "tiktokenCount": 133,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "search_multilingual_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 58,
+        "avgTokenOverlap": 0.1575,
+        "entries": [
+          {
+            "text": "The search section explains one retrieval path with several surface forms: \"binary visual search\", \"recherche visuelle binaire\", \"bin?re visuelle suche\", and \"???????\". The archive does not care which label a regional team used; it still has to prune candidates, fetch compact records, and rerank with exact distance checks. If the representation is stable, these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+            "tiktokenCount": 118,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+            "tiktokenCount": 111,
+            "experimentalPatchCount": 3
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "launch_multilingual_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 51,
+        "avgNearestOutsideSignatureDistance": 85.5,
+        "separationMargin": 34.5,
+        "examples": [
+          {
+            "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+            "nearestOutside": {
+              "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+              "signatureDistance": 81
+            }
+          },
+          {
+            "text": "A second launch passage uses the same business meaning with a different surface mix. The document header says \"liste de lancement\", the regional appendix says \"lista de lanzamiento\", and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams. Even though the scripts and spellings vary, the record still describes one release-control routine: readiness review, rollback planning, sign-off routing, and a final go-live decision. If the representation is stable, these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, not because the benchmark was tuned around one preferred language.",
+            "nearestOutside": {
+              "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+              "signatureDistance": 90
+            }
+          }
+        ]
+      },
+      {
+        "group": "storage_multilingual_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 66,
+        "avgNearestOutsideSignatureDistance": 89.5,
+        "separationMargin": 23.5,
+        "examples": [
+          {
+            "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+            "nearestOutside": {
+              "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+              "signatureDistance": 98
+            }
+          },
+          {
+            "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+            "nearestOutside": {
+              "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+              "signatureDistance": 81
+            }
+          }
+        ]
+      },
+      {
+        "group": "search_multilingual_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 58,
+        "avgNearestOutsideSignatureDistance": 99,
+        "separationMargin": 41,
+        "examples": [
+          {
+            "text": "The search section explains one retrieval path with several surface forms: \"binary visual search\", \"recherche visuelle binaire\", \"bin?re visuelle suche\", and \"???????\". The archive does not care which label a regional team used; it still has to prune candidates, fetch compact records, and rerank with exact distance checks. If the representation is stable, these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+            "nearestOutside": {
+              "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+              "signatureDistance": 104
+            }
+          },
+          {
+            "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+            "nearestOutside": {
+              "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+              "signatureDistance": 94
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 6,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 58.3333,
+    "avgNearestTokenOverlap": 0.1985,
+    "examples": [
+      {
+        "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "A second launch passage uses the same business meaning with a different surface mix. The document header says \"liste de lancement\", the regional appendix says \"lista de lanzamiento\", and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams. Even though the scripts and spellings vary, the record still describes one release-control routine: readiness review, rollback planning, sign-off routing, and a final go-live decision. If the representation is stable, these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, not because the benchmark was tuned around one preferred language.",
+          "signatureDistance": 51,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2574
+        }
+      },
+      {
+        "text": "A second launch passage uses the same business meaning with a different surface mix. The document header says \"liste de lancement\", the regional appendix says \"lista de lanzamiento\", and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams. Even though the scripts and spellings vary, the record still describes one release-control routine: readiness review, rollback planning, sign-off routing, and a final go-live decision. If the representation is stable, these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, not because the benchmark was tuned around one preferred language.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+          "signatureDistance": 51,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2574
+        }
+      },
+      {
+        "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1806
+        }
+      },
+      {
+        "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1806
+        }
+      },
+      {
+        "text": "The search section explains one retrieval path with several surface forms: \"binary visual search\", \"recherche visuelle binaire\", \"bin?re visuelle suche\", and \"???????\". The archive does not care which label a regional team used; it still has to prune candidates, fetch compact records, and rerank with exact distance checks. If the representation is stable, these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+          "signatureDistance": 58,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1575
+        }
+      },
+      {
+        "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The search section explains one retrieval path with several surface forms: \"binary visual search\", \"recherche visuelle binaire\", \"bin?re visuelle suche\", and \"???????\". The archive does not care which label a regional team used; it still has to prune candidates, fetch compact records, and rerank with exact distance checks. If the representation is stable, these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+          "signatureDistance": 58,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1575
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "The release team kept one launch checklist but four public labels: \"launch checklist\", \"lista de lanzamiento\", \"liste de lancement\", and \"??????\". The point was not translation polish; the point was operational symmetry. Every regional team had to confirm the same readiness gates, the same rollback note, the same owner map, and the same audit trail before the feature moved from preview to production. In a visual-token archive, those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body. A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight.",
+      "words": 123,
+      "codepoints": 798,
+      "sourceBytes": 798,
+      "tiktokenCount": 146,
+      "fixtureGlyphCount": 798,
+      "fixtureBinaryBytes": 25536,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4658,
+      "binaryBytesPerToken": 174.9041,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0205,
+      "experimentalBinaryBytesPerToken": 0.6575,
+      "experimentalBinaryVsSourceRatio": 0.1203,
+      "experimentalPatches": [
+        "A tokenizer that really supports multilingual equity should treat those labels as alternate surface forms around the same launch workflow rather than as unrelated fragments with different billing weight. In a visual-token archive,",
+        "those labels should not split the entry into different cost classes just because one office uses English and another keeps the Chinese header in the document body.",
+        "The release team kept one launch checklist but four public labels:"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.184482,
+      "experimentalSignatureHex": "58dd2aab80d22a194a7aa2a4827cb6ce62c7547e94e1c58aa63bb07d3afac35b"
+    },
+    {
+      "text": "A second launch passage uses the same business meaning with a different surface mix. The document header says \"liste de lancement\", the regional appendix says \"lista de lanzamiento\", and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams. Even though the scripts and spellings vary, the record still describes one release-control routine: readiness review, rollback planning, sign-off routing, and a final go-live decision. If the representation is stable, these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, not because the benchmark was tuned around one preferred language.",
+      "words": 102,
+      "codepoints": 694,
+      "sourceBytes": 694,
+      "tiktokenCount": 129,
+      "fixtureGlyphCount": 694,
+      "fixtureBinaryBytes": 22208,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.3798,
+      "binaryBytesPerToken": 172.155,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0233,
+      "experimentalBinaryBytesPerToken": 0.7442,
+      "experimentalBinaryVsSourceRatio": 0.1383,
+      "experimentalPatches": [
+        "these multilingual labels should stay near one another in retrieval because they are attached to the same release procedure, and the operations note keeps the English phrase \"launch checklist\" beside \"??????\" for vendor teams.",
+        "A second launch passage uses the same business meaning with a different surface mix.",
+        "the record still describes one release-control routine:"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.205836,
+      "experimentalSignatureHex": "da7e33eb289e2a7b4ef8a0a5821d76ce66c74c66e6e0c88ea63bb37f1ad0835b"
+    },
+    {
+      "text": "The storage policy passage carries the same rule under several labels: \"storage policy\", \"politique de stockage\", \"speicherrichtlinie\", and \"????\". Under every heading, the actual rule is identical. One live copy serves queries, one fallback copy supports recovery, and one vault copy preserves the evidence trail. The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step. A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. If the tokenizer breaks that relationship, the storage layer pays twice: once in semantic confusion and again in duplicated object overhead.",
+      "words": 106,
+      "codepoints": 740,
+      "sourceBytes": 740,
+      "tiktokenCount": 133,
+      "fixtureGlyphCount": 740,
+      "fixtureBinaryBytes": 23680,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.5639,
+      "binaryBytesPerToken": 178.0451,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0226,
+      "experimentalBinaryBytesPerToken": 0.7218,
+      "experimentalBinaryVsSourceRatio": 0.1297,
+      "experimentalPatches": [
+        "A multilingual archive should therefore keep the storage meaning coherent even when governance packets arrive with different regional headings. The storage policy passage carries the same rule under several labels:",
+        "The economic claim only survives if those tiers replicate compact records instead of dragging full source payloads across every backup step.",
+        "and one vault copy preserves the evidence trail."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.328906,
+      "experimentalSignatureHex": "583889b81257615bcb1e21b8927fa85b7a83513b17f16ca34ea35d266c5b672d"
+    },
+    {
+      "text": "Another storage record uses a different writing style but the same durability idea. The engineering memo opens with \"speicherrichtlinie\", the legal annex repeats \"politique de stockage\", and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set. All four labels still refer to the same tri-tier design of live, fallback, and vault retention with repair after degradation. A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts. This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty.",
+      "words": 108,
+      "codepoints": 698,
+      "sourceBytes": 698,
+      "tiktokenCount": 133,
+      "fixtureGlyphCount": 698,
+      "fixtureBinaryBytes": 22336,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.2481,
+      "binaryBytesPerToken": 167.9398,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0226,
+      "experimentalBinaryBytesPerToken": 0.7218,
+      "experimentalBinaryVsSourceRatio": 0.1375,
+      "experimentalPatches": [
+        "This is the exact place where multilingual equity either becomes a real storage advantage or collapses back into a language-shaped cost penalty. and the rollout summary keeps both \"storage policy\" and \"????\" so the regional teams map to one rule set.",
+        "A robust representation should keep these entries close because the archive logic is the same even though the regional wording shifts.",
+        "Another storage record uses a different writing style but the same durability idea."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.274547,
+      "experimentalSignatureHex": "d8aa89f88217023beb78aaaa923f96da6a23492e97e9edf26e2b796f26f363a9"
+    },
+    {
+      "text": "The search section explains one retrieval path with several surface forms: \"binary visual search\", \"recherche visuelle binaire\", \"bin?re visuelle suche\", and \"???????\". The archive does not care which label a regional team used; it still has to prune candidates, fetch compact records, and rerank with exact distance checks. If the representation is stable, these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+      "words": 91,
+      "codepoints": 628,
+      "sourceBytes": 628,
+      "tiktokenCount": 118,
+      "fixtureGlyphCount": 628,
+      "fixtureBinaryBytes": 20096,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.322,
+      "binaryBytesPerToken": 170.3051,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0254,
+      "experimentalBinaryBytesPerToken": 0.8136,
+      "experimentalBinaryVsSourceRatio": 0.1529,
+      "experimentalPatches": [
+        "these labels belong to one retrieval theme because they all describe the same approximate-plus-exact search workflow over binary signatures. The search section explains one retrieval path with several surface forms:",
+        "The tokenizer should not scatter them into separate neighborhoods just because the query guide was localized for different teams.",
+        "\"binary visual search\","
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.318668,
+      "experimentalSignatureHex": "ea201b9a1ab33d79a822ea96166e28285aba85a62793c6aa8e42e2778a5af14b"
+    },
+    {
+      "text": "A second retrieval passage keeps the same idea while changing the phrasing. The training manual names the feature \"recherche visuelle binaire\", the operator runbook prefers \"binary visual search\", the infrastructure appendix adds \"bin?re visuelle suche\", and the Asia support note carries \"???????\". Those headings all point to one process: narrow the candidate set, load the original codes, then rerank exactly instead of trusting approximation alone. A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale.",
+      "words": 86,
+      "codepoints": 598,
+      "sourceBytes": 598,
+      "tiktokenCount": 111,
+      "fixtureGlyphCount": 598,
+      "fixtureBinaryBytes": 19136,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.3874,
+      "binaryBytesPerToken": 172.3964,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.027,
+      "experimentalBinaryBytesPerToken": 0.8649,
+      "experimentalBinaryVsSourceRatio": 0.1605,
+      "experimentalPatches": [
+        "A multilingual system that cannot keep those records aligned will struggle to prove that visual retrieval survives localization at archive scale. The training manual names the feature \"recherche visuelle binaire\",",
+        "the operator runbook prefers \"binary visual search\",",
+        "A second retrieval passage keeps the same idea while changing the phrasing."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.284894,
+      "experimentalSignatureHex": "da2e27a89af33969282aaeb6162daa3a5e1ac9a2b5a385aace92326b881a634b"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.0234,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 3,
+      "groups": [
+        {
+          "group": "launch_multilingual_longform",
+          "separationMargin": 34.5
+        },
+        {
+          "group": "storage_multilingual_longform",
+          "separationMargin": 23.5
+        },
+        {
+          "group": "search_multilingual_longform",
+          "separationMargin": 41
+        }
+      ],
+      "minSeparationMargin": 23.5,
+      "maxSeparationMargin": 41,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 58.3333,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "Controlled labeled semantic groups are closer internally than to other labeled groups in this run.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

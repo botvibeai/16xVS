@@ -1,0 +1,44 @@
+[
+  {
+    "group": "retention_policy_adversarial",
+    "items": [
+      "The first retention-policy passage defines how long operational records remain in the archive before normal destruction. It lists retention classes, business triggers, review cadence, and the rule that routine archive entries move toward deletion only after their retention window closes and no special exception is active. The language is intentionally close to audit and legal workflows because real governance records overlap. Even so, this passage is about standard retention policy: classification, scheduled review, documented lifecycle, and ordinary expiration of stored material under an approved timetable.",
+      "The second retention-policy passage describes the same kind of governance rule with different wording. It explains that archived records are assigned a retention class, reviewed on a standing schedule, and disposed of only when the class duration has expired and no active exception blocks the action. The memo still talks about evidence, review, and risk because real policy documents do, but its core job is routine retention management rather than legal intervention or emergency audit response."
+    ]
+  },
+  {
+    "group": "legal_hold_adversarial",
+    "items": [
+      "The first legal-hold passage suspends ordinary destruction because a dispute, investigation, or claim may require later production. It uses some of the same words as retention policy, but the key instruction is different: once a hold is issued, scheduled deletion stops, custodians are notified, and the affected archive segments must remain preserved until counsel releases the hold. The record is therefore about legal hold activation and preservation override, not the normal lifecycle timetable for routine archive records.",
+      "The second legal-hold passage describes a preservation notice that overrides the standard archive schedule. Relevant entries, backups, and evidence packets must not be deleted while the hold remains in force, and release depends on legal review rather than the expiration of an ordinary retention class. This still sounds close to compliance language because legal and governance memos share vocabulary, but the controlling action here is the hold itself: freeze disposal, preserve scope, track custodians, and wait for formal release."
+    ]
+  },
+  {
+    "group": "audit_evidence_adversarial",
+    "items": [
+      "The first audit-evidence passage is about proving that a control actually happened. It asks for review logs, approval traces, preservation records, and timestamped artifacts that demonstrate the archive followed policy. The text mentions retention, exceptions, and hold states only because those facts may appear in the evidence package. Its primary purpose is not to decide how long something stays or whether a hold exists; it is to assemble verifiable audit evidence showing what the system did, who approved it, and how the archive can support later examination.",
+      "The second audit-evidence passage frames the same requirement from an assurance perspective. The archive team must produce a chain of artifacts that proves the control was executed: review records, access approvals, deletion deferrals, and stored proof of the final disposition decision. The vocabulary overlaps with policy and legal documents, but the main job is evidentiary. This passage is about assembling an audit packet and preserving proof, not defining the original retention schedule or issuing a legal preservation order."
+    ]
+  },
+  {
+    "group": "access_review_adversarial",
+    "items": [
+      "The first access-review passage focuses on who may see governed archive records and whether that permission remains justified. Reviewers compare role assignments, exception scopes, and evidence access paths against current responsibilities, then revoke or narrow permissions that no longer fit. The memo uses governance language because access decisions affect retained records, legal holds, and audit packets, but the core task is access review: validate user scope, confirm business need, and correct overbroad access before the next certification cycle closes.",
+      "The second access-review passage explains a recurring entitlement review for archived records that may include sensitive evidence. Managers certify which users still need access, security staff remove stale privileges, and exception paths are documented for follow-up. The text references retention and audit activity because the same records are involved, yet the passage is not deciding disposal, preservation, or evidence sufficiency. It is deciding whether each person should retain archive access and how that decision is documented."
+    ]
+  },
+  {
+    "group": "deletion_exception_adversarial",
+    "items": [
+      "The first deletion-exception passage handles the narrow cases where ordinary deletion does not proceed even though the standard retention window has ended. An exception may exist because of regulatory timing, an unresolved review, a linked investigation, or a documented dependency on related evidence. The language is deliberately similar to hold and retention policy text, but the function is different. This record is about exception handling at the point of deletion: note the reason, defer disposal, record the approver, and revisit the item after the exception condition is cleared.",
+      "The second deletion-exception passage describes a deferral from routine destruction after the archive item reaches its nominal end date. Instead of triggering a broad legal-hold process, the system logs a specific deletion exception tied to an open review, external dependency, or temporary governance block. The archive keeps the record, records the rationale, and schedules a follow-up decision. The key idea is exception-based deferral of deletion, not ordinary retention classification and not a full legal preservation freeze."
+    ]
+  },
+  {
+    "group": "compliance_attestation_adversarial",
+    "items": [
+      "The first compliance-attestation passage is a statement that responsible owners reviewed the archive controls and affirm they are operating as required. It references retention classes, hold procedures, review logs, and exception handling because the attestation summarizes all of them at once. But unlike the source policies, its purpose is not to define one control in detail. Its purpose is to certify compliance status, note any gaps, and formally attest that the archive program was examined against its obligations during the reporting period.",
+      "The second compliance-attestation passage serves as a signed governance certification. Control owners confirm that archive retention, hold handling, evidence production, and exception workflows were reviewed for the period and that any deficiencies were recorded for remediation. The wording overlaps with every other governance document because an attestation references the whole program. Still, it is not itself a retention rule, a hold notice, an audit packet, or an access review. It is the final certification layer that states whether the program met its obligations."
+    ]
+  }
+]

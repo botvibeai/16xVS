@@ -1,0 +1,95 @@
+label=ranked-blind-holdout
+startedAt=2026-05-25T19:02:02.836Z
+endedAt=2026-05-25T19:02:08.073Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/eight-head-ranked/blind-holdout-v26-split-ranked.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "default",
+  "reason": "no ranked head passed; preserving v19 selection for inspection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "quoteSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -13.5833,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "stressSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -14.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -14.6667,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 5,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 6,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -15.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 7,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 8,
+      "headId": "blindSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -15.5,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 68.2667,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 12.1136
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "group": "launch_ops_paraphrase",
+    "items": [
+      "deployment readiness checklist",
+      "release go-live review",
+      "production rollout prep",
+      "launch readiness steps",
+      "ship checklist for release"
+    ]
+  },
+  {
+    "group": "storage_resilience_paraphrase",
+    "items": [
+      "three-copy retention policy",
+      "primary backup archive plan",
+      "redundant record storage",
+      "restore missing replicas",
+      "secondary vault replication"
+    ]
+  },
+  {
+    "group": "exact_retrieval_paraphrase",
+    "items": [
+      "exact bit-distance query",
+      "binary pattern lookup",
+      "nearest signature match",
+      "hamming-style glyph search",
+      "precise code retrieval"
+    ]
+  },
+  {
+    "group": "planning_memory_paraphrase",
+    "items": [
+      "persistent execution outline",
+      "memory-led action plan",
+      "state-aware workflow plan",
+      "context-preserving task sequence",
+      "operational reasoning outline"
+    ]
+  },
+  {
+    "group": "cost_efficiency_paraphrase",
+    "items": [
+      "reduce compute spending",
+      "pricing efficiency roadmap",
+      "improve margin on processing",
+      "lower storage expense",
+      "cost-optimized service plan"
+    ]
+  },
+  {
+    "group": "password_reset_paraphrase",
+    "items": [
+      "reset my account password",
+      "recover access to my login",
+      "change the sign-in secret",
+      "help me restore account access",
+      "forgot password recovery"
+    ]
+  }
+]

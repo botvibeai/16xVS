@@ -1,0 +1,101 @@
+{
+  "version": 2,
+  "description": "Expanded training-only phrase groups for the hybrid learned encoder. Blind holdout domains remain excluded.",
+  "negativeMode": "all-cross",
+  "negativeSampleLimitPerPair": 48,
+  "groups": [
+    {
+      "id": "launch_training",
+      "domain": "launch",
+      "description": "Launch and deployment readiness phrasing with multilingual variants.",
+      "items": [
+        "release readiness checklist",
+        "deployment go-live plan",
+        "production rollout signoff",
+        "ship preparation review",
+        "launch approval steps",
+        "release gate review",
+        "lista de salida del producto",
+        "plan de mise en service",
+        "发布上线清单"
+      ]
+    },
+    {
+      "id": "storage_training",
+      "domain": "storage",
+      "description": "Storage durability, archive fallback, and preservation phrasing with multilingual variants.",
+      "items": [
+        "triple copy retention plan",
+        "durable archive recovery",
+        "restore degraded replicas",
+        "fallback vault preservation",
+        "redundant record storage",
+        "archive repair workflow",
+        "política de archivo durable",
+        "politique de réplication archive",
+        "存储保全策略"
+      ]
+    },
+    {
+      "id": "retrieval_training",
+      "domain": "retrieval",
+      "description": "Exact signature lookup and binary retrieval phrasing with multilingual variants.",
+      "items": [
+        "exact hamming retrieval",
+        "binary glyph lookup",
+        "nearest signature search",
+        "precise bit-distance query",
+        "exact code match retrieval",
+        "signature neighbor lookup",
+        "búsqueda binaria exacta",
+        "recherche signature binaire",
+        "二进制签名检索"
+      ]
+    },
+    {
+      "id": "planning_training",
+      "domain": "planning",
+      "description": "Memory-first planning and execution phrasing.",
+      "items": [
+        "stateful execution plan",
+        "memory first workflow outline",
+        "context preserving action plan",
+        "persistent reasoning sequence",
+        "operational planning scaffold",
+        "staged execution outline",
+        "rollout coordination map",
+        "context-aware task flow"
+      ]
+    },
+    {
+      "id": "finance_training",
+      "domain": "finance",
+      "description": "Cost control and pricing optimization phrasing.",
+      "items": [
+        "reduce compute cost",
+        "pricing efficiency plan",
+        "margin improvement roadmap",
+        "lower storage expense",
+        "cost optimized service model",
+        "processing budget control",
+        "pricing guardrail review",
+        "expense reduction plan"
+      ]
+    },
+    {
+      "id": "support_training",
+      "domain": "support",
+      "description": "Account recovery and access restoration phrasing.",
+      "items": [
+        "account access recovery",
+        "restore login credentials",
+        "reset sign-in access",
+        "unlock user profile",
+        "recover locked account",
+        "credential recovery workflow",
+        "help regain account access",
+        "access restoration request"
+      ]
+    }
+  ]
+}

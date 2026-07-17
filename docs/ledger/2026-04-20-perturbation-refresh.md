@@ -1,0 +1,31 @@
+# EXP-2026-04-20-005 Perturbation Guardrail Refresh
+
+- `id`: `EXP-2026-04-20-005`
+- `date`: `2026-04-20`
+- `corpus`: `bench/phrase-corpus.txt` with `bench/perturbation-phrases.json`
+- `method`: Regenerated the perturbation benchmark with the BSQ-style prototype and embedded evidence guardrails.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `30`
+  - `perturbationCases`: `4`
+  - `tiktokenCount`: `93`
+  - `experimentalPatchCount`: `53`
+  - `experimentalPatchesPerToken`: `0.5699`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The perturbation harness still runs and now emits signature-distance details plus evidence guardrails.
+  - Some close variants stay compact under the experimental core candidate.
+- `claim_not_supported`:
+  - Perturbation coverage is too thin to support broad stability claims.
+  - No semantic fixture was included in this standalone perturbation report, so semantic separation must be read from the phrase semantic run.
+  - This does not prove target 16xVS BSQ performance.
+- `artifacts`:
+  - [2026-04-20-perturbation-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-perturbation-bsq-style-report.json)
+  - [perturbation-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\perturbation-report.json)
+- `notes`:
+  - The richer semantic interpretation remains in `EXP-2026-04-20-001`.
+- `next_action`:
+  - Add denser typo, synonym, reorder, and adversarial perturbation sets.

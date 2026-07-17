@@ -1,0 +1,62 @@
+# EXP-2026-04-25-004 Macro Packer V1 Suite
+
+- `id`: `EXP-2026-04-25-004`
+- `date`: `2026-04-25`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json` plus quote and quote-paragraph corpora
+- `method`: Derived a storage-focused model variant from `learned-hybrid-prototype-v3.json` by adding an entry-level patch config (`packingMode: entry`, large single-patch thresholds), then ran quote, quote-paragraph, storage-projection, and frozen-suite benchmarks against that variant without retraining the embedding weights.
+- `implementation_path`: `learned hybrid prototype v3 macro packer v1`
+- `baseline`: `learned hybrid prototype v3`
+- `patch_config`:
+  - `packingMode`: `entry`
+  - `maxEntryWordsForSinglePatch`: `96`
+  - `maxEntryCharsForSinglePatch`: `512`
+  - `maxWordsPerPatch`: `96`
+  - `maxCharsPerPatch`: `512`
+- `metrics`:
+  - `quote.singlePatchRate`: `1.0`
+  - `quote.avgPatchesPerEntry`: `1`
+  - `quote.semantic.minMargin`: `-18.8`
+  - `quoteParagraph.singlePatchRate`: `1.0`
+  - `quoteParagraph.avgPatchesPerEntry`: `1`
+  - `quoteParagraph.semantic.minMargin`: `-24.75`
+  - `storage.rawBinaryVsSourceRatio`: `0.576461`
+  - `storage.rawReductionPercent`: `42.3539`
+  - `storage.inputGbNeededForTargetOutputGb`: `2.1684`
+  - `controlled_phrase.minMargin`: `11.4167`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_multilingual.minMargin`: `-4.7619`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-14.3333`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.minMargin`: `4`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `stress_100.minMargin`: `-29.2333`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `all collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can derive a storage-focused patcher variant from the current best local-only semantic model without retraining.
+  - The macro packer collapses the tested quote corpus to one patch per entry.
+  - The macro packer collapses the tested quote-paragraph corpus to one patch per entry.
+  - The macro packer improves raw-source storage on those tested corpora from expansion to `42.3539%` reduction.
+  - The macro packer preserves positive controlled phrase separation and positive paraphrase-holdout separation.
+  - Collapse checks stay clean under the macro packer variant.
+- `claim_not_supported`:
+  - The macro packer does not pass the blind unseen-domain holdout.
+  - The macro packer does not pass the mixed-format stress suite.
+  - The macro packer does not fully restore the controlled multilingual suite.
+  - The macro packer does not support the `99.99%` raw-storage reduction claim.
+  - The macro packer does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [macro packer model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-macro-packer-v1.json)
+  - [quote benchmark macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3-macro-packer-v1.json)
+  - [quote paragraph macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3-macro-packer-v1.json)
+  - [storage projection macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-macro-packer-v1.json)
+  - [macro frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-macro-packer-v1\suite-summary.json)
+- `notes`:
+  - This is the first repo variant that simultaneously collapses the tested quote and paragraph corpora to one patch per entry and keeps the paraphrase holdout positive.
+  - The storage gain comes from the patching rule, not from a solved semantic representation problem.
+  - The blind holdout remains the real wall.
+- `next_action`:
+  - Keep `v3` as the semantic baseline and `macro-packer-v1` as the storage-focused variant.
+  - Do not merge the macro packer into the main baseline until the semantic tradeoff is explicitly chosen.

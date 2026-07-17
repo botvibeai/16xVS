@@ -1,0 +1,95 @@
+label=ranked-book-root
+startedAt=2026-05-25T19:01:09.147Z
+endedAt=2026-05-25T19:01:16.555Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/eight-head-ranked/book-root-v26-split-ranked.json",
+  "routeId": "bookRoot",
+  "candidateHead": "bookRoot",
+  "selectedHead": "bookRoot",
+  "reason": "v19 selected head is also the best ranked accepted head",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "bookRoot",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 8,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 2,
+      "headId": "quoteSplitV26",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 3,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 3,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -2.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 4,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -3.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 5,
+      "headId": "stressSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -4.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 6,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -11,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 7,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -13.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 8,
+      "headId": "blindSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 8,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 73.6667,
+  "avgPatchesPerEntry": 3,
+  "allHeadsBinaryVsSourceRatio": 0.3869
+}

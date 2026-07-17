@@ -1,0 +1,3336 @@
+{
+  "generatedAt": "2026-05-07T18:02:29.635Z",
+  "input": "bench\\stress-100-phrases-2026-04-23.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 24,
+      "residualMaxCharsPerPatch": 160
+    },
+    "trainingSummary": {
+      "positivePairCount": 751,
+      "negativePairCount": 2080,
+      "averagePositiveSimilarity": 0.750393,
+      "averageNegativeSimilarity": 0.187703,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 100,
+    "words": 316,
+    "codepoints": 2470,
+    "sourceBytes": 2696,
+    "tiktokenCount": 809,
+    "fixtureGlyphCount": 2470,
+    "fixtureBinaryBytes": 79040,
+    "experimentalPatchCount": 100,
+    "experimentalBinaryBytes": 3200,
+    "avgTiktokenPerEntry": 8.09,
+    "avgGlyphsPerEntry": 24.7,
+    "avgExperimentalPatchesPerEntry": 1,
+    "glyphsPerToken": 3.0532,
+    "binaryBytesPerToken": 97.7009,
+    "binaryVsSourceRatio": 29.3175,
+    "experimentalPatchesPerToken": 0.1236,
+    "experimentalBinaryBytesPerToken": 3.9555,
+    "experimentalBinaryVsSourceRatio": 1.1869
+  },
+  "semantic": {
+    "input": "bench\\stress-100-groups-2026-04-23.json",
+    "groups": [
+      {
+        "group": "repetition_patterns",
+        "size": 10,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 120.2222,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "ha ha ha ha ha ha ha ha ha ha",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "0000000000000000000000000000",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "abcabcabcabcabcabcabcabcabc",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "test_test_test_test_test_test",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "repeat repeat repeat repeat repeat",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+            "tiktokenCount": 14,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "lol lol lol lol lol lol lol",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "same same same same same same",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "identical identical identical identical",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "multilingual_greetings",
+        "size": 10,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 93.4889,
+        "avgTokenOverlap": 0.4691,
+        "entries": [
+          {
+            "text": "Hola, ¿cómo estás?",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Bonjour, comment ça va?",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Guten Tag, wie geht’s?",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "こんにちは世界",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "你好，世界",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Привет, как дела?",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "مرحبا كيف حالك",
+            "tiktokenCount": 11,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "שלום עולם",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "नमस्ते दुनिया",
+            "tiktokenCount": 13,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "สวัสดีโลก",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "code_structures",
+        "size": 10,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 80.2222,
+        "avgTokenOverlap": 0.0154,
+        "entries": [
+          {
+            "text": "function test() { return true; }",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "if(x > 10 && y < 5) { execute(); }",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+            "tiktokenCount": 17,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "SELECT * FROM users WHERE id = 1;",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "<html><body>Hello</body></html>",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "for(int i=0; i<100; i++){}",
+            "tiktokenCount": 13,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "console.log(\"Hello, world!\");",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "def my_function(param): return param * 2",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "while(true){ break; }",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "try { something(); } catch(e) {}",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "token_boundaries",
+        "size": 10,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 82.0444,
+        "avgTokenOverlap": 0.0722,
+        "entries": [
+          {
+            "text": "tokenization-test-case",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "tokenization_test_case",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "tokenizationTestCase",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "TokenizationTestCASE123",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "split.this.correctly.now",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "word...break...test",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "edge-case---multiple---dashes",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "camelCaseVsSnake_case",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "PascalCaseTestExample",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "kebab-case-example",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "ai_prompts",
+        "size": 10,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 88.3556,
+        "avgTokenOverlap": 0.0274,
+        "entries": [
+          {
+            "text": "Write a Python function that calculates Fibonacci numbers.",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Summarize the following text in one sentence.",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Translate this into Spanish: “Hello world.”",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Generate a marketing slogan for an AI startup.",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Explain quantum computing in simple terms.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Build a REST API with authentication.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Optimize this SQL query for performance.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Create a chatbot that remembers context.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Design a scalable AI infrastructure system.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Reduce token usage without losing meaning.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "repetition_patterns",
+        "size": 10,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 120.2222,
+        "avgNearestOutsideSignatureDistance": 90.7,
+        "separationMargin": -29.5222,
+        "examples": [
+          {
+            "text": "ha ha ha ha ha ha ha ha ha ha",
+            "nearestOutside": {
+              "text": "function test() { return true; }",
+              "signatureDistance": 84
+            }
+          },
+          {
+            "text": "0000000000000000000000000000",
+            "nearestOutside": {
+              "text": "camelCaseVsSnake_case",
+              "signatureDistance": 103
+            }
+          },
+          {
+            "text": "abcabcabcabcabcabcabcabcabc",
+            "nearestOutside": {
+              "text": "Build a REST API with authentication.",
+              "signatureDistance": 100
+            }
+          },
+          {
+            "text": "test_test_test_test_test_test",
+            "nearestOutside": {
+              "text": "Bonjour, comment ça va?",
+              "signatureDistance": 96
+            }
+          },
+          {
+            "text": "repeat repeat repeat repeat repeat",
+            "nearestOutside": {
+              "text": "你好，世界",
+              "signatureDistance": 91
+            }
+          },
+          {
+            "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "nearestOutside": {
+              "text": "Привет, как дела?",
+              "signatureDistance": 97
+            }
+          },
+          {
+            "text": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+            "nearestOutside": {
+              "text": "Optimize this SQL query for performance.",
+              "signatureDistance": 100
+            }
+          },
+          {
+            "text": "lol lol lol lol lol lol lol",
+            "nearestOutside": {
+              "text": "function test() { return true; }",
+              "signatureDistance": 74
+            }
+          },
+          {
+            "text": "same same same same same same",
+            "nearestOutside": {
+              "text": "camelCaseVsSnake_case",
+              "signatureDistance": 93
+            }
+          },
+          {
+            "text": "identical identical identical identical",
+            "nearestOutside": {
+              "text": "for(int i=0; i<100; i++){}",
+              "signatureDistance": 69
+            }
+          }
+        ]
+      },
+      {
+        "group": "multilingual_greetings",
+        "size": 10,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 93.4889,
+        "avgNearestOutsideSignatureDistance": 76.4,
+        "separationMargin": -17.0889,
+        "examples": [
+          {
+            "text": "Hola, ¿cómo estás?",
+            "nearestOutside": {
+              "text": "if(x > 10 && y < 5) { execute(); }",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "Bonjour, comment ça va?",
+            "nearestOutside": {
+              "text": "split.this.correctly.now",
+              "signatureDistance": 59
+            }
+          },
+          {
+            "text": "Guten Tag, wie geht’s?",
+            "nearestOutside": {
+              "text": "try { something(); } catch(e) {}",
+              "signatureDistance": 62
+            }
+          },
+          {
+            "text": "こんにちは世界",
+            "nearestOutside": {
+              "text": "SELECT * FROM users WHERE id = 1;",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "你好，世界",
+            "nearestOutside": {
+              "text": "function test() { return true; }",
+              "signatureDistance": 82
+            }
+          },
+          {
+            "text": "Привет, как дела?",
+            "nearestOutside": {
+              "text": "kebab-case-example",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "مرحبا كيف حالك",
+            "nearestOutside": {
+              "text": "SELECT * FROM users WHERE id = 1;",
+              "signatureDistance": 81
+            }
+          },
+          {
+            "text": "שלום עולם",
+            "nearestOutside": {
+              "text": "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+              "signatureDistance": 73
+            }
+          },
+          {
+            "text": "नमस्ते दुनिया",
+            "nearestOutside": {
+              "text": "Optimize this SQL query for performance.",
+              "signatureDistance": 92
+            }
+          },
+          {
+            "text": "สวัสดีโลก",
+            "nearestOutside": {
+              "text": "console.log(\"Hello, world!\");",
+              "signatureDistance": 80
+            }
+          }
+        ]
+      },
+      {
+        "group": "code_structures",
+        "size": 10,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 80.2222,
+        "avgNearestOutsideSignatureDistance": 66.4,
+        "separationMargin": -13.8222,
+        "examples": [
+          {
+            "text": "function test() { return true; }",
+            "nearestOutside": {
+              "text": "Guten Tag, wie geht’s?",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "if(x > 10 && y < 5) { execute(); }",
+            "nearestOutside": {
+              "text": "TokenizationTestCASE123",
+              "signatureDistance": 62
+            }
+          },
+          {
+            "text": "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+            "nearestOutside": {
+              "text": "Bonjour, comment ça va?",
+              "signatureDistance": 63
+            }
+          },
+          {
+            "text": "SELECT * FROM users WHERE id = 1;",
+            "nearestOutside": {
+              "text": "split.this.correctly.now",
+              "signatureDistance": 66
+            }
+          },
+          {
+            "text": "<html><body>Hello</body></html>",
+            "nearestOutside": {
+              "text": "Hola, ¿cómo estás?",
+              "signatureDistance": 77
+            }
+          },
+          {
+            "text": "for(int i=0; i<100; i++){}",
+            "nearestOutside": {
+              "text": "identical identical identical identical",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "console.log(\"Hello, world!\");",
+            "nearestOutside": {
+              "text": "Translate this into Spanish: “Hello world.”",
+              "signatureDistance": 66
+            }
+          },
+          {
+            "text": "def my_function(param): return param * 2",
+            "nearestOutside": {
+              "text": "Write a Python function that calculates Fibonacci numbers.",
+              "signatureDistance": 68
+            }
+          },
+          {
+            "text": "while(true){ break; }",
+            "nearestOutside": {
+              "text": "Bonjour, comment ça va?",
+              "signatureDistance": 67
+            }
+          },
+          {
+            "text": "try { something(); } catch(e) {}",
+            "nearestOutside": {
+              "text": "Guten Tag, wie geht’s?",
+              "signatureDistance": 62
+            }
+          }
+        ]
+      },
+      {
+        "group": "token_boundaries",
+        "size": 10,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 82.0444,
+        "avgNearestOutsideSignatureDistance": 72.3,
+        "separationMargin": -9.7444,
+        "examples": [
+          {
+            "text": "tokenization-test-case",
+            "nearestOutside": {
+              "text": "function test() { return true; }",
+              "signatureDistance": 74
+            }
+          },
+          {
+            "text": "tokenization_test_case",
+            "nearestOutside": {
+              "text": "Bonjour, comment ça va?",
+              "signatureDistance": 85
+            }
+          },
+          {
+            "text": "tokenizationTestCase",
+            "nearestOutside": {
+              "text": "function test() { return true; }",
+              "signatureDistance": 77
+            }
+          },
+          {
+            "text": "TokenizationTestCASE123",
+            "nearestOutside": {
+              "text": "if(x > 10 && y < 5) { execute(); }",
+              "signatureDistance": 62
+            }
+          },
+          {
+            "text": "split.this.correctly.now",
+            "nearestOutside": {
+              "text": "Bonjour, comment ça va?",
+              "signatureDistance": 59
+            }
+          },
+          {
+            "text": "word...break...test",
+            "nearestOutside": {
+              "text": "Explain quantum computing in simple terms.",
+              "signatureDistance": 60
+            }
+          },
+          {
+            "text": "edge-case---multiple---dashes",
+            "nearestOutside": {
+              "text": "SELECT * FROM users WHERE id = 1;",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "camelCaseVsSnake_case",
+            "nearestOutside": {
+              "text": "ha ha ha ha ha ha ha ha ha ha",
+              "signatureDistance": 86
+            }
+          },
+          {
+            "text": "PascalCaseTestExample",
+            "nearestOutside": {
+              "text": "try { something(); } catch(e) {}",
+              "signatureDistance": 83
+            }
+          },
+          {
+            "text": "kebab-case-example",
+            "nearestOutside": {
+              "text": "if(x > 10 && y < 5) { execute(); }",
+              "signatureDistance": 68
+            }
+          }
+        ]
+      },
+      {
+        "group": "ai_prompts",
+        "size": 10,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 88.3556,
+        "avgNearestOutsideSignatureDistance": 69.5,
+        "separationMargin": -18.8556,
+        "examples": [
+          {
+            "text": "Write a Python function that calculates Fibonacci numbers.",
+            "nearestOutside": {
+              "text": "def my_function(param): return param * 2",
+              "signatureDistance": 68
+            }
+          },
+          {
+            "text": "Summarize the following text in one sentence.",
+            "nearestOutside": {
+              "text": "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+              "signatureDistance": 71
+            }
+          },
+          {
+            "text": "Translate this into Spanish: “Hello world.”",
+            "nearestOutside": {
+              "text": "split.this.correctly.now",
+              "signatureDistance": 65
+            }
+          },
+          {
+            "text": "Generate a marketing slogan for an AI startup.",
+            "nearestOutside": {
+              "text": "if(x > 10 && y < 5) { execute(); }",
+              "signatureDistance": 75
+            }
+          },
+          {
+            "text": "Explain quantum computing in simple terms.",
+            "nearestOutside": {
+              "text": "word...break...test",
+              "signatureDistance": 60
+            }
+          },
+          {
+            "text": "Build a REST API with authentication.",
+            "nearestOutside": {
+              "text": "TokenizationTestCASE123",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "Optimize this SQL query for performance.",
+            "nearestOutside": {
+              "text": "split.this.correctly.now",
+              "signatureDistance": 74
+            }
+          },
+          {
+            "text": "Create a chatbot that remembers context.",
+            "nearestOutside": {
+              "text": "if(x > 10 && y < 5) { execute(); }",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "Design a scalable AI infrastructure system.",
+            "nearestOutside": {
+              "text": "Hola, ¿cómo estás?",
+              "signatureDistance": 71
+            }
+          },
+          {
+            "text": "Reduce token usage without losing meaning.",
+            "nearestOutside": {
+              "text": "tokenization-test-case",
+              "signatureDistance": 78
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 100,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 63.57,
+    "avgNearestTokenOverlap": 0.1659,
+    "examples": [
+      {
+        "text": "The quick brown fox jumps over the lazy dog.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Short.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "AI is transforming the world faster than expected.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Short.",
+          "signatureDistance": 57,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "This is a simple sentence for testing purposes.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Short.",
+          "signatureDistance": 55,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "How well does your tokenizer handle normal English?",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Bonjour, comment ça va?",
+          "signatureDistance": 63,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Short.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "AI🔥is🚀fast⚡",
+          "signatureDistance": 48,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Very very very very very long repetition test.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Short.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Numbers like 1234567890 should be handled cleanly.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "---",
+          "signatureDistance": 63,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Mixed case Sentence With RANDOM capitalization.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "tokenization-test-case",
+          "signatureDistance": 68,
+          "patchDistance": 0,
+          "tokenOverlap": 0.125
+        }
+      },
+      {
+        "text": "punctuation!!! does it split??? correctly???",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "½¼¾⅓⅔⅛⅜⅝⅞",
+          "signatureDistance": 68,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "End-of-line test.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "This is a simple sentence for testing purposes.",
+          "signatureDistance": 58,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "ha ha ha ha ha ha ha ha ha ha",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "function test() { return true; }",
+          "signatureDistance": 84,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "0000000000000000000000000000",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "0.00000000012345",
+          "signatureDistance": 42,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "abcabcabcabcabcabcabcabcabc",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "#########",
+          "signatureDistance": 95,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "test_test_test_test_test_test",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "test123test456test789",
+          "signatureDistance": 76,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "repeat repeat repeat repeat repeat",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "punctuation!!! does it split??? correctly???",
+          "signatureDistance": 86,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Mixed case Sentence With RANDOM capitalization.",
+          "signatureDistance": 94,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Optimize this SQL query for performance.",
+          "signatureDistance": 100,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "lol lol lol lol lol lol lol",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "©®™✓✔✕✖★☆",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "same same same same same same",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "#########",
+          "signatureDistance": 83,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "identical identical identical identical",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "for(int i=0; i<100; i++){}",
+          "signatureDistance": 69,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "The quick brown fox jumps over the lazy dog.",
+      "words": 9,
+      "codepoints": 44,
+      "sourceBytes": 44,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 44,
+      "fixtureBinaryBytes": 1408,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4,
+      "binaryBytesPerToken": 140.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.7273,
+      "experimentalPatches": [
+        "The quick brown fox jumps over the lazy dog."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.180338,
+      "experimentalSignatureHex": "c565d448da164a786a5b949746537aeda5b72887b525150e54c109e331ff9fcd"
+    },
+    {
+      "text": "AI is transforming the world faster than expected.",
+      "words": 8,
+      "codepoints": 50,
+      "sourceBytes": 50,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 50,
+      "fixtureBinaryBytes": 1600,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5556,
+      "binaryBytesPerToken": 177.7778,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.64,
+      "experimentalPatches": [
+        "AI is transforming the world faster than expected."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.121706,
+      "experimentalSignatureHex": "916cdd10dcdc0aeb6e76a897564d7cc5e4bce4b3ed85afadd523990531f596fe"
+    },
+    {
+      "text": "This is a simple sentence for testing purposes.",
+      "words": 8,
+      "codepoints": 47,
+      "sourceBytes": 47,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 47,
+      "fixtureBinaryBytes": 1504,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2222,
+      "binaryBytesPerToken": 167.1111,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.6809,
+      "experimentalPatches": [
+        "This is a simple sentence for testing purposes."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.148306,
+      "experimentalSignatureHex": "492ed5f8dad60ced6cdcc893560478a58677a4e7e5c5cbeb5869d9e533e5165f"
+    },
+    {
+      "text": "How well does your tokenizer handle normal English?",
+      "words": 8,
+      "codepoints": 51,
+      "sourceBytes": 51,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 51,
+      "fixtureBinaryBytes": 1632,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.6667,
+      "binaryBytesPerToken": 181.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.6275,
+      "experimentalPatches": [
+        "How well does your tokenizer handle normal English?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.151058,
+      "experimentalSignatureHex": "dd2fd55f52d46cef6c4e8e96c65ddea5a63da497a5a7850e6383b8e121afb41f"
+    },
+    {
+      "text": "Short.",
+      "words": 1,
+      "codepoints": 6,
+      "sourceBytes": 6,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 6,
+      "fixtureBinaryBytes": 192,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 5.3333,
+      "experimentalPatches": [
+        "Short."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.155658,
+      "experimentalSignatureHex": "d86ed559dad40c6b6c50899546497a85b4f724a7e5078f8c706d992131e9969e"
+    },
+    {
+      "text": "Very very very very very long repetition test.",
+      "words": 8,
+      "codepoints": 46,
+      "sourceBytes": 46,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 46,
+      "fixtureBinaryBytes": 1472,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.1111,
+      "binaryBytesPerToken": 163.5556,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.6957,
+      "experimentalPatches": [
+        "Very very very very very long repetition test."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.145255,
+      "experimentalSignatureHex": "8966dde89ad42c782e865b9ed62e3bcfa4f76663e4438b0a686d1b02b3b5349b"
+    },
+    {
+      "text": "Numbers like 1234567890 should be handled cleanly.",
+      "words": 7,
+      "codepoints": 50,
+      "sourceBytes": 50,
+      "tiktokenCount": 12,
+      "fixtureGlyphCount": 50,
+      "fixtureBinaryBytes": 1600,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.1667,
+      "binaryBytesPerToken": 133.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0833,
+      "experimentalBinaryBytesPerToken": 2.6667,
+      "experimentalBinaryVsSourceRatio": 0.64,
+      "experimentalPatches": [
+        "Numbers like 1234567890 should be handled cleanly."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.164692,
+      "experimentalSignatureHex": "558fd51c9e942c7f6853a4864e487685a4bfa8f3b4a58304e96539a381bd919b"
+    },
+    {
+      "text": "Mixed case Sentence With RANDOM capitalization.",
+      "words": 6,
+      "codepoints": 47,
+      "sourceBytes": 47,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 47,
+      "fixtureBinaryBytes": 1504,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.875,
+      "binaryBytesPerToken": 188,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.6809,
+      "experimentalPatches": [
+        "Mixed case Sentence With RANDOM capitalization."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.131984,
+      "experimentalSignatureHex": "e926cccb00d60cf960cce093d24e684cd6fb46278425afaed1e9f1a1a130170b"
+    },
+    {
+      "text": "punctuation!!! does it split??? correctly???",
+      "words": 5,
+      "codepoints": 44,
+      "sourceBytes": 44,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 44,
+      "fixtureBinaryBytes": 1408,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.8889,
+      "binaryBytesPerToken": 156.4444,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.7273,
+      "experimentalPatches": [
+        "punctuation!!! does it split??? correctly???"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.159933,
+      "experimentalSignatureHex": "606dd5d792dc4e6bb8d2ec9186727985bebf1a65f5d7abae4ce5396393d79a4b"
+    },
+    {
+      "text": "End-of-line test.",
+      "words": 2,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.4,
+      "binaryBytesPerToken": 108.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "End-of-line test."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.160132,
+      "experimentalSignatureHex": "432ed5d89a924e696c7cc9d3c6427887a4e72ce7c50789bdec611067a3ad911e"
+    },
+    {
+      "text": "ha ha ha ha ha ha ha ha ha ha",
+      "words": 10,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.9,
+      "binaryBytesPerToken": 92.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "ha ha ha ha ha ha ha ha ha ha"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.196896,
+      "experimentalSignatureHex": "9968c44c78de26df5ac8be9dcb43604ca66da48535a4b7bcc6a7d959125b968f"
+    },
+    {
+      "text": "0000000000000000000000000000",
+      "words": 1,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.8,
+      "binaryBytesPerToken": 89.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "0000000000000000000000000000"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.132189,
+      "experimentalSignatureHex": "cdc55402162990a4a9a534521a5a5a163a9356e165e1a3a1e5b51ad1799af997"
+    },
+    {
+      "text": "abcabcabcabcabcabcabcabcabc",
+      "words": 1,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "abcabcabcabcabcabcabcabcabc"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.132596,
+      "experimentalSignatureHex": "96aec419969d2119586e5e4a49466816c7be40491c528baf45f60a650c56960e"
+    },
+    {
+      "text": "test_test_test_test_test_test",
+      "words": 1,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.8333,
+      "binaryBytesPerToken": 154.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "test_test_test_test_test_test"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.170437,
+      "experimentalSignatureHex": "6979d242c91e6ba97c6c0915d6662d2486eee6ed4f479449615a9aaa676d7d10"
+    },
+    {
+      "text": "repeat repeat repeat repeat repeat",
+      "words": 5,
+      "codepoints": 34,
+      "sourceBytes": 34,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 34,
+      "fixtureBinaryBytes": 1088,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.8,
+      "binaryBytesPerToken": 217.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 0.9412,
+      "experimentalPatches": [
+        "repeat repeat repeat repeat repeat"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.184667,
+      "experimentalSignatureHex": "696dca5549d4015bb493d990d6426986fb6b202d57c32bbab44b7b4357689248"
+    },
+    {
+      "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "words": 1,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7,
+      "binaryBytesPerToken": 224,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.139544,
+      "experimentalSignatureHex": "da06c3a595862a292592c55b585e4ace62eb24a9e585a6f7a9ead0a6a0a08466"
+    },
+    {
+      "text": "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+      "words": 1,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 14,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0714,
+      "experimentalBinaryBytesPerToken": 2.2857,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "zzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.163093,
+      "experimentalSignatureHex": "6020e3ac9e379d54bba54e5ae2e5bce98165bb96e7ef5d4a434f0a9a9e8179df"
+    },
+    {
+      "text": "lol lol lol lol lol lol lol",
+      "words": 7,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.8571,
+      "binaryBytesPerToken": 123.4286,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "lol lol lol lol lol lol lol"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.208694,
+      "experimentalSignatureHex": "b0e2d61803dc4cfb6568921bda5c7986e6b5942384272ba4d4399075b2ad9684"
+    },
+    {
+      "text": "same same same same same same",
+      "words": 6,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.8333,
+      "binaryBytesPerToken": 154.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "same same same same same same"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.15188,
+      "experimentalSignatureHex": "9e8cc4a3add46a4d4eda9ab2d574ad94b436f66563c62fae9c67cb490a749406"
+    },
+    {
+      "text": "identical identical identical identical",
+      "words": 4,
+      "codepoints": 39,
+      "sourceBytes": 39,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 39,
+      "fixtureBinaryBytes": 1248,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.8,
+      "binaryBytesPerToken": 249.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 0.8205,
+      "experimentalPatches": [
+        "identical identical identical identical"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.173781,
+      "experimentalSignatureHex": "5226c71a12cedaeb694fb9d152e57907b6b69ea6e5c92db9d625ebe1b1d29c0d"
+    },
+    {
+      "text": "!@#$%^&*()_+-=[]{}|;':\\\",.<>/?",
+      "words": 1,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 18,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.6667,
+      "binaryBytesPerToken": 53.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0556,
+      "experimentalBinaryBytesPerToken": 1.7778,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "!@#$%^&*()_+-=[]{}|;':\\\",.<>/?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.147998,
+      "experimentalSignatureHex": "49acd45c5b94ad6b606cff93c6403a85a5b601a384268fae5161b98191f9904e"
+    },
+    {
+      "text": "$$$$$$%%%%%%^^^^^^&&&&&&",
+      "words": 1,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.6667,
+      "binaryBytesPerToken": 85.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "$$$$$$%%%%%%^^^^^^&&&&&&"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.163176,
+      "experimentalSignatureHex": "4b4cd05fc3941c6d68ade995d234a985b5f6b4a7e5865d5e53a70ac133a7924f"
+    },
+    {
+      "text": "<<<<>>>>////\\\\||||",
+      "words": 1,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.6,
+      "binaryBytesPerToken": 115.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "<<<<>>>>////\\\\||||"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.182598,
+      "experimentalSignatureHex": "4badc59d9a9c0b696c6082174e407885a4ffa5a1e4e5afcdc06199e2b38d924f"
+    },
+    {
+      "text": "~`~`~`~`~`~`~`~`~`",
+      "words": 1,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 18,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1,
+      "binaryBytesPerToken": 32,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0556,
+      "experimentalBinaryBytesPerToken": 1.7778,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "~`~`~`~`~`~`~`~`~`"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.199408,
+      "experimentalSignatureHex": "f66eed3832b62975edcd197b9a44716985f542219c334e9b138799595a7a94a4"
+    },
+    {
+      "text": "©®™✓✔✕✖★☆",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 25,
+      "tiktokenCount": 12,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.75,
+      "binaryBytesPerToken": 24,
+      "binaryVsSourceRatio": 11.52,
+      "experimentalPatchesPerToken": 0.0833,
+      "experimentalBinaryBytesPerToken": 2.6667,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "©®™✓✔✕✖★☆"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.160897,
+      "experimentalSignatureHex": "736ed5daca9c0ce96c79ea97c2527f85a6f60667a4b589acd4219963b1b7968e"
+    },
+    {
+      "text": "emojis 😀😃😄😁😆😅😂🤣😊😇",
+      "words": 2,
+      "codepoints": 17,
+      "sourceBytes": 47,
+      "tiktokenCount": 22,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.7727,
+      "binaryBytesPerToken": 24.7273,
+      "binaryVsSourceRatio": 11.5745,
+      "experimentalPatchesPerToken": 0.0455,
+      "experimentalBinaryBytesPerToken": 1.4545,
+      "experimentalBinaryVsSourceRatio": 0.6809,
+      "experimentalPatches": [
+        "emojis 😀😃😄😁😆😅😂🤣😊😇"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.151294,
+      "experimentalSignatureHex": "73e6c45ada948c6d6d5ecd934e787e8da6f62e33a427afacfca5195133ff9a5f"
+    },
+    {
+      "text": "🔥🚀⚡💡📈📉💰",
+      "words": 1,
+      "codepoints": 7,
+      "sourceBytes": 27,
+      "tiktokenCount": 19,
+      "fixtureGlyphCount": 7,
+      "fixtureBinaryBytes": 224,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.3684,
+      "binaryBytesPerToken": 11.7895,
+      "binaryVsSourceRatio": 8.2963,
+      "experimentalPatchesPerToken": 0.0526,
+      "experimentalBinaryBytesPerToken": 1.6842,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "🔥🚀⚡💡📈📉💰"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.142363,
+      "experimentalSignatureHex": "69ad65b99a958d6dec7bea93426f7885a4f706a48cd5a9a6dda189e1b121941e"
+    },
+    {
+      "text": "½¼¾⅓⅔⅛⅜⅝⅞",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 24,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.6,
+      "binaryBytesPerToken": 19.2,
+      "binaryVsSourceRatio": 12,
+      "experimentalPatchesPerToken": 0.0667,
+      "experimentalBinaryBytesPerToken": 2.1333,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "½¼¾⅓⅔⅛⅜⅝⅞"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.120245,
+      "experimentalSignatureHex": "796cd55fda940d6b686e8d9752625a85aef50c26a4c7af8ef4a10963b16f920e"
+    },
+    {
+      "text": "°±∞≈≠≤≥",
+      "words": 1,
+      "codepoints": 7,
+      "sourceBytes": 19,
+      "tiktokenCount": 12,
+      "fixtureGlyphCount": 7,
+      "fixtureBinaryBytes": 224,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.5833,
+      "binaryBytesPerToken": 18.6667,
+      "binaryVsSourceRatio": 11.7895,
+      "experimentalPatchesPerToken": 0.0833,
+      "experimentalBinaryBytesPerToken": 2.6667,
+      "experimentalBinaryVsSourceRatio": 1.6842,
+      "experimentalPatches": [
+        "°±∞≈≠≤≥"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.201229,
+      "experimentalSignatureHex": "6d6cc50d5a840e7d6c5a8c9342487a85a4f546b5e4678d8ef86599c393a39c0e"
+    },
+    {
+      "text": "“Smart quotes” vs \"dumb quotes\"",
+      "words": 5,
+      "codepoints": 31,
+      "sourceBytes": 35,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 31,
+      "fixtureBinaryBytes": 992,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.1,
+      "binaryBytesPerToken": 99.2,
+      "binaryVsSourceRatio": 28.3429,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.9143,
+      "experimentalPatches": [
+        "“Smart quotes” vs \"dumb quotes\""
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.139921,
+      "experimentalSignatureHex": "58aed7f89ad46ed96c7a8b135a086b85b6a776a7c047438c67e119ab21e3121e"
+    },
+    {
+      "text": "Hola, ¿cómo estás?",
+      "words": 3,
+      "codepoints": 18,
+      "sourceBytes": 21,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.25,
+      "binaryBytesPerToken": 72,
+      "binaryVsSourceRatio": 27.4286,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "Hola, ¿cómo estás?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.155391,
+      "experimentalSignatureHex": "616cdf4adad48d7d64459d97464238a586bea62385078f3469e5b943b1e9920a"
+    },
+    {
+      "text": "Bonjour, comment ça va?",
+      "words": 4,
+      "codepoints": 23,
+      "sourceBytes": 24,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.8333,
+      "binaryBytesPerToken": 122.6667,
+      "binaryVsSourceRatio": 30.6667,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "Bonjour, comment ça va?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.220653,
+      "experimentalSignatureHex": "7b6fd6125a944ced6c5aa89146567e87a6eea4b7e4a58f056565b9e211ef904e"
+    },
+    {
+      "text": "Guten Tag, wie geht’s?",
+      "words": 4,
+      "codepoints": 22,
+      "sourceBytes": 24,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.75,
+      "binaryBytesPerToken": 88,
+      "binaryVsSourceRatio": 29.3333,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "Guten Tag, wie geht’s?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.181636,
+      "experimentalSignatureHex": "792dd559dac40c6a6c49cbf3d25c7a85b4b72ee7c5472fa475ad3b6783f5961e"
+    },
+    {
+      "text": "こんにちは世界",
+      "words": 1,
+      "codepoints": 7,
+      "sourceBytes": 21,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 7,
+      "fixtureBinaryBytes": 224,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.75,
+      "binaryBytesPerToken": 56,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "こんにちは世界"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.121879,
+      "experimentalSignatureHex": "e02547de7e7518aafd63afbe34a58ba9b7b525f977ce28fbda4b6a4f9c5e925a"
+    },
+    {
+      "text": "你好，世界",
+      "words": 1,
+      "codepoints": 5,
+      "sourceBytes": 15,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 5,
+      "fixtureBinaryBytes": 160,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.8333,
+      "binaryBytesPerToken": 26.6667,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 2.1333,
+      "experimentalPatches": [
+        "你好，世界"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.194572,
+      "experimentalSignatureHex": "f96d485edaf48769ad30e995e670eae5b2bb29be25672dae9c63d827a9f7965a"
+    },
+    {
+      "text": "Привет, как дела?",
+      "words": 3,
+      "codepoints": 17,
+      "sourceBytes": 30,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.125,
+      "binaryBytesPerToken": 68,
+      "binaryVsSourceRatio": 18.1333,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "Привет, как дела?"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.186688,
+      "experimentalSignatureHex": "c9e645c98cd647696c6258924a4a5aa7aef932e3a467ada5f1e13801b1a4926b"
+    },
+    {
+      "text": "مرحبا كيف حالك",
+      "words": 3,
+      "codepoints": 14,
+      "sourceBytes": 26,
+      "tiktokenCount": 11,
+      "fixtureGlyphCount": 14,
+      "fixtureBinaryBytes": 448,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.2727,
+      "binaryBytesPerToken": 40.7273,
+      "binaryVsSourceRatio": 17.2308,
+      "experimentalPatchesPerToken": 0.0909,
+      "experimentalBinaryBytesPerToken": 2.9091,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "مرحبا كيف حالك"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.191041,
+      "experimentalSignatureHex": "69a495bdd8cc4a49ed4bee9692e47e25e0c725e7b5c9abbca2a5b126a197aa5b"
+    },
+    {
+      "text": "שלום עולם",
+      "words": 2,
+      "codepoints": 9,
+      "sourceBytes": 17,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.9,
+      "binaryBytesPerToken": 28.8,
+      "binaryVsSourceRatio": 16.9412,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "שלום עולם"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.175035,
+      "experimentalSignatureHex": "616645e8ca948e4978d3e893da607a85a6f756a0b56fa9df78e5c961a8a9964b"
+    },
+    {
+      "text": "नमस्ते दुनिया",
+      "words": 2,
+      "codepoints": 13,
+      "sourceBytes": 37,
+      "tiktokenCount": 13,
+      "fixtureGlyphCount": 13,
+      "fixtureBinaryBytes": 416,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1,
+      "binaryBytesPerToken": 32,
+      "binaryVsSourceRatio": 11.2432,
+      "experimentalPatchesPerToken": 0.0769,
+      "experimentalBinaryBytesPerToken": 2.4615,
+      "experimentalBinaryVsSourceRatio": 0.8649,
+      "experimentalPatches": [
+        "नमस्ते दुनिया"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.207787,
+      "experimentalSignatureHex": "e965d25718c0bd61ec2689a595a9b62da99b443524c6afe6f8275a228aa5331b"
+    },
+    {
+      "text": "สวัสดีโลก",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 27,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.9,
+      "binaryBytesPerToken": 28.8,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "สวัสดีโลก"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.092371,
+      "experimentalSignatureHex": "69eda595da9c4c7b6a799c9696245a05eef31ca0c46729a5c9a589e5a9a59a5e"
+    },
+    {
+      "text": "function test() { return true; }",
+      "words": 6,
+      "codepoints": 32,
+      "sourceBytes": 32,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 32,
+      "fixtureBinaryBytes": 1024,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1,
+      "experimentalPatches": [
+        "function test() { return true; }"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.150587,
+      "experimentalSignatureHex": "f56cd65c4ac54de96c78cc974244688cd6f7ac8795271f26d4a7b96533f5949f"
+    },
+    {
+      "text": "if(x > 10 && y < 5) { execute(); }",
+      "words": 10,
+      "codepoints": 34,
+      "sourceBytes": 34,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 34,
+      "fixtureBinaryBytes": 1088,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.2667,
+      "binaryBytesPerToken": 72.5333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0667,
+      "experimentalBinaryBytesPerToken": 2.1333,
+      "experimentalBinaryVsSourceRatio": 0.9412,
+      "experimentalPatches": [
+        "if(x > 10 && y < 5) { execute(); }"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.11214,
+      "experimentalSignatureHex": "456ed499ca74cde16ce8c0935e4058859efca4a7a5370f6c50e5b14393f4960e"
+    },
+    {
+      "text": "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+      "words": 9,
+      "codepoints": 46,
+      "sourceBytes": 46,
+      "tiktokenCount": 17,
+      "fixtureGlyphCount": 46,
+      "fixtureBinaryBytes": 1472,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.7059,
+      "binaryBytesPerToken": 86.5882,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0588,
+      "experimentalBinaryBytesPerToken": 1.8824,
+      "experimentalBinaryVsSourceRatio": 0.6957,
+      "experimentalPatches": [
+        "const data = { \"name\": \"AI\", \"type\": \"test\" };"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.194705,
+      "experimentalSignatureHex": "596cd58a9a944e6969f2699356627885b6b6a4676d618f0e65ab9b62b3a8964e"
+    },
+    {
+      "text": "SELECT * FROM users WHERE id = 1;",
+      "words": 8,
+      "codepoints": 33,
+      "sourceBytes": 33,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 33,
+      "fixtureBinaryBytes": 1056,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.3,
+      "binaryBytesPerToken": 105.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.9697,
+      "experimentalPatches": [
+        "SELECT * FROM users WHERE id = 1;"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.171412,
+      "experimentalSignatureHex": "4aa8d796dad44afbe855a897d4293a25b4b76561b5a78f8e7ce59963a1fe961e"
+    },
+    {
+      "text": "<html><body>Hello</body></html>",
+      "words": 1,
+      "codepoints": 31,
+      "sourceBytes": 31,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 31,
+      "fixtureBinaryBytes": 992,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.4444,
+      "binaryBytesPerToken": 110.2222,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.0323,
+      "experimentalPatches": [
+        "<html><body>Hello</body></html>"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.189176,
+      "experimentalSignatureHex": "b58fd75bc2c48d4f78538e9356424a85e5f404e1f537851e786b5953b2c7978e"
+    },
+    {
+      "text": "for(int i=0; i<100; i++){}",
+      "words": 4,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 13,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0769,
+      "experimentalBinaryBytesPerToken": 2.4615,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "for(int i=0; i<100; i++){}"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.156341,
+      "experimentalSignatureHex": "736ec63c8ad48ce96946af95c4e0688feeb7f6a6e4a53dbd58e56961b196115e"
+    },
+    {
+      "text": "console.log(\"Hello, world!\");",
+      "words": 2,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.1429,
+      "binaryBytesPerToken": 132.5714,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "console.log(\"Hello, world!\");"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.177854,
+      "experimentalSignatureHex": "ed6dd532da9cad6f696d9933ce5e5acfefa66223947f0f2ce6a19965b9bf115f"
+    },
+    {
+      "text": "def my_function(param): return param * 2",
+      "words": 6,
+      "codepoints": 40,
+      "sourceBytes": 40,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 40,
+      "fixtureBinaryBytes": 1280,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.8,
+      "experimentalPatches": [
+        "def my_function(param): return param * 2"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.190517,
+      "experimentalSignatureHex": "71ecd45e4edc8d7968c1e1954a5a5b8fa7f7466794a59faed5a5a96123d2969b"
+    },
+    {
+      "text": "while(true){ break; }",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.5,
+      "binaryBytesPerToken": 112,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "while(true){ break; }"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.174044,
+      "experimentalSignatureHex": "6f2ed496aa9c4c6d6ace8697da607e47a6ffa043a565050e54e1b96331e5b1ae"
+    },
+    {
+      "text": "try { something(); } catch(e) {}",
+      "words": 6,
+      "codepoints": 32,
+      "sourceBytes": 32,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 32,
+      "fixtureBinaryBytes": 1024,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.5556,
+      "binaryBytesPerToken": 113.7778,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1,
+      "experimentalPatches": [
+        "try { something(); } catch(e) {}"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.184995,
+      "experimentalSignatureHex": "786cf655da948c617e689a93524e7e059f36a6a6e5058f2c50c7ba4193fd948e"
+    },
+    {
+      "text": "1,000,000 vs 1000000",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "1,000,000 vs 1000000"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.138278,
+      "experimentalSignatureHex": "55efd4239edc9cede8e4b4525a527a07a2975661e4e52fa4f5a51be1319bf89f"
+    },
+    {
+      "text": "3.14159265358979323846",
+      "words": 1,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.4444,
+      "binaryBytesPerToken": 78.2222,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "3.14159265358979323846"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.103911,
+      "experimentalSignatureHex": "c3e4c5b992d20d492cfcda920a417d05a5f76c218c379d2d4aa999e19193929a"
+    },
+    {
+      "text": "-273.15 is absolute zero",
+      "words": 4,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.4286,
+      "binaryBytesPerToken": 109.7143,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "-273.15 is absolute zero"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.136992,
+      "experimentalSignatureHex": "44e6c56fcac4646f6cc3b0975a405a85e4b72ca7e4478f6ed84dda5a926c941e"
+    },
+    {
+      "text": "0.00000000012345",
+      "words": 1,
+      "codepoints": 16,
+      "sourceBytes": 16,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.2857,
+      "binaryBytesPerToken": 73.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 2,
+      "experimentalPatches": [
+        "0.00000000012345"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.110651,
+      "experimentalSignatureHex": "cde5542396299ce5a9e558d2da5a6b46aab35761a5e1a3ade1251ac33993f81e"
+    },
+    {
+      "text": "999999999999999999999999",
+      "words": 1,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "999999999999999999999999"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.159825,
+      "experimentalSignatureHex": "491979a494c67e696943e93928561c2d9d6ec9e1a5861d76c84a9abe942dc563"
+    },
+    {
+      "text": "1e10 2e-5 3.5e+7",
+      "words": 3,
+      "codepoints": 16,
+      "sourceBytes": 16,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.0667,
+      "binaryBytesPerToken": 34.1333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0667,
+      "experimentalBinaryBytesPerToken": 2.1333,
+      "experimentalBinaryVsSourceRatio": 2,
+      "experimentalPatches": [
+        "1e10 2e-5 3.5e+7"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.154623,
+      "experimentalSignatureHex": "798dc4a99ad46d7f6072f693c61a5a05aeef2cb7a5a58daeece5a163b1e5b28e"
+    },
+    {
+      "text": "12/25/2025",
+      "words": 1,
+      "codepoints": 10,
+      "sourceBytes": 10,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 10,
+      "fixtureBinaryBytes": 320,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.6667,
+      "binaryBytesPerToken": 53.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "12/25/2025"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.144223,
+      "experimentalSignatureHex": "45ec55b79a964e686cf3a7975a585a85a49d1624d537bdb6d86b9ae391df962b"
+    },
+    {
+      "text": "2025-04-23T12:34:56Z",
+      "words": 1,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 13,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.5385,
+      "binaryBytesPerToken": 49.2308,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0769,
+      "experimentalBinaryBytesPerToken": 2.4615,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "2025-04-23T12:34:56Z"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.18906,
+      "experimentalSignatureHex": "236f45eaca96ce6be8d5ea92ca6c79a4a6f5aae3b5052fac7ca1186119af983e"
+    },
+    {
+      "text": "10:45 PM vs 22:45",
+      "words": 4,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.8889,
+      "binaryBytesPerToken": 60.4444,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "10:45 PM vs 22:45"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.166102,
+      "experimentalSignatureHex": "5daec43d9adc8ded6cfeb89342c97d85b5dc1667e5258784dce5b961c3c5940e"
+    },
+    {
+      "text": "123-456-7890",
+      "words": 1,
+      "codepoints": 12,
+      "sourceBytes": 12,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 12,
+      "fixtureBinaryBytes": 384,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "123-456-7890"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.101672,
+      "experimentalSignatureHex": "36aa64a9da946f7d685ec8974248da85bcf506f6444598aee12999c302ad962b"
+    },
+    {
+      "text": "Hello 世界 123 !!!",
+      "words": 4,
+      "codepoints": 16,
+      "sourceBytes": 20,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 25.6,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "Hello 世界 123 !!!"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.183451,
+      "experimentalSignatureHex": "7129d45b5a944c7d785c8b13d64e7ac5a6b721a3b5070faef4e73b0993ef900e"
+    },
+    {
+      "text": "AI🔥is🚀fast⚡",
+      "words": 1,
+      "codepoints": 11,
+      "sourceBytes": 19,
+      "tiktokenCount": 12,
+      "fixtureGlyphCount": 11,
+      "fixtureBinaryBytes": 352,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.9167,
+      "binaryBytesPerToken": 29.3333,
+      "binaryVsSourceRatio": 18.5263,
+      "experimentalPatchesPerToken": 0.0833,
+      "experimentalBinaryBytesPerToken": 2.6667,
+      "experimentalBinaryVsSourceRatio": 1.6842,
+      "experimentalPatches": [
+        "AI🔥is🚀fast⚡"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.126988,
+      "experimentalSignatureHex": "586ed548dabc0cea6c6c88d352627a85a4f5a6a36c872fa4e0e58b6113cd9a9e"
+    },
+    {
+      "text": "test123test456test789",
+      "words": 1,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.5,
+      "binaryBytesPerToken": 112,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "test123test456test789"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.176396,
+      "experimentalSignatureHex": "612dd44adad64ee96c6c8b13da463887a6bfa6e364470da45969ba0a33ed145e"
+    },
+    {
+      "text": "abc123XYZ789",
+      "words": 1,
+      "codepoints": 12,
+      "sourceBytes": 12,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 12,
+      "fixtureBinaryBytes": 384,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "abc123XYZ789"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.200028,
+      "experimentalSignatureHex": "782ed51dda940c6d60ceac93420a3e85a5b7242764078f8ed0e599e383ef921e"
+    },
+    {
+      "text": "Mix_of-everything123!!!",
+      "words": 1,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.2857,
+      "binaryBytesPerToken": 105.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "Mix_of-everything123!!!"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.187403,
+      "experimentalSignatureHex": "582ec5a99e944e796e488a1b5e6c6885a7f7a023e425071a50e73b4290ef901f"
+    },
+    {
+      "text": "JSON-like {test:123, value:true}",
+      "words": 3,
+      "codepoints": 32,
+      "sourceBytes": 32,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 32,
+      "fixtureBinaryBytes": 1024,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.2,
+      "binaryBytesPerToken": 102.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1,
+      "experimentalPatches": [
+        "JSON-like {test:123, value:true}"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.169507,
+      "experimentalSignatureHex": "ed6dd518da962c696c7cd91b52493a85a4e74fa38565bbaef8e199ab83bd105b"
+    },
+    {
+      "text": "path/to/file/name.ext",
+      "words": 1,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2,
+      "binaryBytesPerToken": 134.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "path/to/file/name.ext"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.16029,
+      "experimentalSignatureHex": "d9a4d43b9ad44e6969e8ce9bca65f885847faeb7a5258d0c5ea59841a3f7960e"
+    },
+    {
+      "text": "[email@test.com](mailto:email@test.com)",
+      "words": 1,
+      "codepoints": 39,
+      "sourceBytes": 39,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 39,
+      "fixtureBinaryBytes": 1248,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.9,
+      "binaryBytesPerToken": 124.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.8205,
+      "experimentalPatches": [
+        "[email@test.com](mailto:email@test.com)"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.184853,
+      "experimentalSignatureHex": "598ddcd2cbdcdef97c78e99146027885aeafa1e149c7860d694118aa836d1a59"
+    },
+    {
+      "text": "https://example.com/test?param=1&x=2",
+      "words": 1,
+      "codepoints": 36,
+      "sourceBytes": 36,
+      "tiktokenCount": 13,
+      "fixtureGlyphCount": 36,
+      "fixtureBinaryBytes": 1152,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2.7692,
+      "binaryBytesPerToken": 88.6154,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0769,
+      "experimentalBinaryBytesPerToken": 2.4615,
+      "experimentalBinaryVsSourceRatio": 0.8889,
+      "experimentalPatches": [
+        "https://example.com/test?param=1&x=2"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.214451,
+      "experimentalSignatureHex": "79ecd45ada94aae96cfad297ca083884a4a708e3654d0d85696b9b1a33cd92da"
+    },
+    {
+      "text": "C:\\Users\\Name\\Desktop\\file.txt",
+      "words": 1,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.3333,
+      "binaryBytesPerToken": 106.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "C:\\Users\\Name\\Desktop\\file.txt"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.119272,
+      "experimentalSignatureHex": "69c4c6afd2cc3d5f6c6de993da38904596b71a21f50c890f70e593e523e9960e"
+    },
+    {
+      "text": "\"\"",
+      "words": 1,
+      "codepoints": 2,
+      "sourceBytes": 2,
+      "tiktokenCount": 1,
+      "fixtureGlyphCount": 2,
+      "fixtureBinaryBytes": 64,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 2,
+      "binaryBytesPerToken": 64,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 1,
+      "experimentalBinaryBytesPerToken": 32,
+      "experimentalBinaryVsSourceRatio": 16,
+      "experimentalPatches": [
+        "\"\""
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.167609,
+      "experimentalSignatureHex": "4d6d75ab8af40ef96c7aad97c6607a85a6f71eec04678dcef96398e3b1a3904a"
+    },
+    {
+      "text": "\" \"",
+      "words": 2,
+      "codepoints": 3,
+      "sourceBytes": 3,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 3,
+      "fixtureBinaryBytes": 96,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.5,
+      "binaryBytesPerToken": 48,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 10.6667,
+      "experimentalPatches": [
+        "\" \""
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.17979,
+      "experimentalSignatureHex": "5965658b92d40ee96c7aea97c6687e85a6f75aaf94679d0ef92798e3b1a3924a"
+    },
+    {
+      "text": "\\n \\n \\n",
+      "words": 3,
+      "codepoints": 8,
+      "sourceBytes": 8,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 8,
+      "fixtureBinaryBytes": 256,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.6,
+      "binaryBytesPerToken": 51.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 4,
+      "experimentalPatches": [
+        "\\n \\n \\n"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.18253,
+      "experimentalSignatureHex": "d36ce5255adc0cfb395e9a93521b7885a4b624adf48587add465894393cfd35f"
+    },
+    {
+      "text": "————",
+      "words": 1,
+      "codepoints": 4,
+      "sourceBytes": 12,
+      "tiktokenCount": 1,
+      "fixtureGlyphCount": 4,
+      "fixtureBinaryBytes": 128,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 1,
+      "experimentalBinaryBytesPerToken": 32,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "————"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.142667,
+      "experimentalSignatureHex": "416ed5dfda944e696061ec97c259fb85b6f542a464478b1ef1ad99e1b1a19249"
+    },
+    {
+      "text": ".........",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 9,
+      "tiktokenCount": 1,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 9,
+      "binaryBytesPerToken": 288,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 1,
+      "experimentalBinaryBytesPerToken": 32,
+      "experimentalBinaryVsSourceRatio": 3.5556,
+      "experimentalPatches": [
+        "........."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.156406,
+      "experimentalSignatureHex": "c52d554a0a5a4eb97e79d8924e6852878ebdb4b6843389afd225a9711b1a9a0e"
+    },
+    {
+      "text": "/////////",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 9,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.5556,
+      "experimentalPatches": [
+        "/////////"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.115816,
+      "experimentalSignatureHex": "5ba5525e5add6deb6861a49744527886bebf3729944fc90ffa6b99a3a58d92a7"
+    },
+    {
+      "text": "\\\\\\\\\\\\",
+      "words": 1,
+      "codepoints": 6,
+      "sourceBytes": 6,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 6,
+      "fixtureBinaryBytes": 192,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 5.3333,
+      "experimentalPatches": [
+        "\\\\\\\\\\\\"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.198171,
+      "experimentalSignatureHex": "5d68c61cd69cac666cf4adb5c6611ea7a5b6a2a13087c71c7069b94a10fdb41c"
+    },
+    {
+      "text": "|||||||||",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 9,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 3.5556,
+      "experimentalPatches": [
+        "|||||||||"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.221852,
+      "experimentalSignatureHex": "7964c41d12948c656806de66ce0572adb5b6a731699597164285a1c1f3ac125e"
+    },
+    {
+      "text": "---",
+      "words": 1,
+      "codepoints": 3,
+      "sourceBytes": 3,
+      "tiktokenCount": 1,
+      "fixtureGlyphCount": 3,
+      "fixtureBinaryBytes": 96,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 1,
+      "experimentalBinaryBytesPerToken": 32,
+      "experimentalBinaryVsSourceRatio": 10.6667,
+      "experimentalPatches": [
+        "---"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.102695,
+      "experimentalSignatureHex": "52acd59ada940d6b6a73c41756487285a6d352b0d465afa6f9a599e3b1b5920a"
+    },
+    {
+      "text": "#########",
+      "words": 1,
+      "codepoints": 9,
+      "sourceBytes": 9,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 9,
+      "fixtureBinaryBytes": 288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.5556,
+      "experimentalPatches": [
+        "#########"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.091343,
+      "experimentalSignatureHex": "e5a5c533c8c60e694ad05a9ac2606a84f6fe466514670b8e4a634869a395951e"
+    },
+    {
+      "text": "tokenization-test-case",
+      "words": 1,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "tokenization-test-case"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.119161,
+      "experimentalSignatureHex": "4f26d44ac1574ef96c7048d3d24a78c5a0ef2c279d0783ae57e9b863213d340d"
+    },
+    {
+      "text": "tokenization_test_case",
+      "words": 1,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "tokenization_test_case"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.173797,
+      "experimentalSignatureHex": "6b26d65a01576cc965e88c92d657688762abad25dd87c3a8c7edb26321383505"
+    },
+    {
+      "text": "tokenizationTestCase",
+      "words": 1,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.6667,
+      "binaryBytesPerToken": 213.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "tokenizationTestCase"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.158962,
+      "experimentalSignatureHex": "4126c65a0155eced6d688cd3d67378a5e2ebaea5bd8687ac46ed38656338351d"
+    },
+    {
+      "text": "TokenizationTestCASE123",
+      "words": 1,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.6,
+      "binaryBytesPerToken": 147.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "TokenizationTestCASE123"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.128599,
+      "experimentalSignatureHex": "4d2ed45a4bd44ced6ce8ce96d2721885a6ff2e27ad078faec7ed306323b8b50d"
+    },
+    {
+      "text": "split.this.correctly.now",
+      "words": 1,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.8,
+      "binaryBytesPerToken": 153.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "split.this.correctly.now"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.175745,
+      "experimentalSignatureHex": "584cd4117a940a6b6c5ea99356587aa5a5f523e7b484afade4619866b3e7920e"
+    },
+    {
+      "text": "word...break...test",
+      "words": 1,
+      "codepoints": 19,
+      "sourceBytes": 19,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 19,
+      "fixtureBinaryBytes": 608,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.8,
+      "binaryBytesPerToken": 121.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.6842,
+      "experimentalPatches": [
+        "word...break...test"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.173419,
+      "experimentalSignatureHex": "5b6ed518da966e796854e997ca446285a6bda023a5052d2dd06599e013e51e9e"
+    },
+    {
+      "text": "edge-case---multiple---dashes",
+      "words": 1,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.1429,
+      "binaryBytesPerToken": 132.5714,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "edge-case---multiple---dashes"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.177747,
+      "experimentalSignatureHex": "53adc522ca560f7d6c748c19c84b1e85a4bb60f1c1258f8cf0ed99e781c11e1e"
+    },
+    {
+      "text": "camelCaseVsSnake_case",
+      "words": 1,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2,
+      "binaryBytesPerToken": 134.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "camelCaseVsSnake_case"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.130996,
+      "experimentalSignatureHex": "91a4e52382d64b7a29009833de4e4844a6af66e765c6a79d96c71a5113dab6cd"
+    },
+    {
+      "text": "PascalCaseTestExample",
+      "words": 1,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2,
+      "binaryBytesPerToken": 134.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "PascalCaseTestExample"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.231744,
+      "experimentalSignatureHex": "942adc584bda4a697cec491bee5d0e85c1bfa467c42cafbd52479b0af3ff348c"
+    },
+    {
+      "text": "kebab-case-example",
+      "words": 1,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "kebab-case-example"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.218312,
+      "experimentalSignatureHex": "3fe4d4098ad12be96c70d897da5b7885a6fba623e40fafadf2c5910fb36f964e"
+    },
+    {
+      "text": "Write a Python function that calculates Fibonacci numbers.",
+      "words": 8,
+      "codepoints": 58,
+      "sourceBytes": 58,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 58,
+      "fixtureBinaryBytes": 1856,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.4444,
+      "binaryBytesPerToken": 206.2222,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.5517,
+      "experimentalPatches": [
+        "Write a Python function that calculates Fibonacci numbers."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.100973,
+      "experimentalSignatureHex": "51ecc7ffd8d60e792cd0849b5a7e7b87b4b6cea1d5238ba625a52161bb7f9e97"
+    },
+    {
+      "text": "Summarize the following text in one sentence.",
+      "words": 7,
+      "codepoints": 45,
+      "sourceBytes": 45,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 45,
+      "fixtureBinaryBytes": 1440,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 0.7111,
+      "experimentalPatches": [
+        "Summarize the following text in one sentence."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.218545,
+      "experimentalSignatureHex": "d08edcda49946c696450c1b35e6e78e59676ca47cc055fafc4eb2969b3f0978e"
+    },
+    {
+      "text": "Translate this into Spanish: “Hello world.”",
+      "words": 6,
+      "codepoints": 43,
+      "sourceBytes": 47,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 43,
+      "fixtureBinaryBytes": 1376,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.7778,
+      "binaryBytesPerToken": 152.8889,
+      "binaryVsSourceRatio": 29.2766,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.6809,
+      "experimentalPatches": [
+        "Translate this into Spanish: “Hello world.”"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.116396,
+      "experimentalSignatureHex": "e96dd45a6a940def682ca8c75e4c5ac7eef512a3f4068fad94e1294191d7954e"
+    },
+    {
+      "text": "Generate a marketing slogan for an AI startup.",
+      "words": 8,
+      "codepoints": 46,
+      "sourceBytes": 46,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 46,
+      "fixtureBinaryBytes": 1472,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.1111,
+      "binaryBytesPerToken": 163.5556,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 0.6957,
+      "experimentalPatches": [
+        "Generate a marketing slogan for an AI startup."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.124281,
+      "experimentalSignatureHex": "d868d5dbcec4adf36c62cab7ca6c7805aef6a4a5ecc4936ecc635b53136d967b"
+    },
+    {
+      "text": "Explain quantum computing in simple terms.",
+      "words": 6,
+      "codepoints": 42,
+      "sourceBytes": 42,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 42,
+      "fixtureBinaryBytes": 1344,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.25,
+      "binaryBytesPerToken": 168,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.7619,
+      "experimentalPatches": [
+        "Explain quantum computing in simple terms."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.187067,
+      "experimentalSignatureHex": "51eed56cf8942e7966b3e9b3560952a58efd8827cc2d8f2f7069996231e59e94"
+    },
+    {
+      "text": "Build a REST API with authentication.",
+      "words": 6,
+      "codepoints": 37,
+      "sourceBytes": 37,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 37,
+      "fixtureBinaryBytes": 1184,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2857,
+      "binaryBytesPerToken": 169.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.8649,
+      "experimentalPatches": [
+        "Build a REST API with authentication."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.151547,
+      "experimentalSignatureHex": "c1a6c51a08c4ac6d6860dc9ed343788596f74e63952f2baad4e1f1f7005d9a09"
+    },
+    {
+      "text": "Optimize this SQL query for performance.",
+      "words": 6,
+      "codepoints": 40,
+      "sourceBytes": 40,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 40,
+      "fixtureBinaryBytes": 1280,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.8,
+      "experimentalPatches": [
+        "Optimize this SQL query for performance."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.10103,
+      "experimentalSignatureHex": "f1a4f7169e94ac6d6d86cab346a878a5a4f767e3e4e79f6ce96b980491e150de"
+    },
+    {
+      "text": "Create a chatbot that remembers context.",
+      "words": 6,
+      "codepoints": 40,
+      "sourceBytes": 40,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 40,
+      "fixtureBinaryBytes": 1280,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.8,
+      "experimentalPatches": [
+        "Create a chatbot that remembers context."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.159703,
+      "experimentalSignatureHex": "c1edc7bfcadd1ce96ce08197524170a786f2a6a52d278fa71c65b16fe3ed1c0c"
+    },
+    {
+      "text": "Design a scalable AI infrastructure system.",
+      "words": 6,
+      "codepoints": 43,
+      "sourceBytes": 43,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 43,
+      "fixtureBinaryBytes": 1376,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.1429,
+      "binaryBytesPerToken": 196.5714,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.7442,
+      "experimentalPatches": [
+        "Design a scalable AI infrastructure system."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.154844,
+      "experimentalSignatureHex": "136edd4ebbd5a9496dc8e897d6186e85c6bee6f5456f8d9478e7f9c01379907f"
+    },
+    {
+      "text": "Reduce token usage without losing meaning.",
+      "words": 6,
+      "codepoints": 42,
+      "sourceBytes": 42,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 42,
+      "fixtureBinaryBytes": 1344,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6,
+      "binaryBytesPerToken": 192,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.7619,
+      "experimentalPatches": [
+        "Reduce token usage without losing meaning."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.133629,
+      "experimentalSignatureHex": "d36ff958d2d106636ab9e093c609fee5a4770a67362f9b2e52adb1638121903d"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.1236,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 5,
+      "groups": [
+        {
+          "group": "repetition_patterns",
+          "separationMargin": -29.5222
+        },
+        {
+          "group": "multilingual_greetings",
+          "separationMargin": -17.0889
+        },
+        {
+          "group": "code_structures",
+          "separationMargin": -13.8222
+        },
+        {
+          "group": "token_boundaries",
+          "separationMargin": -9.7444
+        },
+        {
+          "group": "ai_prompts",
+          "separationMargin": -18.8556
+        }
+      ],
+      "minSeparationMargin": -29.5222,
+      "maxSeparationMargin": -9.7444,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "repetition_patterns",
+        "multilingual_greetings",
+        "code_structures",
+        "token_boundaries",
+        "ai_prompts"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 63.57,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

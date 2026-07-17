@@ -1,0 +1,586 @@
+{
+  "generatedAt": "2026-04-29T07:02:59.895Z",
+  "input": "bench\\archive-pressure-corpus-2026-04-29.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 28,
+      "residualMaxCharsPerPatch": 180
+    },
+    "trainingSummary": {
+      "positivePairCount": 360,
+      "negativePairCount": 2376,
+      "averagePositiveSimilarity": 0.780416,
+      "averageNegativeSimilarity": 0.142019,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 8,
+    "words": 977,
+    "codepoints": 6408,
+    "sourceBytes": 6408,
+    "tiktokenCount": 1123,
+    "fixtureGlyphCount": 6408,
+    "fixtureBinaryBytes": 205056,
+    "experimentalPatchCount": 24,
+    "experimentalBinaryBytes": 768,
+    "avgTiktokenPerEntry": 140.375,
+    "avgGlyphsPerEntry": 801,
+    "avgExperimentalPatchesPerEntry": 3,
+    "glyphsPerToken": 5.7061,
+    "binaryBytesPerToken": 182.5966,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.0214,
+    "experimentalBinaryBytesPerToken": 0.6839,
+    "experimentalBinaryVsSourceRatio": 0.1199
+  },
+  "semantic": {
+    "input": "bench\\archive-pressure-semantic-2026-04-29.json",
+    "groups": [
+      {
+        "group": "archive_catalog_pressure",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 62,
+        "avgTokenOverlap": 0.1734,
+        "entries": [
+          {
+            "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+            "tiktokenCount": 156,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second archive-catalog chapter frames the same problem from the operator side. A catalog is only useful if the stored unit remains small enough that rebuilding indexes, moving cold segments, and scanning retention metadata do not recreate the original storage burden in another format. Once a project accumulates policy books, support manuals, migration reports, and historical decisions, the archive catalog becomes a cost center unless the macro-plus-residual representation keeps both byte footprint and object churn low. In practical terms, the test is simple: can the system absorb another shelf of long-form records while staying close to a few compact codes per entry, or does the catalog fragment back into a swarm of windows that erase the storage advantage it claimed at the start.",
+            "tiktokenCount": 143,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "replication_repair_pressure",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 53,
+        "avgTokenOverlap": 0.2115,
+        "entries": [
+          {
+            "text": "The first replication-and-repair chapter is about failure discipline. A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied, checked, and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record. That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote. If a long archive entry can be rebuilt from a small macro code and limited residuals, the recovery path scales. If it cannot, the repair loop becomes the hidden tax that eats the headline compression win.",
+            "tiktokenCount": 141,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+            "tiktokenCount": 140,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "retention_governance_pressure",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 70,
+        "avgTokenOverlap": 0.1635,
+        "entries": [
+          {
+            "text": "The first retention-and-governance chapter focuses on policy load, not only technical load. Large archives accumulate retention classes, legal hold tags, expiration rules, and access scopes that have to move with the stored record instead of floating in a separate spreadsheet. That governance metadata is manageable only if the underlying content representation stays compact enough that the archive can afford redundant copies, periodic audits, and regional segmentation without making every compliance task a storage event. In a long-form environment, this is where byte economics and governance discipline merge. A representation that compresses short prompts but balloons on policy chapters will fail precisely when retention rules become real, because the archive will spend its margin carrying its own paperwork.",
+            "tiktokenCount": 136,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second retention-and-governance chapter describes the audit side of the same issue. Every preserved passage eventually needs a chain from source to compact record to recovery path to deletion exception, and that chain has to remain legible across time. The benchmark therefore treats governance as a storage pressure, because archives do not merely keep bytes; they keep accountable bytes with history attached. If the representation can store long passages in a small patch budget while leaving room for audit metadata, the archive design remains plausible. If the chapter text itself already consumes too much room, then retention, legal review, and evidence packaging will push the system back toward the size profile it was trying to escape.",
+            "tiktokenCount": 133,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "retrieval_operations_pressure",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 68,
+        "avgTokenOverlap": 0.1387,
+        "entries": [
+          {
+            "text": "The first retrieval-operations chapter is about query behavior after the archive gets old. Fresh benchmarks often assume clean, recent, well-labeled entries, but real institutional stores contain overlapping manuals, superseded policies, side letters, and semi-duplicate guidance that still needs exact or near-exact recall. The representation therefore has to balance two competing requirements at once: keep each long entry compact enough for storage economics and keep enough structure that retrieval can separate archive catalog notes from repair instructions or retention policy chapters. That balance matters more in old archives than in new ones because retrieval quality degrades silently when the store fills with similar long records. This corpus exists to see whether the current packer can survive that shape of pressure without collapsing into too many fragments.",
+            "tiktokenCount": 148,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The second retrieval-operations chapter frames the same problem as a workload question. A storage design is not finished when it stores one chapter efficiently; it is finished when repeated search, rerank, repair lookup, and evidence packaging can all happen without turning the compact record into an expensive intermediate form. The archive path only holds if the macro patch and residual budget remain small under repeated operational use, because every extra fragment increases fetch fan-out and every lost semantic boundary increases false neighbors. This benchmark does not prove the final retrieval system, but it does force the current representation to face a more realistic archive workload than quotes or short fixtures can provide.",
+            "tiktokenCount": 126,
+            "experimentalPatchCount": 3
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "archive_catalog_pressure",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 62,
+        "avgNearestOutsideSignatureDistance": 63,
+        "separationMargin": 1,
+        "examples": [
+          {
+            "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+            "nearestOutside": {
+              "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+              "signatureDistance": 56
+            }
+          },
+          {
+            "text": "The second archive-catalog chapter frames the same problem from the operator side. A catalog is only useful if the stored unit remains small enough that rebuilding indexes, moving cold segments, and scanning retention metadata do not recreate the original storage burden in another format. Once a project accumulates policy books, support manuals, migration reports, and historical decisions, the archive catalog becomes a cost center unless the macro-plus-residual representation keeps both byte footprint and object churn low. In practical terms, the test is simple: can the system absorb another shelf of long-form records while staying close to a few compact codes per entry, or does the catalog fragment back into a swarm of windows that erase the storage advantage it claimed at the start.",
+            "nearestOutside": {
+              "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+              "signatureDistance": 70
+            }
+          }
+        ]
+      },
+      {
+        "group": "replication_repair_pressure",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 53,
+        "avgNearestOutsideSignatureDistance": 57.5,
+        "separationMargin": 4.5,
+        "examples": [
+          {
+            "text": "The first replication-and-repair chapter is about failure discipline. A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied, checked, and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record. That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote. If a long archive entry can be rebuilt from a small macro code and limited residuals, the recovery path scales. If it cannot, the repair loop becomes the hidden tax that eats the headline compression win.",
+            "nearestOutside": {
+              "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+              "signatureDistance": 59
+            }
+          },
+          {
+            "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+            "nearestOutside": {
+              "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+              "signatureDistance": 56
+            }
+          }
+        ]
+      },
+      {
+        "group": "retention_governance_pressure",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 70,
+        "avgNearestOutsideSignatureDistance": 66,
+        "separationMargin": -4,
+        "examples": [
+          {
+            "text": "The first retention-and-governance chapter focuses on policy load, not only technical load. Large archives accumulate retention classes, legal hold tags, expiration rules, and access scopes that have to move with the stored record instead of floating in a separate spreadsheet. That governance metadata is manageable only if the underlying content representation stays compact enough that the archive can afford redundant copies, periodic audits, and regional segmentation without making every compliance task a storage event. In a long-form environment, this is where byte economics and governance discipline merge. A representation that compresses short prompts but balloons on policy chapters will fail precisely when retention rules become real, because the archive will spend its margin carrying its own paperwork.",
+            "nearestOutside": {
+              "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+              "signatureDistance": 67
+            }
+          },
+          {
+            "text": "The second retention-and-governance chapter describes the audit side of the same issue. Every preserved passage eventually needs a chain from source to compact record to recovery path to deletion exception, and that chain has to remain legible across time. The benchmark therefore treats governance as a storage pressure, because archives do not merely keep bytes; they keep accountable bytes with history attached. If the representation can store long passages in a small patch budget while leaving room for audit metadata, the archive design remains plausible. If the chapter text itself already consumes too much room, then retention, legal review, and evidence packaging will push the system back toward the size profile it was trying to escape.",
+            "nearestOutside": {
+              "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+              "signatureDistance": 65
+            }
+          }
+        ]
+      },
+      {
+        "group": "retrieval_operations_pressure",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 68,
+        "avgNearestOutsideSignatureDistance": 64,
+        "separationMargin": -4,
+        "examples": [
+          {
+            "text": "The first retrieval-operations chapter is about query behavior after the archive gets old. Fresh benchmarks often assume clean, recent, well-labeled entries, but real institutional stores contain overlapping manuals, superseded policies, side letters, and semi-duplicate guidance that still needs exact or near-exact recall. The representation therefore has to balance two competing requirements at once: keep each long entry compact enough for storage economics and keep enough structure that retrieval can separate archive catalog notes from repair instructions or retention policy chapters. That balance matters more in old archives than in new ones because retrieval quality degrades silently when the store fills with similar long records. This corpus exists to see whether the current packer can survive that shape of pressure without collapsing into too many fragments.",
+            "nearestOutside": {
+              "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+              "signatureDistance": 66
+            }
+          },
+          {
+            "text": "The second retrieval-operations chapter frames the same problem as a workload question. A storage design is not finished when it stores one chapter efficiently; it is finished when repeated search, rerank, repair lookup, and evidence packaging can all happen without turning the compact record into an expensive intermediate form. The archive path only holds if the macro patch and residual budget remain small under repeated operational use, because every extra fragment increases fetch fan-out and every lost semantic boundary increases false neighbors. This benchmark does not prove the final retrieval system, but it does force the current representation to face a more realistic archive workload than quotes or short fixtures can provide.",
+            "nearestOutside": {
+              "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+              "signatureDistance": 62
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 8,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 60.5,
+    "avgNearestTokenOverlap": 0.1765,
+    "examples": [
+      {
+        "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+          "signatureDistance": 56,
+          "patchDistance": 0,
+          "tokenOverlap": 0.142
+        }
+      },
+      {
+        "text": "The second archive-catalog chapter frames the same problem from the operator side. A catalog is only useful if the stored unit remains small enough that rebuilding indexes, moving cold segments, and scanning retention metadata do not recreate the original storage burden in another format. Once a project accumulates policy books, support manuals, migration reports, and historical decisions, the archive catalog becomes a cost center unless the macro-plus-residual representation keeps both byte footprint and object churn low. In practical terms, the test is simple: can the system absorb another shelf of long-form records while staying close to a few compact codes per entry, or does the catalog fragment back into a swarm of windows that erase the storage advantage it claimed at the start.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+          "signatureDistance": 62,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1734
+        }
+      },
+      {
+        "text": "The first replication-and-repair chapter is about failure discipline. A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied, checked, and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record. That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote. If a long archive entry can be rebuilt from a small macro code and limited residuals, the recovery path scales. If it cannot, the repair loop becomes the hidden tax that eats the headline compression win.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+          "signatureDistance": 53,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2115
+        }
+      },
+      {
+        "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first replication-and-repair chapter is about failure discipline. A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied, checked, and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record. That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote. If a long archive entry can be rebuilt from a small macro code and limited residuals, the recovery path scales. If it cannot, the repair loop becomes the hidden tax that eats the headline compression win.",
+          "signatureDistance": 53,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2115
+        }
+      },
+      {
+        "text": "The first retention-and-governance chapter focuses on policy load, not only technical load. Large archives accumulate retention classes, legal hold tags, expiration rules, and access scopes that have to move with the stored record instead of floating in a separate spreadsheet. That governance metadata is manageable only if the underlying content representation stays compact enough that the archive can afford redundant copies, periodic audits, and regional segmentation without making every compliance task a storage event. In a long-form environment, this is where byte economics and governance discipline merge. A representation that compresses short prompts but balloons on policy chapters will fail precisely when retention rules become real, because the archive will spend its margin carrying its own paperwork.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+          "signatureDistance": 67,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1677
+        }
+      },
+      {
+        "text": "The second retention-and-governance chapter describes the audit side of the same issue. Every preserved passage eventually needs a chain from source to compact record to recovery path to deletion exception, and that chain has to remain legible across time. The benchmark therefore treats governance as a storage pressure, because archives do not merely keep bytes; they keep accountable bytes with history attached. If the representation can store long passages in a small patch budget while leaving room for audit metadata, the archive design remains plausible. If the chapter text itself already consumes too much room, then retention, legal review, and evidence packaging will push the system back toward the size profile it was trying to escape.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1718
+        }
+      },
+      {
+        "text": "The first retrieval-operations chapter is about query behavior after the archive gets old. Fresh benchmarks often assume clean, recent, well-labeled entries, but real institutional stores contain overlapping manuals, superseded policies, side letters, and semi-duplicate guidance that still needs exact or near-exact recall. The representation therefore has to balance two competing requirements at once: keep each long entry compact enough for storage economics and keep enough structure that retrieval can separate archive catalog notes from repair instructions or retention policy chapters. That balance matters more in old archives than in new ones because retrieval quality degrades silently when the store fills with similar long records. This corpus exists to see whether the current packer can survive that shape of pressure without collapsing into too many fragments.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1508
+        }
+      },
+      {
+        "text": "The second retrieval-operations chapter frames the same problem as a workload question. A storage design is not finished when it stores one chapter efficiently; it is finished when repeated search, rerank, repair lookup, and evidence packaging can all happen without turning the compact record into an expensive intermediate form. The archive path only holds if the macro patch and residual budget remain small under repeated operational use, because every extra fragment increases fetch fan-out and every lost semantic boundary increases false neighbors. This benchmark does not prove the final retrieval system, but it does force the current representation to face a more realistic archive workload than quotes or short fixtures can provide.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+          "signatureDistance": 62,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1835
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump. Every ingested passage carries a compact macro code, a small residual budget, and metadata that ties the record back to provenance, retention scope, and repair status. The pressure point is not the first million clean records but the messy long tail: revised policies, duplicated annexes, mixed-language appendices, and recovered historical notes that arrive after the main archive already exists. A serious long-form storage system has to append those records without exploding the object count or breaking search locality. That is why this corpus emphasizes archive catalogs rather than short prompts. The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+      "words": 134,
+      "codepoints": 878,
+      "sourceBytes": 878,
+      "tiktokenCount": 156,
+      "fixtureGlyphCount": 878,
+      "fixtureBinaryBytes": 28096,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6282,
+      "binaryBytesPerToken": 180.1026,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0192,
+      "experimentalBinaryBytesPerToken": 0.6154,
+      "experimentalBinaryVsSourceRatio": 0.1093,
+      "experimentalPatches": [
+        "A serious long-form storage system has to append those records without exploding the object count or breaking search locality. The first archive-catalog chapter treats the storage layer like a living index instead of a passive dump.",
+        "The benchmark is asking whether the representation can stay compact while the evidence inventory starts to look like a real institutional shelf instead of a toy sample.",
+        "The pressure point is not the first million clean records but the messy long tail:"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.288089,
+      "experimentalSignatureHex": "d92899da025721f9c93ca9bd177af2365a2ae12f15b3a8a20e0e5f2f685161a1"
+    },
+    {
+      "text": "The second archive-catalog chapter frames the same problem from the operator side. A catalog is only useful if the stored unit remains small enough that rebuilding indexes, moving cold segments, and scanning retention metadata do not recreate the original storage burden in another format. Once a project accumulates policy books, support manuals, migration reports, and historical decisions, the archive catalog becomes a cost center unless the macro-plus-residual representation keeps both byte footprint and object churn low. In practical terms, the test is simple: can the system absorb another shelf of long-form records while staying close to a few compact codes per entry, or does the catalog fragment back into a swarm of windows that erase the storage advantage it claimed at the start.",
+      "words": 123,
+      "codepoints": 795,
+      "sourceBytes": 795,
+      "tiktokenCount": 143,
+      "fixtureGlyphCount": 795,
+      "fixtureBinaryBytes": 25440,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.5594,
+      "binaryBytesPerToken": 177.9021,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.021,
+      "experimentalBinaryBytesPerToken": 0.6713,
+      "experimentalBinaryVsSourceRatio": 0.1208,
+      "experimentalPatches": [
+        "or does the catalog fragment back into a swarm of windows that erase the storage advantage it claimed at the start. the archive catalog becomes a cost center unless the macro-plus-residual representation keeps both byte footprint and object churn low.",
+        "can the system absorb another shelf of long-form records while staying close to a few compact codes per entry,",
+        "and scanning retention metadata do not recreate the original storage burden in another format."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.19224,
+      "experimentalSignatureHex": "5b4899fa9217e1f9e97a29b5933d22966ab1c52e3fbbcd634a4a5b2f6379e3e5"
+    },
+    {
+      "text": "The first replication-and-repair chapter is about failure discipline. A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied, checked, and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record. That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote. If a long archive entry can be rebuilt from a small macro code and limited residuals, the recovery path scales. If it cannot, the repair loop becomes the hidden tax that eats the headline compression win.",
+      "words": 128,
+      "codepoints": 771,
+      "sourceBytes": 771,
+      "tiktokenCount": 141,
+      "fixtureGlyphCount": 771,
+      "fixtureBinaryBytes": 24672,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4681,
+      "binaryBytesPerToken": 174.9787,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0213,
+      "experimentalBinaryBytesPerToken": 0.6809,
+      "experimentalBinaryVsSourceRatio": 0.1245,
+      "experimentalPatches": [
+        "A live tier can look efficient on paper and still become expensive in practice if every degraded object forces a full source replay into fallback and vault. The better path is to preserve a compact storage unit that can be copied,",
+        "That is why this pressure set treats replication and repair as part of the storage story rather than as a separate operations footnote.",
+        "and reconstructed without dragging the full chapter text through the pipeline every time a regional tier drops a record."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.335439,
+      "experimentalSignatureHex": "582c19f802d2611bca7c21b8117eba9a4aaae13796f368e24e6a5a3eac17632d"
+    },
+    {
+      "text": "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time. An archive with live, fallback, and vault tiers is not stressed by a single missing record; it is stressed by batches of degraded copies after policy migrations, bucket reshuffles, or delayed regional sync. In that setting, the storage unit has to be compact enough that repair traffic remains boring. If every damaged entry expands into many fragments during replay, the system loses twice: recovery gets slower and the replicated byte count rises toward the original source burden. The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design.",
+      "words": 122,
+      "codepoints": 777,
+      "sourceBytes": 777,
+      "tiktokenCount": 140,
+      "fixtureGlyphCount": 777,
+      "fixtureBinaryBytes": 24864,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.55,
+      "binaryBytesPerToken": 177.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0214,
+      "experimentalBinaryBytesPerToken": 0.6857,
+      "experimentalBinaryVsSourceRatio": 0.1236,
+      "experimentalPatches": [
+        "The point of this chapter benchmark is to force the representation to face that operational scenario before anyone confuses a local benchmark win with a durable archive design. the storage unit has to be compact enough that repair traffic remains boring.",
+        "The second replication-and-repair chapter asks what happens when failures cluster instead of arriving one at a time.",
+        "it is stressed by batches of degraded copies after policy migrations,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.269623,
+      "experimentalSignatureHex": "5a0809f802523339cb1a29b4127eba1afabb412f1f93a8a3166e5e6e2e5b6729"
+    },
+    {
+      "text": "The first retention-and-governance chapter focuses on policy load, not only technical load. Large archives accumulate retention classes, legal hold tags, expiration rules, and access scopes that have to move with the stored record instead of floating in a separate spreadsheet. That governance metadata is manageable only if the underlying content representation stays compact enough that the archive can afford redundant copies, periodic audits, and regional segmentation without making every compliance task a storage event. In a long-form environment, this is where byte economics and governance discipline merge. A representation that compresses short prompts but balloons on policy chapters will fail precisely when retention rules become real, because the archive will spend its margin carrying its own paperwork.",
+      "words": 117,
+      "codepoints": 819,
+      "sourceBytes": 819,
+      "tiktokenCount": 136,
+      "fixtureGlyphCount": 819,
+      "fixtureBinaryBytes": 26208,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 6.0221,
+      "binaryBytesPerToken": 192.7059,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0221,
+      "experimentalBinaryBytesPerToken": 0.7059,
+      "experimentalBinaryVsSourceRatio": 0.1172,
+      "experimentalPatches": [
+        "A representation that compresses short prompts but balloons on policy chapters will fail precisely when retention rules become real, and access scopes that have to move with the stored record instead of floating in a separate spreadsheet.",
+        "That governance metadata is manageable only if the underlying content representation stays compact enough that the archive can afford redundant copies,",
+        "and regional segmentation without making every compliance task a storage event."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.240931,
+      "experimentalSignatureHex": "538e9ff8024770abc35c31a5127a7a12c2bbb42f16f9b9a24ccf732e2977e129"
+    },
+    {
+      "text": "The second retention-and-governance chapter describes the audit side of the same issue. Every preserved passage eventually needs a chain from source to compact record to recovery path to deletion exception, and that chain has to remain legible across time. The benchmark therefore treats governance as a storage pressure, because archives do not merely keep bytes; they keep accountable bytes with history attached. If the representation can store long passages in a small patch budget while leaving room for audit metadata, the archive design remains plausible. If the chapter text itself already consumes too much room, then retention, legal review, and evidence packaging will push the system back toward the size profile it was trying to escape.",
+      "words": 116,
+      "codepoints": 749,
+      "sourceBytes": 749,
+      "tiktokenCount": 133,
+      "fixtureGlyphCount": 749,
+      "fixtureBinaryBytes": 23968,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6316,
+      "binaryBytesPerToken": 180.2105,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0226,
+      "experimentalBinaryBytesPerToken": 0.7218,
+      "experimentalBinaryVsSourceRatio": 0.1282,
+      "experimentalPatches": [
+        "If the representation can store long passages in a small patch budget while leaving room for audit metadata, Every preserved passage eventually needs a chain from source to compact record to recovery path to deletion exception,",
+        "and evidence packaging will push the system back toward the size profile it was trying to escape.",
+        "The benchmark therefore treats governance as a storage pressure,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.168845,
+      "experimentalSignatureHex": "5b0c1ceb02577b69eb5aa5a5197c7a127abd550f44d1a9e36e435da5647f6719"
+    },
+    {
+      "text": "The first retrieval-operations chapter is about query behavior after the archive gets old. Fresh benchmarks often assume clean, recent, well-labeled entries, but real institutional stores contain overlapping manuals, superseded policies, side letters, and semi-duplicate guidance that still needs exact or near-exact recall. The representation therefore has to balance two competing requirements at once: keep each long entry compact enough for storage economics and keep enough structure that retrieval can separate archive catalog notes from repair instructions or retention policy chapters. That balance matters more in old archives than in new ones because retrieval quality degrades silently when the store fills with similar long records. This corpus exists to see whether the current packer can survive that shape of pressure without collapsing into too many fragments.",
+      "words": 125,
+      "codepoints": 876,
+      "sourceBytes": 876,
+      "tiktokenCount": 148,
+      "fixtureGlyphCount": 876,
+      "fixtureBinaryBytes": 28032,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.9189,
+      "binaryBytesPerToken": 189.4054,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0203,
+      "experimentalBinaryBytesPerToken": 0.6486,
+      "experimentalBinaryVsSourceRatio": 0.1096,
+      "experimentalPatches": [
+        "keep each long entry compact enough for storage economics and keep enough structure that retrieval can separate archive catalog notes from repair instructions or retention policy chapters. but real institutional stores contain overlapping manuals,",
+        "That balance matters more in old archives than in new ones because retrieval quality degrades silently when the store fills with similar long records.",
+        "This corpus exists to see whether the current packer can survive that shape of pressure without collapsing into too many fragments."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.220913,
+      "experimentalSignatureHex": "d2041fda0a9371f9eb28a5b4523f3832cab9c30f179be8e8ae4c7426a41361c1"
+    },
+    {
+      "text": "The second retrieval-operations chapter frames the same problem as a workload question. A storage design is not finished when it stores one chapter efficiently; it is finished when repeated search, rerank, repair lookup, and evidence packaging can all happen without turning the compact record into an expensive intermediate form. The archive path only holds if the macro patch and residual budget remain small under repeated operational use, because every extra fragment increases fetch fan-out and every lost semantic boundary increases false neighbors. This benchmark does not prove the final retrieval system, but it does force the current representation to face a more realistic archive workload than quotes or short fixtures can provide.",
+      "words": 112,
+      "codepoints": 743,
+      "sourceBytes": 743,
+      "tiktokenCount": 126,
+      "fixtureGlyphCount": 743,
+      "fixtureBinaryBytes": 23776,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.8968,
+      "binaryBytesPerToken": 188.6984,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0238,
+      "experimentalBinaryBytesPerToken": 0.7619,
+      "experimentalBinaryVsSourceRatio": 0.1292,
+      "experimentalPatches": [
+        "The archive path only holds if the macro patch and residual budget remain small under repeated operational use, but it does force the current representation to face a more realistic archive workload than quotes or short fixtures can provide.",
+        "and evidence packaging can all happen without turning the compact record into an expensive intermediate form.",
+        "The second retrieval-operations chapter frames the same problem as a workload question."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.185081,
+      "experimentalSignatureHex": "da2c1dda0a8329796a12aa94123e3a9a2ab3c5a61bd2e9a2864373670851636b"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.0214,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 4,
+      "groups": [
+        {
+          "group": "archive_catalog_pressure",
+          "separationMargin": 1
+        },
+        {
+          "group": "replication_repair_pressure",
+          "separationMargin": 4.5
+        },
+        {
+          "group": "retention_governance_pressure",
+          "separationMargin": -4
+        },
+        {
+          "group": "retrieval_operations_pressure",
+          "separationMargin": -4
+        }
+      ],
+      "minSeparationMargin": -4,
+      "maxSeparationMargin": 4.5,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "retention_governance_pressure",
+        "retrieval_operations_pressure"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 60.5,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

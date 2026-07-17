@@ -1,0 +1,77 @@
+label=ranked-mega-book-ladder
+startedAt=2026-05-20T11:25:33.788Z
+endedAt=2026-05-20T11:25:50.283Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-20-v25-hard-negative-repair/six-head-ranked/mega-book-ladder-v25-six-head-ranked.json",
+  "routeId": "bookRoot",
+  "candidateHead": "bookRoot",
+  "selectedHead": "default",
+  "reason": "v19 selected head is also the best ranked accepted head",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "default",
+      "accepted": true,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": 31,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 2,
+      "headId": "quoteRepairV25",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 27.4167,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 3,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 33.0833,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 4,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": 31.25,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 5,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": 28.1667,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 6,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": 26.25,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 31,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 21,
+  "avgPatchesPerEntry": 2.9167,
+  "allHeadsBinaryVsSourceRatio": 0.2024
+}

@@ -1,0 +1,31 @@
+{
+  "laneId": "governance-adversarial",
+  "issue": "Unrestricted ranked selection sorts by accepted margin before route ownership, so a repair head can steal a lane it does not own.",
+  "unrestricted": {
+    "selectedHead": "stressSplitV26",
+    "selectedMargin": 4.5,
+    "topRankedHead": "stressSplitV26",
+    "topRankedMargin": 4.5,
+    "routeFitRole": "other"
+  },
+  "gated": {
+    "selectedHead": "governance",
+    "selectedMargin": 3.5,
+    "topEligibleHead": "governance",
+    "topEligibleMargin": 3.5,
+    "eligibleHeads": [
+      "governance",
+      "default"
+    ],
+    "blockedHeads": [
+      "bookRoot",
+      "booklikeRepair",
+      "quoteRepair",
+      "quoteSplitV26",
+      "blindSplitV26",
+      "stressSplitV26"
+    ]
+  },
+  "leakReproduced": true,
+  "leakBlocked": true
+}

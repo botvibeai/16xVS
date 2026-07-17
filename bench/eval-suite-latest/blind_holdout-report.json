@@ -1,0 +1,1365 @@
+{
+  "generatedAt": "2026-04-23T20:41:10.945Z",
+  "input": "bench\\blind-holdout-2026-04-20.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "bsq-style-prototype",
+    "embeddingSource": "sparse random projection over heuristic lexical, character-ngram, patch, and script features",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to 256-bit code",
+    "dimensions": 256
+  },
+  "caution": "fixtureGlyphCount is the current 16xVS POC character-fixture path. experimentalPatchCount is from a separate 16xVS-core candidate, and retrieval now uses a BSQ-style prototype encoder (continuous embedding -> normalize -> sign) rather than the old heuristic signature path. It is still not the final tokenizer. Use this as directional evidence only.",
+  "summary": {
+    "entries": 30,
+    "words": 89,
+    "codepoints": 634,
+    "sourceBytes": 634,
+    "tiktokenCount": 126,
+    "fixtureGlyphCount": 634,
+    "fixtureBinaryBytes": 20288,
+    "experimentalPatchCount": 53,
+    "experimentalBinaryBytes": 1696,
+    "avgTiktokenPerEntry": 4.2,
+    "avgGlyphsPerEntry": 21.1333,
+    "avgExperimentalPatchesPerEntry": 1.7667,
+    "glyphsPerToken": 5.0317,
+    "binaryBytesPerToken": 161.0159,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.4206,
+    "experimentalBinaryBytesPerToken": 13.4603,
+    "experimentalBinaryVsSourceRatio": 2.6751
+  },
+  "semantic": {
+    "input": "bench\\blind-holdout-semantic-2026-04-20.json",
+    "groups": [
+      {
+        "group": "cooking_holdout",
+        "size": 4,
+        "avgPatchDistance": 0.6667,
+        "avgSignatureDistance": 117.6667,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "sourdough starter feeding",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "knead bread dough",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "cast iron skillet",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "simmer tomato sauce",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          }
+        ]
+      },
+      {
+        "group": "weather_holdout",
+        "size": 4,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 124.6667,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "coastal fog forecast",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "thunderstorm warning",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "barometric pressure drop",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "humid afternoon breeze",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          }
+        ]
+      },
+      {
+        "group": "music_holdout",
+        "size": 4,
+        "avgPatchDistance": 0.5,
+        "avgSignatureDistance": 124.1667,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "jazz chord progression",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "violin tuning peg",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "drum rhythm pattern",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "concert hall acoustics",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          }
+        ]
+      },
+      {
+        "group": "gardening_holdout",
+        "size": 4,
+        "avgPatchDistance": 0.5,
+        "avgSignatureDistance": 123.6667,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "tomato seedling transplant",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "compost soil amendment",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "prune rose bushes",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "irrigation drip line",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          }
+        ]
+      },
+      {
+        "group": "astronomy_holdout",
+        "size": 4,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 118.8333,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "lunar eclipse shadow",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "telescope mirror alignment",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "orbital debris tracking",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 2
+          },
+          {
+            "text": "spectral redshift measurement",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 2
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "cooking_holdout",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 117.6667,
+        "avgNearestOutsideSignatureDistance": 111.5,
+        "separationMargin": -6.1667,
+        "examples": [
+          {
+            "text": "sourdough starter feeding",
+            "nearestOutside": {
+              "text": "violin tuning peg",
+              "signatureDistance": 108
+            }
+          },
+          {
+            "text": "knead bread dough",
+            "nearestOutside": {
+              "text": "irrigation drip line",
+              "signatureDistance": 112
+            }
+          },
+          {
+            "text": "cast iron skillet",
+            "nearestOutside": {
+              "text": "orbital debris tracking",
+              "signatureDistance": 114
+            }
+          },
+          {
+            "text": "simmer tomato sauce",
+            "nearestOutside": {
+              "text": "lunar eclipse shadow",
+              "signatureDistance": 112
+            }
+          }
+        ]
+      },
+      {
+        "group": "weather_holdout",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 124.6667,
+        "avgNearestOutsideSignatureDistance": 110,
+        "separationMargin": -14.6667,
+        "examples": [
+          {
+            "text": "coastal fog forecast",
+            "nearestOutside": {
+              "text": "cast iron skillet",
+              "signatureDistance": 116
+            }
+          },
+          {
+            "text": "thunderstorm warning",
+            "nearestOutside": {
+              "text": "orbital debris tracking",
+              "signatureDistance": 114
+            }
+          },
+          {
+            "text": "barometric pressure drop",
+            "nearestOutside": {
+              "text": "spectral redshift measurement",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "humid afternoon breeze",
+            "nearestOutside": {
+              "text": "concert hall acoustics",
+              "signatureDistance": 108
+            }
+          }
+        ]
+      },
+      {
+        "group": "music_holdout",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 124.1667,
+        "avgNearestOutsideSignatureDistance": 106,
+        "separationMargin": -18.1667,
+        "examples": [
+          {
+            "text": "jazz chord progression",
+            "nearestOutside": {
+              "text": "lunar eclipse shadow",
+              "signatureDistance": 114
+            }
+          },
+          {
+            "text": "violin tuning peg",
+            "nearestOutside": {
+              "text": "irrigation drip line",
+              "signatureDistance": 104
+            }
+          },
+          {
+            "text": "drum rhythm pattern",
+            "nearestOutside": {
+              "text": "irrigation drip line",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "concert hall acoustics",
+            "nearestOutside": {
+              "text": "prune rose bushes",
+              "signatureDistance": 104
+            }
+          }
+        ]
+      },
+      {
+        "group": "gardening_holdout",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 123.6667,
+        "avgNearestOutsideSignatureDistance": 104.75,
+        "separationMargin": -18.9167,
+        "examples": [
+          {
+            "text": "tomato seedling transplant",
+            "nearestOutside": {
+              "text": "humid afternoon breeze",
+              "signatureDistance": 110
+            }
+          },
+          {
+            "text": "compost soil amendment",
+            "nearestOutside": {
+              "text": "telescope mirror alignment",
+              "signatureDistance": 103
+            }
+          },
+          {
+            "text": "prune rose bushes",
+            "nearestOutside": {
+              "text": "concert hall acoustics",
+              "signatureDistance": 104
+            }
+          },
+          {
+            "text": "irrigation drip line",
+            "nearestOutside": {
+              "text": "drum rhythm pattern",
+              "signatureDistance": 102
+            }
+          }
+        ]
+      },
+      {
+        "group": "astronomy_holdout",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 118.8333,
+        "avgNearestOutsideSignatureDistance": 107.5,
+        "separationMargin": -11.3333,
+        "examples": [
+          {
+            "text": "lunar eclipse shadow",
+            "nearestOutside": {
+              "text": "barometric pressure drop",
+              "signatureDistance": 111
+            }
+          },
+          {
+            "text": "telescope mirror alignment",
+            "nearestOutside": {
+              "text": "compost soil amendment",
+              "signatureDistance": 103
+            }
+          },
+          {
+            "text": "orbital debris tracking",
+            "nearestOutside": {
+              "text": "cast iron skillet",
+              "signatureDistance": 114
+            }
+          },
+          {
+            "text": "spectral redshift measurement",
+            "nearestOutside": {
+              "text": "barometric pressure drop",
+              "signatureDistance": 102
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 30,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 104.4333,
+    "avgNearestTokenOverlap": 0,
+    "examples": [
+      {
+        "text": "sourdough starter feeding",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "violin tuning peg",
+          "signatureDistance": 108,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "knead bread dough",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "public library archive",
+          "signatureDistance": 101,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "cast iron skillet",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "simmer tomato sauce",
+          "signatureDistance": 110,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "simmer tomato sauce",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "ocean coral reef",
+          "signatureDistance": 103,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "coastal fog forecast",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "wildlife camera trap",
+          "signatureDistance": 100,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "thunderstorm warning",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "children bedtime story",
+          "signatureDistance": 97,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "barometric pressure drop",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "spectral redshift measurement",
+          "signatureDistance": 102,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "humid afternoon breeze",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "concert hall acoustics",
+          "signatureDistance": 108,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "jazz chord progression",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "children bedtime story",
+          "signatureDistance": 109,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "violin tuning peg",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "drum rhythm pattern",
+          "signatureDistance": 102,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "drum rhythm pattern",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "violin tuning peg",
+          "signatureDistance": 102,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "concert hall acoustics",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "prune rose bushes",
+          "signatureDistance": 104,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "tomato seedling transplant",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "humid afternoon breeze",
+          "signatureDistance": 110,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "compost soil amendment",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "prune rose bushes",
+          "signatureDistance": 102,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "prune rose bushes",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "compost soil amendment",
+          "signatureDistance": 102,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "irrigation drip line",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "drum rhythm pattern",
+          "signatureDistance": 102,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "lunar eclipse shadow",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "antique clock repair",
+          "signatureDistance": 109,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "telescope mirror alignment",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "compost soil amendment",
+          "signatureDistance": 103,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "orbital debris tracking",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "wildlife camera trap",
+          "signatureDistance": 104,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "spectral redshift measurement",
+        "experimentalPatchCount": 2,
+        "nearestNeighbor": {
+          "text": "barometric pressure drop",
+          "signatureDistance": 102,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "sourdough starter feeding",
+      "words": 3,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.56,
+      "experimentalPatches": [
+        "sourdough starter",
+        "feeding"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 72.77361,
+      "experimentalSignatureHex": "cbe5aff0bc58532c9d33c7ef94fca81105f37f3e3609f5a7c1e9762b906af9bd"
+    },
+    {
+      "text": "knead bread dough",
+      "words": 3,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.4,
+      "binaryBytesPerToken": 108.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "knead bread dough"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 59.373692,
+      "experimentalSignatureHex": "6368df92c9c2a8faf37ba78fd6d0543c9dfb45d235da78a7dfe8f7ff45fe5d71"
+    },
+    {
+      "text": "cast iron skillet",
+      "words": 3,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.6667,
+      "binaryBytesPerToken": 181.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "cast iron skillet"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 56.706097,
+      "experimentalSignatureHex": "fa3e9f8e00cf2efd16bc63995eef32859639d453897c4599a5016ae2526a8e1e"
+    },
+    {
+      "text": "simmer tomato sauce",
+      "words": 3,
+      "codepoints": 19,
+      "sourceBytes": 19,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 19,
+      "fixtureBinaryBytes": 608,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 4.75,
+      "binaryBytesPerToken": 152,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.3684,
+      "experimentalPatches": [
+        "simmer tomato",
+        "sauce"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 59.143585,
+      "experimentalSignatureHex": "c3b4f7824a4152e510ff46c987767565ffb3d6da6dcf46535c277f79e7cb9337"
+    },
+    {
+      "text": "coastal fog forecast",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "coastal fog",
+        "forecast"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 65.885447,
+      "experimentalSignatureHex": "f787ff5883ceb2408d9ee9b0f5b5fc8c2b2207ffaeb8759cbb2673b5f65ec27f"
+    },
+    {
+      "text": "thunderstorm warning",
+      "words": 2,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "thunderstorm",
+        "warning"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 64.247478,
+      "experimentalSignatureHex": "0da1b6e7779e98d8088da44695ab0ce0daffeeef79b9a19f5d4b0a6f74d57eff"
+    },
+    {
+      "text": "barometric pressure drop",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 6,
+      "binaryBytesPerToken": 192,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "barometric",
+        "pressure drop"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 66.123739,
+      "experimentalSignatureHex": "7f54b6b0b49af6fce94e559960df9eaaccfd2312b9c126fa748cfc86d37dbcff"
+    },
+    {
+      "text": "humid afternoon breeze",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "humid afternoon",
+        "breeze"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 68.315064,
+      "experimentalSignatureHex": "2baca4198df760712eb167149259e6fdde74d90738f1f58d2b608d4f75f54b52"
+    },
+    {
+      "text": "jazz chord progression",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "jazz chord",
+        "progression"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 61.576817,
+      "experimentalSignatureHex": "7ab59dbdfadf1b6a44e1ba45cba4fc063a31813262c5413ecc60dd9fe353e661"
+    },
+    {
+      "text": "violin tuning peg",
+      "words": 3,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.25,
+      "binaryBytesPerToken": 136,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "violin tuning peg"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 55.973222,
+      "experimentalSignatureHex": "fd67b5e9bc2cf5935137eaff1fbff2f852fcdbbe9ea5bf7b7dc95436e579b6dd"
+    },
+    {
+      "text": "drum rhythm pattern",
+      "words": 3,
+      "codepoints": 19,
+      "sourceBytes": 19,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 19,
+      "fixtureBinaryBytes": 608,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 4.75,
+      "binaryBytesPerToken": 152,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.3684,
+      "experimentalPatches": [
+        "drum rhythm",
+        "pattern"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 62.971349,
+      "experimentalSignatureHex": "be688559f9ae40e7ff87dc9ff0bbf0fb05b6dbd67833f9b34deac574a272faa7"
+    },
+    {
+      "text": "concert hall acoustics",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 4.4,
+      "binaryBytesPerToken": 140.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "concert hall",
+        "acoustics"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 67.850378,
+      "experimentalSignatureHex": "63848f3f0e764afcc7cd770ba157aaf4c4e62657c98f74afcde3db4e96f6135f"
+    },
+    {
+      "text": "tomato seedling transplant",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.2,
+      "binaryBytesPerToken": 166.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.4615,
+      "experimentalPatches": [
+        "tomato seedling",
+        "transplant"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 292.265238,
+      "experimentalSignatureHex": "22bef8e1aa29a670a5fbab208259b66c06e8deda5ae1cbb60fea3a785be2832a"
+    },
+    {
+      "text": "compost soil amendment",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "compost soil",
+        "amendment"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 69.181936,
+      "experimentalSignatureHex": "f60595765d9cef6d6bd72a510b66de3e55acfeaf89d92f5f2a05f396c15dff47"
+    },
+    {
+      "text": "prune rose bushes",
+      "words": 3,
+      "codepoints": 17,
+      "sourceBytes": 17,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 17,
+      "fixtureBinaryBytes": 544,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.25,
+      "binaryBytesPerToken": 136,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.8824,
+      "experimentalPatches": [
+        "prune rose bushes"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 58.717512,
+      "experimentalSignatureHex": "3dc7ef577c3d4d3a775437d7eae6beacebeece17874dfbedefcef375816fd71f"
+    },
+    {
+      "text": "irrigation drip line",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "irrigation drip",
+        "line"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 65.004278,
+      "experimentalSignatureHex": "9695d773d83167e29ff7748ddffa58d86af525dedcb3acb7dc4907f66770e391"
+    },
+    {
+      "text": "lunar eclipse shadow",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "lunar eclipse",
+        "shadow"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 63.931491,
+      "experimentalSignatureHex": "5643963c285855c44c7cb975e46e9c24fafb07cace9394f66623becf8eeb8756"
+    },
+    {
+      "text": "telescope mirror alignment",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 6.5,
+      "binaryBytesPerToken": 208,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.4615,
+      "experimentalPatches": [
+        "telescope mirror",
+        "alignment"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 69.056397,
+      "experimentalSignatureHex": "5686dcf4b8cae1fae2d3faeb0c1d0219f32cfa8fe395b27e86237761885457c7"
+    },
+    {
+      "text": "orbital debris tracking",
+      "words": 3,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.75,
+      "binaryBytesPerToken": 184,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.7826,
+      "experimentalPatches": [
+        "orbital debris",
+        "tracking"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 67.503175,
+      "experimentalSignatureHex": "b6dacfed14328b4b163fe13f462ddee7debc1fe7ff1cb0a94826b86d5071a671"
+    },
+    {
+      "text": "spectral redshift measurement",
+      "words": 3,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.8,
+      "binaryBytesPerToken": 185.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.2069,
+      "experimentalPatches": [
+        "spectral redshift",
+        "measurement"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 70.682751,
+      "experimentalSignatureHex": "f3559fd47b2f6ecd490ddede54595a2ac2fc37573f81f15b9e05b9d4954bcd31"
+    },
+    {
+      "text": "courtroom evidence filing",
+      "words": 3,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 6.25,
+      "binaryBytesPerToken": 200,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.56,
+      "experimentalPatches": [
+        "courtroom evidence",
+        "filing"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 66.037734,
+      "experimentalSignatureHex": "0e729bb1cc0502e3c74148482d2caea152bce6f6872970beee8946f7a16977af"
+    },
+    {
+      "text": "museum sculpture exhibit",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 6,
+      "binaryBytesPerToken": 192,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "museum sculpture",
+        "exhibit"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 69.820536,
+      "experimentalSignatureHex": "ed64cde4e1efd809c8bba19250de84f0ffa9f5760bbd57100cad58be55deeb8f"
+    },
+    {
+      "text": "freight rail timetable",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "freight rail",
+        "timetable"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 67.719654,
+      "experimentalSignatureHex": "d40eefb89bdabfbe5437e3f0a10e78ee8f3daf1bc5afed55fc4d7c11b175455d"
+    },
+    {
+      "text": "antique clock repair",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "antique clock",
+        "repair"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 75.055406,
+      "experimentalSignatureHex": "85ad9e6d582ba6dfce6d0b6ad04f988618b7a10adbb3cbe36e0cf9fff7daf390"
+    },
+    {
+      "text": "children bedtime story",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 7.3333,
+      "binaryBytesPerToken": 234.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.6667,
+      "experimentalBinaryBytesPerToken": 21.3333,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "children bedtime",
+        "story"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 66.414685,
+      "experimentalSignatureHex": "3d1f96d8439ebbca40f9695adf383e2adbf2ee3b5d9d315fe0482cb6b7615a33"
+    },
+    {
+      "text": "mountain trail map",
+      "words": 3,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "mountain trail map"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 56.667162,
+      "experimentalSignatureHex": "c3bfaf8ccb133c19fd3b5b723d12ae75bfbb7bee18a875ff180ccc27d7fbc531"
+    },
+    {
+      "text": "ocean coral reef",
+      "words": 3,
+      "codepoints": 16,
+      "sourceBytes": 16,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 2,
+      "experimentalPatches": [
+        "ocean coral reef"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 54.988271,
+      "experimentalSignatureHex": "ff9cd7fddf5b32cbd250f5bf861cd045f6a7f7d77daff679b7edf746425d937b"
+    },
+    {
+      "text": "ceramic glaze kiln",
+      "words": 3,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "ceramic glaze kiln"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 56.968892,
+      "experimentalSignatureHex": "2ad6d12d6fd773d4f97816bbe269ee72a07534773ce854437fe7f2e963d2ee73"
+    },
+    {
+      "text": "wildlife camera trap",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "wildlife camera",
+        "trap"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 68.127733,
+      "experimentalSignatureHex": "a4d4cfae875baa7dd77dcbf95335e726d33bde6fbbf9ffba7baa71bd265e87c2"
+    },
+    {
+      "text": "public library archive",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 2,
+      "experimentalBinaryBytes": 64,
+      "glyphsPerToken": 7.3333,
+      "binaryBytesPerToken": 234.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.6667,
+      "experimentalBinaryBytesPerToken": 21.3333,
+      "experimentalBinaryVsSourceRatio": 2.9091,
+      "experimentalPatches": [
+        "public library",
+        "archive"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 68.599567,
+      "experimentalSignatureHex": "91bb9c92ba5274ba666f200ad87a722a5ffdd7b63f397fb2c3cc4c97a1ff6b7d"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.4206,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 5,
+      "groups": [
+        {
+          "group": "cooking_holdout",
+          "separationMargin": -6.1667
+        },
+        {
+          "group": "weather_holdout",
+          "separationMargin": -14.6667
+        },
+        {
+          "group": "music_holdout",
+          "separationMargin": -18.1667
+        },
+        {
+          "group": "gardening_holdout",
+          "separationMargin": -18.9167
+        },
+        {
+          "group": "astronomy_holdout",
+          "separationMargin": -11.3333
+        }
+      ],
+      "minSeparationMargin": -18.9167,
+      "maxSeparationMargin": -6.1667,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "cooking_holdout",
+        "weather_holdout",
+        "music_holdout",
+        "gardening_holdout",
+        "astronomy_holdout"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 104.4333,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

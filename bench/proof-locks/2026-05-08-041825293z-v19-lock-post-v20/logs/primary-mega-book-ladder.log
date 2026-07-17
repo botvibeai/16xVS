@@ -1,0 +1,50 @@
+label=primary-mega-book-ladder
+startedAt=2026-05-08T04:18:43.609Z
+endedAt=2026-05-08T04:18:48.989Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-08-041825293z-v19-lock-post-v20/reports/mega-book-ladder-v19-validated-routed.json",
+  "routeId": "bookRoot",
+  "candidateHead": "bookRoot",
+  "selectedHead": "default",
+  "reason": "candidate head failed validation; fallback passed",
+  "selectionPolicy": "v19-candidate-fallback",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "default",
+      "accepted": true,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": 31,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 2,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 33.0833,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": 31.25,
+      "signatureCollapse": true,
+      "avgPatchesPerEntry": 2.9167
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 31,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 21,
+  "avgPatchesPerEntry": 2.9167,
+  "allHeadsBinaryVsSourceRatio": 0.1012
+}

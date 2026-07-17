@@ -1,0 +1,49 @@
+label=primary-book-root
+startedAt=2026-05-08T04:06:03.588Z
+endedAt=2026-05-08T04:06:08.639Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-08-040602355z-v19-lock/reports/book-root-v19-validated-routed.json",
+  "routeId": "bookRoot",
+  "candidateHead": "bookRoot",
+  "selectedHead": "bookRoot",
+  "reason": "candidate head passed validation",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "bookRoot",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 8,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 2,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -2.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -3.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 8,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 73.6667,
+  "avgPatchesPerEntry": 3,
+  "allHeadsBinaryVsSourceRatio": 0.1451
+}

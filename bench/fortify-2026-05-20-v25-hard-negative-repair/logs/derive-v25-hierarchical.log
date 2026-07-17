@@ -1,0 +1,21 @@
+label=derive-v25-hierarchical
+startedAt=2026-05-20T11:19:05.963Z
+endedAt=2026-05-20T11:19:10.201Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "models/learned-hybrid-prototype-v25-hard-negative-repair-base.json",
+  "output": "models/learned-hybrid-prototype-v25-hard-negative-repair-hierarchical-packer-v2.json",
+  "variantName": "hard-negative-repair-hierarchical-packer-v2",
+  "patchConfig": {
+    "packingMode": "hierarchical",
+    "maxWordsPerPatch": 96,
+    "maxCharsPerPatch": 512,
+    "maxEntryWordsForSinglePatch": 96,
+    "maxEntryCharsForSinglePatch": 512,
+    "maxResidualPatches": 2,
+    "residualMaxWordsPerPatch": 28,
+    "residualMaxCharsPerPatch": 180
+  }
+}

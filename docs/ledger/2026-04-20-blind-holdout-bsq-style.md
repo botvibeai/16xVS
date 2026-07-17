@@ -1,0 +1,50 @@
+# EXP-2026-04-20-006 Blind Holdout BSQ-Style Prototype
+
+- `id`: `EXP-2026-04-20-006`
+- `date`: `2026-04-20`
+- `corpus`: `bench/blind-holdout-2026-04-20.txt` with `bench/blind-holdout-semantic-2026-04-20.json`
+- `method`: Locked blind holdout run. Captured benchmark/tokenizer fingerprints, created new unseen phrase groups, ran the benchmark without changing tokenizer or benchmark code, then compared patch count, labeled semantic margins, and collapse flags.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `freeze_fingerprint`:
+  - `core/experimental-tokenizer.mjs`: `A982D583A0C3E545D2FFEA749BD160AB854D4F29CB9438AA26B59CEE72869D91`
+  - `core/evidence-assessment.mjs`: `CBCE72721EA03A405FF1873B29CE3F0195F232E611D2F359BBBE7F24317F24C3`
+  - `scripts/benchmark.mjs`: `16E8DA6BFCD1BF74170881E5D5F4BDC29A929279D456385137A0827F75489EE7`
+- `metrics`:
+  - `entries`: `30`
+  - `tiktokenCount`: `126`
+  - `experimentalPatchCount`: `53`
+  - `experimentalPatchesPerToken`: `0.4206`
+  - `experimentalBinaryVsSourceRatio`: `2.6751`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `104.4333`
+  - `retrieval.avgNearestTokenOverlap`: `0`
+  - `cooking_holdout.separationMargin`: `-6.1667`
+  - `weather_holdout.separationMargin`: `-14.6667`
+  - `music_holdout.separationMargin`: `-18.1667`
+  - `gardening_holdout.separationMargin`: `-18.9167`
+  - `astronomy_holdout.separationMargin`: `-11.3333`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.semanticSignal.allMarginsPositive`: `false`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The experimental core candidate still uses fewer patches than `tiktoken` tokens on the blind holdout corpus.
+  - The signature space did not collapse under this holdout run.
+  - The code freeze held: the three captured implementation hashes matched before and after the run.
+- `claim_not_supported`:
+  - The blind holdout does not support semantic generalization.
+  - The current prototype does not keep unseen same-domain groups closer than other labeled groups.
+  - The controlled positive semantic fixture results should not be promoted beyond directional evidence.
+  - This does not prove target 16xVS BSQ behavior or broad real-world tokenizer superiority.
+- `artifacts`:
+  - [2026-04-20-blind-holdout-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-blind-holdout-bsq-style-report.json)
+  - [blind-holdout-2026-04-20.txt](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\blind-holdout-2026-04-20.txt)
+  - [blind-holdout-semantic-2026-04-20.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\blind-holdout-semantic-2026-04-20.json)
+- `notes`:
+  - The JSON report's top-level `evidenceAssessment.resultLabel` is `directional` because count compression and collapse checks pass. The ledger labels the semantic holdout `failed` because the explicit blind-holdout acceptance criterion required semantic margins to stay positive.
+  - All five unseen semantic groups failed separation: cooking, weather, music, gardening, and astronomy.
+  - This is a useful negative result. It shows the current heuristic embedding source is not enough for blind semantic generalization.
+- `next_action`:
+  - Do not tune against this exact holdout. Build a real target embedding path or create a separate future holdout before retesting semantic claims.

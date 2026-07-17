@@ -1,0 +1,30 @@
+# EXP-2026-04-20-004 Google 1000 Guardrail Refresh
+
+- `id`: `EXP-2026-04-20-004`
+- `date`: `2026-04-20`
+- `corpus`: First `1000` entries from `bench/google-10000-english-usa.txt`
+- `method`: Regenerated the Google 1000 word benchmark with the BSQ-style prototype and embedded evidence guardrails.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `1000`
+  - `tiktokenCount`: `1089`
+  - `experimentalPatchCount`: `1000`
+  - `experimentalPatchesPerToken`: `0.9183`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate slightly beats `tiktoken` by count on the first 1000 English words.
+  - The refreshed report includes machine-readable evidence guardrails.
+- `claim_not_supported`:
+  - This does not prove broad tokenizer superiority.
+  - No semantic fixture was included, so this run does not support semantic behavior claims.
+  - This does not prove target 16xVS BSQ performance.
+- `artifacts`:
+  - [2026-04-20-google-1000-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-google-1000-bsq-style-report.json)
+  - [google-10000-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\google-10000-report.json)
+- `notes`:
+  - This remains a count benchmark over isolated words, not a semantic benchmark.
+- `next_action`:
+  - Add larger sentence, paragraph, and book-style corpora before making stronger count claims.

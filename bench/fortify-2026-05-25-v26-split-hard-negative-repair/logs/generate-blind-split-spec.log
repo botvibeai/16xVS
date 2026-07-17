@@ -1,0 +1,16 @@
+{
+  "probeId": "blind-split",
+  "headId": "blindSplitV26",
+  "baseSpec": "data/training/embedding-training-spec-v13-balanced-triad.json",
+  "spec": "data/training/embedding-training-spec-v26-blind-split-repair.json",
+  "minedReports": [
+    {
+      "sourceId": "blind-holdout",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/blind-holdout-v24-quote-repair.json",
+      "pairCount": 8
+    }
+  ],
+  "groupCount": 26,
+  "explicitNegativePairCount": 8,
+  "minedGroupCount": 5
+}

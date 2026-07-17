@@ -1,0 +1,37 @@
+# EXP-2026-04-10-004 Phrase Semantic Separation
+
+- `id`: `EXP-2026-04-10-004`
+- `date`: `2026-04-10`
+- `corpus`: `bench/phrase-corpus.txt` with `bench/semantic-phrases.json`
+- `method`: Evaluate count compression, group-level similarity, nearest-neighbor retrieval, and group-vs-outside signature separation.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `tiktokenCount`: `93`
+  - `experimentalPatchCount`: `53`
+  - `retrieval.avgNearestSignatureDistance`: `89.0667`
+  - `retrieval.avgNearestTokenOverlap`: `0.1806`
+  - `launch.separationMargin`: `6.8333`
+  - `storage.separationMargin`: `-23.8333`
+  - `search.separationMargin`: `-20.5833`
+  - `planning.separationMargin`: `-3.3333`
+  - `finance.separationMargin`: `-15.5`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The benchmark can now measure semantic-group separation and retrieval failure explicitly.
+  - The experimental core candidate still shows favorable count compression on the phrase set.
+  - The BSQ-style prototype encoder now produces a positive separation margin for the `launch` group.
+  - Nearest-neighbor overlap improved relative to the earlier prototype.
+- `claim_not_supported`:
+  - The current BSQ-style prototype still does not keep same-group phrases closer than outside phrases overall.
+  - The current candidate does not justify semantic superiority claims.
+  - The current candidate is not a proxy for full BSQ performance.
+- `artifacts`:
+  - [phrase-semantic-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\phrase-semantic-report.json)
+- `notes`:
+  - This is the clearest negative result in the current evidence set.
+  - Compression signal survived, and one English semantic group (`launch`) is now positive.
+  - The benchmark now follows a BSQ-style prototype encoder path for retrieval codes, which makes this negative result more meaningful than the earlier fake-signature version.
+  - English semantic behavior improved materially from the older prototype, but the result is still below the threshold needed for semantic claims because most groups remain negative.
+- `next_action`:
+  - Keep improving the embedding source behind the BSQ-style path before making any semantic claim.

@@ -1,0 +1,1427 @@
+{
+  "generatedAt": "2026-04-23T20:41:03.601Z",
+  "source": "data/training/embedding-training-spec.json",
+  "summary": {
+    "groupCount": 5,
+    "itemCount": 25,
+    "positivePairCount": 50,
+    "negativePairCount": 125,
+    "totalPairCount": 175
+  },
+  "groups": [
+    {
+      "id": "launch_training",
+      "domain": "launch",
+      "description": "Launch and deployment readiness phrasing.",
+      "items": [
+        "release readiness checklist",
+        "deployment go-live plan",
+        "ship preparation review",
+        "launch approval checklist",
+        "production release steps"
+      ]
+    },
+    {
+      "id": "storage_training",
+      "domain": "storage",
+      "description": "Storage durability and recovery phrasing.",
+      "items": [
+        "live fallback vault policy",
+        "triple copy retention plan",
+        "repair degraded storage replicas",
+        "secondary archive replication",
+        "durable record preservation"
+      ]
+    },
+    {
+      "id": "retrieval_training",
+      "domain": "retrieval",
+      "description": "Exact binary retrieval and lookup phrasing.",
+      "items": [
+        "exact hamming retrieval",
+        "binary glyph lookup",
+        "nearest signature search",
+        "bit distance query",
+        "precise retrieval match"
+      ]
+    },
+    {
+      "id": "planning_training",
+      "domain": "planning",
+      "description": "Memory-first planning and execution phrasing.",
+      "items": [
+        "stateful execution plan",
+        "memory first workflow outline",
+        "context preserving action plan",
+        "persistent reasoning sequence",
+        "operational planning scaffold"
+      ]
+    },
+    {
+      "id": "finance_training",
+      "domain": "finance",
+      "description": "Cost and pricing optimization phrasing.",
+      "items": [
+        "reduce compute cost",
+        "pricing efficiency plan",
+        "margin improvement roadmap",
+        "lower storage expense",
+        "cost optimized service model"
+      ]
+    }
+  ],
+  "positives": [
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "release readiness checklist",
+      "right": "deployment go-live plan",
+      "pairKey": "deployment go-live plan|||release readiness checklist"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "release readiness checklist",
+      "right": "ship preparation review",
+      "pairKey": "release readiness checklist|||ship preparation review"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "release readiness checklist",
+      "right": "launch approval checklist",
+      "pairKey": "launch approval checklist|||release readiness checklist"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "release readiness checklist",
+      "right": "production release steps",
+      "pairKey": "production release steps|||release readiness checklist"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "deployment go-live plan",
+      "right": "ship preparation review",
+      "pairKey": "deployment go-live plan|||ship preparation review"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "deployment go-live plan",
+      "right": "launch approval checklist",
+      "pairKey": "deployment go-live plan|||launch approval checklist"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "deployment go-live plan",
+      "right": "production release steps",
+      "pairKey": "deployment go-live plan|||production release steps"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "ship preparation review",
+      "right": "launch approval checklist",
+      "pairKey": "launch approval checklist|||ship preparation review"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "ship preparation review",
+      "right": "production release steps",
+      "pairKey": "production release steps|||ship preparation review"
+    },
+    {
+      "label": "positive",
+      "groupId": "launch_training",
+      "left": "launch approval checklist",
+      "right": "production release steps",
+      "pairKey": "launch approval checklist|||production release steps"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "live fallback vault policy",
+      "right": "triple copy retention plan",
+      "pairKey": "live fallback vault policy|||triple copy retention plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "live fallback vault policy",
+      "right": "repair degraded storage replicas",
+      "pairKey": "live fallback vault policy|||repair degraded storage replicas"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "live fallback vault policy",
+      "right": "secondary archive replication",
+      "pairKey": "live fallback vault policy|||secondary archive replication"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "live fallback vault policy",
+      "right": "durable record preservation",
+      "pairKey": "durable record preservation|||live fallback vault policy"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "triple copy retention plan",
+      "right": "repair degraded storage replicas",
+      "pairKey": "repair degraded storage replicas|||triple copy retention plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "triple copy retention plan",
+      "right": "secondary archive replication",
+      "pairKey": "secondary archive replication|||triple copy retention plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "triple copy retention plan",
+      "right": "durable record preservation",
+      "pairKey": "durable record preservation|||triple copy retention plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "repair degraded storage replicas",
+      "right": "secondary archive replication",
+      "pairKey": "repair degraded storage replicas|||secondary archive replication"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "repair degraded storage replicas",
+      "right": "durable record preservation",
+      "pairKey": "durable record preservation|||repair degraded storage replicas"
+    },
+    {
+      "label": "positive",
+      "groupId": "storage_training",
+      "left": "secondary archive replication",
+      "right": "durable record preservation",
+      "pairKey": "durable record preservation|||secondary archive replication"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "exact hamming retrieval",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||exact hamming retrieval"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "exact hamming retrieval",
+      "right": "nearest signature search",
+      "pairKey": "exact hamming retrieval|||nearest signature search"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "exact hamming retrieval",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||exact hamming retrieval"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "exact hamming retrieval",
+      "right": "precise retrieval match",
+      "pairKey": "exact hamming retrieval|||precise retrieval match"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "binary glyph lookup",
+      "right": "nearest signature search",
+      "pairKey": "binary glyph lookup|||nearest signature search"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "binary glyph lookup",
+      "right": "bit distance query",
+      "pairKey": "binary glyph lookup|||bit distance query"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "binary glyph lookup",
+      "right": "precise retrieval match",
+      "pairKey": "binary glyph lookup|||precise retrieval match"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "nearest signature search",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||nearest signature search"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "nearest signature search",
+      "right": "precise retrieval match",
+      "pairKey": "nearest signature search|||precise retrieval match"
+    },
+    {
+      "label": "positive",
+      "groupId": "retrieval_training",
+      "left": "bit distance query",
+      "right": "precise retrieval match",
+      "pairKey": "bit distance query|||precise retrieval match"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "stateful execution plan",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||stateful execution plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "stateful execution plan",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||stateful execution plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "stateful execution plan",
+      "right": "persistent reasoning sequence",
+      "pairKey": "persistent reasoning sequence|||stateful execution plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "stateful execution plan",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||stateful execution plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "memory first workflow outline",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||memory first workflow outline"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "memory first workflow outline",
+      "right": "persistent reasoning sequence",
+      "pairKey": "memory first workflow outline|||persistent reasoning sequence"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "memory first workflow outline",
+      "right": "operational planning scaffold",
+      "pairKey": "memory first workflow outline|||operational planning scaffold"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "context preserving action plan",
+      "right": "persistent reasoning sequence",
+      "pairKey": "context preserving action plan|||persistent reasoning sequence"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "context preserving action plan",
+      "right": "operational planning scaffold",
+      "pairKey": "context preserving action plan|||operational planning scaffold"
+    },
+    {
+      "label": "positive",
+      "groupId": "planning_training",
+      "left": "persistent reasoning sequence",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||persistent reasoning sequence"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "reduce compute cost",
+      "right": "pricing efficiency plan",
+      "pairKey": "pricing efficiency plan|||reduce compute cost"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "reduce compute cost",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||reduce compute cost"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "reduce compute cost",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||reduce compute cost"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "reduce compute cost",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||reduce compute cost"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "pricing efficiency plan",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||pricing efficiency plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "pricing efficiency plan",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||pricing efficiency plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "pricing efficiency plan",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||pricing efficiency plan"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "margin improvement roadmap",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||margin improvement roadmap"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "margin improvement roadmap",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||margin improvement roadmap"
+    },
+    {
+      "label": "positive",
+      "groupId": "finance_training",
+      "left": "lower storage expense",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||lower storage expense"
+    }
+  ],
+  "negatives": [
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "release readiness checklist",
+      "right": "stateful execution plan",
+      "pairKey": "release readiness checklist|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "release readiness checklist",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||release readiness checklist"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "release readiness checklist",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||release readiness checklist"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "release readiness checklist",
+      "right": "persistent reasoning sequence",
+      "pairKey": "persistent reasoning sequence|||release readiness checklist"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "release readiness checklist",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||release readiness checklist"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "deployment go-live plan",
+      "right": "stateful execution plan",
+      "pairKey": "deployment go-live plan|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "deployment go-live plan",
+      "right": "memory first workflow outline",
+      "pairKey": "deployment go-live plan|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "deployment go-live plan",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||deployment go-live plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "deployment go-live plan",
+      "right": "persistent reasoning sequence",
+      "pairKey": "deployment go-live plan|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "deployment go-live plan",
+      "right": "operational planning scaffold",
+      "pairKey": "deployment go-live plan|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "ship preparation review",
+      "right": "stateful execution plan",
+      "pairKey": "ship preparation review|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "ship preparation review",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||ship preparation review"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "ship preparation review",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||ship preparation review"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "ship preparation review",
+      "right": "persistent reasoning sequence",
+      "pairKey": "persistent reasoning sequence|||ship preparation review"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "ship preparation review",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||ship preparation review"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "launch approval checklist",
+      "right": "stateful execution plan",
+      "pairKey": "launch approval checklist|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "launch approval checklist",
+      "right": "memory first workflow outline",
+      "pairKey": "launch approval checklist|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "launch approval checklist",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||launch approval checklist"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "launch approval checklist",
+      "right": "persistent reasoning sequence",
+      "pairKey": "launch approval checklist|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "launch approval checklist",
+      "right": "operational planning scaffold",
+      "pairKey": "launch approval checklist|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "production release steps",
+      "right": "stateful execution plan",
+      "pairKey": "production release steps|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "production release steps",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||production release steps"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "production release steps",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||production release steps"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "production release steps",
+      "right": "persistent reasoning sequence",
+      "pairKey": "persistent reasoning sequence|||production release steps"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "launch_training",
+      "rightGroupId": "planning_training",
+      "left": "production release steps",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||production release steps"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "live fallback vault policy",
+      "right": "reduce compute cost",
+      "pairKey": "live fallback vault policy|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "live fallback vault policy",
+      "right": "pricing efficiency plan",
+      "pairKey": "live fallback vault policy|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "live fallback vault policy",
+      "right": "margin improvement roadmap",
+      "pairKey": "live fallback vault policy|||margin improvement roadmap"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "live fallback vault policy",
+      "right": "lower storage expense",
+      "pairKey": "live fallback vault policy|||lower storage expense"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "live fallback vault policy",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||live fallback vault policy"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "triple copy retention plan",
+      "right": "reduce compute cost",
+      "pairKey": "reduce compute cost|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "triple copy retention plan",
+      "right": "pricing efficiency plan",
+      "pairKey": "pricing efficiency plan|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "triple copy retention plan",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "triple copy retention plan",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "triple copy retention plan",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "repair degraded storage replicas",
+      "right": "reduce compute cost",
+      "pairKey": "reduce compute cost|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "repair degraded storage replicas",
+      "right": "pricing efficiency plan",
+      "pairKey": "pricing efficiency plan|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "repair degraded storage replicas",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "repair degraded storage replicas",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "repair degraded storage replicas",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "secondary archive replication",
+      "right": "reduce compute cost",
+      "pairKey": "reduce compute cost|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "secondary archive replication",
+      "right": "pricing efficiency plan",
+      "pairKey": "pricing efficiency plan|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "secondary archive replication",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "secondary archive replication",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "secondary archive replication",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "durable record preservation",
+      "right": "reduce compute cost",
+      "pairKey": "durable record preservation|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "durable record preservation",
+      "right": "pricing efficiency plan",
+      "pairKey": "durable record preservation|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "durable record preservation",
+      "right": "margin improvement roadmap",
+      "pairKey": "durable record preservation|||margin improvement roadmap"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "durable record preservation",
+      "right": "lower storage expense",
+      "pairKey": "durable record preservation|||lower storage expense"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "finance_training",
+      "left": "durable record preservation",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||durable record preservation"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "live fallback vault policy",
+      "right": "exact hamming retrieval",
+      "pairKey": "exact hamming retrieval|||live fallback vault policy"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "live fallback vault policy",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||live fallback vault policy"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "live fallback vault policy",
+      "right": "nearest signature search",
+      "pairKey": "live fallback vault policy|||nearest signature search"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "live fallback vault policy",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||live fallback vault policy"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "live fallback vault policy",
+      "right": "precise retrieval match",
+      "pairKey": "live fallback vault policy|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "triple copy retention plan",
+      "right": "exact hamming retrieval",
+      "pairKey": "exact hamming retrieval|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "triple copy retention plan",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "triple copy retention plan",
+      "right": "nearest signature search",
+      "pairKey": "nearest signature search|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "triple copy retention plan",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "triple copy retention plan",
+      "right": "precise retrieval match",
+      "pairKey": "precise retrieval match|||triple copy retention plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "repair degraded storage replicas",
+      "right": "exact hamming retrieval",
+      "pairKey": "exact hamming retrieval|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "repair degraded storage replicas",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "repair degraded storage replicas",
+      "right": "nearest signature search",
+      "pairKey": "nearest signature search|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "repair degraded storage replicas",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "repair degraded storage replicas",
+      "right": "precise retrieval match",
+      "pairKey": "precise retrieval match|||repair degraded storage replicas"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "secondary archive replication",
+      "right": "exact hamming retrieval",
+      "pairKey": "exact hamming retrieval|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "secondary archive replication",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "secondary archive replication",
+      "right": "nearest signature search",
+      "pairKey": "nearest signature search|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "secondary archive replication",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "secondary archive replication",
+      "right": "precise retrieval match",
+      "pairKey": "precise retrieval match|||secondary archive replication"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "durable record preservation",
+      "right": "exact hamming retrieval",
+      "pairKey": "durable record preservation|||exact hamming retrieval"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "durable record preservation",
+      "right": "binary glyph lookup",
+      "pairKey": "binary glyph lookup|||durable record preservation"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "durable record preservation",
+      "right": "nearest signature search",
+      "pairKey": "durable record preservation|||nearest signature search"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "durable record preservation",
+      "right": "bit distance query",
+      "pairKey": "bit distance query|||durable record preservation"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "storage_training",
+      "rightGroupId": "retrieval_training",
+      "left": "durable record preservation",
+      "right": "precise retrieval match",
+      "pairKey": "durable record preservation|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "exact hamming retrieval",
+      "right": "stateful execution plan",
+      "pairKey": "exact hamming retrieval|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "exact hamming retrieval",
+      "right": "memory first workflow outline",
+      "pairKey": "exact hamming retrieval|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "exact hamming retrieval",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||exact hamming retrieval"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "exact hamming retrieval",
+      "right": "persistent reasoning sequence",
+      "pairKey": "exact hamming retrieval|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "exact hamming retrieval",
+      "right": "operational planning scaffold",
+      "pairKey": "exact hamming retrieval|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "binary glyph lookup",
+      "right": "stateful execution plan",
+      "pairKey": "binary glyph lookup|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "binary glyph lookup",
+      "right": "memory first workflow outline",
+      "pairKey": "binary glyph lookup|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "binary glyph lookup",
+      "right": "context preserving action plan",
+      "pairKey": "binary glyph lookup|||context preserving action plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "binary glyph lookup",
+      "right": "persistent reasoning sequence",
+      "pairKey": "binary glyph lookup|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "binary glyph lookup",
+      "right": "operational planning scaffold",
+      "pairKey": "binary glyph lookup|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "nearest signature search",
+      "right": "stateful execution plan",
+      "pairKey": "nearest signature search|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "nearest signature search",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||nearest signature search"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "nearest signature search",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||nearest signature search"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "nearest signature search",
+      "right": "persistent reasoning sequence",
+      "pairKey": "nearest signature search|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "nearest signature search",
+      "right": "operational planning scaffold",
+      "pairKey": "nearest signature search|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "bit distance query",
+      "right": "stateful execution plan",
+      "pairKey": "bit distance query|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "bit distance query",
+      "right": "memory first workflow outline",
+      "pairKey": "bit distance query|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "bit distance query",
+      "right": "context preserving action plan",
+      "pairKey": "bit distance query|||context preserving action plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "bit distance query",
+      "right": "persistent reasoning sequence",
+      "pairKey": "bit distance query|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "bit distance query",
+      "right": "operational planning scaffold",
+      "pairKey": "bit distance query|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "precise retrieval match",
+      "right": "stateful execution plan",
+      "pairKey": "precise retrieval match|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "precise retrieval match",
+      "right": "memory first workflow outline",
+      "pairKey": "memory first workflow outline|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "precise retrieval match",
+      "right": "context preserving action plan",
+      "pairKey": "context preserving action plan|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "precise retrieval match",
+      "right": "persistent reasoning sequence",
+      "pairKey": "persistent reasoning sequence|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "retrieval_training",
+      "rightGroupId": "planning_training",
+      "left": "precise retrieval match",
+      "right": "operational planning scaffold",
+      "pairKey": "operational planning scaffold|||precise retrieval match"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "stateful execution plan",
+      "right": "reduce compute cost",
+      "pairKey": "reduce compute cost|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "stateful execution plan",
+      "right": "pricing efficiency plan",
+      "pairKey": "pricing efficiency plan|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "stateful execution plan",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "stateful execution plan",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "stateful execution plan",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||stateful execution plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "memory first workflow outline",
+      "right": "reduce compute cost",
+      "pairKey": "memory first workflow outline|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "memory first workflow outline",
+      "right": "pricing efficiency plan",
+      "pairKey": "memory first workflow outline|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "memory first workflow outline",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "memory first workflow outline",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "memory first workflow outline",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||memory first workflow outline"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "context preserving action plan",
+      "right": "reduce compute cost",
+      "pairKey": "context preserving action plan|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "context preserving action plan",
+      "right": "pricing efficiency plan",
+      "pairKey": "context preserving action plan|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "context preserving action plan",
+      "right": "margin improvement roadmap",
+      "pairKey": "context preserving action plan|||margin improvement roadmap"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "context preserving action plan",
+      "right": "lower storage expense",
+      "pairKey": "context preserving action plan|||lower storage expense"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "context preserving action plan",
+      "right": "cost optimized service model",
+      "pairKey": "context preserving action plan|||cost optimized service model"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "persistent reasoning sequence",
+      "right": "reduce compute cost",
+      "pairKey": "persistent reasoning sequence|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "persistent reasoning sequence",
+      "right": "pricing efficiency plan",
+      "pairKey": "persistent reasoning sequence|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "persistent reasoning sequence",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "persistent reasoning sequence",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "persistent reasoning sequence",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||persistent reasoning sequence"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "operational planning scaffold",
+      "right": "reduce compute cost",
+      "pairKey": "operational planning scaffold|||reduce compute cost"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "operational planning scaffold",
+      "right": "pricing efficiency plan",
+      "pairKey": "operational planning scaffold|||pricing efficiency plan"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "operational planning scaffold",
+      "right": "margin improvement roadmap",
+      "pairKey": "margin improvement roadmap|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "operational planning scaffold",
+      "right": "lower storage expense",
+      "pairKey": "lower storage expense|||operational planning scaffold"
+    },
+    {
+      "label": "negative",
+      "leftGroupId": "planning_training",
+      "rightGroupId": "finance_training",
+      "left": "operational planning scaffold",
+      "right": "cost optimized service model",
+      "pairKey": "cost optimized service model|||operational planning scaffold"
+    }
+  ]
+}

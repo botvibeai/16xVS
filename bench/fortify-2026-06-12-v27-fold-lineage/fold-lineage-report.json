@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "v27-fold-lineage-report-v1",
+  "generatedAt": "2026-06-12T20:19:41.926Z",
+  "summary": {
+    "nodeCount": 38,
+    "parentCount": 14,
+    "allMarginsPositive": true,
+    "minMargin": 9,
+    "avgMargin": 23.8571,
+    "totalResidualCount": 20,
+    "parentLevels": {
+      "chapter": {
+        "parentCount": 8,
+        "allMarginsPositive": true,
+        "minMargin": 9,
+        "avgMargin": 19.25,
+        "avgPatchCount": 3,
+        "residualCount": 8
+      },
+      "book": {
+        "parentCount": 4,
+        "allMarginsPositive": true,
+        "minMargin": 32,
+        "avgMargin": 36.5,
+        "avgPatchCount": 3,
+        "residualCount": 8
+      },
+      "mega": {
+        "parentCount": 2,
+        "allMarginsPositive": true,
+        "minMargin": 12,
+        "avgMargin": 17,
+        "avgPatchCount": 3,
+        "residualCount": 4
+      }
+    }
+  },
+  "checks": [
+    {
+      "level": "mega",
+      "parentId": "lineage-cluster-orbit",
+      "childLevel": "book",
+      "childIds": [
+        "orbit-cost-book",
+        "orbit-routing-book"
+      ],
+      "nearestOwnDistance": 16,
+      "farthestOwnDistance": 24,
+      "nearestOutsideDistance": 46,
+      "margin": 22,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "book",
+      "parentId": "orbit-cost-book",
+      "childLevel": "chapter",
+      "childIds": [
+        "orbit-cost-book-chapter-1",
+        "orbit-cost-book-chapter-2"
+      ],
+      "nearestOwnDistance": 14,
+      "farthestOwnDistance": 15,
+      "nearestOutsideDistance": 53,
+      "margin": 38,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "book",
+      "parentId": "orbit-routing-book",
+      "childLevel": "chapter",
+      "childIds": [
+        "orbit-routing-book-chapter-1",
+        "orbit-routing-book-chapter-2"
+      ],
+      "nearestOwnDistance": 9,
+      "farthestOwnDistance": 10,
+      "nearestOutsideDistance": 43,
+      "margin": 33,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "orbit-cost-book-chapter-1",
+      "childLevel": "patch",
+      "childIds": [
+        "orbit-cost-book-chapter-1-patch-1",
+        "orbit-cost-book-chapter-1-patch-2",
+        "orbit-cost-book-chapter-1-patch-3"
+      ],
+      "nearestOwnDistance": 35,
+      "farthestOwnDistance": 38,
+      "nearestOutsideDistance": 47,
+      "margin": 9,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "orbit-cost-book-chapter-2",
+      "childLevel": "patch",
+      "childIds": [
+        "orbit-cost-book-chapter-2-patch-1",
+        "orbit-cost-book-chapter-2-patch-2",
+        "orbit-cost-book-chapter-2-patch-3"
+      ],
+      "nearestOwnDistance": 34,
+      "farthestOwnDistance": 38,
+      "nearestOutsideDistance": 50,
+      "margin": 12,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "orbit-routing-book-chapter-1",
+      "childLevel": "patch",
+      "childIds": [
+        "orbit-routing-book-chapter-1-patch-1",
+        "orbit-routing-book-chapter-1-patch-2",
+        "orbit-routing-book-chapter-1-patch-3"
+      ],
+      "nearestOwnDistance": 25,
+      "farthestOwnDistance": 26,
+      "nearestOutsideDistance": 44,
+      "margin": 18,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "orbit-routing-book-chapter-2",
+      "childLevel": "patch",
+      "childIds": [
+        "orbit-routing-book-chapter-2-patch-1",
+        "orbit-routing-book-chapter-2-patch-2",
+        "orbit-routing-book-chapter-2-patch-3"
+      ],
+      "nearestOwnDistance": 19,
+      "farthestOwnDistance": 23,
+      "nearestOutsideDistance": 45,
+      "margin": 22,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "mega",
+      "parentId": "lineage-cluster-harbor",
+      "childLevel": "book",
+      "childIds": [
+        "harbor-audit-book",
+        "harbor-retention-book"
+      ],
+      "nearestOwnDistance": 25,
+      "farthestOwnDistance": 31,
+      "nearestOutsideDistance": 43,
+      "margin": 12,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "book",
+      "parentId": "harbor-audit-book",
+      "childLevel": "chapter",
+      "childIds": [
+        "harbor-audit-book-chapter-1",
+        "harbor-audit-book-chapter-2"
+      ],
+      "nearestOwnDistance": 9,
+      "farthestOwnDistance": 11,
+      "nearestOutsideDistance": 43,
+      "margin": 32,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "book",
+      "parentId": "harbor-retention-book",
+      "childLevel": "chapter",
+      "childIds": [
+        "harbor-retention-book-chapter-1",
+        "harbor-retention-book-chapter-2"
+      ],
+      "nearestOwnDistance": 7,
+      "farthestOwnDistance": 10,
+      "nearestOutsideDistance": 53,
+      "margin": 43,
+      "patchCount": 3,
+      "residualCount": 2,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "harbor-audit-book-chapter-1",
+      "childLevel": "patch",
+      "childIds": [
+        "harbor-audit-book-chapter-1-patch-1",
+        "harbor-audit-book-chapter-1-patch-2",
+        "harbor-audit-book-chapter-1-patch-3"
+      ],
+      "nearestOwnDistance": 15,
+      "farthestOwnDistance": 17,
+      "nearestOutsideDistance": 38,
+      "margin": 21,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "harbor-audit-book-chapter-2",
+      "childLevel": "patch",
+      "childIds": [
+        "harbor-audit-book-chapter-2-patch-1",
+        "harbor-audit-book-chapter-2-patch-2",
+        "harbor-audit-book-chapter-2-patch-3"
+      ],
+      "nearestOwnDistance": 20,
+      "farthestOwnDistance": 25,
+      "nearestOutsideDistance": 44,
+      "margin": 19,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "harbor-retention-book-chapter-1",
+      "childLevel": "patch",
+      "childIds": [
+        "harbor-retention-book-chapter-1-patch-1",
+        "harbor-retention-book-chapter-1-patch-2",
+        "harbor-retention-book-chapter-1-patch-3"
+      ],
+      "nearestOwnDistance": 17,
+      "farthestOwnDistance": 21,
+      "nearestOutsideDistance": 45,
+      "margin": 24,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    },
+    {
+      "level": "chapter",
+      "parentId": "harbor-retention-book-chapter-2",
+      "childLevel": "patch",
+      "childIds": [
+        "harbor-retention-book-chapter-2-patch-1",
+        "harbor-retention-book-chapter-2-patch-2",
+        "harbor-retention-book-chapter-2-patch-3"
+      ],
+      "nearestOwnDistance": 16,
+      "farthestOwnDistance": 19,
+      "nearestOutsideDistance": 48,
+      "margin": 29,
+      "patchCount": 3,
+      "residualCount": 1,
+      "pass": true
+    }
+  ]
+}

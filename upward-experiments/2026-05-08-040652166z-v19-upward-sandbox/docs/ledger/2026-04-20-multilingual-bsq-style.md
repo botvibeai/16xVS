@@ -1,0 +1,42 @@
+# EXP-2026-04-20-002 Multilingual BSQ-Style Prototype
+
+- `id`: `EXP-2026-04-20-002`
+- `date`: `2026-04-20`
+- `corpus`: `bench/multilingual-phrases.txt` with `bench/multilingual-semantic-phrases.json`
+- `method`: Regenerated the multilingual benchmark with the experimental BSQ-style prototype path: heuristic multilingual features -> continuous embedding -> unit normalization -> 256-bit sign quantization. Compared patch count against `tiktoken` and measured labeled multilingual group-vs-group semantic separation plus retrieval collapse guardrails.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `21`
+  - `tiktokenCount`: `146`
+  - `experimentalPatchCount`: `28`
+  - `experimentalPatchesPerToken`: `0.1918`
+  - `experimentalBinaryVsSourceRatio`: `1.8211`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `64.2381`
+  - `retrieval.avgNearestTokenOverlap`: `0.3365`
+  - `launch_multilingual.separationMargin`: `18`
+  - `storage_multilingual.separationMargin`: `23.4762`
+  - `search_multilingual.separationMargin`: `22.2381`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.semanticSignal.allMarginsPositive`: `true`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate uses fewer patches than `tiktoken` tokens on this controlled multilingual corpus.
+  - All three labeled multilingual groups have positive separation margins against other labeled groups in this run.
+  - The retrieval signature space did not trip the current collapse guardrails.
+- `claim_not_supported`:
+  - This does not prove full multilingual equity.
+  - This does not prove target 16xVS BSQ behavior because the embedding source is still heuristic.
+  - This does not prove broad real-world tokenizer superiority.
+- `artifacts`:
+  - [2026-04-20-multilingual-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-multilingual-bsq-style-report.json)
+  - [multilingual-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-report.json)
+- `notes`:
+  - This is the strongest current multilingual signal: count compression and controlled labeled semantic separation are both positive.
+  - The result is still a controlled fixture result, not a production tokenizer proof.
+  - The report now includes `evidenceAssessment` so future summaries can detect count, semantic, and collapse status directly from JSON.
+- `next_action`:
+  - Expand multilingual coverage with more scripts, longer phrases, and adversarial near-neighbor groups before making stronger claims.

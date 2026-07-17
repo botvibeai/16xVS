@@ -1,0 +1,33 @@
+# EXP-2026-04-25-007 Vault Snapshot Hierarchical Final
+
+- `id`: `EXP-2026-04-25-007`
+- `date`: `2026-04-25`
+- `corpus`: Repository evidence set
+- `method`: Created a hashed repo snapshot with `npm run vault:snapshot -- --label hierarchical-packer-v1-final`, compressed the snapshot directory, and uploaded both the final zip archive and manifest to the remote `16xvs-poc-vault` R2 bucket.
+- `implementation_path`: `vault snapshot/export flow`
+- `baseline`: `no repo-level archival path for models, bench artifacts, and docs`
+- `metrics`:
+  - `snapshotId`: `2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final`
+  - `fileCount`: `167`
+  - `totalBytes`: `74711594`
+  - `criticalArtifacts.count`: `12`
+  - `remoteArchiveObject`: `backups/2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final.zip`
+  - `remoteManifestObject`: `backups/2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final-manifest.json`
+- `result_label`: `proven`
+- `claim_supported`:
+  - The repo can produce a file-hashed snapshot of code, models, benchmark artifacts, training data, and docs.
+  - The snapshot can be archived locally as a zip and uploaded into the remote `vault` bucket.
+  - The final remote snapshot explicitly includes the current hierarchical storage artifacts in its critical-artifact manifest.
+- `claim_not_supported`:
+  - This archival proof does not say anything about tokenizer quality by itself.
+  - The existence of a vault snapshot does not validate the large storage-collapse claims.
+- `artifacts`:
+  - [vault snapshot script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\create-vault-snapshot.mjs)
+  - [snapshot core helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\vault-snapshot.mjs)
+  - [final local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final\manifest.json)
+  - [snapshot ledger for hierarchical round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+- `notes`:
+  - The final manifest calls out the current semantic baseline, macro variants, hierarchical variant, and key suite summaries as critical artifacts.
+  - The remote upload was performed with Wrangler against the remote R2 bucket, not only Wrangler's local R2 context.
+- `next_action`:
+  - Keep cutting a dated vault snapshot after every meaningful modeling or storage round.

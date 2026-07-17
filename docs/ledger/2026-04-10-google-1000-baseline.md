@@ -1,0 +1,29 @@
+# EXP-2026-04-10-002 Google 1000 Word Comparison
+
+- `id`: `EXP-2026-04-10-002`
+- `date`: `2026-04-10`
+- `corpus`: First `1000` entries from `bench/google-10000-english-usa.txt`
+- `method`: Compare `tiktoken`, current fixture path, and experimental core candidate on single-word English entries.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `1000`
+  - `tiktokenCount`: `1089`
+  - `fixtureGlyphCount`: `5366`
+  - `experimentalPatchCount`: `1000`
+  - `experimentalPatchesPerToken`: `0.9183`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate can slightly beat `tiktoken` by count on simple single-word English entries.
+  - The benchmark stack handles larger corpora without manual interpretation.
+- `claim_not_supported`:
+  - This does not prove broad tokenizer superiority.
+  - This does not say anything useful about semantic grouping.
+  - This does not prove storage efficiency of the final 16xVS protocol.
+- `artifacts`:
+  - [google-10000-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\google-10000-report.json)
+- `notes`:
+  - The result is favorable but narrow because the corpus is mostly isolated English words.
+  - This benchmark is still useful as a recurring baseline.
+- `next_action`:
+  - Keep this as a count benchmark, not a semantic benchmark.

@@ -1,0 +1,59 @@
+label=generalization-stress-100
+startedAt=2026-05-26T18:19:08.672Z
+endedAt=2026-05-26T18:19:14.404Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-26-181831302z-v23-founder-proof-2026-05-26/reports/stress-100-v23-four-head-ranked.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "default",
+  "reason": "no ranked head passed; preserving v19 selection for inspection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -28.6444,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -28.8667,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -29.5222,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -29.5556,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -28.6444,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 64.45,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 4.7478
+}

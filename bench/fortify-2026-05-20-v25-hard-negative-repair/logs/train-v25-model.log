@@ -1,0 +1,22 @@
+label=train-v25-model
+startedAt=2026-05-20T11:11:02.812Z
+endedAt=2026-05-20T11:19:05.937Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-pairs-v25-hard-negative-repair.json",
+  "output": "models/learned-hybrid-prototype-v25-hard-negative-repair-base.json",
+  "stage": "learned-hybrid-prototype",
+  "trainingSummary": {
+    "positivePairCount": 1091,
+    "negativePairCount": 1738,
+    "averagePositiveSimilarity": 0.745223,
+    "averageNegativeSimilarity": 0.207019,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25
+  },
+  "dimensions": 256
+}

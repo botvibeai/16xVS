@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-05-07T14:43:56.369Z",
+  "label": "oracle-specialist-routing-upper-bound",
+  "caution": "This is not an implemented router. It tests whether existing specialist heads can cover the known target corpora while preserving fold shape.",
+  "routes": [
+    {
+      "corpus": "bookRoot",
+      "selectedModel": "v8-control-bridge",
+      "report": "bench/2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json",
+      "entries": 6,
+      "avgPatchesPerEntry": 3,
+      "patchesPerToken": 0.0085,
+      "sourceBytes": 11909,
+      "singleHeadBinaryBytes": 576,
+      "threeHeadBinaryBytes": 1728,
+      "threeHeadBinaryVsSourceRatio": 0.1451,
+      "minMargin": 8,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    {
+      "corpus": "governance",
+      "selectedModel": "v13-balanced-triad",
+      "report": "bench/2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json",
+      "entries": 12,
+      "avgPatchesPerEntry": 2.8333,
+      "patchesPerToken": 0.0297,
+      "sourceBytes": 6616,
+      "singleHeadBinaryBytes": 1088,
+      "threeHeadBinaryBytes": 3264,
+      "threeHeadBinaryVsSourceRatio": 0.4933,
+      "minMargin": 3.5,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    {
+      "corpus": "archive",
+      "selectedModel": "v13-balanced-triad",
+      "report": "bench/2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json",
+      "entries": 8,
+      "avgPatchesPerEntry": 3,
+      "patchesPerToken": 0.0214,
+      "sourceBytes": 6408,
+      "singleHeadBinaryBytes": 768,
+      "threeHeadBinaryBytes": 2304,
+      "threeHeadBinaryVsSourceRatio": 0.3596,
+      "minMargin": 8,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    {
+      "corpus": "defaultCombined",
+      "selectedModel": "v10-constrained-merge",
+      "report": "bench/2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json",
+      "entries": 6,
+      "avgPatchesPerEntry": 3,
+      "patchesPerToken": 0.0085,
+      "sourceBytes": 11909,
+      "singleHeadBinaryBytes": 576,
+      "threeHeadBinaryBytes": 1728,
+      "threeHeadBinaryVsSourceRatio": 0.1451,
+      "minMargin": -2.5,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "control_book_root"
+      ]
+    }
+  ],
+  "targetTriadPass": true,
+  "notes": [
+    "Known target triad clears only with specialist/oracle routing, not with one tested single-head model.",
+    "Three 256-bit heads would triple binary code bytes but remains small on these corpora; this needs broader storage projection before any claim.",
+    "Next implementation should test a deterministic router or multi-head signature, not another broad phrase-injection retrain."
+  ]
+}

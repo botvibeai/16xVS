@@ -1,0 +1,9 @@
+import "./auto-route.test.mjs";
+import "./benchmark-evidence.test.mjs";
+import "./head-validator.test.mjs";
+import "./learned-encoder.test.mjs";
+import "./mega-book-ladder.test.mjs";
+import "./multi-head-routing.test.mjs";
+import "./proof-gates.test.mjs";
+import "./training-pipeline.test.mjs";
+import "./vault-snapshot.test.mjs";

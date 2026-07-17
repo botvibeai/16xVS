@@ -1,0 +1,19 @@
+label=build-blind-split-training-data
+startedAt=2026-05-25T18:51:24.083Z
+endedAt=2026-05-25T18:51:24.345Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-spec-v26-blind-split-repair.json",
+  "output": "data/training/embedding-training-pairs-v26-blind-split-repair.json",
+  "summary": {
+    "groupCount": 26,
+    "itemCount": 200,
+    "positivePairCount": 781,
+    "negativePairCount": 2248,
+    "explicitNegativePairCount": 8,
+    "totalPairCount": 3029,
+    "negativeMode": "explicit"
+  }
+}

@@ -1,0 +1,35 @@
+label=generate-v25-spec
+startedAt=2026-05-20T11:11:01.919Z
+endedAt=2026-05-20T11:11:02.488Z
+exitCode=0
+
+{
+  "ok": true,
+  "baseSpec": "data/training/embedding-training-spec-v24-quote-repair.json",
+  "output": "data/training/embedding-training-spec-v25-hard-negative-repair.json",
+  "minedReports": [
+    {
+      "sourceId": "quote",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-v24-quote-repair.json",
+      "pairCount": 9
+    },
+    {
+      "sourceId": "quote-paragraph",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-paragraph-v24-quote-repair.json",
+      "pairCount": 8
+    },
+    {
+      "sourceId": "blind-holdout",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/blind-holdout-v24-quote-repair.json",
+      "pairCount": 8
+    },
+    {
+      "sourceId": "stress-100",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/stress-100-v24-quote-repair.json",
+      "pairCount": 9
+    }
+  ],
+  "groupCount": 46,
+  "explicitNegativePairCount": 34,
+  "minedGroupCount": 20
+}

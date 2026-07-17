@@ -1,0 +1,19 @@
+label=build-stress-split-training-data
+startedAt=2026-05-25T18:56:13.396Z
+endedAt=2026-05-25T18:56:13.896Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-spec-v26-stress-split-repair.json",
+  "output": "data/training/embedding-training-pairs-v26-stress-split-repair.json",
+  "summary": {
+    "groupCount": 26,
+    "itemCount": 200,
+    "positivePairCount": 781,
+    "negativePairCount": 2249,
+    "explicitNegativePairCount": 9,
+    "totalPairCount": 3030,
+    "negativeMode": "explicit"
+  }
+}

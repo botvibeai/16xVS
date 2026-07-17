@@ -1,0 +1,600 @@
+{
+  "generatedAt": "2026-05-07T14:42:55.535Z",
+  "purpose": "Compact role/failure matrix for current 16xVS learned-hybrid rounds. This is an audit artifact, not a promotion decision.",
+  "candidates": [
+    {
+      "id": "v3-storage-baseline",
+      "role": "storage baseline",
+      "reports": {
+        "bookRoot": {
+          "entries": 6,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0085,
+          "minMargin": -3,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "economics_book_root",
+            "control_book_root"
+          ],
+          "groups": [
+            {
+              "group": "economics_book_root",
+              "separationMargin": 0
+            },
+            {
+              "group": "systems_book_root",
+              "separationMargin": 7
+            },
+            {
+              "group": "control_book_root",
+              "separationMargin": -3
+            }
+          ],
+          "path": "bench/2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json"
+        },
+        "archive": {
+          "entries": 8,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0214,
+          "minMargin": -12,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "retention_governance_pressure"
+          ],
+          "groups": [
+            {
+              "group": "archive_catalog_pressure",
+              "separationMargin": 1
+            },
+            {
+              "group": "replication_repair_pressure",
+              "separationMargin": 1
+            },
+            {
+              "group": "retention_governance_pressure",
+              "separationMargin": -12
+            },
+            {
+              "group": "retrieval_operations_pressure",
+              "separationMargin": 0.5
+            }
+          ],
+          "path": "bench/2026-04-29-archive-pressure-v3-hierarchical-packer-v2.json"
+        }
+      },
+      "suite": {
+        "suiteCount": 7,
+        "semanticPassCount": 2,
+        "semanticFailCount": 3,
+        "failedSemanticSuites": [
+          "controlled_multilingual",
+          "blind_holdout",
+          "stress_100"
+        ]
+      },
+      "suitePath": "bench/eval-suite-learned-hybrid-v3-hierarchical-packer-v2/suite-summary.json"
+    },
+    {
+      "id": "v6-governance-archive-specialist",
+      "role": "governance/archive specialist",
+      "reports": {
+        "governance": {
+          "entries": 12,
+          "avgPatchesPerEntry": 2.8333,
+          "patchesPerToken": 0.0297,
+          "minMargin": 1,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "retention_policy_adversarial",
+              "separationMargin": 14.5
+            },
+            {
+              "group": "legal_hold_adversarial",
+              "separationMargin": 13
+            },
+            {
+              "group": "audit_evidence_adversarial",
+              "separationMargin": 1
+            },
+            {
+              "group": "access_review_adversarial",
+              "separationMargin": 7.5
+            },
+            {
+              "group": "deletion_exception_adversarial",
+              "separationMargin": 15.5
+            },
+            {
+              "group": "compliance_attestation_adversarial",
+              "separationMargin": 24.5
+            }
+          ],
+          "path": "bench/2026-05-05-governance-adversarial-v6-legalhold-archive-hierarchical-packer-v1.json"
+        },
+        "archive": {
+          "entries": 8,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0214,
+          "minMargin": 6,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "archive_catalog_pressure",
+              "separationMargin": 14
+            },
+            {
+              "group": "replication_repair_pressure",
+              "separationMargin": 14
+            },
+            {
+              "group": "retention_governance_pressure",
+              "separationMargin": 6
+            },
+            {
+              "group": "retrieval_operations_pressure",
+              "separationMargin": 10
+            }
+          ],
+          "path": "bench/2026-05-05-archive-pressure-v6-legalhold-archive-hierarchical-packer-v1.json"
+        }
+      },
+      "suite": {
+        "suiteCount": 7,
+        "semanticPassCount": 1,
+        "semanticFailCount": 4,
+        "failedSemanticSuites": [
+          "controlled_multilingual",
+          "blind_holdout",
+          "paraphrase_holdout",
+          "stress_100"
+        ]
+      },
+      "suitePath": "bench/eval-suite-learned-hybrid-v6-legalhold-archive-hierarchical-packer-v1/suite-summary.json"
+    },
+    {
+      "id": "v8-control-bridge-specialist",
+      "role": "book-root/control bridge specialist",
+      "reports": {
+        "bookRoot": {
+          "entries": 6,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0085,
+          "minMargin": 8,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "economics_book_root",
+              "separationMargin": 8
+            },
+            {
+              "group": "systems_book_root",
+              "separationMargin": 20
+            },
+            {
+              "group": "control_book_root",
+              "separationMargin": 17
+            }
+          ],
+          "path": "bench/2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json"
+        },
+        "governance": {
+          "entries": 12,
+          "avgPatchesPerEntry": 2.8333,
+          "patchesPerToken": 0.0297,
+          "minMargin": -31,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "retention_policy_adversarial",
+            "legal_hold_adversarial",
+            "audit_evidence_adversarial",
+            "compliance_attestation_adversarial"
+          ],
+          "groups": [
+            {
+              "group": "retention_policy_adversarial",
+              "separationMargin": -1.5
+            },
+            {
+              "group": "legal_hold_adversarial",
+              "separationMargin": -31
+            },
+            {
+              "group": "audit_evidence_adversarial",
+              "separationMargin": 0
+            },
+            {
+              "group": "access_review_adversarial",
+              "separationMargin": 5.5
+            },
+            {
+              "group": "deletion_exception_adversarial",
+              "separationMargin": 2.5
+            },
+            {
+              "group": "compliance_attestation_adversarial",
+              "separationMargin": 0
+            }
+          ],
+          "path": "bench/2026-05-07-governance-adversarial-v8-control-bridge-hierarchical-packer-v2.json"
+        }
+      },
+      "suite": {
+        "suiteCount": 7,
+        "semanticPassCount": 3,
+        "semanticFailCount": 2,
+        "failedSemanticSuites": [
+          "blind_holdout",
+          "stress_100"
+        ]
+      },
+      "suitePath": "bench/eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2/suite-summary.json"
+    },
+    {
+      "id": "v10-constrained-merge",
+      "role": "best combined constrained merge candidate",
+      "reports": {
+        "bookRoot": {
+          "entries": 6,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0085,
+          "minMargin": -2.5,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "control_book_root"
+          ],
+          "groups": [
+            {
+              "group": "economics_book_root",
+              "separationMargin": 3.5
+            },
+            {
+              "group": "systems_book_root",
+              "separationMargin": 12
+            },
+            {
+              "group": "control_book_root",
+              "separationMargin": -2.5
+            }
+          ],
+          "path": "bench/2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json"
+        },
+        "booklike": {
+          "entries": 12,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.017,
+          "minMargin": -18.5,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "multilingual_equity_booklike",
+            "hardware_edge_booklike",
+            "governance_evidence_booklike"
+          ],
+          "groups": [
+            {
+              "group": "multilingual_equity_booklike",
+              "separationMargin": -18.5
+            },
+            {
+              "group": "storage_economics_booklike",
+              "separationMargin": 2
+            },
+            {
+              "group": "retrieval_booklike",
+              "separationMargin": 7
+            },
+            {
+              "group": "pricing_operations_booklike",
+              "separationMargin": 4.5
+            },
+            {
+              "group": "hardware_edge_booklike",
+              "separationMargin": -7
+            },
+            {
+              "group": "governance_evidence_booklike",
+              "separationMargin": -7.5
+            }
+          ],
+          "path": "bench/2026-05-07-booklike-benchmark-v10-constrained-merge-hierarchical-packer-v2.json"
+        },
+        "megaBook": {
+          "entries": 1,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0014,
+          "minMargin": null,
+          "allMarginsPositive": null,
+          "negativeGroups": [],
+          "groups": [],
+          "path": "bench/2026-05-07-mega-book-benchmark-v10-constrained-merge-hierarchical-packer-v2.json"
+        },
+        "governance": {
+          "entries": 12,
+          "avgPatchesPerEntry": 2.8333,
+          "patchesPerToken": 0.0297,
+          "minMargin": -1,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "audit_evidence_adversarial"
+          ],
+          "groups": [
+            {
+              "group": "retention_policy_adversarial",
+              "separationMargin": 15.5
+            },
+            {
+              "group": "legal_hold_adversarial",
+              "separationMargin": 8.5
+            },
+            {
+              "group": "audit_evidence_adversarial",
+              "separationMargin": -1
+            },
+            {
+              "group": "access_review_adversarial",
+              "separationMargin": 5.5
+            },
+            {
+              "group": "deletion_exception_adversarial",
+              "separationMargin": 17
+            },
+            {
+              "group": "compliance_attestation_adversarial",
+              "separationMargin": 26.5
+            }
+          ],
+          "path": "bench/2026-05-07-governance-adversarial-v10-constrained-merge-hierarchical-packer-v2.json"
+        },
+        "archive": {
+          "entries": 8,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0214,
+          "minMargin": 1.5,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "archive_catalog_pressure",
+              "separationMargin": 19.5
+            },
+            {
+              "group": "replication_repair_pressure",
+              "separationMargin": 19
+            },
+            {
+              "group": "retention_governance_pressure",
+              "separationMargin": 1.5
+            },
+            {
+              "group": "retrieval_operations_pressure",
+              "separationMargin": 19.5
+            }
+          ],
+          "path": "bench/2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json"
+        }
+      },
+      "suite": {
+        "suiteCount": 7,
+        "semanticPassCount": 3,
+        "semanticFailCount": 2,
+        "failedSemanticSuites": [
+          "blind_holdout",
+          "stress_100"
+        ]
+      },
+      "suitePath": "bench/eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2/suite-summary.json"
+    },
+    {
+      "id": "v13-governance-archive-fold-specialist",
+      "role": "governance/archive fold specialist",
+      "reports": {
+        "bookRoot": {
+          "entries": 6,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0085,
+          "minMargin": -3.5,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "economics_book_root",
+            "control_book_root"
+          ],
+          "groups": [
+            {
+              "group": "economics_book_root",
+              "separationMargin": -1.5
+            },
+            {
+              "group": "systems_book_root",
+              "separationMargin": 10.5
+            },
+            {
+              "group": "control_book_root",
+              "separationMargin": -3.5
+            }
+          ],
+          "path": "bench/2026-05-07-book-root-benchmark-v13-balanced-triad-hierarchical-packer-v2.json"
+        },
+        "governance": {
+          "entries": 12,
+          "avgPatchesPerEntry": 2.8333,
+          "patchesPerToken": 0.0297,
+          "minMargin": 3.5,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "retention_policy_adversarial",
+              "separationMargin": 15
+            },
+            {
+              "group": "legal_hold_adversarial",
+              "separationMargin": 10
+            },
+            {
+              "group": "audit_evidence_adversarial",
+              "separationMargin": 3.5
+            },
+            {
+              "group": "access_review_adversarial",
+              "separationMargin": 6
+            },
+            {
+              "group": "deletion_exception_adversarial",
+              "separationMargin": 7.5
+            },
+            {
+              "group": "compliance_attestation_adversarial",
+              "separationMargin": 20.5
+            }
+          ],
+          "path": "bench/2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json"
+        },
+        "archive": {
+          "entries": 8,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0214,
+          "minMargin": 8,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "archive_catalog_pressure",
+              "separationMargin": 24.5
+            },
+            {
+              "group": "replication_repair_pressure",
+              "separationMargin": 28.5
+            },
+            {
+              "group": "retention_governance_pressure",
+              "separationMargin": 8
+            },
+            {
+              "group": "retrieval_operations_pressure",
+              "separationMargin": 12
+            }
+          ],
+          "path": "bench/2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json"
+        }
+      },
+      "suite": null,
+      "suitePath": null
+    },
+    {
+      "id": "v14-negative-probe",
+      "role": "failed book-root reinforcement probe",
+      "reports": {
+        "bookRoot": {
+          "entries": 6,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0085,
+          "minMargin": -8,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "economics_book_root",
+            "control_book_root"
+          ],
+          "groups": [
+            {
+              "group": "economics_book_root",
+              "separationMargin": -8
+            },
+            {
+              "group": "systems_book_root",
+              "separationMargin": 12
+            },
+            {
+              "group": "control_book_root",
+              "separationMargin": -6
+            }
+          ],
+          "path": "bench/2026-05-07-book-root-benchmark-v14-book-root-balance-hierarchical-packer-v2.json"
+        },
+        "governance": {
+          "entries": 12,
+          "avgPatchesPerEntry": 2.8333,
+          "patchesPerToken": 0.0297,
+          "minMargin": -2.5,
+          "allMarginsPositive": false,
+          "negativeGroups": [
+            "legal_hold_adversarial"
+          ],
+          "groups": [
+            {
+              "group": "retention_policy_adversarial",
+              "separationMargin": 13.5
+            },
+            {
+              "group": "legal_hold_adversarial",
+              "separationMargin": -2.5
+            },
+            {
+              "group": "audit_evidence_adversarial",
+              "separationMargin": 3.5
+            },
+            {
+              "group": "access_review_adversarial",
+              "separationMargin": 9
+            },
+            {
+              "group": "deletion_exception_adversarial",
+              "separationMargin": 7
+            },
+            {
+              "group": "compliance_attestation_adversarial",
+              "separationMargin": 7
+            }
+          ],
+          "path": "bench/2026-05-07-governance-adversarial-v14-book-root-balance-hierarchical-packer-v2.json"
+        },
+        "archive": {
+          "entries": 8,
+          "avgPatchesPerEntry": 3,
+          "patchesPerToken": 0.0214,
+          "minMargin": 4,
+          "allMarginsPositive": true,
+          "negativeGroups": [],
+          "groups": [
+            {
+              "group": "archive_catalog_pressure",
+              "separationMargin": 15.5
+            },
+            {
+              "group": "replication_repair_pressure",
+              "separationMargin": 15
+            },
+            {
+              "group": "retention_governance_pressure",
+              "separationMargin": 5.5
+            },
+            {
+              "group": "retrieval_operations_pressure",
+              "separationMargin": 4
+            }
+          ],
+          "path": "bench/2026-05-07-archive-pressure-v14-book-root-balance-hierarchical-packer-v2.json"
+        }
+      },
+      "suite": null,
+      "suitePath": null
+    }
+  ],
+  "conclusion": {
+    "bestCurrentOverall": "v10-constrained-merge",
+    "keepAsSpecialists": [
+      "v3-storage-baseline",
+      "v6-governance-archive-specialist",
+      "v8-control-bridge-specialist",
+      "v13-governance-archive-fold-specialist"
+    ],
+    "doNotPromote": [
+      "v11-targeted-bridge-audit",
+      "v12-blend-sweep",
+      "v14-negative-probe"
+    ],
+    "nextHypothesis": "Use group-aware calibration/guarding on top of v10/v13 instead of broad phrase injection or scalar blend sweeps."
+  }
+}

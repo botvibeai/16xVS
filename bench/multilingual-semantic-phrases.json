@@ -1,0 +1,38 @@
+[
+  {
+    "group": "launch_multilingual",
+    "items": [
+      "launch checklist",
+      "lista de lanzamiento",
+      "liste de lancement",
+      "startcheckliste",
+      "قائمة الإطلاق",
+      "लॉन्च चेकलिस्ट",
+      "产品发布清单"
+    ]
+  },
+  {
+    "group": "storage_multilingual",
+    "items": [
+      "storage policy",
+      "política de almacenamiento",
+      "politique de stockage",
+      "speicherrichtlinie",
+      "سياسة التخزين",
+      "स्टोरेज नीति",
+      "存储策略"
+    ]
+  },
+  {
+    "group": "search_multilingual",
+    "items": [
+      "binary visual search",
+      "búsqueda visual binaria",
+      "recherche visuelle binaire",
+      "binäre visuelle suche",
+      "بحث بصري ثنائي",
+      "बाइनरी विजुअल सर्च",
+      "二进制视觉搜索"
+    ]
+  }
+]

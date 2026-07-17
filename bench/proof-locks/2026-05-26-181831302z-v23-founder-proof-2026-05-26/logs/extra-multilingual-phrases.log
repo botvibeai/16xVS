@@ -1,0 +1,59 @@
+label=extra-multilingual-phrases
+startedAt=2026-05-26T18:19:31.424Z
+endedAt=2026-05-26T18:19:34.462Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-26-181831302z-v23-founder-proof-2026-05-26/reports/multilingual-phrases-v23-four-head-ranked.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "bookRoot",
+  "reason": "best ranked accepted head selected over v19 route selection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "bookRoot",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 2.8095,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "default",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 0.8095,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -2.1905,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -4.7143,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 2.8095,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 53.0476,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 5.4634
+}

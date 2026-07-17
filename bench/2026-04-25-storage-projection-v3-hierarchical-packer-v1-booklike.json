@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-04-25T06:34:59.613Z",
+  "reports": [
+    {
+      "report": "bench/2026-04-25-quote-benchmark-v3-hierarchical-packer-v1.json",
+      "input": "bench\\quote-corpus-2026-04-25.txt",
+      "entries": 25,
+      "sourceBytes": 686,
+      "experimentalBinaryBytes": 800,
+      "experimentalPatchCount": 25,
+      "avgExperimentalPatchesPerEntry": 1,
+      "experimentalPatchesPerToken": 0.1656,
+      "experimentalBinaryVsSourceRatio": 1.1662,
+      "binaryCodeBytes": 32
+    },
+    {
+      "report": "bench/2026-04-25-quote-paragraph-benchmark-v3-hierarchical-packer-v1.json",
+      "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+      "entries": 20,
+      "sourceBytes": 1812,
+      "experimentalBinaryBytes": 640,
+      "experimentalPatchCount": 20,
+      "avgExperimentalPatchesPerEntry": 1,
+      "experimentalPatchesPerToken": 0.059,
+      "experimentalBinaryVsSourceRatio": 0.3532,
+      "binaryCodeBytes": 32
+    },
+    {
+      "report": "bench/2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v1.json",
+      "input": "bench\\protocol-longform-2026-04-25.txt",
+      "entries": 6,
+      "sourceBytes": 4404,
+      "experimentalBinaryBytes": 576,
+      "experimentalPatchCount": 18,
+      "avgExperimentalPatchesPerEntry": 3,
+      "experimentalPatchesPerToken": 0.0227,
+      "experimentalBinaryVsSourceRatio": 0.1308,
+      "binaryCodeBytes": 32
+    },
+    {
+      "report": "bench/2026-04-25-booklike-benchmark-v3-hierarchical-packer-v1.json",
+      "input": "bench\\booklike-corpus-2026-04-25.txt",
+      "entries": 12,
+      "sourceBytes": 11903,
+      "experimentalBinaryBytes": 1152,
+      "experimentalPatchCount": 36,
+      "avgExperimentalPatchesPerEntry": 3,
+      "experimentalPatchesPerToken": 0.017,
+      "experimentalBinaryVsSourceRatio": 0.0968,
+      "binaryCodeBytes": 32
+    }
+  ],
+  "aggregate": {
+    "entries": 63,
+    "sourceBytes": 18805,
+    "sourceGb": 0.00001751,
+    "experimentalBinaryBytes": 3168,
+    "experimentalBinaryGb": 0.00000295,
+    "experimentalPatchCount": 99,
+    "avgPatchesPerEntry": 1.5714,
+    "rawBinaryVsSourceRatio": 0.168466,
+    "rawReductionPercent": 83.1534,
+    "rawCompressionAssessment": "directional",
+    "projectedOutputGbPerInputGb": 0.168466,
+    "inputGbNeededForTargetOutputGb": 7.4199,
+    "targetOutputGb": 1.25
+  },
+  "denseVectorComparison": {
+    "baselineVectorBytes": 6144,
+    "binaryCodeBytes": 32,
+    "reductionPercentPerCode": 99.4792,
+    "assessment": "directional",
+    "caution": "This compares one 256-bit binary code to one dense float32 vector. It is not the same claim as raw-source compression."
+  },
+  "claims": {
+    "rawTextCompression99_99Percent": {
+      "assessment": "failed",
+      "note": "Using current reports, raw-source storage does not approach 99.99% reduction."
+    },
+    "rawTextTo1_25Gb": {
+      "assessment": "directional",
+      "note": "At the current aggregate ratio, an input corpus larger than 7.4199 GB would exceed 1.25 GB of binary output."
+    },
+    "denseVectorStorageReduction": {
+      "assessment": "directional",
+      "note": "If a storage layer can replace one 1536-float32 vector with one 256-bit code, the byte reduction is large, but this remains a theoretical storage-model comparison in this repo."
+    }
+  }
+}

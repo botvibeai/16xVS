@@ -1,0 +1,22 @@
+label=train-stress-split-model
+startedAt=2026-05-25T18:56:13.898Z
+endedAt=2026-05-25T19:01:01.302Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-pairs-v26-stress-split-repair.json",
+  "output": "models/learned-hybrid-prototype-v26-stress-split-repair-base.json",
+  "stage": "learned-hybrid-prototype",
+  "trainingSummary": {
+    "positivePairCount": 781,
+    "negativePairCount": 2249,
+    "averagePositiveSimilarity": 0.755096,
+    "averageNegativeSimilarity": 0.174309,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25
+  },
+  "dimensions": 256
+}

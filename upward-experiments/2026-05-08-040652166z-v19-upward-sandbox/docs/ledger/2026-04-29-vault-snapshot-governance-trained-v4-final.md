@@ -1,0 +1,35 @@
+# EXP-2026-04-29-007 Vault Snapshot Governance-Trained V4 Final
+
+- `id`: `EXP-2026-04-29-007`
+- `date`: `2026-04-29`
+- `corpus`: Final repository evidence set after the governance-focused `v4` round, doc updates, and snapshot-manifest improvements
+- `method`: Re-ran the repo tests, created a final hashed repo snapshot with `node ./scripts/create-vault-snapshot.mjs --label governance-trained-v4-round-final-2026-04-29`, compressed that snapshot into a local zip archive, and reused the current Cloudflare auth check to determine whether remote vault upload could proceed.
+- `implementation_path`: `vault snapshot/export flow`
+- `baseline`: `same-day pre-final governance-trained v4 local snapshot`
+- `metrics`:
+  - `snapshotId`: `2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29`
+  - `fileCount`: `229`
+  - `totalBytes`: `135632406`
+  - `criticalArtifacts.count`: `36`
+  - `localZipBytes`: `42393103`
+  - `npmTest`: `15/15 pass`
+  - `wranglerWhoami`: `failed`
+  - `cloudflareApiToken`: `missing`
+  - `remoteZipUpload`: `failed`
+  - `remoteManifestUpload`: `failed`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The final local vault snapshot now includes the governance-focused `v4` model artifacts, the governance round ledger, and the snapshot-backup ledgers as critical artifacts.
+  - The final tested state of this round is preserved locally as both a hashed snapshot directory and a zip archive.
+- `claim_not_supported`:
+  - The final snapshot is not fully backed up to the remote `16xvs-poc-vault` bucket from the current environment.
+  - The remote vault archive and manifest objects were not uploaded successfully in this session.
+- `artifacts`:
+  - [final local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29\manifest.json)
+  - [final local snapshot zip](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29.zip)
+  - [governance-focused v4 round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+- `notes`:
+  - This final snapshot is the best local preservation point for the governance-focused `v4` round because it includes the final docs and the updated snapshot critical-artifact rules.
+  - Cloudflare auth remained blocked by a `401 Unauthorized` / `Not logged in` Wrangler state, and `CLOUDFLARE_API_TOKEN` is still missing.
+- `next_action`:
+  - Restore Cloudflare auth, then upload the final zip archive and manifest to the remote `16xvs-poc-vault` bucket.

@@ -1,0 +1,32 @@
+{
+  "title": "V28 STE Temperature-Decay Probe",
+  "mode": "ste",
+  "generatedAt": "2026-06-17T12:02:40.052Z",
+  "outputDir": "bench/fortify-2026-06-17-v28-ste",
+  "claimLevel": "ste-stability-proof",
+  "report": "bench/fortify-2026-06-17-v28-ste/ste-report.json",
+  "schemaPreview": {
+    "laneId": null,
+    "eligibleHeads": [],
+    "confidence": null,
+    "accepted": null,
+    "fallbackUsed": null,
+    "fallbackPatchIds": [],
+    "temperatureSchedule": [
+      2,
+      1,
+      0.5,
+      0.25
+    ],
+    "driftBefore": 2,
+    "driftAfter": 0
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ],
+  "read": "This is a controlled STE stabilization simulation. It does not train a new model."
+}

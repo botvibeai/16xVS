@@ -1,0 +1,50 @@
+{
+  "name": "16xvs-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node ./test/all-tests.mjs",
+    "benchmark": "node ./scripts/benchmark.mjs",
+    "benchmark:model": "node ./scripts/run-benchmark-with-model.mjs",
+    "model:derive": "node ./scripts/derive-model-variant.mjs",
+    "vault:snapshot": "node ./scripts/create-vault-snapshot.mjs",
+    "training:data": "node ./scripts/build-training-data.mjs",
+    "training:data:v2": "node ./scripts/build-training-data.mjs --input ./data/training/embedding-training-spec-v2.json --output ./data/training/embedding-training-pairs-v2.json",
+    "eval:suite": "node ./scripts/run-eval-suite.mjs",
+    "learned:train": "node ./scripts/train-learned-encoder.mjs",
+    "learned:eval": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-feature-prototype.json --output-dir ./bench/eval-suite-learned-latest",
+    "learned:train:hybrid-v2": "node ./scripts/train-learned-encoder.mjs --output ./models/learned-hybrid-prototype-v2.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --epochs 36 --learning-rate 0.05 --negative-margin 0.15 --seed 17",
+    "learned:eval:hybrid-v2": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v2.json --output-dir ./bench/eval-suite-learned-hybrid-v2",
+    "learned:train:hybrid-v3": "node ./scripts/train-learned-encoder.mjs --input ./data/training/embedding-training-pairs-v2.json --output ./models/learned-hybrid-prototype-v3.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --prototype-learning-rate 0.03 --prototype-negative-margin 0.25 --prototype-negatives-per-item 2 --epochs 40 --learning-rate 0.05 --negative-margin 0.15 --seed 19",
+    "learned:eval:hybrid-v3": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v3.json --output-dir ./bench/eval-suite-learned-hybrid-v3",
+    "learned:train:macro-trained-v1": "node ./scripts/train-learned-encoder.mjs --input ./data/training/embedding-training-pairs-v2.json --output ./models/learned-hybrid-prototype-v3-macro-trained-v1.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --prototype-learning-rate 0.03 --prototype-negative-margin 0.25 --prototype-negatives-per-item 2 --epochs 40 --learning-rate 0.05 --negative-margin 0.15 --seed 29 --packing-mode entry --max-entry-words 96 --max-entry-chars 512 --max-words-per-patch 96 --max-chars-per-patch 512",
+    "learned:eval:macro-trained-v1": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v3-macro-trained-v1.json --output-dir ./bench/eval-suite-learned-hybrid-v3-macro-trained-v1",
+    "storage:project": "node ./scripts/storage-projection.mjs",
+    "ledger:from-report": "node ./scripts/ledger-from-report.mjs",
+    "proof:package": "node ./scripts/build-proof-package.mjs",
+    "proof:package:v23": "node ./scripts/build-v23-four-head-proof-package.mjs",
+    "proof:probe:v25": "node ./scripts/build-v25-hard-negative-proof-probe.mjs",
+    "proof:probe:v26": "node ./scripts/build-v26-split-hard-negative-probe.mjs",
+    "proof:probe:v27-route-gated": "node ./scripts/build-v27-route-gated-probe.mjs",
+    "proof:fold:v27": "node ./scripts/run-v27-fold-lineage.mjs",
+    "proof:probe:v28-runtime-hardening": "node ./scripts/run-v28-runtime-hardening.mjs --mode runtime",
+    "proof:probe:v28-ste": "node ./scripts/run-v28-runtime-hardening.mjs --mode ste",
+    "proof:probe:v28-cold-path": "node ./scripts/run-v28-runtime-hardening.mjs --mode cold-path",
+    "proof:gap:v29": "node ./scripts/run-v29-report-gap-audit.mjs",
+    "proof:commercial:v30": "node ./scripts/run-v30-commercial-baseline.mjs",
+    "sandbox:create": "node ./scripts/create-upward-sandbox.mjs",
+    "routing:ranked": "node ./scripts/run-validated-routing-benchmark.mjs --selection-policy ranked-accepted-head",
+    "training:spec:v22": "node ./scripts/generate-v22-governance-evidence-booklike-spec.mjs",
+    "training:spec:v24": "node ./scripts/generate-v24-quote-repair-spec.mjs",
+    "training:spec:v25": "node ./scripts/generate-v25-hard-negative-repair-spec.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.77.0"
+  },
+  "dependencies": {
+    "tiktoken": "^1.0.22"
+  }
+}

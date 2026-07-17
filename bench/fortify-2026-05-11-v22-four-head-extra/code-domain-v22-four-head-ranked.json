@@ -1,0 +1,858 @@
+{
+  "generatedAt": "2026-05-11T22:58:13.401Z",
+  "input": "bench\\code-domain-holdout-2026-05-08.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 24,
+      "residualMaxCharsPerPatch": 160
+    },
+    "trainingSummary": {
+      "positivePairCount": 751,
+      "negativePairCount": 2080,
+      "averagePositiveSimilarity": 0.750393,
+      "averageNegativeSimilarity": 0.187703,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 8,
+    "words": 386,
+    "codepoints": 3298,
+    "sourceBytes": 3298,
+    "tiktokenCount": 704,
+    "fixtureGlyphCount": 3298,
+    "fixtureBinaryBytes": 105536,
+    "experimentalPatchCount": 8,
+    "experimentalBinaryBytes": 256,
+    "avgTiktokenPerEntry": 88,
+    "avgGlyphsPerEntry": 412.25,
+    "avgExperimentalPatchesPerEntry": 1,
+    "glyphsPerToken": 4.6847,
+    "binaryBytesPerToken": 149.9091,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.0114,
+    "experimentalBinaryBytesPerToken": 0.3636,
+    "experimentalBinaryVsSourceRatio": 0.0776
+  },
+  "semantic": {
+    "input": "bench\\code-domain-semantic-2026-05-08.json",
+    "groups": [
+      {
+        "group": "worker_routing_code",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 64,
+        "avgTokenOverlap": 0.6667,
+        "entries": [
+          {
+            "text": "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+            "tiktokenCount": 102,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior.",
+            "tiktokenCount": 104,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "proof_gate_code",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 69,
+        "avgTokenOverlap": 0.2857,
+        "entries": [
+          {
+            "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+            "tiktokenCount": 101,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails.",
+            "tiktokenCount": 86,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "database_persistence_code",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 71,
+        "avgTokenOverlap": 0.2727,
+        "entries": [
+          {
+            "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+            "tiktokenCount": 66,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+            "tiktokenCount": 77,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "selector_test_code",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 66,
+        "avgTokenOverlap": 0.3529,
+        "entries": [
+          {
+            "text": "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+            "tiktokenCount": 84,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins.",
+            "tiktokenCount": 84,
+            "experimentalPatchCount": 1
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "worker_routing_code",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 64,
+        "avgNearestOutsideSignatureDistance": 110,
+        "separationMargin": 46,
+        "examples": [
+          {
+            "text": "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+            "nearestOutside": {
+              "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+              "signatureDistance": 118
+            }
+          },
+          {
+            "text": "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior.",
+            "nearestOutside": {
+              "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+              "signatureDistance": 102
+            }
+          }
+        ]
+      },
+      {
+        "group": "proof_gate_code",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 69,
+        "avgNearestOutsideSignatureDistance": 105,
+        "separationMargin": 36,
+        "examples": [
+          {
+            "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+            "nearestOutside": {
+              "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+              "signatureDistance": 99
+            }
+          },
+          {
+            "text": "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails.",
+            "nearestOutside": {
+              "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+              "signatureDistance": 111
+            }
+          }
+        ]
+      },
+      {
+        "group": "database_persistence_code",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 71,
+        "avgNearestOutsideSignatureDistance": 101.5,
+        "separationMargin": 30.5,
+        "examples": [
+          {
+            "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+            "nearestOutside": {
+              "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+              "signatureDistance": 99
+            }
+          },
+          {
+            "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+            "nearestOutside": {
+              "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+              "signatureDistance": 104
+            }
+          }
+        ]
+      },
+      {
+        "group": "selector_test_code",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 66,
+        "avgNearestOutsideSignatureDistance": 109,
+        "separationMargin": 43,
+        "examples": [
+          {
+            "text": "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+            "nearestOutside": {
+              "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+              "signatureDistance": 108
+            }
+          },
+          {
+            "text": "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins.",
+            "nearestOutside": {
+              "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+              "signatureDistance": 110
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 8,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 67.5,
+    "avgNearestTokenOverlap": 0.3945,
+    "examples": [
+      {
+        "text": "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior.",
+          "signatureDistance": 64,
+          "patchDistance": 0,
+          "tokenOverlap": 0.6667
+        }
+      },
+      {
+        "text": "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+          "signatureDistance": 64,
+          "patchDistance": 0,
+          "tokenOverlap": 0.6667
+        }
+      },
+      {
+        "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails.",
+          "signatureDistance": 69,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2857
+        }
+      },
+      {
+        "text": "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+          "signatureDistance": 69,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2857
+        }
+      },
+      {
+        "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2727
+        }
+      },
+      {
+        "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2727
+        }
+      },
+      {
+        "text": "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins.",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0.3529
+        }
+      },
+      {
+        "text": "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0.3529
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+      "words": 59,
+      "codepoints": 457,
+      "sourceBytes": 457,
+      "tiktokenCount": 102,
+      "fixtureGlyphCount": 457,
+      "fixtureBinaryBytes": 14624,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4804,
+      "binaryBytesPerToken": 143.3725,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0098,
+      "experimentalBinaryBytesPerToken": 0.3137,
+      "experimentalBinaryVsSourceRatio": 0.07,
+      "experimentalPatches": [
+        "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.137026,
+      "experimentalSignatureHex": "c8d19d5a6eb1bd554a4e8ab35e9fac5ad8aca5c3ed07540548429f3606147aaf"
+    },
+    {
+      "text": "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior.",
+      "words": 59,
+      "codepoints": 468,
+      "sourceBytes": 468,
+      "tiktokenCount": 104,
+      "fixtureGlyphCount": 468,
+      "fixtureBinaryBytes": 14976,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0096,
+      "experimentalBinaryBytesPerToken": 0.3077,
+      "experimentalBinaryVsSourceRatio": 0.0684,
+      "experimentalPatches": [
+        "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.15618,
+      "experimentalSignatureHex": "91cc9c5a6a112d554a48a891d61e2cd856b9e5638d0d6ea1c6469b778b1c3a8b"
+    },
+    {
+      "text": "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+      "words": 52,
+      "codepoints": 483,
+      "sourceBytes": 483,
+      "tiktokenCount": 101,
+      "fixtureGlyphCount": 483,
+      "fixtureBinaryBytes": 15456,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.7822,
+      "binaryBytesPerToken": 153.0297,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0099,
+      "experimentalBinaryBytesPerToken": 0.3168,
+      "experimentalBinaryVsSourceRatio": 0.0663,
+      "experimentalPatches": [
+        "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.205719,
+      "experimentalSignatureHex": "d1869e4cac94ade96a69c4a4622b5a86e6f456037d4babaee3a7b971bbea2bc8"
+    },
+    {
+      "text": "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails.",
+      "words": 47,
+      "codepoints": 384,
+      "sourceBytes": 384,
+      "tiktokenCount": 86,
+      "fixtureGlyphCount": 384,
+      "fixtureBinaryBytes": 12288,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4651,
+      "binaryBytesPerToken": 142.8837,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0116,
+      "experimentalBinaryBytesPerToken": 0.3721,
+      "experimentalBinaryVsSourceRatio": 0.0833,
+      "experimentalPatches": [
+        "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.214362,
+      "experimentalSignatureHex": "d8869e508a9e8ac94e69a7a66a397a866b98560b5a42aead64533b181b624a4a"
+    },
+    {
+      "text": "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+      "words": 44,
+      "codepoints": 339,
+      "sourceBytes": 339,
+      "tiktokenCount": 66,
+      "fixtureGlyphCount": 339,
+      "fixtureBinaryBytes": 10848,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.1364,
+      "binaryBytesPerToken": 164.3636,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0152,
+      "experimentalBinaryBytesPerToken": 0.4848,
+      "experimentalBinaryVsSourceRatio": 0.0944,
+      "experimentalPatches": [
+        "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.215197,
+      "experimentalSignatureHex": "d46d594bca94ac6d6152e49756467087e7fcee256ca5b7a585e9b94519708c9f"
+    },
+    {
+      "text": "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration.",
+      "words": 40,
+      "codepoints": 354,
+      "sourceBytes": 354,
+      "tiktokenCount": 77,
+      "fixtureGlyphCount": 354,
+      "fixtureBinaryBytes": 11328,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5974,
+      "binaryBytesPerToken": 147.1169,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.013,
+      "experimentalBinaryBytesPerToken": 0.4156,
+      "experimentalBinaryVsSourceRatio": 0.0904,
+      "experimentalPatches": [
+        "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.200579,
+      "experimentalSignatureHex": "d44869db4a96ac7978d6e0b1d269e185d0b74e2956263babc2abb9410b74c4de"
+    },
+    {
+      "text": "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+      "words": 41,
+      "codepoints": 396,
+      "sourceBytes": 396,
+      "tiktokenCount": 84,
+      "fixtureGlyphCount": 396,
+      "fixtureBinaryBytes": 12672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.7143,
+      "binaryBytesPerToken": 150.8571,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0119,
+      "experimentalBinaryBytesPerToken": 0.381,
+      "experimentalBinaryVsSourceRatio": 0.0808,
+      "experimentalPatches": [
+        "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.168811,
+      "experimentalSignatureHex": "c529ada192568fa903b54219d4713956a6ac64034d553a8da3c2f999527e3612"
+    },
+    {
+      "text": "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins.",
+      "words": 44,
+      "codepoints": 417,
+      "sourceBytes": 417,
+      "tiktokenCount": 84,
+      "fixtureGlyphCount": 417,
+      "fixtureBinaryBytes": 13344,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.9643,
+      "binaryBytesPerToken": 158.8571,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0119,
+      "experimentalBinaryBytesPerToken": 0.381,
+      "experimentalBinaryVsSourceRatio": 0.0767,
+      "experimentalPatches": [
+        "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.180398,
+      "experimentalSignatureHex": "452f8da992748b9902b72a9bd224bd24aaff24232d4119acd9c7d9db5668a491"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.0114,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 4,
+      "groups": [
+        {
+          "group": "worker_routing_code",
+          "separationMargin": 46
+        },
+        {
+          "group": "proof_gate_code",
+          "separationMargin": 36
+        },
+        {
+          "group": "database_persistence_code",
+          "separationMargin": 30.5
+        },
+        {
+          "group": "selector_test_code",
+          "separationMargin": 43
+        }
+      ],
+      "minSeparationMargin": 30.5,
+      "maxSeparationMargin": 46,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 67.5,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "Controlled labeled semantic groups are closer internally than to other labeled groups in this run.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  },
+  "validatedHeadCandidate": {
+    "headId": "governance",
+    "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json"
+  },
+  "autoRoute": {
+    "routeId": "archive",
+    "candidateRouteId": "archive",
+    "lexicalSelectedHead": "governance",
+    "selectedHead": "governance",
+    "scores": {
+      "bookRoot": 0,
+      "governance": 0,
+      "archive": 16
+    },
+    "ranked": [
+      {
+        "routeId": "archive",
+        "score": 16
+      },
+      {
+        "routeId": "bookRoot",
+        "score": 0
+      },
+      {
+        "routeId": "governance",
+        "score": 0
+      }
+    ],
+    "minimumScore": 6,
+    "confidenceGuard": {
+      "enabled": true,
+      "accepted": true,
+      "reason": "no corpus shape guard required",
+      "thresholds": {
+        "bookRootMinimumAverageWordsPerEntry": 240,
+        "bookRootMinimumMinWordsPerEntry": 220
+      },
+      "corpusShape": {
+        "entries": 8,
+        "totalWords": 386,
+        "averageWordsPerEntry": 48.25,
+        "minWordsPerEntry": 40,
+        "maxWordsPerEntry": 59
+      }
+    },
+    "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+    "selectionPolicy": "ranked-accepted-head"
+  },
+  "headValidation": {
+    "selectedHeadId": "governance",
+    "policy": "ranked-accepted-head",
+    "reason": "v19 selected head is also the best ranked accepted head",
+    "candidateHeadId": "governance",
+    "fallbackHeadId": "default",
+    "legacySelection": {
+      "selectedHeadId": "governance",
+      "reason": "candidate head passed validation",
+      "candidateHeadId": "governance",
+      "fallbackHeadId": "default",
+      "candidateValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 30.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 67.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      },
+      "fallbackValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 27.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 71.75,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      }
+    },
+    "selectedValidation": {
+      "accepted": true,
+      "reasons": [],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 30.5,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 67.5,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 0.0776
+      }
+    },
+    "fullHeadRanking": [
+      {
+        "rank": 1,
+        "headId": "governance",
+        "routeFitRole": "candidate",
+        "routeFitScore": 2,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 30.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 67.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 30.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 67.5,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 0.0776
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "headId": "default",
+        "routeFitRole": "fallback",
+        "routeFitScore": 1,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 27.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 71.75,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 27.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 71.75,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 0.0776
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "headId": "bookRoot",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 24.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 72.25,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 24.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 72.25,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 0.0776
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "headId": "booklikeRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 15,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 54,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 15,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 54,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 0.0776
+          }
+        }
+      }
+    ],
+    "selectionPolicy": "ranked-accepted-head",
+    "reports": {
+      "governance": {
+        "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 30.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 67.5,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      },
+      "default": {
+        "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 27.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 71.75,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      },
+      "bookRoot": {
+        "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 24.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 72.25,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      },
+      "booklikeRepair": {
+        "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 15,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 54,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 0.0776
+        }
+      }
+    }
+  },
+  "multiHeadStorage": {
+    "storedHeadCount": 4,
+    "codeBytesPerPatch": 32,
+    "selectedHeadBinaryBytes": 256,
+    "allHeadsBinaryBytes": 1024,
+    "selectedHeadBinaryVsSourceRatio": 0.0776,
+    "allHeadsBinaryVsSourceRatio": 0.3105
+  }
+}

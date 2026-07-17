@@ -1,0 +1,267 @@
+{
+  "schemaVersion": "v29-report-gap-audit-v1",
+  "generatedAt": "2026-06-18T07:33:47.617Z",
+  "claimLevel": "evidence-governance-gap-audit",
+  "source": {
+    "path": "C:\\Users\\BotVi\\Downloads\\16xVS 6-13-2026.md",
+    "rawSha256": "fee76ccb42e792faeca8e2a231293f6246e035ae00fcd8837374d0b3575711f9",
+    "normalizedSha256": "ac5a9cbbf864c8062747ee26675e6abda876d3433de1ac045bcac42de70f1e39",
+    "rawBytes": 16294,
+    "normalizedBytes": 16133
+  },
+  "sections": {
+    "schemaVersion": "v29-report-section-detection-v1",
+    "detectedSectionIds": [
+      "architecture-10",
+      "bart-pipeline",
+      "memory-architecture",
+      "scaling-behavior",
+      "fold-mechanism",
+      "cognitive-stack"
+    ],
+    "missingSectionIds": [],
+    "architectureItems": [
+      {
+        "id": "hard-route-gating",
+        "title": "Hard-Constraint Route Gating",
+        "detected": true
+      },
+      {
+        "id": "wasm-simd-hamming",
+        "title": "SIMD-Accelerated Hamming Distance Kernels",
+        "detected": true
+      },
+      {
+        "id": "matryoshka-compaction",
+        "title": "Matryoshka-Style Embedding Compaction",
+        "detected": true
+      },
+      {
+        "id": "h-mhsa",
+        "title": "Intra-Lane Local-Relationship Modeling",
+        "detected": true
+      },
+      {
+        "id": "lane-ownership-policies",
+        "title": "Explicit Lane-Ownership Policies",
+        "detected": true
+      },
+      {
+        "id": "ste-temperature-decay",
+        "title": "STE Gradient Fine-Tuning",
+        "detected": true
+      },
+      {
+        "id": "zero-copy-typedarray",
+        "title": "Zero-Copy Typed Array Buffering",
+        "detected": true
+      },
+      {
+        "id": "durable-object-sharding",
+        "title": "Durable Object Sharded State Coordination",
+        "detected": true
+      },
+      {
+        "id": "qjl-error-correction",
+        "title": "QJL Error-Correction",
+        "detected": true
+      },
+      {
+        "id": "cold-path-fallback",
+        "title": "Cold-Path Failure Fallback",
+        "detected": true
+      }
+    ]
+  },
+  "claims": [
+    {
+      "id": "hard-route-gating",
+      "title": "Hard-Constraint Route Gating",
+      "status": "local-proof-only",
+      "detectedInReport": true,
+      "currentEvidence": "V27 route-gated proof and V28 runtime contract proof cover this locally.",
+      "nextProofRequired": "Implement and test the same lane gate at the Worker entry contract before production use."
+    },
+    {
+      "id": "wasm-simd-hamming",
+      "title": "SIMD-Accelerated Hamming Distance Kernels",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "No Wasm SIMD kernel is implemented in the current proof harness.",
+      "nextProofRequired": "Add a local Wasm SIMD distance kernel and benchmark it against the JS Hamming path."
+    },
+    {
+      "id": "matryoshka-compaction",
+      "title": "Matryoshka-Style Embedding Compaction",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "No nested short/full binary-token representation is implemented.",
+      "nextProofRequired": "Add a compact-vs-full retrieval probe that measures fast-path recall and reconstruction fidelity."
+    },
+    {
+      "id": "h-mhsa",
+      "title": "Intra-Lane Local-Relationship Modeling",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "Current heads are routed specialists, not H-MHSA models.",
+      "nextProofRequired": "Build a controlled local/global relationship probe before changing model architecture."
+    },
+    {
+      "id": "lane-ownership-policies",
+      "title": "Explicit Lane-Ownership Policies",
+      "status": "local-proof-only",
+      "detectedInReport": true,
+      "currentEvidence": "V27 route policy and V28 runtime policy contracts enforce local lane ownership.",
+      "nextProofRequired": "Promote the local policy to a Worker-entry contract only after deployment-specific tests exist."
+    },
+    {
+      "id": "ste-temperature-decay",
+      "title": "STE Gradient Fine-Tuning",
+      "status": "local-proof-only",
+      "detectedInReport": true,
+      "currentEvidence": "V28 includes a controlled STE temperature-decay simulation only.",
+      "nextProofRequired": "Apply the temperature schedule to an actual training run and compare holdout drift."
+    },
+    {
+      "id": "zero-copy-typedarray",
+      "title": "Zero-Copy Typed Array Buffering",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "No zero-copy JS-to-Wasm data path exists yet.",
+      "nextProofRequired": "Add a zero-copy TypedArray fixture and verify no serialization or buffer cloning is used."
+    },
+    {
+      "id": "durable-object-sharding",
+      "title": "Durable Object Sharded State Coordination",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "V28 is local only and does not modify Cloudflare Durable Objects.",
+      "nextProofRequired": "Add a local DO-shard design proof, then a Worker integration test before deployment."
+    },
+    {
+      "id": "qjl-error-correction",
+      "title": "QJL Error-Correction",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "No QJL checker or repair path is implemented.",
+      "nextProofRequired": "Create a QJL-only repair probe for quote, blind, and stress failures without changing V23/V27/V28 locks."
+    },
+    {
+      "id": "cold-path-fallback",
+      "title": "Cold-Path Failure Fallback",
+      "status": "local-proof-only",
+      "detectedInReport": true,
+      "currentEvidence": "V28 proves patch-local fallback in the local harness only.",
+      "nextProofRequired": "Connect fallback to a real high-precision path and prove sequence-level behavior on held-out failures."
+    },
+    {
+      "id": "bart-preprocessing",
+      "title": "BART Preprocessing Pipeline",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "No BART dependency, command, or measured preprocessing probe exists in the repo.",
+      "nextProofRequired": "Run a controlled BART-vs-no-BART fingerprint test across quotes, legal text, code, and long-form passages."
+    },
+    {
+      "id": "tokentax0-normalizer",
+      "title": "TokenTax0 Normalizer Pipeline",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "TokenTax0 is described in the report but not wired into this proof harness.",
+      "nextProofRequired": "Add a normalizer-only fixture and verify code/morphology preservation before 16xVS folding."
+    },
+    {
+      "id": "keeper-throwaway-memory",
+      "title": "Keepers vs Throwaways Memory Architecture",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "The repo has proof artifacts and snapshots, but not the described two-tier semantic memory runtime.",
+      "nextProofRequired": "Define a local memory schema and test keeper/throwaway routing without external systems."
+    },
+    {
+      "id": "data-growth-scaling",
+      "title": "Data Growth Scaling Behavior",
+      "status": "unsupported",
+      "detectedInReport": true,
+      "currentEvidence": "Current corpora are too small and controlled to prove asymptotic scaling behavior.",
+      "nextProofRequired": "Run a multi-size corpus sweep and show unique-fingerprint flattening, compression, and routing trends."
+    },
+    {
+      "id": "fold-mechanism",
+      "title": "Fold Mechanism",
+      "status": "directional",
+      "detectedInReport": true,
+      "currentEvidence": "V18/V27 fold-lineage evidence supports parent-child retrieval shape in controlled fixtures.",
+      "nextProofRequired": "Prove unfolding quality on independent held-out content before claiming reversible reconstruction."
+    },
+    {
+      "id": "cognitive-stack",
+      "title": "Cognitive Stack",
+      "status": "deferred",
+      "detectedInReport": true,
+      "currentEvidence": "This is architecture strategy, not implemented in the local 16xVS proof harness.",
+      "nextProofRequired": "Define local interfaces before connecting 16xVS evidence to agent memory or orchestration layers."
+    }
+  ],
+  "summary": {
+    "detectedClaimCount": 16,
+    "totalClaimCount": 16,
+    "statusCounts": {
+      "proven": 0,
+      "directional": 1,
+      "local-proof-only": 4,
+      "deferred": 10,
+      "unsupported": 1
+    },
+    "v23Locked": true,
+    "v27Locked": true,
+    "v28Locked": true,
+    "noDeploy": true,
+    "noExternalCalls": true
+  },
+  "claimsNotAllowed": [
+    {
+      "id": "reversibility",
+      "title": "Reversible Fold",
+      "status": "unsupported",
+      "reason": "Fold-lineage currently shows routing/root-handle behavior, not lossless reversal.",
+      "allowed": false
+    },
+    {
+      "id": "lossless-unfolding",
+      "title": "Lossless Unfolding",
+      "status": "unsupported",
+      "reason": "No independent unfold-quality benchmark exists.",
+      "allowed": false
+    },
+    {
+      "id": "broad-tokenizer-superiority",
+      "title": "Broad Tokenizer Superiority",
+      "status": "unsupported",
+      "reason": "Current results are controlled and directional, with blind/stress/quote failures still negative.",
+      "allowed": false
+    },
+    {
+      "id": "99.99-storage-reduction",
+      "title": "99.99% Storage Reduction",
+      "status": "unsupported",
+      "reason": "Current status explicitly does not support this raw-source storage claim.",
+      "allowed": false
+    },
+    {
+      "id": "1.25gb-collapse",
+      "title": "1.25 GB Corpus Collapse",
+      "status": "unsupported",
+      "reason": "The repo only supports a smaller directional storage envelope, not the broad corpus-collapse claim.",
+      "allowed": false
+    },
+    {
+      "id": "bart-preserves-meaning",
+      "title": "BART Preserves Meaning Without Measured Loss",
+      "status": "unsupported",
+      "reason": "BART has not been tested against quote, legal, code, blind, or stress fixtures in this repo.",
+      "allowed": false
+    }
+  ],
+  "read": "V29 is a proof-vs-claim audit of the supplied report. It does not promote deferred or unsupported report claims into implementation proof."
+}

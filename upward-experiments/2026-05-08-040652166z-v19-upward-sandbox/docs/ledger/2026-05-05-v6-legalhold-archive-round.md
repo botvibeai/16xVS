@@ -1,0 +1,74 @@
+# EXP-2026-05-05-002 V6 Legal-Hold and Archive Round
+
+- `id`: `EXP-2026-05-05-002`
+- `date`: `2026-05-05`
+- `corpus`: `data/training/embedding-training-spec-v5.json` for training, evaluated against `data/eval/frozen-eval-suite.json`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, and `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`
+- `method`: Built a new focused training spec from the `v5` balance point, added explicit archive-catalog and replication-repair groups, expanded legal-hold-specific phrasing, and increased targeted hard negatives around legal hold, retention, archive operations, and retrieval. Trained a base hybrid encoder with the standard `v3` hyperparameters, derived a hierarchical storage variant, then ran the frozen suite plus the governance and archive-pressure corpora.
+- `implementation_path`: `learned hybrid prototype v6 legalhold archive hierarchical packer v1`
+- `baseline`: `learned-hybrid-prototype-v5-mixed-objective-hierarchical-packer-v1.json`
+- `training_config`:
+  - `trainingSpec`: `data/training/embedding-training-spec-v5.json`
+  - `groupCount`: `14`
+  - `itemCount`: `120`
+  - `positivePairCount`: `463`
+  - `negativePairCount`: `1296`
+  - `negativeMode`: `explicit`
+  - `negativeSampleLimitPerPair`: `24`
+  - `dimensions`: `256`
+  - `epochs`: `40`
+  - `learningRate`: `0.05`
+  - `negativeMargin`: `0.15`
+  - `seed`: `19`
+  - `learnedBlendWeight`: `1`
+  - `heuristicBlendWeight`: `0.6`
+  - `prototypeLearningRate`: `0.03`
+  - `prototypeNegativeMargin`: `0.25`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.757819`
+  - `training.averageNegativeSimilarity`: `0.199597`
+  - `governance.avgPatchesPerEntry`: `2.8333`
+  - `governance.patchesPerToken`: `0.0297`
+  - `governance.semantic.minMargin`: `1`
+  - `governance.semantic.allPositive`: `true`
+  - `archivePressure.avgPatchesPerEntry`: `3`
+  - `archivePressure.patchesPerToken`: `0.0214`
+  - `archivePressure.semantic.minMargin`: `6`
+  - `archivePressure.semantic.allPositive`: `true`
+  - `suite.controlled_phrase.minMargin`: `8.5833`
+  - `suite.controlled_phrase.allPositive`: `true`
+  - `suite.controlled_multilingual.minMargin`: `-17.0476`
+  - `suite.controlled_multilingual.allPositive`: `false`
+  - `suite.blind_holdout.minMargin`: `-15.6667`
+  - `suite.blind_holdout.allPositive`: `false`
+  - `suite.paraphrase_holdout.minMargin`: `-6.2`
+  - `suite.paraphrase_holdout.allPositive`: `false`
+  - `suite.stress_100.minMargin`: `-28.6111`
+  - `suite.stress_100.allPositive`: `false`
+  - `all suite collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can now produce a single candidate that fully clears both the governance adversarial holdout and the archive-pressure corpus while keeping the same compact storage shape as prior hierarchical runs.
+  - The remaining `legal_hold` miss in `v5` is trainable without collapsing retrieval space.
+  - Archive catalog, replication repair, retention governance, and retrieval operations all become non-negative together under the targeted round.
+- `claim_not_supported`:
+  - This round does not become the new overall baseline.
+  - Controlled multilingual regresses sharply and remains fully negative.
+  - The paraphrase holdout regresses back to a failure.
+  - The blind holdout and stress suite still fail.
+  - This run does not support broad tokenizer-superiority claims.
+- `artifacts`:
+  - [training spec v5](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v5.json)
+  - [training pairs v5](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v5.json)
+  - [v6 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v6-legalhold-archive-base.json)
+  - [v6 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v6 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v6-legalhold-archive-hierarchical-packer-v1\suite-summary.json)
+  - [v6 governance adversarial report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-governance-adversarial-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v6 archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-archive-pressure-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v5 mixed-objective round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-05-mixed-objective-v5-round.md)
+- `notes`:
+  - This is the strongest targeted archive/governance result in the repo so far.
+  - It is still a specialization result with a large multilingual and paraphrase tradeoff.
+  - The broader semantic balance problem remains unresolved.
+- `next_action`:
+  - Treat archive/governance specialization as proven-directional, but do not promote this model to the main baseline.
+  - Any next round should defend controlled multilingual and paraphrase explicitly if this specialization line continues.

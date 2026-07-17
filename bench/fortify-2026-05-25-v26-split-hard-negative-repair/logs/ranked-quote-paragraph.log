@@ -1,0 +1,95 @@
+label=ranked-quote-paragraph
+startedAt=2026-05-25T19:01:56.915Z
+endedAt=2026-05-25T19:02:02.832Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/eight-head-ranked/quote-paragraph-v26-split-ranked.json",
+  "routeId": "archive",
+  "candidateHead": "governance",
+  "selectedHead": "governance",
+  "reason": "no ranked head passed; preserving v19 selection for inspection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -10.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "quoteSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -18.75,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 5,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -20.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 6,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -21.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 7,
+      "headId": "blindSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -21.9167,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 8,
+      "headId": "stressSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -23.6667,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -20.25,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 79.9,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 2.8256
+}

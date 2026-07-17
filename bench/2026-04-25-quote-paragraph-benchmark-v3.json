@@ -1,0 +1,1236 @@
+{
+  "generatedAt": "2026-04-25T05:28:55.170Z",
+  "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "trainingSummary": {
+      "positivePairCount": 192,
+      "negativePairCount": 720,
+      "averagePositiveSimilarity": 0.823585,
+      "averageNegativeSimilarity": 0.187133,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 20,
+    "words": 295,
+    "codepoints": 1812,
+    "sourceBytes": 1812,
+    "tiktokenCount": 339,
+    "fixtureGlyphCount": 1812,
+    "fixtureBinaryBytes": 57984,
+    "experimentalPatchCount": 130,
+    "experimentalBinaryBytes": 4160,
+    "avgTiktokenPerEntry": 16.95,
+    "avgGlyphsPerEntry": 90.6,
+    "avgExperimentalPatchesPerEntry": 6.5,
+    "glyphsPerToken": 5.3451,
+    "binaryBytesPerToken": 171.0442,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.3835,
+    "experimentalBinaryBytesPerToken": 12.2714,
+    "experimentalBinaryVsSourceRatio": 2.2958
+  },
+  "semantic": {
+    "input": "bench\\quote-paragraph-semantic-2026-04-25.json",
+    "groups": [
+      {
+        "group": "discipline_paragraphs",
+        "size": 4,
+        "avgPatchDistance": 1.3333,
+        "avgSignatureDistance": 106.3333,
+        "avgTokenOverlap": 0.0265,
+        "entries": [
+          {
+            "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+            "tiktokenCount": 19,
+            "experimentalPatchCount": 8
+          },
+          {
+            "text": "A strong routine turns difficult goals into ordinary tasks, and ordinary tasks are what actually finish big projects.",
+            "tiktokenCount": 20,
+            "experimentalPatchCount": 8
+          },
+          {
+            "text": "The day improves when the first hour belongs to deliberate effort instead of distraction.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "Consistency matters more than bursts of intensity because systems survive moods.",
+            "tiktokenCount": 14,
+            "experimentalPatchCount": 6
+          }
+        ]
+      },
+      {
+        "group": "truth_paragraphs",
+        "size": 4,
+        "avgPatchDistance": 1.1667,
+        "avgSignatureDistance": 99.6667,
+        "avgTokenOverlap": 0.0128,
+        "entries": [
+          {
+            "text": "Clear language removes excuses; when the description sharpens, the decision usually becomes obvious.",
+            "tiktokenCount": 17,
+            "experimentalPatchCount": 8
+          },
+          {
+            "text": "Facts remain useful when pride does not, so write the numbers down before memory edits the story.",
+            "tiktokenCount": 20,
+            "experimentalPatchCount": 7
+          },
+          {
+            "text": "Honest diagnosis feels slow at first, but it prevents expensive confusion later.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+            "tiktokenCount": 16,
+            "experimentalPatchCount": 6
+          }
+        ]
+      },
+      {
+        "group": "patience_paragraphs",
+        "size": 4,
+        "avgPatchDistance": 0.5,
+        "avgSignatureDistance": 97.6667,
+        "avgTokenOverlap": 0.024,
+        "entries": [
+          {
+            "text": "Wait long enough to see the second-order effect, then act with less drama and more accuracy.",
+            "tiktokenCount": 19,
+            "experimentalPatchCount": 7
+          },
+          {
+            "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+            "tiktokenCount": 21,
+            "experimentalPatchCount": 7
+          },
+          {
+            "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+            "tiktokenCount": 16,
+            "experimentalPatchCount": 7
+          },
+          {
+            "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+            "tiktokenCount": 14,
+            "experimentalPatchCount": 6
+          }
+        ]
+      },
+      {
+        "group": "courage_paragraphs",
+        "size": 4,
+        "avgPatchDistance": 0.5,
+        "avgSignatureDistance": 94.6667,
+        "avgTokenOverlap": 0.0429,
+        "entries": [
+          {
+            "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+            "tiktokenCount": 19,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "The first public attempt is always uncomfortable, but hiding the work teaches nothing.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 5
+          },
+          {
+            "text": "Move toward the decision that protects the mission, even if it costs comfort.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 6
+          }
+        ]
+      },
+      {
+        "group": "craft_paragraphs",
+        "size": 4,
+        "avgPatchDistance": 1.5,
+        "avgSignatureDistance": 105.3333,
+        "avgTokenOverlap": 0.0167,
+        "entries": [
+          {
+            "text": "Good craft is measured by how well the thing holds up under repeated use, not by how impressive the demo looked.",
+            "tiktokenCount": 23,
+            "experimentalPatchCount": 8
+          },
+          {
+            "text": "Every clean revision removes a future error, which is why careful design compounds.",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+            "tiktokenCount": 17,
+            "experimentalPatchCount": 6
+          },
+          {
+            "text": "Strong systems are built from small corrections that stay in place under load.",
+            "tiktokenCount": 14,
+            "experimentalPatchCount": 5
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "discipline_paragraphs",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 106.3333,
+        "avgNearestOutsideSignatureDistance": 96.25,
+        "separationMargin": -10.0833,
+        "examples": [
+          {
+            "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+            "nearestOutside": {
+              "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+              "signatureDistance": 84
+            }
+          },
+          {
+            "text": "A strong routine turns difficult goals into ordinary tasks, and ordinary tasks are what actually finish big projects.",
+            "nearestOutside": {
+              "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "The day improves when the first hour belongs to deliberate effort instead of distraction.",
+            "nearestOutside": {
+              "text": "Wait long enough to see the second-order effect, then act with less drama and more accuracy.",
+              "signatureDistance": 99
+            }
+          },
+          {
+            "text": "Consistency matters more than bursts of intensity because systems survive moods.",
+            "nearestOutside": {
+              "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+              "signatureDistance": 100
+            }
+          }
+        ]
+      },
+      {
+        "group": "truth_paragraphs",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 99.6667,
+        "avgNearestOutsideSignatureDistance": 84.75,
+        "separationMargin": -14.9167,
+        "examples": [
+          {
+            "text": "Clear language removes excuses; when the description sharpens, the decision usually becomes obvious.",
+            "nearestOutside": {
+              "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+              "signatureDistance": 85
+            }
+          },
+          {
+            "text": "Facts remain useful when pride does not, so write the numbers down before memory edits the story.",
+            "nearestOutside": {
+              "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+              "signatureDistance": 84
+            }
+          },
+          {
+            "text": "Honest diagnosis feels slow at first, but it prevents expensive confusion later.",
+            "nearestOutside": {
+              "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+              "signatureDistance": 89
+            }
+          },
+          {
+            "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+            "nearestOutside": {
+              "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+              "signatureDistance": 81
+            }
+          }
+        ]
+      },
+      {
+        "group": "patience_paragraphs",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 97.6667,
+        "avgNearestOutsideSignatureDistance": 83,
+        "separationMargin": -14.6667,
+        "examples": [
+          {
+            "text": "Wait long enough to see the second-order effect, then act with less drama and more accuracy.",
+            "nearestOutside": {
+              "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+              "signatureDistance": 90
+            }
+          },
+          {
+            "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+            "nearestOutside": {
+              "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+              "signatureDistance": 81
+            }
+          },
+          {
+            "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+            "nearestOutside": {
+              "text": "Every clean revision removes a future error, which is why careful design compounds.",
+              "signatureDistance": 77
+            }
+          },
+          {
+            "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+            "nearestOutside": {
+              "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+              "signatureDistance": 84
+            }
+          }
+        ]
+      },
+      {
+        "group": "courage_paragraphs",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 94.6667,
+        "avgNearestOutsideSignatureDistance": 85.75,
+        "separationMargin": -8.9167,
+        "examples": [
+          {
+            "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+            "nearestOutside": {
+              "text": "Every clean revision removes a future error, which is why careful design compounds.",
+              "signatureDistance": 86
+            }
+          },
+          {
+            "text": "The first public attempt is always uncomfortable, but hiding the work teaches nothing.",
+            "nearestOutside": {
+              "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+              "signatureDistance": 82
+            }
+          },
+          {
+            "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+            "nearestOutside": {
+              "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+              "signatureDistance": 82
+            }
+          },
+          {
+            "text": "Move toward the decision that protects the mission, even if it costs comfort.",
+            "nearestOutside": {
+              "text": "Clear language removes excuses; when the description sharpens, the decision usually becomes obvious.",
+              "signatureDistance": 93
+            }
+          }
+        ]
+      },
+      {
+        "group": "craft_paragraphs",
+        "size": 4,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 105.3333,
+        "avgNearestOutsideSignatureDistance": 84,
+        "separationMargin": -21.3333,
+        "examples": [
+          {
+            "text": "Good craft is measured by how well the thing holds up under repeated use, not by how impressive the demo looked.",
+            "nearestOutside": {
+              "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+              "signatureDistance": 93
+            }
+          },
+          {
+            "text": "Every clean revision removes a future error, which is why careful design compounds.",
+            "nearestOutside": {
+              "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+              "signatureDistance": 77
+            }
+          },
+          {
+            "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+            "nearestOutside": {
+              "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+              "signatureDistance": 82
+            }
+          },
+          {
+            "text": "Strong systems are built from small corrections that stay in place under load.",
+            "nearestOutside": {
+              "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+              "signatureDistance": 84
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 20,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 85,
+    "avgNearestTokenOverlap": 0.0758,
+    "examples": [
+      {
+        "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+        "experimentalPatchCount": 8,
+        "nearestNeighbor": {
+          "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+          "signatureDistance": 84,
+          "patchDistance": 2,
+          "tokenOverlap": 0.08
+        }
+      },
+      {
+        "text": "A strong routine turns difficult goals into ordinary tasks, and ordinary tasks are what actually finish big projects.",
+        "experimentalPatchCount": 8,
+        "nearestNeighbor": {
+          "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+          "signatureDistance": 102,
+          "patchDistance": 3,
+          "tokenOverlap": 0.0385
+        }
+      },
+      {
+        "text": "The day improves when the first hour belongs to deliberate effort instead of distraction.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+          "signatureDistance": 97,
+          "patchDistance": 2,
+          "tokenOverlap": 0.1154
+        }
+      },
+      {
+        "text": "Consistency matters more than bursts of intensity because systems survive moods.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+          "signatureDistance": 100,
+          "patchDistance": 0,
+          "tokenOverlap": 0.0909
+        }
+      },
+      {
+        "text": "Clear language removes excuses; when the description sharpens, the decision usually becomes obvious.",
+        "experimentalPatchCount": 8,
+        "nearestNeighbor": {
+          "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+          "signatureDistance": 85,
+          "patchDistance": 3,
+          "tokenOverlap": 0.0455
+        }
+      },
+      {
+        "text": "Facts remain useful when pride does not, so write the numbers down before memory edits the story.",
+        "experimentalPatchCount": 7,
+        "nearestNeighbor": {
+          "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+          "signatureDistance": 84,
+          "patchDistance": 1,
+          "tokenOverlap": 0.08
+        }
+      },
+      {
+        "text": "Honest diagnosis feels slow at first, but it prevents expensive confusion later.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+          "signatureDistance": 89,
+          "patchDistance": 1,
+          "tokenOverlap": 0.0833
+        }
+      },
+      {
+        "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+          "signatureDistance": 81,
+          "patchDistance": 1,
+          "tokenOverlap": 0.1111
+        }
+      },
+      {
+        "text": "Wait long enough to see the second-order effect, then act with less drama and more accuracy.",
+        "experimentalPatchCount": 7,
+        "nearestNeighbor": {
+          "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+          "signatureDistance": 90,
+          "patchDistance": 1,
+          "tokenOverlap": 0.069
+        }
+      },
+      {
+        "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+        "experimentalPatchCount": 7,
+        "nearestNeighbor": {
+          "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+          "signatureDistance": 81,
+          "patchDistance": 1,
+          "tokenOverlap": 0.1111
+        }
+      },
+      {
+        "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+        "experimentalPatchCount": 7,
+        "nearestNeighbor": {
+          "text": "Every clean revision removes a future error, which is why careful design compounds.",
+          "signatureDistance": 77,
+          "patchDistance": 1,
+          "tokenOverlap": 0.08
+        }
+      },
+      {
+        "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+          "signatureDistance": 84,
+          "patchDistance": 2,
+          "tokenOverlap": 0.08
+        }
+      },
+      {
+        "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Move toward the decision that protects the mission, even if it costs comfort.",
+          "signatureDistance": 73,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1304
+        }
+      },
+      {
+        "text": "The first public attempt is always uncomfortable, but hiding the work teaches nothing.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+          "signatureDistance": 82,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+        "experimentalPatchCount": 5,
+        "nearestNeighbor": {
+          "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+          "signatureDistance": 82,
+          "patchDistance": 1,
+          "tokenOverlap": 0.0435
+        }
+      },
+      {
+        "text": "Move toward the decision that protects the mission, even if it costs comfort.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+          "signatureDistance": 73,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1304
+        }
+      },
+      {
+        "text": "Good craft is measured by how well the thing holds up under repeated use, not by how impressive the demo looked.",
+        "experimentalPatchCount": 8,
+        "nearestNeighbor": {
+          "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+          "signatureDistance": 93,
+          "patchDistance": 2,
+          "tokenOverlap": 0.1034
+        }
+      },
+      {
+        "text": "Every clean revision removes a future error, which is why careful design compounds.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+          "signatureDistance": 77,
+          "patchDistance": 1,
+          "tokenOverlap": 0.08
+        }
+      },
+      {
+        "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+        "experimentalPatchCount": 6,
+        "nearestNeighbor": {
+          "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+          "signatureDistance": 82,
+          "patchDistance": 1,
+          "tokenOverlap": 0.0435
+        }
+      },
+      {
+        "text": "Strong systems are built from small corrections that stay in place under load.",
+        "experimentalPatchCount": 5,
+        "nearestNeighbor": {
+          "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+          "signatureDistance": 84,
+          "patchDistance": 1,
+          "tokenOverlap": 0
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "Start before confidence arrives, then keep the promise you made to yourself when the work becomes boring.",
+      "words": 17,
+      "codepoints": 105,
+      "sourceBytes": 105,
+      "tiktokenCount": 19,
+      "fixtureGlyphCount": 105,
+      "fixtureBinaryBytes": 3360,
+      "experimentalPatchCount": 8,
+      "experimentalBinaryBytes": 256,
+      "glyphsPerToken": 5.5263,
+      "binaryBytesPerToken": 176.8421,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4211,
+      "experimentalBinaryBytesPerToken": 13.4737,
+      "experimentalBinaryVsSourceRatio": 2.4381,
+      "experimentalPatches": [
+        "Start before",
+        "confidence",
+        "arrives,",
+        "then keep the",
+        "promise you made",
+        "to yourself when",
+        "the work becomes",
+        "boring."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.171093,
+      "experimentalSignatureHex": "da08172990983a6bc837bc34825eb629dcb7837725919c7a6de9d0e694f5e34b"
+    },
+    {
+      "text": "A strong routine turns difficult goals into ordinary tasks, and ordinary tasks are what actually finish big projects.",
+      "words": 18,
+      "codepoints": 117,
+      "sourceBytes": 117,
+      "tiktokenCount": 20,
+      "fixtureGlyphCount": 117,
+      "fixtureBinaryBytes": 3744,
+      "experimentalPatchCount": 8,
+      "experimentalBinaryBytes": 256,
+      "glyphsPerToken": 5.85,
+      "binaryBytesPerToken": 187.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.188,
+      "experimentalPatches": [
+        "A strong routine",
+        "turns difficult",
+        "goals into",
+        "ordinary tasks,",
+        "and ordinary tasks",
+        "are what actually",
+        "finish big",
+        "projects."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.183855,
+      "experimentalSignatureHex": "f12b9df038852d2bfe71a1a532cd67e55562c972af30861258234bbbd3c0b29b"
+    },
+    {
+      "text": "The day improves when the first hour belongs to deliberate effort instead of distraction.",
+      "words": 14,
+      "codepoints": 89,
+      "sourceBytes": 89,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 89,
+      "fixtureBinaryBytes": 2848,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.9333,
+      "binaryBytesPerToken": 189.8667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.1573,
+      "experimentalPatches": [
+        "The day improves",
+        "when the first",
+        "hour belongs to",
+        "deliberate effort",
+        "instead of",
+        "distraction."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.172613,
+      "experimentalSignatureHex": "da34878329163cea666896349bef765896b38a437469991a6e65f9a761e58493"
+    },
+    {
+      "text": "Consistency matters more than bursts of intensity because systems survive moods.",
+      "words": 11,
+      "codepoints": 80,
+      "sourceBytes": 80,
+      "tiktokenCount": 14,
+      "fixtureGlyphCount": 80,
+      "fixtureBinaryBytes": 2560,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.7143,
+      "binaryBytesPerToken": 182.8571,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4286,
+      "experimentalBinaryBytesPerToken": 13.7143,
+      "experimentalBinaryVsSourceRatio": 2.4,
+      "experimentalPatches": [
+        "Consistency",
+        "matters more than",
+        "bursts of",
+        "intensity because",
+        "systems survive",
+        "moods."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.15785,
+      "experimentalSignatureHex": "7a6bdb3bab9e3efb4278a88456dbc42795f1426f142afb8a9ea7497db2d3a54b"
+    },
+    {
+      "text": "Clear language removes excuses; when the description sharpens, the decision usually becomes obvious.",
+      "words": 13,
+      "codepoints": 100,
+      "sourceBytes": 100,
+      "tiktokenCount": 17,
+      "fixtureGlyphCount": 100,
+      "fixtureBinaryBytes": 3200,
+      "experimentalPatchCount": 8,
+      "experimentalBinaryBytes": 256,
+      "glyphsPerToken": 5.8824,
+      "binaryBytesPerToken": 188.2353,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4706,
+      "experimentalBinaryBytesPerToken": 15.0588,
+      "experimentalBinaryVsSourceRatio": 2.56,
+      "experimentalPatches": [
+        "Clear language",
+        "removes excuses;",
+        "when the",
+        "description",
+        "sharpens,",
+        "the decision",
+        "usually becomes",
+        "obvious."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.187108,
+      "experimentalSignatureHex": "d8a81d3b1216366be24baa97327e9a4da6e798f6e6c9b866b485606f327103d3"
+    },
+    {
+      "text": "Facts remain useful when pride does not, so write the numbers down before memory edits the story.",
+      "words": 17,
+      "codepoints": 97,
+      "sourceBytes": 97,
+      "tiktokenCount": 20,
+      "fixtureGlyphCount": 97,
+      "fixtureBinaryBytes": 3104,
+      "experimentalPatchCount": 7,
+      "experimentalBinaryBytes": 224,
+      "glyphsPerToken": 4.85,
+      "binaryBytesPerToken": 155.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.35,
+      "experimentalBinaryBytesPerToken": 11.2,
+      "experimentalBinaryVsSourceRatio": 2.3093,
+      "experimentalPatches": [
+        "Facts remain",
+        "useful when pride",
+        "does not,",
+        "so write the",
+        "numbers down",
+        "before memory",
+        "edits the story."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.14936,
+      "experimentalSignatureHex": "8ac2f2fb92924a791ada8a36721cbe2e8df38b26f2b5cfa3fc43d9a623612109"
+    },
+    {
+      "text": "Honest diagnosis feels slow at first, but it prevents expensive confusion later.",
+      "words": 12,
+      "codepoints": 80,
+      "sourceBytes": 80,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 80,
+      "fixtureBinaryBytes": 2560,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.3333,
+      "binaryBytesPerToken": 170.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.4,
+      "experimentalPatches": [
+        "Honest diagnosis",
+        "feels slow at",
+        "first,",
+        "but it prevents",
+        "expensive",
+        "confusion later."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.170309,
+      "experimentalSignatureHex": "eb8d17fbb29f8ea3ac74a737125d12cb95b3e0273655e2a1a42905a6a1f5de06"
+    },
+    {
+      "text": "A direct sentence can expose a weak plan faster than a week of polite agreement.",
+      "words": 15,
+      "codepoints": 80,
+      "sourceBytes": 80,
+      "tiktokenCount": 16,
+      "fixtureGlyphCount": 80,
+      "fixtureBinaryBytes": 2560,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.375,
+      "experimentalBinaryBytesPerToken": 12,
+      "experimentalBinaryVsSourceRatio": 2.4,
+      "experimentalPatches": [
+        "A direct sentence",
+        "can expose a",
+        "weak plan faster",
+        "than a week",
+        "of polite",
+        "agreement."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.150099,
+      "experimentalSignatureHex": "4aa6f53b929a2b7bea9aab90526a7a6c86a0ede76bc18aaece2b996f3bc2220a"
+    },
+    {
+      "text": "Wait long enough to see the second-order effect, then act with less drama and more accuracy.",
+      "words": 16,
+      "codepoints": 92,
+      "sourceBytes": 92,
+      "tiktokenCount": 19,
+      "fixtureGlyphCount": 92,
+      "fixtureBinaryBytes": 2944,
+      "experimentalPatchCount": 7,
+      "experimentalBinaryBytes": 224,
+      "glyphsPerToken": 4.8421,
+      "binaryBytesPerToken": 154.9474,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3684,
+      "experimentalBinaryBytesPerToken": 11.7895,
+      "experimentalBinaryVsSourceRatio": 2.4348,
+      "experimentalPatches": [
+        "Wait long enough",
+        "to see the",
+        "second-order",
+        "effect,",
+        "then act with",
+        "less drama and",
+        "more accuracy."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.196076,
+      "experimentalSignatureHex": "6b3a55ca1b5a5a78735a1b120a0b76da65b64963a5f1b5b6264342a261e56b1f"
+    },
+    {
+      "text": "A repair made in haste often returns as a larger repair, so deliberate attention can be the faster path.",
+      "words": 19,
+      "codepoints": 104,
+      "sourceBytes": 104,
+      "tiktokenCount": 21,
+      "fixtureGlyphCount": 104,
+      "fixtureBinaryBytes": 3328,
+      "experimentalPatchCount": 7,
+      "experimentalBinaryBytes": 224,
+      "glyphsPerToken": 4.9524,
+      "binaryBytesPerToken": 158.4762,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 2.1538,
+      "experimentalPatches": [
+        "A repair made",
+        "in haste often",
+        "returns as a",
+        "larger repair,",
+        "so deliberate",
+        "attention can be",
+        "the faster path."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.199546,
+      "experimentalSignatureHex": "58345f6e129a244b6c7ab3ba5b6abe85d0b165a767f7aca2ee621b2e34d76349"
+    },
+    {
+      "text": "Time does not solve every problem, but it reveals which problems deserve permanent changes.",
+      "words": 14,
+      "codepoints": 91,
+      "sourceBytes": 91,
+      "tiktokenCount": 16,
+      "fixtureGlyphCount": 91,
+      "fixtureBinaryBytes": 2912,
+      "experimentalPatchCount": 7,
+      "experimentalBinaryBytes": 224,
+      "glyphsPerToken": 5.6875,
+      "binaryBytesPerToken": 182,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4375,
+      "experimentalBinaryBytesPerToken": 14,
+      "experimentalBinaryVsSourceRatio": 2.4615,
+      "experimentalPatches": [
+        "Time does not",
+        "solve every",
+        "problem,",
+        "but it reveals",
+        "which problems",
+        "deserve permanent",
+        "changes."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.168823,
+      "experimentalSignatureHex": "681095bba0d74b6b6acdf797125b5a12e2b949b667d5a6a4a565f50690d6c443"
+    },
+    {
+      "text": "Deliberate pacing keeps the system stable when pressure invites reckless shortcuts.",
+      "words": 11,
+      "codepoints": 83,
+      "sourceBytes": 83,
+      "tiktokenCount": 14,
+      "fixtureGlyphCount": 83,
+      "fixtureBinaryBytes": 2656,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.9286,
+      "binaryBytesPerToken": 189.7143,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4286,
+      "experimentalBinaryBytesPerToken": 13.7143,
+      "experimentalBinaryVsSourceRatio": 2.3133,
+      "experimentalPatches": [
+        "Deliberate pacing",
+        "keeps the system",
+        "stable when",
+        "pressure invites",
+        "reckless",
+        "shortcuts."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.159767,
+      "experimentalSignatureHex": "5aa454bb9a921e69287aab24327aa81b86bb45732595aea27c65b1165269824b"
+    },
+    {
+      "text": "Courage is not loud; it is the quiet decision to proceed after the risk becomes real.",
+      "words": 16,
+      "codepoints": 85,
+      "sourceBytes": 85,
+      "tiktokenCount": 19,
+      "fixtureGlyphCount": 85,
+      "fixtureBinaryBytes": 2720,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 4.4737,
+      "binaryBytesPerToken": 143.1579,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3158,
+      "experimentalBinaryBytesPerToken": 10.1053,
+      "experimentalBinaryVsSourceRatio": 2.2588,
+      "experimentalPatches": [
+        "Courage is not",
+        "loud;",
+        "it is the",
+        "quiet decision to",
+        "proceed after the",
+        "risk becomes real."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.152301,
+      "experimentalSignatureHex": "6828d31bb2120c516e798a91435b56e7e5b59467a5858524e449502e23718329"
+    },
+    {
+      "text": "The first public attempt is always uncomfortable, but hiding the work teaches nothing.",
+      "words": 13,
+      "codepoints": 86,
+      "sourceBytes": 86,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 86,
+      "fixtureBinaryBytes": 2752,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.7333,
+      "binaryBytesPerToken": 183.4667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.2326,
+      "experimentalPatches": [
+        "The first public",
+        "attempt is always",
+        "uncomfortable,",
+        "but hiding the",
+        "work teaches",
+        "nothing."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.2009,
+      "experimentalSignatureHex": "c9bdf5bb989668694a7a919576097a0fd3e4c9a76d65eb67cc6b51ff62e94859"
+    },
+    {
+      "text": "Hard conversations get cheaper when they happen early and get expensive when they wait.",
+      "words": 14,
+      "codepoints": 87,
+      "sourceBytes": 87,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 87,
+      "fixtureBinaryBytes": 2784,
+      "experimentalPatchCount": 5,
+      "experimentalBinaryBytes": 160,
+      "glyphsPerToken": 5.8,
+      "binaryBytesPerToken": 185.6,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.8391,
+      "experimentalPatches": [
+        "Hard conversations",
+        "get cheaper when",
+        "they happen early",
+        "and get expensive",
+        "when they wait."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.176588,
+      "experimentalSignatureHex": "4aa517b91a967f3afb558bb476ef7aa9d1238953f2e9f626aca50164a97082e1"
+    },
+    {
+      "text": "Move toward the decision that protects the mission, even if it costs comfort.",
+      "words": 13,
+      "codepoints": 77,
+      "sourceBytes": 77,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 77,
+      "fixtureBinaryBytes": 2464,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.1333,
+      "binaryBytesPerToken": 164.2667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.4935,
+      "experimentalPatches": [
+        "Move toward the",
+        "decision that",
+        "protects the",
+        "mission,",
+        "even if it",
+        "costs comfort."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.247269,
+      "experimentalSignatureHex": "e9a59713a29eae394a7ba6a7075912a6abf688a3a481c52e64cb79292363ea91"
+    },
+    {
+      "text": "Good craft is measured by how well the thing holds up under repeated use, not by how impressive the demo looked.",
+      "words": 21,
+      "codepoints": 112,
+      "sourceBytes": 112,
+      "tiktokenCount": 23,
+      "fixtureGlyphCount": 112,
+      "fixtureBinaryBytes": 3584,
+      "experimentalPatchCount": 8,
+      "experimentalBinaryBytes": 256,
+      "glyphsPerToken": 4.8696,
+      "binaryBytesPerToken": 155.8261,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3478,
+      "experimentalBinaryBytesPerToken": 11.1304,
+      "experimentalBinaryVsSourceRatio": 2.2857,
+      "experimentalPatches": [
+        "Good craft is",
+        "measured by how",
+        "well the thing",
+        "holds up under",
+        "repeated use,",
+        "not by how",
+        "impressive the",
+        "demo looked."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.116564,
+      "experimentalSignatureHex": "69618b7b5ad8045d1c389a161a3a9e9ffab785f766e3855e4e8070a756699745"
+    },
+    {
+      "text": "Every clean revision removes a future error, which is why careful design compounds.",
+      "words": 13,
+      "codepoints": 83,
+      "sourceBytes": 83,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 83,
+      "fixtureBinaryBytes": 2656,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.5333,
+      "binaryBytesPerToken": 177.0667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.4,
+      "experimentalBinaryBytesPerToken": 12.8,
+      "experimentalBinaryVsSourceRatio": 2.3133,
+      "experimentalPatches": [
+        "Every clean",
+        "revision removes a",
+        "future error,",
+        "which is why",
+        "careful design",
+        "compounds."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.196685,
+      "experimentalSignatureHex": "6aa7d53a28d649636e6fb616625a7acf46bd1d2336e9a020bc6f5826a2c6b049"
+    },
+    {
+      "text": "The right tool saves time, but clear judgment decides when the tool should be ignored.",
+      "words": 15,
+      "codepoints": 86,
+      "sourceBytes": 86,
+      "tiktokenCount": 17,
+      "fixtureGlyphCount": 86,
+      "fixtureBinaryBytes": 2752,
+      "experimentalPatchCount": 6,
+      "experimentalBinaryBytes": 192,
+      "glyphsPerToken": 5.0588,
+      "binaryBytesPerToken": 161.8824,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3529,
+      "experimentalBinaryBytesPerToken": 11.2941,
+      "experimentalBinaryVsSourceRatio": 2.2326,
+      "experimentalPatches": [
+        "The right tool",
+        "saves time,",
+        "but clear judgment",
+        "decides when the",
+        "tool should be",
+        "ignored."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.182238,
+      "experimentalSignatureHex": "5a621b5b18926899e2318d94064a5a0fd32ea996e5e1a580e427d1668bd2e3f1"
+    },
+    {
+      "text": "Strong systems are built from small corrections that stay in place under load.",
+      "words": 13,
+      "codepoints": 78,
+      "sourceBytes": 78,
+      "tiktokenCount": 14,
+      "fixtureGlyphCount": 78,
+      "fixtureBinaryBytes": 2496,
+      "experimentalPatchCount": 5,
+      "experimentalBinaryBytes": 160,
+      "glyphsPerToken": 5.5714,
+      "binaryBytesPerToken": 178.2857,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3571,
+      "experimentalBinaryBytesPerToken": 11.4286,
+      "experimentalBinaryVsSourceRatio": 2.0513,
+      "experimentalPatches": [
+        "Strong systems are",
+        "built from small",
+        "corrections that",
+        "stay in place",
+        "under load."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.25816,
+      "experimentalSignatureHex": "6a0f96b779442c69a950a2a5372f98c956bea4a724cb9a0e7e6573c6524b524b"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.3835,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 5,
+      "groups": [
+        {
+          "group": "discipline_paragraphs",
+          "separationMargin": -10.0833
+        },
+        {
+          "group": "truth_paragraphs",
+          "separationMargin": -14.9167
+        },
+        {
+          "group": "patience_paragraphs",
+          "separationMargin": -14.6667
+        },
+        {
+          "group": "courage_paragraphs",
+          "separationMargin": -8.9167
+        },
+        {
+          "group": "craft_paragraphs",
+          "separationMargin": -21.3333
+        }
+      ],
+      "minSeparationMargin": -21.3333,
+      "maxSeparationMargin": -8.9167,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "discipline_paragraphs",
+        "truth_paragraphs",
+        "patience_paragraphs",
+        "courage_paragraphs",
+        "craft_paragraphs"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 85,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

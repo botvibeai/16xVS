@@ -1,0 +1,57 @@
+# EXP-2026-04-24-001 Learned Hybrid Prototype V2 Suite
+
+- `id`: `EXP-2026-04-24-001`
+- `date`: `2026-04-24`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Trained a second learned encoder prototype on `data/training/embedding-training-pairs.json`, kept the current patch packer, blended the learned embedding with the existing heuristic experimental embedding as a fixed prior before `normalize -> sign`, and ran the trained model through the full frozen evaluation suite.
+- `implementation_path`: `learned hybrid prototype v2`
+- `baseline`: `experimental core candidate` and `learned feature prototype`
+- `training_config`:
+  - `dimensions`: `256`
+  - `epochs`: `36`
+  - `learningRate`: `0.05`
+  - `negativeMargin`: `0.15`
+  - `seed`: `17`
+  - `learnedBlendWeight`: `1`
+  - `heuristicBlendWeight`: `0.6`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.786401`
+  - `training.averageNegativeSimilarity`: `0.22033`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_phrase.minMargin`: `7.5`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `controlled_multilingual.minMargin`: `-14.8095`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-16.1667`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.minMargin`: `-19.4`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `stress_100.minMargin`: `-29.2444`
+  - `all suite collapse flags`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The repo can train and evaluate a second learned prototype without changing the frozen evaluation gates.
+  - The hybrid prior restored the controlled phrase suite to positive labeled separation.
+  - The hybrid prior improved the controlled multilingual failure relative to the first learned prototype.
+  - The hybrid prior kept count compression unchanged and did not trip collapse checks.
+  - The blind holdout minimum margin improved relative to the heuristic baseline, though it still failed.
+- `claim_not_supported`:
+  - The hybrid second prototype did not pass the blind holdout.
+  - The hybrid second prototype did not pass the paraphrase holdout.
+  - The hybrid second prototype did not restore the controlled multilingual suite.
+  - The hybrid second prototype did not pass the mixed-format stress suite.
+  - This is still not evidence that the learned path solves unseen semantic generalization.
+- `artifacts`:
+  - [learned hybrid model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v2.json)
+  - [hybrid suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v2\suite-summary.json)
+  - [first learned suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-latest\suite-summary.json)
+  - [heuristic suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+- `notes`:
+  - This was a local, principled iteration rather than a benchmark rewrite. The frozen suite stayed fixed.
+  - The hybrid path recovered one important regression from the first learned model: controlled phrase grouping is positive again.
+  - The hard gates remain closed. Blind holdout, paraphrase holdout, multilingual generalization, and the stress suite still fail.
+  - The current local path can improve lexical and anchor-preserving behavior, but it still lacks the broad semantic prior needed for unseen-domain grouping.
+- `next_action`:
+  - Do not claim semantic superiority from this result.
+  - If the next iteration stays local-only, focus on better embedding architecture and broader training data.
+  - If the goal is real blind-holdout improvement, introduce a stronger semantic prior instead of repeating small local feature tweaks.

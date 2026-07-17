@@ -1,0 +1,50 @@
+# EXP-2026-04-23-003 Learned Feature Prototype Suite
+
+- `id`: `EXP-2026-04-23-003`
+- `date`: `2026-04-23`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Trained the first learned additive feature encoder on `data/training/embedding-training-pairs.json`, kept the current patch packer, replaced only the continuous embedding source before `normalize -> sign`, and ran the trained model through the full frozen evaluation suite.
+- `implementation_path`: `learned feature prototype`
+- `baseline`: `experimental core candidate` using the current heuristic embedding source
+- `freeze_fingerprint`:
+  - `core/experimental-tokenizer.mjs`: `A982D583A0C3E545D2FFEA749BD160AB854D4F29CB9438AA26B59CEE72869D91`
+  - `core/evidence-assessment.mjs`: `CBCE72721EA03A405FF1873B29CE3F0195F232E611D2F359BBBE7F24317F24C3`
+  - `core/learned-encoder.mjs`: `CAE2AA390ABF4B0C6A4DE487B6E879D14ECB60131E8354EC305EA31FC3C4F6BE`
+  - `scripts/benchmark.mjs`: `DB5132A28CA82E1EF03FD5BC6DDA3B9691C7C87D056FC86A15820DE650432A64`
+  - `scripts/train-learned-encoder.mjs`: `1FE85D69760846A0D62FB94D749EED058BAA8F69452F7C81EE13E981F3C5929A`
+  - `scripts/run-eval-suite.mjs`: `423566DD17DC4CB10E4AD7C6603A0FAB4992EADD6F81674B6E293698DDF2A0D7`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.823303`
+  - `training.averageNegativeSimilarity`: `0.206598`
+  - `controlled_phrase.allSemanticMarginsPositive`: `false`
+  - `controlled_phrase.minMargin`: `-7.5833`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `controlled_multilingual.minMargin`: `-40.0952`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-15.5833`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.minMargin`: `-14.8`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `stress_100.minMargin`: `-30.3667`
+  - `all suite collapse flags`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The repo can now train and evaluate a learned encoder prototype end-to-end.
+  - The learned model kept patch-count compression unchanged because it reuses the existing patch packer.
+  - The learned model did not trip collapse checks across the frozen suite.
+  - The learned model improved some hard sets relative to the heuristic baseline, especially the paraphrase holdout and blind holdout minimum margins.
+- `claim_not_supported`:
+  - The first learned prototype did not pass the blind holdout.
+  - The first learned prototype did not pass the paraphrase holdout.
+  - The first learned prototype regressed the controlled phrase and controlled multilingual suites relative to the heuristic baseline.
+  - This is not yet evidence that a learned encoder solves the problem.
+- `artifacts`:
+  - [learned-feature-prototype.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-feature-prototype.json)
+  - [learned suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-latest\suite-summary.json)
+  - [baseline suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+- `notes`:
+  - This is a real prototype, not a paper design, and it gives a direct answer: the first learned encoder is not good enough.
+  - The holdout minima improved in some places, but the model failed every pass/fail gate and regressed the previously positive controlled suites.
+  - The result is still useful because it validates the new train/eval loop and gives a concrete baseline for iteration two.
+- `next_action`:
+  - Improve the learned encoder architecture or training objective before drawing conclusions about the learned path itself.

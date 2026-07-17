@@ -1,0 +1,757 @@
+{
+  "generatedAt": "2026-05-11T22:58:34.891Z",
+  "input": "bench\\protocol-longform-2026-04-25.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 24,
+      "residualMaxCharsPerPatch": 160
+    },
+    "trainingSummary": {
+      "positivePairCount": 751,
+      "negativePairCount": 2080,
+      "averagePositiveSimilarity": 0.750393,
+      "averageNegativeSimilarity": 0.187703,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 6,
+    "words": 682,
+    "codepoints": 4404,
+    "sourceBytes": 4404,
+    "tiktokenCount": 792,
+    "fixtureGlyphCount": 4404,
+    "fixtureBinaryBytes": 140928,
+    "experimentalPatchCount": 18,
+    "experimentalBinaryBytes": 576,
+    "avgTiktokenPerEntry": 132,
+    "avgGlyphsPerEntry": 734,
+    "avgExperimentalPatchesPerEntry": 3,
+    "glyphsPerToken": 5.5606,
+    "binaryBytesPerToken": 177.9394,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.0227,
+    "experimentalBinaryBytesPerToken": 0.7273,
+    "experimentalBinaryVsSourceRatio": 0.1308
+  },
+  "semantic": {
+    "input": "bench\\protocol-longform-semantic-2026-04-25.json",
+    "groups": [
+      {
+        "group": "multilingual_equity_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 75,
+        "avgTokenOverlap": 0.2,
+        "entries": [
+          {
+            "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+            "tiktokenCount": 135,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+            "tiktokenCount": 131,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "storage_economics_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 71,
+        "avgTokenOverlap": 0.2192,
+        "entries": [
+          {
+            "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+            "tiktokenCount": 130,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+            "tiktokenCount": 127,
+            "experimentalPatchCount": 3
+          }
+        ]
+      },
+      {
+        "group": "retrieval_longform",
+        "size": 2,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 73,
+        "avgTokenOverlap": 0.1856,
+        "entries": [
+          {
+            "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+            "tiktokenCount": 131,
+            "experimentalPatchCount": 3
+          },
+          {
+            "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+            "tiktokenCount": 138,
+            "experimentalPatchCount": 3
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "multilingual_equity_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 75,
+        "avgNearestOutsideSignatureDistance": 93.5,
+        "separationMargin": 18.5,
+        "examples": [
+          {
+            "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+            "nearestOutside": {
+              "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+              "signatureDistance": 92
+            }
+          },
+          {
+            "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+            "nearestOutside": {
+              "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+              "signatureDistance": 95
+            }
+          }
+        ]
+      },
+      {
+        "group": "storage_economics_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 71,
+        "avgNearestOutsideSignatureDistance": 98.5,
+        "separationMargin": 27.5,
+        "examples": [
+          {
+            "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+            "nearestOutside": {
+              "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+            "nearestOutside": {
+              "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+              "signatureDistance": 95
+            }
+          }
+        ]
+      },
+      {
+        "group": "retrieval_longform",
+        "size": 2,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 73,
+        "avgNearestOutsideSignatureDistance": 97,
+        "separationMargin": 24,
+        "examples": [
+          {
+            "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+            "nearestOutside": {
+              "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+              "signatureDistance": 92
+            }
+          },
+          {
+            "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+            "nearestOutside": {
+              "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+              "signatureDistance": 102
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 6,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 73,
+    "avgNearestTokenOverlap": 0.2016,
+    "examples": [
+      {
+        "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+          "signatureDistance": 75,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2
+        }
+      },
+      {
+        "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+          "signatureDistance": 75,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2
+        }
+      },
+      {
+        "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2192
+        }
+      },
+      {
+        "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2192
+        }
+      },
+      {
+        "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+          "signatureDistance": 73,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1856
+        }
+      },
+      {
+        "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+        "experimentalPatchCount": 3,
+        "nearestNeighbor": {
+          "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+          "signatureDistance": 73,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1856
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "Legacy byte pair encoding ties compute cost to the quirks of human writing, so a Mandarin character, an Arabic phrase, and an English checklist do not consume resources on equal terms even when they carry comparable meaning. The 16xVS direction argues that every script, symbol, and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. In this long-form framing, the main promise is not marketing language about fairness but a computable rule: normalize the representation first, then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+      "words": 115,
+      "codepoints": 734,
+      "sourceBytes": 734,
+      "tiktokenCount": 135,
+      "fixtureGlyphCount": 734,
+      "fixtureBinaryBytes": 23488,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.437,
+      "binaryBytesPerToken": 173.9852,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0222,
+      "experimentalBinaryBytesPerToken": 0.7111,
+      "experimentalBinaryVsSourceRatio": 0.1308,
+      "experimentalPatches": [
+        "and workflow marker should be rendered into the same visual patch standard so the cost of reasoning no longer depends on whether the source text happened to fit an English-centric tokenizer. The 16xVS direction argues that every script,",
+        "then let storage and retrieval operate on one neutral unit instead of a patchwork of language-specific token boundaries.",
+        "and an English checklist do not consume resources on equal terms even when they carry comparable meaning."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.198699,
+      "experimentalSignatureHex": "dbee9cda4a960a594a5b2994a62db6b420565816ad61a8a7842ba23d3138a6fb"
+    },
+    {
+      "text": "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, Mandarin, or Hindi. A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it. If that works at scale, new symbols are integrated by renderer updates instead of embedding-matrix retraining, and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script, notation, or domain marker appears.",
+      "words": 110,
+      "codepoints": 719,
+      "sourceBytes": 719,
+      "tiktokenCount": 131,
+      "fixtureGlyphCount": 719,
+      "fixtureBinaryBytes": 23008,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.4885,
+      "binaryBytesPerToken": 175.6336,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0229,
+      "experimentalBinaryBytesPerToken": 0.7328,
+      "experimentalBinaryVsSourceRatio": 0.1335,
+      "experimentalPatches": [
+        "The multilingual-equity argument behind 16xVS is that the system should stop charging different computational prices for the same amount of business meaning just because one customer writes in English and another writes in Arabic, or domain marker appears.",
+        "A visual patch standard tries to force a neutral unit of compute by mapping each symbol or clustered phrase into a fixed representation before the rest of the system sees it.",
+        "and the out-of-vocabulary problem becomes an operational maintenance problem rather than an expensive model surgery event every time a new script,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.13491,
+      "experimentalSignatureHex": "5b6eddc88616023be3982197961ff0bc0edf5e7e8f2ae9a9dc6b6b3d1b39836b"
+    },
+    {
+      "text": "The storage case for 16xVS is not merely that binary codes are smaller than float vectors, but that the whole pipeline can be arranged so live access, fallback safety, and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies. When the system stores one working copy, one secondary copy, and one deep archive copy, the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. That is why the current proof work keeps measuring patch count, binary bytes, and storage projection together rather than talking about compression in the abstract.",
+      "words": 114,
+      "codepoints": 717,
+      "sourceBytes": 717,
+      "tiktokenCount": 130,
+      "fixtureGlyphCount": 717,
+      "fixtureBinaryBytes": 22944,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.5154,
+      "binaryBytesPerToken": 176.4923,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0231,
+      "experimentalBinaryBytesPerToken": 0.7385,
+      "experimentalBinaryVsSourceRatio": 0.1339,
+      "experimentalPatches": [
+        "the economics change only if the unit being replicated is already compressed and if repair can rebuild degraded tiers without forcing a full reprocessing of the corpus. and storage projection together rather than talking about compression in the abstract.",
+        "The storage case for 16xVS is not merely that binary codes are smaller than float vectors,",
+        "and long-term vault retention all operate on compact patch records instead of heavyweight embeddings or repeated source copies."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.235231,
+      "experimentalSignatureHex": "50b68fb80295327bc29e61b83e93b868fbaef027bdb164fb46431a2b605e678d"
+    },
+    {
+      "text": "The storage-reduction claim only matters if the archive, fallback, and live tiers can all carry durable evidence without making the system balloon back toward raw-source size. A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers, recovered through repair, and still keep the byte footprint materially lower than dense-vector alternatives. That is why the repo keeps separating raw-source compression from dense-vector replacement, because those are different claims: one compares output bytes to input text, while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable.",
+      "words": 105,
+      "codepoints": 704,
+      "sourceBytes": 704,
+      "tiktokenCount": 127,
+      "fixtureGlyphCount": 704,
+      "fixtureBinaryBytes": 22528,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.5433,
+      "binaryBytesPerToken": 177.3858,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0236,
+      "experimentalBinaryBytesPerToken": 0.7559,
+      "experimentalBinaryVsSourceRatio": 0.1364,
+      "experimentalPatches": [
+        "while the other compares a 256-bit code to a large float32 embedding and measures whether the storage unit itself is economically viable. and live tiers can all carry durable evidence without making the system balloon back toward raw-source size.",
+        "A serious 16xVS path has to show that compact patch records can be replicated across the three durability tiers,",
+        "The storage-reduction claim only matters if the archive,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.256716,
+      "experimentalSignatureHex": "59ae9cdc829e52da427c29b833b29938939f382bbe3b68ea5eca5a2b6c7a626c"
+    },
+    {
+      "text": "The retrieval case for 16xVS depends on a two-step logic: first compress the entry into a binary representation that stays stable under normalization and sign quantization, then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup. Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story. A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+      "words": 117,
+      "codepoints": 753,
+      "sourceBytes": 753,
+      "tiktokenCount": 131,
+      "fixtureGlyphCount": 753,
+      "fixtureBinaryBytes": 24096,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.7481,
+      "binaryBytesPerToken": 183.9389,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0229,
+      "experimentalBinaryBytesPerToken": 0.7328,
+      "experimentalBinaryVsSourceRatio": 0.1275,
+      "experimentalPatches": [
+        "A hierarchical packer is meant to test whether one macro code plus a few residual segments can preserve enough shape for retrieval while keeping the storage count from exploding when entries become real paragraphs instead of short phrases.",
+        "Long-form passages make this harder because they can force the system to choose between one coarse patch that loses too much detail or many local patches that destroy the storage story.",
+        "then use exact Hamming comparison or a compatible approximate stage to recover the closest patterns without spending dense-vector compute on every lookup."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.211226,
+      "experimentalSignatureHex": "d2669cda9a917be96ee8ed94562e381ceebc8c233d2bad246e4b52268138b04b"
+    },
+    {
+      "text": "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, operational runbooks, and long-form strategy documents. In practice that means the representation has to survive three stresses at once: larger entries, harder semantic grouping, and compact storage under exact or near-exact binary comparison. If the packer can keep long passages close to one macro code with a small residual budget, then the pipeline has a plausible path toward archive economics; if it falls back to too many windows, then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+      "words": 121,
+      "codepoints": 777,
+      "sourceBytes": 777,
+      "tiktokenCount": 138,
+      "fixtureGlyphCount": 777,
+      "fixtureBinaryBytes": 24864,
+      "experimentalPatchCount": 3,
+      "experimentalBinaryBytes": 96,
+      "glyphsPerToken": 5.6304,
+      "binaryBytesPerToken": 180.1739,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.0217,
+      "experimentalBinaryBytesPerToken": 0.6957,
+      "experimentalBinaryVsSourceRatio": 0.1236,
+      "experimentalPatches": [
+        "The edge-native retrieval argument says the system wins only if search remains cheap after the text stops looking like toy prompts and starts looking like real policy passages, and compact storage under exact or near-exact binary comparison.",
+        "then the current approach is still a directional experiment rather than proof that a large institutional corpus could collapse into a very small storage envelope.",
+        "If the packer can keep long passages close to one macro code with a small residual budget,"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.206932,
+      "experimentalSignatureHex": "d2261f981a9311786979eaae4a3e2aaccab0c4231d9bbe8a6f076b6d8932e24b"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.0227,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 3,
+      "groups": [
+        {
+          "group": "multilingual_equity_longform",
+          "separationMargin": 18.5
+        },
+        {
+          "group": "storage_economics_longform",
+          "separationMargin": 27.5
+        },
+        {
+          "group": "retrieval_longform",
+          "separationMargin": 24
+        }
+      ],
+      "minSeparationMargin": 18.5,
+      "maxSeparationMargin": 27.5,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 73,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "Controlled labeled semantic groups are closer internally than to other labeled groups in this run.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  },
+  "validatedHeadCandidate": {
+    "headId": "governance",
+    "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json"
+  },
+  "autoRoute": {
+    "routeId": "default",
+    "candidateRouteId": "bookRoot",
+    "lexicalSelectedHead": "default",
+    "selectedHead": "governance",
+    "scores": {
+      "bookRoot": 81,
+      "governance": 0,
+      "archive": 38
+    },
+    "ranked": [
+      {
+        "routeId": "bookRoot",
+        "score": 81
+      },
+      {
+        "routeId": "archive",
+        "score": 38
+      },
+      {
+        "routeId": "governance",
+        "score": 0
+      }
+    ],
+    "minimumScore": 6,
+    "confidenceGuard": {
+      "enabled": true,
+      "accepted": false,
+      "reason": "bookRoot corpus shape below folded-entry threshold",
+      "thresholds": {
+        "bookRootMinimumAverageWordsPerEntry": 240,
+        "bookRootMinimumMinWordsPerEntry": 220
+      },
+      "corpusShape": {
+        "entries": 6,
+        "totalWords": 682,
+        "averageWordsPerEntry": 113.6667,
+        "minWordsPerEntry": 105,
+        "maxWordsPerEntry": 121
+      }
+    },
+    "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+    "selectionPolicy": "ranked-accepted-head"
+  },
+  "headValidation": {
+    "selectedHeadId": "governance",
+    "policy": "ranked-accepted-head",
+    "reason": "best ranked accepted head selected over v19 route selection",
+    "candidateHeadId": "default",
+    "fallbackHeadId": "default",
+    "legacySelection": {
+      "selectedHeadId": "default",
+      "reason": "candidate head passed validation",
+      "candidateHeadId": "default",
+      "fallbackHeadId": "default",
+      "candidateValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 9.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 81,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      },
+      "fallbackValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 9.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 81,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      }
+    },
+    "selectedValidation": {
+      "accepted": true,
+      "reasons": [],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 18.5,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 73,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.1308
+      }
+    },
+    "fullHeadRanking": [
+      {
+        "rank": 1,
+        "headId": "governance",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 73,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 18.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 73,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.1308
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "headId": "default",
+        "routeFitRole": "candidate",
+        "routeFitScore": 2,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 9.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 81,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 9.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 81,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.1308
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "headId": "bookRoot",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 3.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 79.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 3.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 79.5,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.1308
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "headId": "booklikeRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 3.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.6667,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 3.5,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 64.6667,
+            "avgPatchesPerEntry": 3,
+            "experimentalBinaryVsSourceRatio": 0.1308
+          }
+        }
+      }
+    ],
+    "selectionPolicy": "ranked-accepted-head",
+    "reports": {
+      "default": {
+        "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 9.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 81,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      },
+      "bookRoot": {
+        "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 3.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 79.5,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      },
+      "governance": {
+        "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 18.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 73,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      },
+      "booklikeRepair": {
+        "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 3.5,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.6667,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1308
+        }
+      }
+    }
+  },
+  "multiHeadStorage": {
+    "storedHeadCount": 4,
+    "codeBytesPerPatch": 32,
+    "selectedHeadBinaryBytes": 576,
+    "allHeadsBinaryBytes": 2304,
+    "selectedHeadBinaryVsSourceRatio": 0.1308,
+    "allHeadsBinaryVsSourceRatio": 0.5232
+  }
+}

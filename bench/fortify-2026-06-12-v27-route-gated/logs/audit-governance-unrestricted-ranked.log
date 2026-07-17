@@ -1,0 +1,97 @@
+label=audit-governance-unrestricted-ranked
+startedAt=2026-06-12T20:17:58.510Z
+endedAt=2026-06-12T20:18:12.146Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-06-12-v27-route-gated/audit/governance-adversarial-v26-unrestricted-ranked.json",
+  "routeId": "governance",
+  "candidateHead": "governance",
+  "selectedHead": "stressSplitV26",
+  "reason": "best ranked accepted head selected over v19 route selection",
+  "selectionPolicy": "ranked-accepted-head",
+  "laneId": "governance-adversarial",
+  "routeGate": null,
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "stressSplitV26",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 4.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 2,
+      "headId": "governance",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 3.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 3,
+      "headId": "blindSplitV26",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 1.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 4,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -1,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 5,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -1.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 6,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -1.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 7,
+      "headId": "quoteSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -3,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 8,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -31,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v26-stress-split-repair-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 4.5,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 50.25,
+  "avgPatchesPerEntry": 2.8333,
+  "allHeadsBinaryVsSourceRatio": 1.3156
+}

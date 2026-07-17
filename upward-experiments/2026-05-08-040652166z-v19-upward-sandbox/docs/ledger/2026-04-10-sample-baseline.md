@@ -1,0 +1,28 @@
+# EXP-2026-04-10-001 Sample Baseline
+
+- `id`: `EXP-2026-04-10-001`
+- `date`: `2026-04-10`
+- `corpus`: `bench/sample-corpus.txt`
+- `method`: Compare `tiktoken`, current fixture path, and experimental core candidate on the sample corpus.
+- `implementation_path`: `POC harness` and `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `tiktokenCount`: `85`
+  - `fixtureGlyphCount`: `501`
+  - `experimentalPatchCount`: `50`
+  - `experimentalPatchesPerToken`: `0.5882`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The benchmark harness can compare current `16xVS` paths against `tiktoken`.
+  - The experimental core candidate can be denser than `tiktoken` by count on a controlled English sample.
+- `claim_not_supported`:
+  - This is not evidence of semantic superiority.
+  - This is not evidence of BSQ behavior.
+  - The fixture path remains materially worse than `tiktoken`.
+- `artifacts`:
+  - [latest-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\latest-report.json)
+- `notes`:
+  - This was the first clear sign that the heuristic core candidate was worth testing further.
+  - The result only supports directional compression signal.
+- `next_action`:
+  - Keep the sample corpus as a smoke benchmark and never cite it as standalone proof.

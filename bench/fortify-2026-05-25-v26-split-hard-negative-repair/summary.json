@@ -1,0 +1,973 @@
+{
+  "label": "v26-split-hard-negative-repair",
+  "generatedAt": "2026-05-25T19:02:16.211Z",
+  "outputDir": "bench/fortify-2026-05-25-v26-split-hard-negative-repair",
+  "claimLevel": "negative-or-mixed-probe",
+  "v23BaselinePreserved": false,
+  "allTargetsImprove": false,
+  "allTargetsPass": false,
+  "splitSpecs": [
+    {
+      "probeId": "quote-split",
+      "headId": "quoteSplitV26",
+      "baseSpec": "data/training/embedding-training-spec-v24-quote-repair.json",
+      "spec": "data/training/embedding-training-spec-v26-quote-split-repair.json",
+      "minedReports": [
+        {
+          "sourceId": "quote",
+          "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-v24-quote-repair.json",
+          "pairCount": 9
+        },
+        {
+          "sourceId": "quote-paragraph",
+          "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-paragraph-v24-quote-repair.json",
+          "pairCount": 8
+        }
+      ],
+      "groupCount": 36,
+      "explicitNegativePairCount": 17,
+      "minedGroupCount": 10
+    },
+    {
+      "probeId": "blind-split",
+      "headId": "blindSplitV26",
+      "baseSpec": "data/training/embedding-training-spec-v13-balanced-triad.json",
+      "spec": "data/training/embedding-training-spec-v26-blind-split-repair.json",
+      "minedReports": [
+        {
+          "sourceId": "blind-holdout",
+          "report": "bench/fortify-2026-05-16-v24-quote-repair/blind-holdout-v24-quote-repair.json",
+          "pairCount": 8
+        }
+      ],
+      "groupCount": 26,
+      "explicitNegativePairCount": 8,
+      "minedGroupCount": 5
+    },
+    {
+      "probeId": "stress-split",
+      "headId": "stressSplitV26",
+      "baseSpec": "data/training/embedding-training-spec-v13-balanced-triad.json",
+      "spec": "data/training/embedding-training-spec-v26-stress-split-repair.json",
+      "minedReports": [
+        {
+          "sourceId": "stress-100",
+          "report": "bench/fortify-2026-05-16-v24-quote-repair/stress-100-v24-quote-repair.json",
+          "pairCount": 9
+        }
+      ],
+      "groupCount": 26,
+      "explicitNegativePairCount": 9,
+      "minedGroupCount": 5
+    }
+  ],
+  "targetGates": {
+    "quote": {
+      "caseId": "quote",
+      "targetHeadId": "quoteSplitV26",
+      "previousBestMargin": -12.8,
+      "singleHead": {
+        "input": "bench\\quote-corpus-2026-04-25.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -10.8,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\quote-corpus-2026-04-25.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -18.2,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -10.8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -12.8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -16.6,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.2,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -18.2,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 7,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -18.4,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 8,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -18.4,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteSplitV26",
+      "bestRankedMargin": -10.8,
+      "targetRankedMargin": -10.8,
+      "improvedBeyondPrevious": true,
+      "pass": false
+    },
+    "quote-paragraph": {
+      "caseId": "quote-paragraph",
+      "targetHeadId": "quoteSplitV26",
+      "previousBestMargin": -10.3333,
+      "singleHead": {
+        "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -15,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 0.3532,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+        "routeId": "archive",
+        "lexicalHead": "governance",
+        "selectedHead": "governance",
+        "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -20.25,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 0.3532,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -10.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -18.75,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -20.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -21.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 7,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -21.9167,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 8,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -23.6667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteRepair",
+      "bestRankedMargin": -10.3333,
+      "targetRankedMargin": -15,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    },
+    "blind-holdout": {
+      "caseId": "blind-holdout",
+      "targetHeadId": "blindSplitV26",
+      "previousBestMargin": -14.6667,
+      "singleHead": {
+        "input": "bench\\blind-holdout-2026-04-20.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -17.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.5142,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\blind-holdout-2026-04-20.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -15.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.5142,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -13.5833,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -14.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -14.6667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -15.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 7,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 8,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteSplitV26",
+      "bestRankedMargin": -13.5833,
+      "targetRankedMargin": -17.5,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    },
+    "stress-100": {
+      "caseId": "stress-100",
+      "targetHeadId": "stressSplitV26",
+      "previousBestMargin": -24.0667,
+      "singleHead": {
+        "input": "bench\\stress-100-phrases-2026-04-23.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -26.8111,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1869,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\stress-100-phrases-2026-04-23.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -28.6444,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1869,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -25.8889,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -26.8111,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -28.6444,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -28.8667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.5222,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.5556,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 7,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.8778,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 8,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -31.6333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "blindSplitV26",
+      "bestRankedMargin": -25.8889,
+      "targetRankedMargin": -26.8111,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    }
+  },
+  "primaryGates": {
+    "book-root": {
+      "caseId": "book-root",
+      "summary": {
+        "input": "bench\\book-root-corpus-2026-05-06.txt",
+        "routeId": "bookRoot",
+        "lexicalHead": "bookRoot",
+        "selectedHead": "bookRoot",
+        "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 8,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.0484,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "bookRoot",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "quoteSplitV26",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 3,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -2.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -4.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 7,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -13.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 8,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "governance-adversarial": {
+      "caseId": "governance-adversarial",
+      "summary": {
+        "input": "bench\\governance-adversarial-holdout-2026-04-29.txt",
+        "routeId": "governance",
+        "lexicalHead": "governance",
+        "selectedHead": "stressSplitV26",
+        "selectedModel": "models/learned-hybrid-prototype-v26-stress-split-repair-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 4.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 2.8333,
+        "experimentalBinaryVsSourceRatio": 0.1644,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "stressSplitV26",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 4.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 2,
+            "headId": "governance",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 3.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 3,
+            "headId": "blindSplitV26",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 4,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -1,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 5,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 7,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 8,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -31,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          }
+        ]
+      },
+      "pass": false
+    },
+    "archive-pressure": {
+      "caseId": "archive-pressure",
+      "summary": {
+        "input": "bench\\archive-pressure-corpus-2026-04-29.txt",
+        "routeId": "archive",
+        "lexicalHead": "governance",
+        "selectedHead": "governance",
+        "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 8,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.1199,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "governance",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "quoteSplitV26",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 6.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "default",
+            "accepted": true,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": 1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "booklikeRepair",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 1,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -0.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 7,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 8,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "booklike": {
+      "caseId": "booklike",
+      "summary": {
+        "input": "bench\\booklike-corpus-2026-04-25.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "booklikeRepair",
+        "selectedModel": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 7.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.0968,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "booklikeRepair",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 7.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "quoteSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -7.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -12.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -18.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 7,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -19.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 8,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -23.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "mega-book-ladder": {
+      "caseId": "mega-book-ladder",
+      "summary": {
+        "input": "bench\\mega-book-ladder-corpus-2026-05-07.txt",
+        "routeId": "bookRoot",
+        "lexicalHead": "bookRoot",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 31,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 2.9167,
+        "experimentalBinaryVsSourceRatio": 0.0337,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "default",
+            "accepted": true,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": 31,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 2,
+            "headId": "quoteSplitV26",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 22.5833,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 3,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 33.0833,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 4,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 31.25,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 5,
+            "headId": "stressSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 29.75,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 6,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 28.1667,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 7,
+            "headId": "blindSplitV26",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 27.5833,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 8,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 26.25,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          }
+        ]
+      },
+      "pass": true
+    }
+  },
+  "read": "V26 tests whether V25 failed from over-mixing repair pressure. Treat it as split-head repair evidence only, not as a baseline.",
+  "claimsNotAllowed": [
+    "V26 as the locked baseline unless all target gates pass and independent holdout verification is added.",
+    "Production proof from mined failure-pair repair.",
+    "Broad tokenizer superiority, 99.99% raw-source reduction, or 1.25 GB corpus-collapse claims."
+  ]
+}

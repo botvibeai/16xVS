@@ -1,0 +1,36 @@
+{
+  "name": "16xvs-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node ./test/all-tests.mjs",
+    "benchmark": "node ./scripts/benchmark.mjs",
+    "benchmark:model": "node ./scripts/run-benchmark-with-model.mjs",
+    "model:derive": "node ./scripts/derive-model-variant.mjs",
+    "vault:snapshot": "node ./scripts/create-vault-snapshot.mjs",
+    "training:data": "node ./scripts/build-training-data.mjs",
+    "training:data:v2": "node ./scripts/build-training-data.mjs --input ./data/training/embedding-training-spec-v2.json --output ./data/training/embedding-training-pairs-v2.json",
+    "eval:suite": "node ./scripts/run-eval-suite.mjs",
+    "learned:train": "node ./scripts/train-learned-encoder.mjs",
+    "learned:eval": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-feature-prototype.json --output-dir ./bench/eval-suite-learned-latest",
+    "learned:train:hybrid-v2": "node ./scripts/train-learned-encoder.mjs --output ./models/learned-hybrid-prototype-v2.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --epochs 36 --learning-rate 0.05 --negative-margin 0.15 --seed 17",
+    "learned:eval:hybrid-v2": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v2.json --output-dir ./bench/eval-suite-learned-hybrid-v2",
+    "learned:train:hybrid-v3": "node ./scripts/train-learned-encoder.mjs --input ./data/training/embedding-training-pairs-v2.json --output ./models/learned-hybrid-prototype-v3.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --prototype-learning-rate 0.03 --prototype-negative-margin 0.25 --prototype-negatives-per-item 2 --epochs 40 --learning-rate 0.05 --negative-margin 0.15 --seed 19",
+    "learned:eval:hybrid-v3": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v3.json --output-dir ./bench/eval-suite-learned-hybrid-v3",
+    "learned:train:macro-trained-v1": "node ./scripts/train-learned-encoder.mjs --input ./data/training/embedding-training-pairs-v2.json --output ./models/learned-hybrid-prototype-v3-macro-trained-v1.json --heuristic-blend-weight 0.6 --learned-blend-weight 1 --prototype-learning-rate 0.03 --prototype-negative-margin 0.25 --prototype-negatives-per-item 2 --epochs 40 --learning-rate 0.05 --negative-margin 0.15 --seed 29 --packing-mode entry --max-entry-words 96 --max-entry-chars 512 --max-words-per-patch 96 --max-chars-per-patch 512",
+    "learned:eval:macro-trained-v1": "node ./scripts/run-eval-suite.mjs --encoder-model ./models/learned-hybrid-prototype-v3-macro-trained-v1.json --output-dir ./bench/eval-suite-learned-hybrid-v3-macro-trained-v1",
+    "storage:project": "node ./scripts/storage-projection.mjs",
+    "ledger:from-report": "node ./scripts/ledger-from-report.mjs",
+    "proof:package": "node ./scripts/build-proof-package.mjs",
+    "sandbox:create": "node ./scripts/create-upward-sandbox.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.77.0"
+  },
+  "dependencies": {
+    "tiktoken": "^1.0.22"
+  }
+}

@@ -1,0 +1,44 @@
+# EXP-2026-04-20-001 Phrase Semantic BSQ-Style Prototype
+
+- `id`: `EXP-2026-04-20-001`
+- `date`: `2026-04-20`
+- `corpus`: `bench/phrase-corpus.txt` with `bench/semantic-phrases.json` and `bench/perturbation-phrases.json`
+- `method`: Regenerated the phrase benchmark with the experimental BSQ-style prototype path: heuristic features -> continuous embedding -> unit normalization -> 256-bit sign quantization. Compared patch count against `tiktoken` and measured labeled group-vs-group semantic separation plus retrieval collapse guardrails.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `30`
+  - `tiktokenCount`: `93`
+  - `experimentalPatchCount`: `53`
+  - `experimentalPatchesPerToken`: `0.5699`
+  - `experimentalBinaryVsSourceRatio`: `2.7223`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `72.9`
+  - `retrieval.avgNearestTokenOverlap`: `0.1656`
+  - `launch.separationMargin`: `22.5`
+  - `storage.separationMargin`: `8.4167`
+  - `search.separationMargin`: `19`
+  - `planning.separationMargin`: `13.5`
+  - `finance.separationMargin`: `6.75`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.semanticSignal.allMarginsPositive`: `true`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate uses fewer patches than `tiktoken` tokens on this controlled phrase corpus.
+  - All five labeled phrase groups have positive separation margins against other labeled groups in this run.
+  - The retrieval signature space did not trip the current collapse guardrails.
+- `claim_not_supported`:
+  - This does not prove target 16xVS BSQ behavior because the embedding source is still heuristic.
+  - This does not prove broad real-world tokenizer superiority.
+  - This does not prove robust semantic retrieval outside the controlled phrase fixture.
+- `artifacts`:
+  - [2026-04-20-phrase-semantic-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-phrase-semantic-bsq-style-report.json)
+  - [phrase-semantic-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\phrase-semantic-report.json)
+- `notes`:
+  - This reverses the earlier phrase semantic failure on the controlled labeled fixture, but only at the experimental-candidate layer.
+  - The weakest positive group is `finance` with margin `6.75`; this needs larger corpus pressure before promotion.
+  - The report now includes `evidenceAssessment` so future summaries can detect count, semantic, and collapse status directly from JSON.
+- `next_action`:
+  - Add a larger phrase/book-style semantic fixture and keep this result directional until it survives broader data.

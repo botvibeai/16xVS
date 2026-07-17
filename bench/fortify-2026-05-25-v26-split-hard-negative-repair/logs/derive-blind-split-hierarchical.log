@@ -1,0 +1,21 @@
+label=derive-blind-split-hierarchical
+startedAt=2026-05-25T18:56:10.733Z
+endedAt=2026-05-25T18:56:13.238Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "models/learned-hybrid-prototype-v26-blind-split-repair-base.json",
+  "output": "models/learned-hybrid-prototype-v26-blind-split-repair-hierarchical-packer-v2.json",
+  "variantName": "blind-split-hierarchical-packer-v2",
+  "patchConfig": {
+    "packingMode": "hierarchical",
+    "maxWordsPerPatch": 96,
+    "maxCharsPerPatch": 512,
+    "maxEntryWordsForSinglePatch": 96,
+    "maxEntryCharsForSinglePatch": 512,
+    "maxResidualPatches": 2,
+    "residualMaxWordsPerPatch": 28,
+    "residualMaxCharsPerPatch": 180
+  }
+}
