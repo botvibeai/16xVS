@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "16xvs-recovery-assets-v1",
+  "frozenCommit": "fb49ce97d07e596509823f6de2be8734bca0139d",
+  "authoritativeBranch": "recovery/v30-full-2026-07-17",
+  "releaseControlBranch": "recovery/release-controls-2026-07-17",
+  "criticalTracked": [
+    "src/index.js",
+    "wrangler.jsonc",
+    "package.json",
+    "package-lock.json",
+    "core/v23-proof-package.mjs",
+    "scripts/build-v23-four-head-proof-package.mjs",
+    "scripts/create-vault-snapshot.mjs",
+    "test/all-tests.mjs",
+    "docs/status.md",
+    "docs/artifact-policy.md"
+  ],
+  "criticalIgnored": [
+    "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+    "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+    "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+    "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+    "vault-snapshots/"
+  ],
+  "cloudflareAssets": {
+    "worker": "16xvs-poc",
+    "durableObjectBinding": "GLYPH_CATALOG",
+    "r2Buckets": [
+      "16xvs-poc-live",
+      "16xvs-poc-fallback",
+      "16xvs-poc-vault"
+    ]
+  },
+  "releaseBlockers": [
+    "Original workspace has not been inventoried and hashed",
+    "Critical ignored model assets have not been verified",
+    "Vault snapshot manifests have not been verified",
+    "Durable Object catalog has not been exported",
+    "R2 live/fallback/vault records have not been compared",
+    "Restore from isolated copy has not been demonstrated"
+  ],
+  "rules": {
+    "mainIsAuthoritative": false,
+    "mergeAllowed": false,
+    "deployAllowed": false,
+    "cleanupAllowed": false,
+    "deleteAllowed": false,
+    "forcePushAllowed": false
+  }
+}
