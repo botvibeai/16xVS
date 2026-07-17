@@ -51,14 +51,14 @@
   - The archive-pressure corpus still does not become a full pass under this candidate.
   - This run does not support broad tokenizer-superiority claims.
 - `artifacts`:
-  - [training spec v3](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v3.json)
-  - [training pairs v3](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v3.json)
-  - [v4 governance base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v4-governance-base.json)
-  - [v4 governance hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v4-governance-hierarchical-packer-v1.json)
-  - [v4 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v4-governance-hierarchical-packer-v1\suite-summary.json)
-  - [v4 governance adversarial report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-governance-adversarial-v4-governance-hierarchical-packer-v1.json)
-  - [v4 archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-archive-pressure-v4-governance-hierarchical-packer-v1.json)
-  - [prior governance adversarial failure](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-adversarial-holdout.md)
+  - [training spec v3](data\training\embedding-training-spec-v3.json)
+  - [training pairs v3](data\training\embedding-training-pairs-v3.json)
+  - [v4 governance base model](models\learned-hybrid-prototype-v4-governance-base.json)
+  - [v4 governance hierarchical model](models\learned-hybrid-prototype-v4-governance-hierarchical-packer-v1.json)
+  - [v4 frozen suite summary](bench\eval-suite-learned-hybrid-v4-governance-hierarchical-packer-v1\suite-summary.json)
+  - [v4 governance adversarial report](bench\2026-04-29-governance-adversarial-v4-governance-hierarchical-packer-v1.json)
+  - [v4 archive pressure report](bench\2026-04-29-archive-pressure-v4-governance-hierarchical-packer-v1.json)
+  - [prior governance adversarial failure](docs\ledger\2026-04-29-governance-adversarial-holdout.md)
 - `notes`:
   - This is a useful specialization result, not a broad win.
   - The model appears to trade generality for governance-specific separation.

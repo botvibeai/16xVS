@@ -51,12 +51,12 @@
   - This is not broad proof that the learned path beats regular tokenizers in real-world use.
   - This is still not target BSQ implementation proof.
 - `artifacts`:
-  - [expanded training spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v2.json)
-  - [expanded training pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v2.json)
-  - [learned hybrid v3 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3.json)
-  - [hybrid v3 suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3\suite-summary.json)
-  - [hybrid v2 suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v2\suite-summary.json)
-  - [baseline suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+  - [expanded training spec](data\training\embedding-training-spec-v2.json)
+  - [expanded training pairs](data\training\embedding-training-pairs-v2.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
+  - [hybrid v3 suite summary](bench\eval-suite-learned-hybrid-v3\suite-summary.json)
+  - [hybrid v2 suite summary](bench\eval-suite-learned-hybrid-v2\suite-summary.json)
+  - [baseline suite summary](bench\eval-suite-latest\suite-summary.json)
 - `notes`:
   - This is the first learned path in the repo that clears the paraphrase holdout while keeping the frozen blind holdout unchanged.
   - The phrase holdout is now phrase-unseen rather than domain-unseen because the expanded training set includes a support domain. The blind holdout remains the real unseen-domain gate.

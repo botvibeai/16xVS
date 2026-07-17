@@ -39,9 +39,9 @@
   - The controlled positive semantic fixture results should not be promoted beyond directional evidence.
   - This does not prove target 16xVS BSQ behavior or broad real-world tokenizer superiority.
 - `artifacts`:
-  - [2026-04-20-blind-holdout-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-blind-holdout-bsq-style-report.json)
-  - [blind-holdout-2026-04-20.txt](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\blind-holdout-2026-04-20.txt)
-  - [blind-holdout-semantic-2026-04-20.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\blind-holdout-semantic-2026-04-20.json)
+  - [2026-04-20-blind-holdout-bsq-style-report.json](bench\2026-04-20-blind-holdout-bsq-style-report.json)
+  - [blind-holdout-2026-04-20.txt](bench\blind-holdout-2026-04-20.txt)
+  - [blind-holdout-semantic-2026-04-20.json](bench\blind-holdout-semantic-2026-04-20.json)
 - `notes`:
   - The JSON report's top-level `evidenceAssessment.resultLabel` is `directional` because count compression and collapse checks pass. The ledger labels the semantic holdout `failed` because the explicit blind-holdout acceptance criterion required semantic margins to stay positive.
   - All five unseen semantic groups failed separation: cooking, weather, music, gardening, and astronomy.

@@ -38,19 +38,19 @@
   - The current round sharply weakens the current raw-source storage projection. The aggregate tested reduction falls from the prior fold rounds to `57.2748%`, and the current directional `1.25 GB` envelope falls to `2.9257 GB`.
   - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [training spec v8 merge bridge governance](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v8-merge-bridge-governance.json)
-  - [training pairs v8 merge bridge governance](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v8-merge-bridge-governance.json)
-  - [v9 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v9-merge-bridge-governance-base.json)
-  - [v9 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [book-root v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [booklike v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [mega-book v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [governance adversarial v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [archive pressure v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [book-fold storage projection v9](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-folding-storage-projection-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-  - [frozen suite summary v9](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v9-merge-bridge-governance-hierarchical-packer-v2\suite-summary.json)
-  - [v6 legalhold archive round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-05-v6-legalhold-archive-round.md)
-  - [v8 control bridge round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v8-control-bridge-round.md)
+  - [training spec v8 merge bridge governance](data\training\embedding-training-spec-v8-merge-bridge-governance.json)
+  - [training pairs v8 merge bridge governance](data\training\embedding-training-pairs-v8-merge-bridge-governance.json)
+  - [v9 base model](models\learned-hybrid-prototype-v9-merge-bridge-governance-base.json)
+  - [v9 hierarchical model](models\learned-hybrid-prototype-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [book-root v9 report](bench\2026-05-07-book-root-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [booklike v9 report](bench\2026-05-07-booklike-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [mega-book v9 report](bench\2026-05-07-mega-book-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [governance adversarial v9 report](bench\2026-05-07-governance-adversarial-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [archive pressure v9 report](bench\2026-05-07-archive-pressure-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [book-fold storage projection v9](bench\2026-05-07-book-folding-storage-projection-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [frozen suite summary v9](bench\eval-suite-learned-hybrid-v9-merge-bridge-governance-hierarchical-packer-v2\suite-summary.json)
+  - [v6 legalhold archive round](docs\ledger\2026-05-05-v6-legalhold-archive-round.md)
+  - [v8 control bridge round](docs\ledger\2026-05-07-v8-control-bridge-round.md)
 - `notes`:
   - `v9` answers the merge question directly: the repo can hold the governance boundary and the multilingual-control bridge in one model, but the current merge path does it by over-segmenting long-form text.
   - The storage failure is structural, not cosmetic. The packer falls back from the earlier `3`-patch book-fold shape to sentence-and-clause fragmentation across the long-form corpora.

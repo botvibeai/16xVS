@@ -22,8 +22,8 @@
   - No semantic fixture was included, so this run does not support semantic behavior claims.
   - This does not prove target 16xVS BSQ performance.
 - `artifacts`:
-  - [2026-04-20-google-1000-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-google-1000-bsq-style-report.json)
-  - [google-10000-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\google-10000-report.json)
+  - [2026-04-20-google-1000-bsq-style-report.json](bench\2026-04-20-google-1000-bsq-style-report.json)
+  - [google-10000-report.json](bench\google-10000-report.json)
 - `notes`:
   - This remains a count benchmark over isolated words, not a semantic benchmark.
 - `next_action`:

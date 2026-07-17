@@ -24,9 +24,9 @@
   - This round is not fully backed up to the remote `16xvs-poc-vault` bucket from the current environment.
   - The remote vault archive and manifest objects were not uploaded successfully in this session.
 - `artifacts`:
-  - [local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29\manifest.json)
-  - [local snapshot zip](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29.zip)
-  - [governance-focused v4 round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+  - [local snapshot manifest](vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29\manifest.json)
+  - [local snapshot zip](vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29.zip)
+  - [governance-focused v4 round](docs\ledger\2026-04-29-governance-trained-v4-round.md)
 - `notes`:
   - `npx wrangler whoami` returned `Not logged in` after a `401 Unauthorized` token fetch failure.
   - `CLOUDFLARE_API_TOKEN` is missing in the current environment.

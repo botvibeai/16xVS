@@ -81,11 +81,11 @@ The current evidence suggests:
 - unrestricted ranked repair heads can leak into lanes they should not control
 - the next research step should be route-gated repair, not another unrestricted global head
 
-See [technical thesis](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\founder-proof-package-2026-05-26\TECHNICAL-THESIS.md).
+See [technical thesis](docs\proofs\founder-proof-package-2026-05-26\TECHNICAL-THESIS.md).
 
 ## Reproduce
 
-Use [REPRODUCE.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\founder-proof-package-2026-05-26\REPRODUCE.md) for commands.
+Use [REPRODUCE.md](docs\proofs\founder-proof-package-2026-05-26\REPRODUCE.md) for commands.
 
 Minimum verification:
 
@@ -96,14 +96,14 @@ npm run proof:package:v23 -- --label v23-founder-proof-2026-05-26
 
 ## Evidence
 
-- [Fresh V23 founder proof package](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\README.md)
-- [Fresh V23 founder summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\summary.json)
-- [V23 locked proof package](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
-- [V23 ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-16-v23-four-head-proof-package.md)
-- [V24 quote repair probe](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-16-v24-quote-repair-probe.md)
-- [V25 hard-negative repair probe](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-20-v25-hard-negative-repair-probe.md)
-- [V26 split hard-negative repair probe](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-25-v26-split-hard-negative-repair-probe.md)
-- [Evidence map](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\founder-proof-package-2026-05-26\EVIDENCE-MAP.md)
+- [Fresh V23 founder proof package](bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\README.md)
+- [Fresh V23 founder summary](bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\summary.json)
+- [V23 locked proof package](bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
+- [V23 ledger](docs\ledger\2026-05-16-v23-four-head-proof-package.md)
+- [V24 quote repair probe](docs\ledger\2026-05-16-v24-quote-repair-probe.md)
+- [V25 hard-negative repair probe](docs\ledger\2026-05-20-v25-hard-negative-repair-probe.md)
+- [V26 split hard-negative repair probe](docs\ledger\2026-05-25-v26-split-hard-negative-repair-probe.md)
+- [Evidence map](docs\proofs\founder-proof-package-2026-05-26\EVIDENCE-MAP.md)
 
 ## Use Boundary
 

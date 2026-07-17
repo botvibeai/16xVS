@@ -39,9 +39,9 @@
   - The controlled positive fixture results do not generalize to new paraphrase wording.
   - This does not prove target 16xVS BSQ behavior or broad tokenizer superiority.
 - `artifacts`:
-  - [2026-04-23-paraphrase-holdout-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-23-paraphrase-holdout-bsq-style-report.json)
-  - [paraphrase-holdout-2026-04-23.txt](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\paraphrase-holdout-2026-04-23.txt)
-  - [paraphrase-holdout-semantic-2026-04-23.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\paraphrase-holdout-semantic-2026-04-23.json)
+  - [2026-04-23-paraphrase-holdout-bsq-style-report.json](bench\2026-04-23-paraphrase-holdout-bsq-style-report.json)
+  - [paraphrase-holdout-2026-04-23.txt](bench\paraphrase-holdout-2026-04-23.txt)
+  - [paraphrase-holdout-semantic-2026-04-23.json](bench\paraphrase-holdout-semantic-2026-04-23.json)
 - `notes`:
   - This was a cleaner grouping test than the 100-phrase stress set because each group was intended to carry the same meaning across alternate wording.
   - All six groups failed separation, including the in-domain launch, storage, retrieval, planning, and cost groups.

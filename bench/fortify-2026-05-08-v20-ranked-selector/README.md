@@ -25,12 +25,12 @@ The ranked selector is a useful v20 candidate because it improves the paraphrase
 
 ## Artifacts
 
-- [book-root](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\book-root-v20-ranked-selector.json)
-- [governance-adversarial](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\governance-adversarial-v20-ranked-selector.json)
-- [archive-pressure](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\archive-pressure-v20-ranked-selector.json)
-- [booklike](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\booklike-v20-ranked-selector.json)
-- [mega-book-ladder](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\mega-book-ladder-v20-ranked-selector.json)
-- [paraphrase-holdout](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\paraphrase-holdout-v20-ranked-selector.json)
-- [multilingual-longform](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\multilingual-longform-v20-ranked-selector.json)
-- [blind-holdout](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\blind-holdout-v20-ranked-selector.json)
-- [stress-100](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\stress-100-v20-ranked-selector.json)
+- [book-root](bench\fortify-2026-05-08-v20-ranked-selector\book-root-v20-ranked-selector.json)
+- [governance-adversarial](bench\fortify-2026-05-08-v20-ranked-selector\governance-adversarial-v20-ranked-selector.json)
+- [archive-pressure](bench\fortify-2026-05-08-v20-ranked-selector\archive-pressure-v20-ranked-selector.json)
+- [booklike](bench\fortify-2026-05-08-v20-ranked-selector\booklike-v20-ranked-selector.json)
+- [mega-book-ladder](bench\fortify-2026-05-08-v20-ranked-selector\mega-book-ladder-v20-ranked-selector.json)
+- [paraphrase-holdout](bench\fortify-2026-05-08-v20-ranked-selector\paraphrase-holdout-v20-ranked-selector.json)
+- [multilingual-longform](bench\fortify-2026-05-08-v20-ranked-selector\multilingual-longform-v20-ranked-selector.json)
+- [blind-holdout](bench\fortify-2026-05-08-v20-ranked-selector\blind-holdout-v20-ranked-selector.json)
+- [stress-100](bench\fortify-2026-05-08-v20-ranked-selector\stress-100-v20-ranked-selector.json)

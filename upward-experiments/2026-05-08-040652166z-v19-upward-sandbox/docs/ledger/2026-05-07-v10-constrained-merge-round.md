@@ -41,15 +41,15 @@
   - The governance adversarial holdout is not fully cleared because `audit_evidence_adversarial` is slightly negative.
   - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [v10 constrained hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [book-root v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [booklike v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [mega-book v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [governance adversarial v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [archive pressure v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [book-fold storage projection v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-folding-storage-projection-v10-constrained-merge-hierarchical-packer-v2.json)
-  - [frozen suite summary v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2\suite-summary.json)
-  - [v9 merge bridge governance round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v9-merge-bridge-governance-round.md)
+  - [v10 constrained hierarchical model](models\learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [book-root v10 report](bench\2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [booklike v10 report](bench\2026-05-07-booklike-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [mega-book v10 report](bench\2026-05-07-mega-book-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [governance adversarial v10 report](bench\2026-05-07-governance-adversarial-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [archive pressure v10 report](bench\2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [book-fold storage projection v10](bench\2026-05-07-book-folding-storage-projection-v10-constrained-merge-hierarchical-packer-v2.json)
+  - [frozen suite summary v10](bench\eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2\suite-summary.json)
+  - [v9 merge bridge governance round](docs\ledger\2026-05-07-v9-merge-bridge-governance-round.md)
 - `notes`:
   - `v10` is the best combined storage-plus-merge result so far. It keeps the fold, clears archive pressure, keeps controlled multilingual and paraphrase positive, and brings governance adversarial within one point of passing.
   - The remaining hard conflict is now narrow: `control_book_root` and `audit_evidence_adversarial` need help without disturbing the fold.

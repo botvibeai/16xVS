@@ -45,14 +45,14 @@ The old `booklike` corpus remains unresolved. The validator correctly keeps it o
 
 ## Artifacts
 
-- [head validator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\head-validator.mjs)
-- [validated route runner](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-validated-routing-benchmark.mjs)
-- [head validator tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\head-validator.test.mjs)
-- [book-root v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v19-validated-routed.json)
-- [governance v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v19-validated-routed.json)
-- [archive v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v19-validated-routed.json)
-- [booklike v19 validated guardrail](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v19-validated-routed.json)
-- [mega-book ladder v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v19-validated-routed.json)
+- [head validator](core\head-validator.mjs)
+- [validated route runner](scripts\run-validated-routing-benchmark.mjs)
+- [head validator tests](test\head-validator.test.mjs)
+- [book-root v19 validated route](bench\2026-05-07-book-root-benchmark-v19-validated-routed.json)
+- [governance v19 validated route](bench\2026-05-07-governance-adversarial-v19-validated-routed.json)
+- [archive v19 validated route](bench\2026-05-07-archive-pressure-v19-validated-routed.json)
+- [booklike v19 validated guardrail](bench\2026-05-07-booklike-benchmark-v19-validated-routed.json)
+- [mega-book ladder v19 validated route](bench\2026-05-07-mega-book-ladder-v19-validated-routed.json)
 
 ## Next Action
 

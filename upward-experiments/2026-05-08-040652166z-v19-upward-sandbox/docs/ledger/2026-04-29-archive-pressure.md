@@ -35,11 +35,11 @@
   - This run does not support the `99.99%` raw-storage reduction claim.
   - This run does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [archive pressure corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\archive-pressure-corpus-2026-04-29.txt)
-  - [archive pressure semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\archive-pressure-semantic-2026-04-29.json)
-  - [archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-archive-pressure-v3-hierarchical-packer-v2.json)
-  - [expanded storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-storage-projection-v3-hierarchical-packer-v2-expanded.json)
-  - [prior booklike storage pressure ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-booklike-storage-pressure.md)
+  - [archive pressure corpus](bench\archive-pressure-corpus-2026-04-29.txt)
+  - [archive pressure semantic groups](bench\archive-pressure-semantic-2026-04-29.json)
+  - [archive pressure report](bench\2026-04-29-archive-pressure-v3-hierarchical-packer-v2.json)
+  - [expanded storage projection](bench\2026-04-29-storage-projection-v3-hierarchical-packer-v2-expanded.json)
+  - [prior booklike storage pressure ledger](docs\ledger\2026-04-25-booklike-storage-pressure.md)
 - `notes`:
   - The archive-pressure corpus is a better operational stress test than quote or short-prompt sets because it pressures governance and repair language directly.
   - The semantic failure remains concentrated in retention-and-governance language, which suggests the current representation still blurs long policy-heavy passages more than operational or retrieval-heavy passages.

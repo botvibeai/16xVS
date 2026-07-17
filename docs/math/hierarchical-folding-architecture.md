@@ -14,8 +14,8 @@ This doc mixes three layers on purpose, but it labels them explicitly:
 
 Read this file together with:
 
-- [bsq-and-protocol-foundation.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\math\bsq-and-protocol-foundation.md)
-- [status.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\status.md)
+- [bsq-and-protocol-foundation.md](docs\math\bsq-and-protocol-foundation.md)
+- [status.md](docs\status.md)
 
 ## Core Idea
 

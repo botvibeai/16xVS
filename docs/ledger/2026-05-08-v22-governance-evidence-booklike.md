@@ -54,7 +54,7 @@
 
 ## Artifacts
 
-- [v22 summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v22-governance-evidence-booklike\README.md)
-- [four-head summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v22-four-head-ranked\README.md)
-- [v22 generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v22-governance-evidence-booklike-spec.mjs)
-- [v22 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json)
+- [v22 summary](bench\fortify-2026-05-08-v22-governance-evidence-booklike\README.md)
+- [four-head summary](bench\fortify-2026-05-08-v22-four-head-ranked\README.md)
+- [v22 generator](scripts\generate-v22-governance-evidence-booklike-spec.mjs)
+- [v22 model](models\learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json)

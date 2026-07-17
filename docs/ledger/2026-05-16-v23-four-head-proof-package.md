@@ -62,7 +62,7 @@
 
 ## Artifacts
 
-- [v23 package README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
-- [v23 package summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\summary.json)
-- [v23 proof package core](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\v23-proof-package.mjs)
-- [v23 proof package runner](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\build-v23-four-head-proof-package.mjs)
+- [v23 package README](bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
+- [v23 package summary](bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\summary.json)
+- [v23 proof package core](core\v23-proof-package.mjs)
+- [v23 proof package runner](scripts\build-v23-four-head-proof-package.mjs)

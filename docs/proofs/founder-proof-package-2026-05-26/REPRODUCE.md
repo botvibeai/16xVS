@@ -5,7 +5,7 @@ Date: `2026-05-26`
 Run from:
 
 ```powershell
-cd "C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc"
+cd "."
 ```
 
 ## Minimum Verification
@@ -109,8 +109,8 @@ unless the founder explicitly asks for a Worker deployment.
 
 ## Evidence Files
 
-- [V23 package README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
-- [V23 package summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\summary.json)
-- [Fresh V23 founder package README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\README.md)
-- [Fresh V23 founder package summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\summary.json)
-- [Founder proof package README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\founder-proof-package-2026-05-26\README.md)
+- [V23 package README](bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\README.md)
+- [V23 package summary](bench\proof-locks\2026-05-16-213600482z-v23-four-head-ranked-2026-05-16\summary.json)
+- [Fresh V23 founder package README](bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\README.md)
+- [Fresh V23 founder package summary](bench\proof-locks\2026-05-26-181831302z-v23-founder-proof-2026-05-26\summary.json)
+- [Founder proof package README](docs\proofs\founder-proof-package-2026-05-26\README.md)

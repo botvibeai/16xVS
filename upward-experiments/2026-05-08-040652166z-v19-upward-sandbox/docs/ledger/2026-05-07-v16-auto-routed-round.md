@@ -42,13 +42,13 @@ The old `booklike` corpus is a useful negative signal. The classifier routes it 
 
 ## Artifacts
 
-- [auto-route helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\auto-route.mjs)
-- [auto-route benchmark script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-auto-routing-benchmark.mjs)
-- [auto-route tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\auto-route.test.mjs)
-- [book-root v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v16-auto-routed.json)
-- [governance v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v16-auto-routed.json)
-- [archive v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v16-auto-routed.json)
-- [booklike v16 auto-routed guardrail](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v16-auto-routed.json)
+- [auto-route helper](core\auto-route.mjs)
+- [auto-route benchmark script](scripts\run-auto-routing-benchmark.mjs)
+- [auto-route tests](test\auto-route.test.mjs)
+- [book-root v16 auto-routed report](bench\2026-05-07-book-root-benchmark-v16-auto-routed.json)
+- [governance v16 auto-routed report](bench\2026-05-07-governance-adversarial-v16-auto-routed.json)
+- [archive v16 auto-routed report](bench\2026-05-07-archive-pressure-v16-auto-routed.json)
+- [booklike v16 auto-routed guardrail](bench\2026-05-07-booklike-benchmark-v16-auto-routed.json)
 
 ## Next Action
 

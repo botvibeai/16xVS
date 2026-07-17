@@ -20,7 +20,7 @@
 - `claim_not_supported`:
   - Replace these bullets with the limits or failed claims exposed by this report.
 - `artifacts`:
-  - [latest-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\latest-report.json)
+  - [latest-report.json](bench\latest-report.json)
 - `notes`:
   - Generated from `bench/latest-report.json`.
   - Review this draft before using it in a proof document.

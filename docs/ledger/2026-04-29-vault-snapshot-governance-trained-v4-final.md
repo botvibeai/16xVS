@@ -25,9 +25,9 @@
   - The final snapshot is not fully backed up to the remote `16xvs-poc-vault` bucket from the current environment.
   - The remote vault archive and manifest objects were not uploaded successfully in this session.
 - `artifacts`:
-  - [final local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29\manifest.json)
-  - [final local snapshot zip](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29.zip)
-  - [governance-focused v4 round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+  - [final local snapshot manifest](vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29\manifest.json)
+  - [final local snapshot zip](vault-snapshots\2026-04-29T07-11-53-715Z-governance-trained-v4-round-final-2026-04-29.zip)
+  - [governance-focused v4 round](docs\ledger\2026-04-29-governance-trained-v4-round.md)
 - `notes`:
   - This final snapshot is the best local preservation point for the governance-focused `v4` round because it includes the final docs and the updated snapshot critical-artifact rules.
   - Cloudflare auth remained blocked by a `401 Unauthorized` / `Not logged in` Wrangler state, and `CLOUDFLARE_API_TOKEN` is still missing.

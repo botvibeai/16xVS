@@ -25,6 +25,6 @@ The code-domain fixture is not a blocker in this pass. All release heads pass; `
 
 ## Artifacts
 
-- [corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\code-domain-holdout-2026-05-08.txt)
-- [semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\code-domain-semantic-2026-05-08.json)
-- [report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-code-domain\code-domain-v20-ranked-selector.json)
+- [corpus](bench\code-domain-holdout-2026-05-08.txt)
+- [semantic groups](bench\code-domain-semantic-2026-05-08.json)
+- [report](bench\fortify-2026-05-08-code-domain\code-domain-v20-ranked-selector.json)

@@ -1,6 +1,6 @@
 # V30 Commercial Token-Reduction Baseline
 
-- generatedAt: `2026-07-17T17:04:24.620Z`
+- generatedAt: `2026-07-17T17:22:20.198Z`
 - claimLevel: `local-commercial-stretch-proof`
 - entryCount: `100`
 - averageSourceBpe: `220.49`

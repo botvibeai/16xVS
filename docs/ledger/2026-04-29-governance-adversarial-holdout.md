@@ -41,11 +41,11 @@
   - The current macro baseline does not solve the governance failure and is materially worse on patch count.
   - This run does not support broad tokenizer-superiority claims.
 - `artifacts`:
-  - [governance adversarial corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\governance-adversarial-holdout-2026-04-29.txt)
-  - [governance adversarial groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\governance-adversarial-semantic-2026-04-29.json)
-  - [hierarchical governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-governance-adversarial-v3-hierarchical-packer-v2.json)
-  - [macro governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-governance-adversarial-v3-macro-packer-v1.json)
-  - [archive pressure longform test](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-archive-pressure.md)
+  - [governance adversarial corpus](bench\governance-adversarial-holdout-2026-04-29.txt)
+  - [governance adversarial groups](bench\governance-adversarial-semantic-2026-04-29.json)
+  - [hierarchical governance report](bench\2026-04-29-governance-adversarial-v3-hierarchical-packer-v2.json)
+  - [macro governance report](bench\2026-04-29-governance-adversarial-v3-macro-packer-v1.json)
+  - [archive pressure longform test](docs\ledger\2026-04-29-archive-pressure.md)
 - `notes`:
   - This is the cleanest negative evidence so far for the current semantic wall because the corpus isolates governance concepts that are close in wording but distinct in operational meaning.
   - The hierarchical line did not collapse and still preserved a compact storage shape, so the failure is semantic separation rather than retrieval-space collapse.

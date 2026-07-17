@@ -48,11 +48,11 @@
   - The macro packer does not support the `99.99%` raw-storage reduction claim.
   - The macro packer does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [macro packer model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-macro-packer-v1.json)
-  - [quote benchmark macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3-macro-packer-v1.json)
-  - [quote paragraph macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3-macro-packer-v1.json)
-  - [storage projection macro report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-macro-packer-v1.json)
-  - [macro frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-macro-packer-v1\suite-summary.json)
+  - [macro packer model](models\learned-hybrid-prototype-v3-macro-packer-v1.json)
+  - [quote benchmark macro report](bench\2026-04-25-quote-benchmark-v3-macro-packer-v1.json)
+  - [quote paragraph macro report](bench\2026-04-25-quote-paragraph-benchmark-v3-macro-packer-v1.json)
+  - [storage projection macro report](bench\2026-04-25-storage-projection-v3-macro-packer-v1.json)
+  - [macro frozen suite summary](bench\eval-suite-learned-hybrid-v3-macro-packer-v1\suite-summary.json)
 - `notes`:
   - This is the first repo variant that simultaneously collapses the tested quote and paragraph corpora to one patch per entry and keeps the paraphrase holdout positive.
   - The storage gain comes from the patching rule, not from a solved semantic representation problem.

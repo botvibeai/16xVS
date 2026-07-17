@@ -1,6 +1,6 @@
 {
   "title": "V30 Commercial Token-Reduction Baseline",
-  "generatedAt": "2026-07-17T17:04:24.620Z",
+  "generatedAt": "2026-07-17T17:22:20.198Z",
   "outputDir": "bench/fortify-2026-07-17-v30-commercial-baseline",
   "claimLevel": "local-commercial-stretch-proof",
   "fixture": "bench/fortify-2026-07-17-v30-commercial-baseline/fixture.json",

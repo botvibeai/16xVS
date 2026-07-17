@@ -39,14 +39,14 @@
   - The mega-book report trips the default collapse guardrail only because the one-entry corpus yields no nearest-neighbor distances; this is not evidence of a real signature collision.
   - This round still does not support the `99.99%` raw-source reduction claim or the `Library of Congress -> 1.25 GB` claim.
 - `artifacts`:
-  - [chapter baseline report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
-  - [book-root corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\book-root-corpus-2026-05-06.txt)
-  - [book-root semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\book-root-semantic-2026-05-06.json)
-  - [book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
-  - [mega-book corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\mega-book-corpus-2026-05-06.txt)
-  - [mega-book report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
-  - [book-fold storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-folding-storage-projection-v3-hierarchical-packer-v2.json)
-  - [booklike storage pressure test](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-booklike-storage-pressure.md)
+  - [chapter baseline report](bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-root corpus](bench\book-root-corpus-2026-05-06.txt)
+  - [book-root semantic groups](bench\book-root-semantic-2026-05-06.json)
+  - [book-root report](bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
+  - [mega-book corpus](bench\mega-book-corpus-2026-05-06.txt)
+  - [mega-book report](bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-fold storage projection](bench\2026-05-06-book-folding-storage-projection-v3-hierarchical-packer-v2.json)
+  - [booklike storage pressure test](docs\ledger\2026-04-25-booklike-storage-pressure.md)
 - `notes`:
   - This is the cleanest repo evidence so far for the user's "book folds in on itself" idea.
   - The fold is currently driven by the hierarchical packer cap rather than by a fully validated recursive token tree.

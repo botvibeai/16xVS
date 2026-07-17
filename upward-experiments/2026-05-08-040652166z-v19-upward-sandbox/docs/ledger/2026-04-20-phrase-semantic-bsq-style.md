@@ -34,8 +34,8 @@
   - This does not prove broad real-world tokenizer superiority.
   - This does not prove robust semantic retrieval outside the controlled phrase fixture.
 - `artifacts`:
-  - [2026-04-20-phrase-semantic-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-phrase-semantic-bsq-style-report.json)
-  - [phrase-semantic-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\phrase-semantic-report.json)
+  - [2026-04-20-phrase-semantic-bsq-style-report.json](bench\2026-04-20-phrase-semantic-bsq-style-report.json)
+  - [phrase-semantic-report.json](bench\phrase-semantic-report.json)
 - `notes`:
   - This reverses the earlier phrase semantic failure on the controlled labeled fixture, but only at the experimental-candidate layer.
   - The weakest positive group is `finance` with margin `6.75`; this needs larger corpus pressure before promotion.

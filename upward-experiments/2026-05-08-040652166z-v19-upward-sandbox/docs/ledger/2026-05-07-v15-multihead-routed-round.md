@@ -50,15 +50,15 @@
 
 ## Artifacts
 
-- [multi-head routing helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\multi-head-routing.mjs)
-- [multi-head routing benchmark script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-multihead-routing-benchmark.mjs)
-- [multi-head routing tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\multi-head-routing.test.mjs)
-- [book-root v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v15-multihead-routed.json)
-- [governance v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v15-multihead-routed.json)
-- [archive v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v15-multihead-routed.json)
-- [booklike default-route guardrail](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v15-multihead-default-route.json)
-- [v8 selected-head frozen suite](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-v15-selected-head-bookroot-v8\suite-summary.json)
-- [v13 selected-head frozen suite](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-v15-selected-head-governance-v13\suite-summary.json)
+- [multi-head routing helper](core\multi-head-routing.mjs)
+- [multi-head routing benchmark script](scripts\run-multihead-routing-benchmark.mjs)
+- [multi-head routing tests](test\multi-head-routing.test.mjs)
+- [book-root v15 routed report](bench\2026-05-07-book-root-benchmark-v15-multihead-routed.json)
+- [governance v15 routed report](bench\2026-05-07-governance-adversarial-v15-multihead-routed.json)
+- [archive v15 routed report](bench\2026-05-07-archive-pressure-v15-multihead-routed.json)
+- [booklike default-route guardrail](bench\2026-05-07-booklike-benchmark-v15-multihead-default-route.json)
+- [v8 selected-head frozen suite](bench\eval-suite-v15-selected-head-bookroot-v8\suite-summary.json)
+- [v13 selected-head frozen suite](bench\eval-suite-v15-selected-head-governance-v13\suite-summary.json)
 
 ## Next Action
 

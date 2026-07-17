@@ -28,10 +28,10 @@
   - The current best local-only model does not show positive quote-theme separation on this corpus.
   - This is not evidence that quote-sized meaning is fully captured in one patch.
 - `artifacts`:
-  - [quote corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\quote-corpus-2026-04-25.txt)
-  - [quote semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\quote-semantic-2026-04-25.json)
-  - [quote benchmark report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3.json)
-  - [learned hybrid v3 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3.json)
+  - [quote corpus](bench\quote-corpus-2026-04-25.txt)
+  - [quote semantic groups](bench\quote-semantic-2026-04-25.json)
+  - [quote benchmark report](bench\2026-04-25-quote-benchmark-v3.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
 - `notes`:
   - This benchmark directly answers the founder question about quote-level collapse into a single visual token.
   - Under the current patch packer, most quote-style lines still take `2` or `3` patches.

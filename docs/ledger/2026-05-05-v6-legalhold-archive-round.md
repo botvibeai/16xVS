@@ -57,14 +57,14 @@
   - The blind holdout and stress suite still fail.
   - This run does not support broad tokenizer-superiority claims.
 - `artifacts`:
-  - [training spec v5](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v5.json)
-  - [training pairs v5](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v5.json)
-  - [v6 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v6-legalhold-archive-base.json)
-  - [v6 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v6-legalhold-archive-hierarchical-packer-v1.json)
-  - [v6 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v6-legalhold-archive-hierarchical-packer-v1\suite-summary.json)
-  - [v6 governance adversarial report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-governance-adversarial-v6-legalhold-archive-hierarchical-packer-v1.json)
-  - [v6 archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-archive-pressure-v6-legalhold-archive-hierarchical-packer-v1.json)
-  - [v5 mixed-objective round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-05-mixed-objective-v5-round.md)
+  - [training spec v5](data\training\embedding-training-spec-v5.json)
+  - [training pairs v5](data\training\embedding-training-pairs-v5.json)
+  - [v6 base model](models\learned-hybrid-prototype-v6-legalhold-archive-base.json)
+  - [v6 hierarchical model](models\learned-hybrid-prototype-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v6 frozen suite summary](bench\eval-suite-learned-hybrid-v6-legalhold-archive-hierarchical-packer-v1\suite-summary.json)
+  - [v6 governance adversarial report](bench\2026-05-05-governance-adversarial-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v6 archive pressure report](bench\2026-05-05-archive-pressure-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v5 mixed-objective round](docs\ledger\2026-05-05-mixed-objective-v5-round.md)
 - `notes`:
   - This is the strongest targeted archive/governance result in the repo so far.
   - It is still a specialization result with a large multilingual and paraphrase tradeoff.

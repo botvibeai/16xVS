@@ -76,8 +76,8 @@
 
 ## Artifacts
 
-- [v24 single-head summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-repair\README.md)
-- [v24 five-head ranked summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-five-head-ranked\README.md)
-- [v24 blend sweep summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-blend-sweep\README.md)
-- [v24 generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v24-quote-repair-spec.mjs)
-- [v24 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json)
+- [v24 single-head summary](bench\fortify-2026-05-16-v24-quote-repair\README.md)
+- [v24 five-head ranked summary](bench\fortify-2026-05-16-v24-five-head-ranked\README.md)
+- [v24 blend sweep summary](bench\fortify-2026-05-16-v24-quote-blend-sweep\README.md)
+- [v24 generator](scripts\generate-v24-quote-repair-spec.mjs)
+- [v24 hierarchical model](models\learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json)

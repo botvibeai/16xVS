@@ -45,22 +45,22 @@
   - Additional broad support phrases are not a safe route by themselves; they can overfit or smear the semantic boundary.
   - These tests still do not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [v13 spec generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v13-balanced-triad-spec.mjs)
-  - [v13 training spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v13-balanced-triad.json)
-  - [v13 training pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v13-balanced-triad.json)
-  - [v13 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v13-balanced-triad-base.json)
-  - [v13 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json)
-  - [v13 book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v13-balanced-triad-hierarchical-packer-v2.json)
-  - [v13 governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json)
-  - [v13 archive report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json)
-  - [v14 spec generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v14-book-root-balance-spec.mjs)
-  - [v14 training spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v14-book-root-balance.json)
-  - [v14 training pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v14-book-root-balance.json)
-  - [v14 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v14-book-root-balance-base.json)
-  - [v14 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v14-book-root-balance-hierarchical-packer-v2.json)
-  - [v14 book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v14-book-root-balance-hierarchical-packer-v2.json)
-  - [v14 governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v14-book-root-balance-hierarchical-packer-v2.json)
-  - [v14 archive report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v13 spec generator](scripts\generate-v13-balanced-triad-spec.mjs)
+  - [v13 training spec](data\training\embedding-training-spec-v13-balanced-triad.json)
+  - [v13 training pairs](data\training\embedding-training-pairs-v13-balanced-triad.json)
+  - [v13 base model](models\learned-hybrid-prototype-v13-balanced-triad-base.json)
+  - [v13 hierarchical model](models\learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 book-root report](bench\2026-05-07-book-root-benchmark-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 governance report](bench\2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 archive report](bench\2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v14 spec generator](scripts\generate-v14-book-root-balance-spec.mjs)
+  - [v14 training spec](data\training\embedding-training-spec-v14-book-root-balance.json)
+  - [v14 training pairs](data\training\embedding-training-pairs-v14-book-root-balance.json)
+  - [v14 base model](models\learned-hybrid-prototype-v14-book-root-balance-base.json)
+  - [v14 hierarchical model](models\learned-hybrid-prototype-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 book-root report](bench\2026-05-07-book-root-benchmark-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 governance report](bench\2026-05-07-governance-adversarial-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 archive report](bench\2026-05-07-archive-pressure-v14-book-root-balance-hierarchical-packer-v2.json)
 - `notes`:
   - v13 is useful as a governance/archive specialist candidate, but it is not the best overall model.
   - v14 demonstrates that adding more book-root phrases is not enough and can degrade nearby legal-hold boundaries.

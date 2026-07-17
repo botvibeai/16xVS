@@ -58,17 +58,17 @@
   - The v12 blend-only approach cannot clear book-root, governance, and archive pressure together under the current learned surface.
   - These tests still do not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [v11 targeted training spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v9-targeted-bridge-audit.json)
-  - [v11 targeted training pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v9-targeted-bridge-audit.json)
-  - [v11 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v11-targeted-bridge-audit-base.json)
-  - [v11 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
-  - [v11 book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
-  - [v11 governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
-  - [v11 archive report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
-  - [v11 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v11-targeted-bridge-audit-hierarchical-packer-v2\suite-summary.json)
-  - [v12 h05 book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v12-blend-h05-hierarchical-packer-v2.json)
-  - [v12 h05 governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v12-blend-h05-hierarchical-packer-v2.json)
-  - [v12 h05 archive report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v12-blend-h05-hierarchical-packer-v2.json)
+  - [v11 targeted training spec](data\training\embedding-training-spec-v9-targeted-bridge-audit.json)
+  - [v11 targeted training pairs](data\training\embedding-training-pairs-v9-targeted-bridge-audit.json)
+  - [v11 base model](models\learned-hybrid-prototype-v11-targeted-bridge-audit-base.json)
+  - [v11 hierarchical model](models\learned-hybrid-prototype-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 book-root report](bench\2026-05-07-book-root-benchmark-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 governance report](bench\2026-05-07-governance-adversarial-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 archive report](bench\2026-05-07-archive-pressure-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 frozen suite summary](bench\eval-suite-learned-hybrid-v11-targeted-bridge-audit-hierarchical-packer-v2\suite-summary.json)
+  - [v12 h05 book-root report](bench\2026-05-07-book-root-benchmark-v12-blend-h05-hierarchical-packer-v2.json)
+  - [v12 h05 governance report](bench\2026-05-07-governance-adversarial-v12-blend-h05-hierarchical-packer-v2.json)
+  - [v12 h05 archive report](bench\2026-05-07-archive-pressure-v12-blend-h05-hierarchical-packer-v2.json)
 - `notes`:
   - v10 remains the best overall constrained merge candidate because it preserves the fold, passes archive pressure, and only narrowly misses `control_book_root` and `audit_evidence_adversarial`.
   - v11 shows that simply adding supervision for the two failing groups is too blunt; it fixes those names while moving failures into neighboring concepts.

@@ -28,9 +28,9 @@
   - Under the current aggregate ratio, any input corpus larger than `0.5303 GB` would exceed `1.25 GB` of binary output.
   - The dense-vector reduction math is not proof of raw-text compression.
 - `artifacts`:
-  - [quote report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3.json)
-  - [quote paragraph report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3.json)
-  - [storage projection report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3.json)
+  - [quote report](bench\2026-04-25-quote-benchmark-v3.json)
+  - [quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3.json)
+  - [storage projection report](bench\2026-04-25-storage-projection-v3.json)
 - `notes`:
   - This result is specifically about raw-source storage under the current text-side prototype path.
   - The current path expands quote-style and paragraph-style text in raw bytes because the packer emits multiple `32`-byte codes per line.

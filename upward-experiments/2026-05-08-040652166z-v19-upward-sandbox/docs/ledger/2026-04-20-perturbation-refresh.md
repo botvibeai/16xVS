@@ -23,8 +23,8 @@
   - No semantic fixture was included in this standalone perturbation report, so semantic separation must be read from the phrase semantic run.
   - This does not prove target 16xVS BSQ performance.
 - `artifacts`:
-  - [2026-04-20-perturbation-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-perturbation-bsq-style-report.json)
-  - [perturbation-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\perturbation-report.json)
+  - [2026-04-20-perturbation-bsq-style-report.json](bench\2026-04-20-perturbation-bsq-style-report.json)
+  - [perturbation-report.json](bench\perturbation-report.json)
 - `notes`:
   - The richer semantic interpretation remains in `EXP-2026-04-20-001`.
 - `next_action`:

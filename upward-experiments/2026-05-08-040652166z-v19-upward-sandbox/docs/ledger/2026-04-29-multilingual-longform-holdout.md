@@ -29,10 +29,10 @@
   - This run does not prove broad multilingual superiority in real-world use.
   - This run does not validate the larger `99.99%` or `1.25 GB` raw-source claims.
 - `artifacts`:
-  - [multilingual longform corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-longform-holdout-2026-04-29.txt)
-  - [multilingual longform semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-longform-semantic-2026-04-29.json)
-  - [multilingual longform report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-29-multilingual-longform-holdout-v3-hierarchical-packer-v2.json)
-  - [current hierarchical baseline model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
+  - [multilingual longform corpus](bench\multilingual-longform-holdout-2026-04-29.txt)
+  - [multilingual longform semantic groups](bench\multilingual-longform-semantic-2026-04-29.json)
+  - [multilingual longform report](bench\2026-04-29-multilingual-longform-holdout-v3-hierarchical-packer-v2.json)
+  - [current hierarchical baseline model](models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
 - `notes`:
   - The passages are still benchmark-authored and controlled.
   - The result is useful because it shows the current baseline can carry multilingual theme structure on longer mixed-script records even though the older frozen multilingual gate still has one failing group.

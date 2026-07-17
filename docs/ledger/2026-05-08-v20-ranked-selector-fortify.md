@@ -41,7 +41,7 @@
 
 ## Artifacts
 
-- [v20 fortify summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v20-ranked-selector\README.md)
-- [head validator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\head-validator.mjs)
-- [validated routing runner](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-validated-routing-benchmark.mjs)
-- [head validator tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\head-validator.test.mjs)
+- [v20 fortify summary](bench\fortify-2026-05-08-v20-ranked-selector\README.md)
+- [head validator](core\head-validator.mjs)
+- [validated routing runner](scripts\run-validated-routing-benchmark.mjs)
+- [head validator tests](test\head-validator.test.mjs)

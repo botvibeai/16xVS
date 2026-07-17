@@ -43,8 +43,8 @@ V21 is not a new baseline because the locked book-root, governance, and archive 
 
 ## Artifacts
 
-- [spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v21-booklike-repair.json)
-- [pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v21-booklike-repair.json)
-- [base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v21-booklike-repair-base.json)
-- [hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v21-booklike-repair-hierarchical-packer-v2.json)
-- [booklike report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v21-booklike-repair\booklike-v21-booklike-repair.json)
+- [spec](data\training\embedding-training-spec-v21-booklike-repair.json)
+- [pairs](data\training\embedding-training-pairs-v21-booklike-repair.json)
+- [base model](models\learned-hybrid-prototype-v21-booklike-repair-base.json)
+- [hierarchical model](models\learned-hybrid-prototype-v21-booklike-repair-hierarchical-packer-v2.json)
+- [booklike report](bench\fortify-2026-05-08-v21-booklike-repair\booklike-v21-booklike-repair.json)

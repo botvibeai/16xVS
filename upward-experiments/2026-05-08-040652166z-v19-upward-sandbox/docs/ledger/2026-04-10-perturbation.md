@@ -19,8 +19,8 @@
   - Perturbation coverage is still too thin to support general stability claims.
   - This does not demonstrate semantic robustness.
 - `artifacts`:
-  - [perturbation-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\perturbation-report.json)
-  - [phrase-semantic-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\phrase-semantic-report.json)
+  - [perturbation-report.json](bench\perturbation-report.json)
+  - [phrase-semantic-report.json](bench\phrase-semantic-report.json)
 - `notes`:
   - This report is useful, but the richer perturbation interpretation now lives inside the phrase semantic run.
   - Future perturbation tests should use denser variant sets.

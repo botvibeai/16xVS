@@ -35,6 +35,6 @@ This is useful governance evidence for the router: the system can see a better s
 
 ## Artifacts
 
-- [five-head ranked reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-five-head-ranked)
-- [v24 single-head summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-repair\README.md)
-- [v24 blend sweep summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-blend-sweep\README.md)
+- [five-head ranked reports](bench\fortify-2026-05-16-v24-five-head-ranked)
+- [v24 single-head summary](bench\fortify-2026-05-16-v24-quote-repair\README.md)
+- [v24 blend sweep summary](bench\fortify-2026-05-16-v24-quote-blend-sweep\README.md)

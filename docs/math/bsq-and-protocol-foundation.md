@@ -1,10 +1,10 @@
-﻿# 16xVS Math and Protocol Foundation
+# 16xVS Math and Protocol Foundation
 
 This file separates target 16xVS protocol math from the currently implemented benchmark code.
 
 For the target multilevel fold above those binary codes, see:
 
-- [hierarchical-folding-architecture.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\math\hierarchical-folding-architecture.md)
+- [hierarchical-folding-architecture.md](docs\math\hierarchical-folding-architecture.md)
 
 ## Target 16xVS Math
 

@@ -53,9 +53,9 @@ Target comparison against v23 selected-head margins:
 
 ## Artifacts
 
-- [v24 generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v24-quote-repair-spec.mjs)
-- [v24 spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v24-quote-repair.json)
-- [v24 pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v24-quote-repair.json)
-- [v24 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v24-quote-repair-base.json)
-- [v24 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json)
-- [single-head reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-repair)
+- [v24 generator](scripts\generate-v24-quote-repair-spec.mjs)
+- [v24 spec](data\training\embedding-training-spec-v24-quote-repair.json)
+- [v24 pairs](data\training\embedding-training-pairs-v24-quote-repair.json)
+- [v24 base model](models\learned-hybrid-prototype-v24-quote-repair-base.json)
+- [v24 hierarchical model](models\learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json)
+- [single-head reports](bench\fortify-2026-05-16-v24-quote-repair)

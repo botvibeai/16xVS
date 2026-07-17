@@ -49,14 +49,14 @@ The synthetic mega-book follow-up tests the inward-folding shape directly under 
 
 ## Artifacts
 
-- [auto-route helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\auto-route.mjs)
-- [auto-route benchmark script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-auto-routing-benchmark.mjs)
-- [auto-route tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\auto-route.test.mjs)
-- [book-root v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v17-confidence-routed.json)
-- [governance v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v17-confidence-routed.json)
-- [archive v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v17-confidence-routed.json)
-- [booklike v17 confidence-routed guardrail](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v17-confidence-routed.json)
-- [mega-book v17 confidence-routed fold report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v17-confidence-routed.json)
+- [auto-route helper](core\auto-route.mjs)
+- [auto-route benchmark script](scripts\run-auto-routing-benchmark.mjs)
+- [auto-route tests](test\auto-route.test.mjs)
+- [book-root v17 confidence-routed report](bench\2026-05-07-book-root-benchmark-v17-confidence-routed.json)
+- [governance v17 confidence-routed report](bench\2026-05-07-governance-adversarial-v17-confidence-routed.json)
+- [archive v17 confidence-routed report](bench\2026-05-07-archive-pressure-v17-confidence-routed.json)
+- [booklike v17 confidence-routed guardrail](bench\2026-05-07-booklike-benchmark-v17-confidence-routed.json)
+- [mega-book v17 confidence-routed fold report](bench\2026-05-07-mega-book-benchmark-v17-confidence-routed.json)
 
 ## Next Action
 

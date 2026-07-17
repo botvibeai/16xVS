@@ -58,9 +58,9 @@ The stronger finding is the four-head ranked architecture: adding v22 as a dedic
 
 ## Artifacts
 
-- [v22 generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v22-governance-evidence-booklike-spec.mjs)
-- [v22 spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v22-governance-evidence-booklike.json)
-- [v22 pairs](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v22-governance-evidence-booklike.json)
-- [v22 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json)
-- [single-head reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v22-governance-evidence-booklike)
-- [four-head ranked reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v22-four-head-ranked)
+- [v22 generator](scripts\generate-v22-governance-evidence-booklike-spec.mjs)
+- [v22 spec](data\training\embedding-training-spec-v22-governance-evidence-booklike.json)
+- [v22 pairs](data\training\embedding-training-pairs-v22-governance-evidence-booklike.json)
+- [v22 model](models\learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json)
+- [single-head reports](bench\fortify-2026-05-08-v22-governance-evidence-booklike)
+- [four-head ranked reports](bench\fortify-2026-05-08-v22-four-head-ranked)

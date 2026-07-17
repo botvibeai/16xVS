@@ -22,10 +22,10 @@
   - This archival proof does not say anything about tokenizer quality by itself.
   - The existence of a vault snapshot does not validate the large storage-collapse claims.
 - `artifacts`:
-  - [vault snapshot script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\create-vault-snapshot.mjs)
-  - [snapshot core helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\vault-snapshot.mjs)
-  - [final local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final\manifest.json)
-  - [snapshot ledger for hierarchical round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+  - [vault snapshot script](scripts\create-vault-snapshot.mjs)
+  - [snapshot core helper](core\vault-snapshot.mjs)
+  - [final local snapshot manifest](vault-snapshots\2026-04-25T06-27-22-993Z-hierarchical-packer-v1-final\manifest.json)
+  - [snapshot ledger for hierarchical round](docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
 - `notes`:
   - The final manifest calls out the current semantic baseline, macro variants, hierarchical variant, and key suite summaries as critical artifacts.
   - The remote upload was performed with Wrangler against the remote R2 bucket, not only Wrangler's local R2 context.

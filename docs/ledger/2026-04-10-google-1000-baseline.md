@@ -21,7 +21,7 @@
   - This does not say anything useful about semantic grouping.
   - This does not prove storage efficiency of the final 16xVS protocol.
 - `artifacts`:
-  - [google-10000-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\google-10000-report.json)
+  - [google-10000-report.json](bench\google-10000-report.json)
 - `notes`:
   - The result is favorable but narrow because the corpus is mostly isolated English words.
   - This benchmark is still useful as a recurring baseline.

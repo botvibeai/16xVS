@@ -64,14 +64,14 @@
   - The archive-pressure corpus regresses to three negative groups and does not become a pass.
   - This run does not support broad tokenizer-superiority claims.
 - `artifacts`:
-  - [training spec v4](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v4.json)
-  - [training pairs v4](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v4.json)
-  - [v5 mixed-objective base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v5-mixed-objective-base.json)
-  - [v5 mixed-objective hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v5-mixed-objective-hierarchical-packer-v1.json)
-  - [v5 frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v5-mixed-objective-hierarchical-packer-v1\suite-summary.json)
-  - [v5 governance adversarial report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-governance-adversarial-v5-mixed-objective-hierarchical-packer-v1.json)
-  - [v5 archive pressure report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-05-archive-pressure-v5-mixed-objective-hierarchical-packer-v1.json)
-  - [v4 governance round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+  - [training spec v4](data\training\embedding-training-spec-v4.json)
+  - [training pairs v4](data\training\embedding-training-pairs-v4.json)
+  - [v5 mixed-objective base model](models\learned-hybrid-prototype-v5-mixed-objective-base.json)
+  - [v5 mixed-objective hierarchical model](models\learned-hybrid-prototype-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v5 frozen suite summary](bench\eval-suite-learned-hybrid-v5-mixed-objective-hierarchical-packer-v1\suite-summary.json)
+  - [v5 governance adversarial report](bench\2026-05-05-governance-adversarial-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v5 archive pressure report](bench\2026-05-05-archive-pressure-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [v4 governance round](docs\ledger\2026-04-29-governance-trained-v4-round.md)
 - `notes`:
   - This is a compromise result, not a breakthrough.
   - Relative to `v4`, the model is broader and less overfit.

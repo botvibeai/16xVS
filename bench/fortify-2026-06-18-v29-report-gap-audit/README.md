@@ -2,7 +2,7 @@
 
 - generatedAt: `2026-06-18T07:33:47.617Z`
 - claimLevel: `evidence-governance-gap-audit`
-- source: `C:\Users\BotVi\Downloads\16xVS 6-13-2026.md`
+- source: `external-source:16xVS 6-13-2026.md`
 - rawSha256: `fee76ccb42e792faeca8e2a231293f6246e035ae00fcd8837374d0b3575711f9`
 - noDeploy: `true`
 - noExternalCalls: `true`

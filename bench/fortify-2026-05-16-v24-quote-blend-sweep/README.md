@@ -27,6 +27,6 @@ The best observed target margins were:
 
 ## Artifacts
 
-- [blend sweep reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-blend-sweep)
-- [h0p2 quote report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-blend-sweep\quote-v24-h0p2.json)
-- [h0p4 quote-paragraph report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-16-v24-quote-blend-sweep\quote-paragraph-v24-h0p4.json)
+- [blend sweep reports](bench\fortify-2026-05-16-v24-quote-blend-sweep)
+- [h0p2 quote report](bench\fortify-2026-05-16-v24-quote-blend-sweep\quote-v24-h0p2.json)
+- [h0p4 quote-paragraph report](bench\fortify-2026-05-16-v24-quote-blend-sweep\quote-paragraph-v24-h0p4.json)

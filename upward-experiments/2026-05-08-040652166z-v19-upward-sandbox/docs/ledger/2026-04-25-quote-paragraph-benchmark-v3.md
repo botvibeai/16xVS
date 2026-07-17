@@ -26,10 +26,10 @@
   - The current best local-only model does not show positive paragraph-theme separation on this corpus.
   - This is not evidence that passage-level meaning is captured in one patch.
 - `artifacts`:
-  - [quote paragraph corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\quote-paragraph-corpus-2026-04-25.txt)
-  - [quote paragraph semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\quote-paragraph-semantic-2026-04-25.json)
-  - [quote paragraph report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3.json)
-  - [learned hybrid v3 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3.json)
+  - [quote paragraph corpus](bench\quote-paragraph-corpus-2026-04-25.txt)
+  - [quote paragraph semantic groups](bench\quote-paragraph-semantic-2026-04-25.json)
+  - [quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
 - `notes`:
   - The current patch packer still scales linearly on paragraph-style lines. Most entries landed in the `6` to `8` patch range.
   - This test strengthens the conclusion from the shorter quote benchmark: the current path is not yet a one-token quote or one-token passage system.

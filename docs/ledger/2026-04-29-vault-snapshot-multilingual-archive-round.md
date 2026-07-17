@@ -21,9 +21,9 @@
   - This round is not fully backed up to the remote vault bucket from the current environment.
   - The remote vault archive and manifest objects were not uploaded successfully in this session.
 - `artifacts`:
-  - [local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-29T05-41-17-137Z-multilingual-archive-round-2026-04-29\manifest.json)
-  - [multilingual longform ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-multilingual-longform-holdout.md)
-  - [archive pressure ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-archive-pressure.md)
+  - [local snapshot manifest](vault-snapshots\2026-04-29T05-41-17-137Z-multilingual-archive-round-2026-04-29\manifest.json)
+  - [multilingual longform ledger](docs\ledger\2026-04-29-multilingual-longform-holdout.md)
+  - [archive pressure ledger](docs\ledger\2026-04-29-archive-pressure.md)
 - `notes`:
   - The local snapshot succeeded.
   - The remote Wrangler session failed with an invalid access token state and no `CLOUDFLARE_API_TOKEN` available in the current environment, so the vault upload could not complete from this run.

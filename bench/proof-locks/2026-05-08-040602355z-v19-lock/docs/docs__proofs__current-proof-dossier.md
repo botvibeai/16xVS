@@ -10,8 +10,8 @@ The isolated Worker path can ingest, store, retrieve, and repair records without
 
 Evidence:
 
-- [README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\README.md)
-- [status](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\status.md)
+- [README](README.md)
+- [status](docs\status.md)
 
 ### Triple storage policy is implemented
 
@@ -19,8 +19,8 @@ The current POC enforces `live` plus at least one secondary tier and exposes rep
 
 Evidence:
 
-- [README](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\README.md)
-- [status](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\status.md)
+- [README](README.md)
+- [status](docs\status.md)
 
 ### Benchmark harness is real
 
@@ -28,8 +28,8 @@ The repo can generate benchmark artifacts that compare `tiktoken`, the fixture p
 
 Evidence:
 
-- [sample baseline refresh](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-sample-baseline-refresh.md)
-- [Google 1000 refresh](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-google-1000-refresh.md)
+- [sample baseline refresh](docs\ledger\2026-04-20-sample-baseline-refresh.md)
+- [Google 1000 refresh](docs\ledger\2026-04-20-google-1000-refresh.md)
 
 ### Vault snapshot path exists
 
@@ -37,10 +37,10 @@ The repo can now create a file-hashed snapshot of the current code, models, benc
 
 Evidence:
 
-- [status](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\status.md)
-- [vault snapshot script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\create-vault-snapshot.mjs)
-- [vault snapshot ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-vault-snapshot-hierarchical-final.md)
-- [latest vault snapshot ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-vault-snapshot-hierarchical-v2-final.md)
+- [status](docs\status.md)
+- [vault snapshot script](scripts\create-vault-snapshot.mjs)
+- [vault snapshot ledger](docs\ledger\2026-04-25-vault-snapshot-hierarchical-final.md)
+- [latest vault snapshot ledger](docs\ledger\2026-04-25-vault-snapshot-hierarchical-v2-final.md)
 
 ### Phase-1 learned-encoder scaffold exists
 
@@ -48,10 +48,10 @@ The repo now has a training-pair builder and a frozen evaluation-suite runner. T
 
 Evidence:
 
-- [embedding-training-spec.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec.json)
-- [embedding-training-pairs.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs.json)
-- [frozen-eval-suite.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\eval\frozen-eval-suite.json)
-- [suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+- [embedding-training-spec.json](data\training\embedding-training-spec.json)
+- [embedding-training-pairs.json](data\training\embedding-training-pairs.json)
+- [frozen-eval-suite.json](data\eval\frozen-eval-suite.json)
+- [suite-summary.json](bench\eval-suite-latest\suite-summary.json)
 
 ## Directional
 
@@ -61,9 +61,9 @@ This is supported by the sample benchmark, the 1000-word English subset, and the
 
 Evidence:
 
-- [sample baseline refresh](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-sample-baseline-refresh.md)
-- [Google 1000 refresh](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-google-1000-refresh.md)
-- [multilingual BSQ-style run](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-multilingual-bsq-style.md)
+- [sample baseline refresh](docs\ledger\2026-04-20-sample-baseline-refresh.md)
+- [Google 1000 refresh](docs\ledger\2026-04-20-google-1000-refresh.md)
+- [multilingual BSQ-style run](docs\ledger\2026-04-20-multilingual-bsq-style.md)
 
 ### Multilingual count disparity can be benchmarked directly
 
@@ -71,7 +71,7 @@ The current harness can expose baseline count inflation under `tiktoken` versus 
 
 Evidence:
 
-- [multilingual BSQ-style run](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-multilingual-bsq-style.md)
+- [multilingual BSQ-style run](docs\ledger\2026-04-20-multilingual-bsq-style.md)
 
 ### Controlled semantic separation is now positive in the BSQ-style prototype
 
@@ -81,9 +81,9 @@ The locked blind holdout failed semantic separation, so this claim must not be p
 
 Evidence:
 
-- [phrase BSQ-style run](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-phrase-semantic-bsq-style.md)
-- [multilingual BSQ-style run](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-multilingual-bsq-style.md)
-- [blind holdout failure](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-20-blind-holdout-bsq-style.md)
+- [phrase BSQ-style run](docs\ledger\2026-04-20-phrase-semantic-bsq-style.md)
+- [multilingual BSQ-style run](docs\ledger\2026-04-20-multilingual-bsq-style.md)
+- [blind holdout failure](docs\ledger\2026-04-20-blind-holdout-bsq-style.md)
 
 ### The best local-only learned path now passes the phrase-unseen paraphrase holdout
 
@@ -93,8 +93,8 @@ This remains directional rather than proven because the blind unseen-domain hold
 
 Evidence:
 
-- [learned hybrid prototype v3 suite](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-24-learned-hybrid-prototype-v3-suite.md)
-- [hybrid v3 suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3\suite-summary.json)
+- [learned hybrid prototype v3 suite](docs\ledger\2026-04-24-learned-hybrid-prototype-v3-suite.md)
+- [hybrid v3 suite summary](bench\eval-suite-learned-hybrid-v3\suite-summary.json)
 
 ### A separate macro-packer variant now collapses tested quotes and paragraphs to one patch each
 
@@ -104,7 +104,7 @@ This remains directional only because the blind unseen-domain holdout still fail
 
 Evidence:
 
-- [macro packer v1 suite](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-macro-packer-v1-suite.md)
+- [macro packer v1 suite](docs\ledger\2026-04-25-macro-packer-v1-suite.md)
 
 ### The current hierarchical storage baseline improves the tested long-form storage profile
 
@@ -116,8 +116,8 @@ The `v2` residual-selection update is useful because it keeps the storage profil
 
 Evidence:
 
-- [hierarchical packer v1 suite](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
-- [hierarchical packer v2 residual selection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+- [hierarchical packer v1 suite](docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+- [hierarchical packer v2 residual selection](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
 
 ### The current hierarchical storage baseline now shows explicit synthetic book folding
 
@@ -127,9 +127,9 @@ This remains directional only because the book-root semantic grouping is still s
 
 Evidence:
 
-- [book folding round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-06-book-folding-round.md)
-- [book-root report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
-- [mega-book report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
+- [book folding round](docs\ledger\2026-05-06-book-folding-round.md)
+- [book-root report](bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
+- [mega-book report](bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
 
 ### A targeted control-bridge round can clear synthetic book-root grouping while preserving multilingual and paraphrase gates
 
@@ -139,9 +139,9 @@ This remains directional only because the blind holdout and stress suite still f
 
 Evidence:
 
-- [v8 control bridge round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v8-control-bridge-round.md)
-- [book-root v8 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
-- [suite summary v8](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2\suite-summary.json)
+- [v8 control bridge round](docs\ledger\2026-05-07-v8-control-bridge-round.md)
+- [book-root v8 report](bench\2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+- [suite summary v8](bench\eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2\suite-summary.json)
 
 ### A direct merge round can hold governance and bridge semantics in one model, but not the fold
 
@@ -151,10 +151,10 @@ This remains directional only because the same round destroys the long-form fold
 
 Evidence:
 
-- [v9 merge bridge governance round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v9-merge-bridge-governance-round.md)
-- [governance adversarial v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-- [archive pressure v9 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v9-merge-bridge-governance-hierarchical-packer-v2.json)
-- [suite summary v9](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v9-merge-bridge-governance-hierarchical-packer-v2\suite-summary.json)
+- [v9 merge bridge governance round](docs\ledger\2026-05-07-v9-merge-bridge-governance-round.md)
+- [governance adversarial v9 report](bench\2026-05-07-governance-adversarial-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+- [archive pressure v9 report](bench\2026-05-07-archive-pressure-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+- [suite summary v9](bench\eval-suite-learned-hybrid-v9-merge-bridge-governance-hierarchical-packer-v2\suite-summary.json)
 
 ### A constrained merge can hold the fold, archive pressure, multilingual, and paraphrase together
 
@@ -164,10 +164,10 @@ This remains directional only because `control_book_root` and `audit_evidence_ad
 
 Evidence:
 
-- [v10 constrained merge round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v10-constrained-merge-round.md)
-- [book-root v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
-- [archive pressure v10 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json)
-- [suite summary v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2\suite-summary.json)
+- [v10 constrained merge round](docs\ledger\2026-05-07-v10-constrained-merge-round.md)
+- [book-root v10 report](bench\2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json)
+- [archive pressure v10 report](bench\2026-05-07-archive-pressure-v10-constrained-merge-hierarchical-packer-v2.json)
+- [suite summary v10](bench\eval-suite-learned-hybrid-v10-constrained-merge-hierarchical-packer-v2\suite-summary.json)
 
 ### A governance/archive fold specialist can clear both target corpora, but not book-root
 
@@ -177,9 +177,9 @@ This remains directional only because the same model still fails synthetic book-
 
 Evidence:
 
-- [v13/v14 balanced triad round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v13-v14-balanced-triad-round.md)
-- [v13 governance report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json)
-- [v13 archive report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json)
+- [v13/v14 balanced triad round](docs\ledger\2026-05-07-v13-v14-balanced-triad-round.md)
+- [v13 governance report](bench\2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json)
+- [v13 archive report](bench\2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json)
 
 ### A hardening audit now favors a multi-head/routed-head architecture
 
@@ -189,9 +189,9 @@ This remains an architectural clue, not production proof. The router is not impl
 
 Evidence:
 
-- [hardening audit](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-hardening-audit.md)
-- [model role audit JSON](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-model-role-audit.json)
-- [oracle specialist routing audit](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-oracle-specialist-routing-audit.json)
+- [hardening audit](docs\ledger\2026-05-07-hardening-audit.md)
+- [model role audit JSON](bench\2026-05-07-model-role-audit.json)
+- [oracle specialist routing audit](bench\2026-05-07-oracle-specialist-routing-audit.json)
 
 ### A deterministic v15 multi-head benchmark clears the known target triad with supplied routes
 
@@ -201,10 +201,10 @@ This remains directional only because routing is supplied by the benchmark comma
 
 Evidence:
 
-- [v15 multi-head routed round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v15-multihead-routed-round.md)
-- [book-root v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v15-multihead-routed.json)
-- [governance v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v15-multihead-routed.json)
-- [archive v15 routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v15-multihead-routed.json)
+- [v15 multi-head routed round](docs\ledger\2026-05-07-v15-multihead-routed-round.md)
+- [book-root v15 routed report](bench\2026-05-07-book-root-benchmark-v15-multihead-routed.json)
+- [governance v15 routed report](bench\2026-05-07-governance-adversarial-v15-multihead-routed.json)
+- [archive v15 routed report](bench\2026-05-07-archive-pressure-v15-multihead-routed.json)
 
 ### A lexical v16 auto-router clears the known target triad without supplied route labels
 
@@ -214,10 +214,10 @@ This remains directional only because the router is lexical and brittle. It rout
 
 Evidence:
 
-- [v16 auto-routed round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v16-auto-routed-round.md)
-- [book-root v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v16-auto-routed.json)
-- [governance v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v16-auto-routed.json)
-- [archive v16 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v16-auto-routed.json)
+- [v16 auto-routed round](docs\ledger\2026-05-07-v16-auto-routed-round.md)
+- [book-root v16 auto-routed report](bench\2026-05-07-book-root-benchmark-v16-auto-routed.json)
+- [governance v16 auto-routed report](bench\2026-05-07-governance-adversarial-v16-auto-routed.json)
+- [archive v16 auto-routed report](bench\2026-05-07-archive-pressure-v16-auto-routed.json)
 
 ### A v17 confidence guard fixes the known booklike over-route
 
@@ -227,11 +227,11 @@ This remains directional only because the guard is shape-based, not learned vali
 
 Evidence:
 
-- [v17 confidence-routed round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v17-confidence-routed-round.md)
-- [book-root v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v17-confidence-routed.json)
-- [governance v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v17-confidence-routed.json)
-- [archive v17 confidence-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v17-confidence-routed.json)
-- [booklike v17 confidence-routed guardrail](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-booklike-benchmark-v17-confidence-routed.json)
+- [v17 confidence-routed round](docs\ledger\2026-05-07-v17-confidence-routed-round.md)
+- [book-root v17 confidence-routed report](bench\2026-05-07-book-root-benchmark-v17-confidence-routed.json)
+- [governance v17 confidence-routed report](bench\2026-05-07-governance-adversarial-v17-confidence-routed.json)
+- [archive v17 confidence-routed report](bench\2026-05-07-archive-pressure-v17-confidence-routed.json)
+- [booklike v17 confidence-routed guardrail](bench\2026-05-07-booklike-benchmark-v17-confidence-routed.json)
 
 ### The v17 router preserves the synthetic mega-book fold
 
@@ -241,7 +241,7 @@ This is storage-shape evidence only. The one-entry mega-book corpus cannot prove
 
 Evidence:
 
-- [mega-book v17 confidence-routed fold report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v17-confidence-routed.json)
+- [mega-book v17 confidence-routed fold report](bench\2026-05-07-mega-book-benchmark-v17-confidence-routed.json)
 
 ### The v18 semantic ladder proves a stronger fold-retention shape under the right head
 
@@ -251,9 +251,9 @@ This is the strongest current synthetic evidence for the "book folds inward but 
 
 Evidence:
 
-- [v18 mega-book semantic ladder](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v18-mega-book-semantic-ladder.md)
-- [v18 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v18-confidence-routed.json)
-- [v18 v10 head comparison](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v18-v10-head-comparison.json)
+- [v18 mega-book semantic ladder](docs\ledger\2026-05-07-v18-mega-book-semantic-ladder.md)
+- [v18 auto-routed report](bench\2026-05-07-mega-book-ladder-v18-confidence-routed.json)
+- [v18 v10 head comparison](bench\2026-05-07-mega-book-ladder-v18-v10-head-comparison.json)
 
 ### The v19 validated router fixes the v18 head-selection failure
 
@@ -263,13 +263,13 @@ This is still directional because the active selection policy keeps the safer ro
 
 Evidence:
 
-- [v19 validated routing round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-07-v19-validated-routing-round.md)
-- [v19 lock proof package](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\v19-lock-proof-package.md)
-- [v19 checkpoint manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\release\v19-lock-checkpoints.json)
-- [book-root v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v19-validated-routed.json)
-- [governance v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v19-validated-routed.json)
-- [archive v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-archive-pressure-v19-validated-routed.json)
-- [mega-book ladder v19 validated route](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v19-validated-routed.json)
+- [v19 validated routing round](docs\ledger\2026-05-07-v19-validated-routing-round.md)
+- [v19 lock proof package](docs\proofs\v19-lock-proof-package.md)
+- [v19 checkpoint manifest](data\release\v19-lock-checkpoints.json)
+- [book-root v19 validated route](bench\2026-05-07-book-root-benchmark-v19-validated-routed.json)
+- [governance v19 validated route](bench\2026-05-07-governance-adversarial-v19-validated-routed.json)
+- [archive v19 validated route](bench\2026-05-07-archive-pressure-v19-validated-routed.json)
+- [mega-book ladder v19 validated route](bench\2026-05-07-mega-book-ladder-v19-validated-routed.json)
 
 ### The v19 proof package is the first locked release evidence bundle
 
@@ -279,9 +279,9 @@ This remains a proof package rather than a production system. A production lock 
 
 Evidence:
 
-- [v19 lock proof package](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\v19-lock-proof-package.md)
-- [proof package script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\build-proof-package.mjs)
-- [proof gates](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\proof-gates.mjs)
+- [v19 lock proof package](docs\proofs\v19-lock-proof-package.md)
+- [proof package script](scripts\build-proof-package.mjs)
+- [proof gates](core\proof-gates.mjs)
 
 ### A larger book-like corpus strengthens the storage-side signal
 
@@ -291,8 +291,8 @@ This is still directional rather than proven because grouped semantic separation
 
 Evidence:
 
-- [booklike storage pressure test](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-booklike-storage-pressure.md)
-- [hierarchical packer v2 residual selection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+- [booklike storage pressure test](docs\ledger\2026-04-25-booklike-storage-pressure.md)
+- [hierarchical packer v2 residual selection](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
 
 ### A new multilingual long-form holdout passes under the current hierarchical baseline
 
@@ -302,7 +302,7 @@ This is directional rather than proven because the older frozen multilingual sui
 
 Evidence:
 
-- [multilingual longform holdout](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-multilingual-longform-holdout.md)
+- [multilingual longform holdout](docs\ledger\2026-04-29-multilingual-longform-holdout.md)
 
 ### The expanded long-form evidence set strengthens the storage envelope again
 
@@ -312,7 +312,7 @@ This remains directional rather than proven because the new archive-pressure cor
 
 Evidence:
 
-- [archive pressure longform test](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-archive-pressure.md)
+- [archive pressure longform test](docs\ledger\2026-04-29-archive-pressure.md)
 
 ### A governance-focused training round can clear the targeted governance adversarial holdout
 
@@ -322,7 +322,7 @@ This remains directional only because the same round regresses the broader froze
 
 Evidence:
 
-- [governance-focused v4 round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-29-governance-trained-v4-round.md)
+- [governance-focused v4 round](docs\ledger\2026-04-29-governance-trained-v4-round.md)
 
 ### A mixed-objective round can preserve more of the broad suite while keeping most governance gains
 
@@ -332,7 +332,7 @@ This remains directional only because the controlled multilingual suite still fa
 
 Evidence:
 
-- [mixed-objective v5 round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-05-mixed-objective-v5-round.md)
+- [mixed-objective v5 round](docs\ledger\2026-05-05-mixed-objective-v5-round.md)
 
 ### A targeted v6 round can fully clear governance adversarial and archive-pressure together
 
@@ -342,7 +342,7 @@ This remains directional only because the same round regresses controlled multil
 
 Evidence:
 
-- [v6 legal-hold and archive round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-05-v6-legalhold-archive-round.md)
+- [v6 legal-hold and archive round](docs\ledger\2026-05-05-v6-legalhold-archive-round.md)
 
 ## Not in this dossier
 
@@ -350,7 +350,7 @@ The following claims are intentionally excluded because they are not yet proven:
 
 - target BSQ implementation claims
 - broad semantic superiority claims
-- “beats regular tokenizers” as a general statement
+- â€œbeats regular tokenizersâ€ as a general statement
 - strategic market dominance, pricing, or 20-year financial claims
 
 Those remain documented in math notes, the status page, and the failure log until evidence changes.

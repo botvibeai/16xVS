@@ -20,7 +20,7 @@
   - This is not evidence of BSQ behavior.
   - The fixture path remains materially worse than `tiktoken`.
 - `artifacts`:
-  - [latest-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\latest-report.json)
+  - [latest-report.json](bench\latest-report.json)
 - `notes`:
   - This was the first clear sign that the heuristic core candidate was worth testing further.
   - The result only supports directional compression signal.

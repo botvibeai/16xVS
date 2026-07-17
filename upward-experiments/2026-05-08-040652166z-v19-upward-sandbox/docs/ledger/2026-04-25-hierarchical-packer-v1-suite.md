@@ -58,14 +58,14 @@
   - The hierarchical variant does not support the `99.99%` raw-storage reduction claim.
   - The hierarchical variant does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [hierarchical packer model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v1.json)
-  - [hierarchical frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v1\suite-summary.json)
-  - [hierarchical quote report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3-hierarchical-packer-v1.json)
-  - [hierarchical quote paragraph report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3-hierarchical-packer-v1.json)
-  - [hierarchical protocol longform report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v1.json)
-  - [macro protocol longform baseline](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-protocol-longform-benchmark-v3-macro-packer-v1.json)
-  - [hierarchical storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1.json)
-  - [macro longform storage projection baseline](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-macro-packer-v1-longform.json)
+  - [hierarchical packer model](models\learned-hybrid-prototype-v3-hierarchical-packer-v1.json)
+  - [hierarchical frozen suite summary](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v1\suite-summary.json)
+  - [hierarchical quote report](bench\2026-04-25-quote-benchmark-v3-hierarchical-packer-v1.json)
+  - [hierarchical quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3-hierarchical-packer-v1.json)
+  - [hierarchical protocol longform report](bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v1.json)
+  - [macro protocol longform baseline](bench\2026-04-25-protocol-longform-benchmark-v3-macro-packer-v1.json)
+  - [hierarchical storage projection](bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1.json)
+  - [macro longform storage projection baseline](bench\2026-04-25-storage-projection-v3-macro-packer-v1-longform.json)
 - `notes`:
   - This is the first repo variant that materially reduces long-form entry patch count without losing the quote and quote-paragraph one-patch results.
   - The gain is storage-side. The frozen semantic gate picture is effectively unchanged from the derived macro baseline.

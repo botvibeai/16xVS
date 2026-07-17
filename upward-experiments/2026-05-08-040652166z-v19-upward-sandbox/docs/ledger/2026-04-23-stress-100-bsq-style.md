@@ -38,9 +38,9 @@
   - The current prototype does not generalize category-level grouping across multilingual, code, repetition, token-boundary, and AI-prompt slices.
   - This does not prove target 16xVS BSQ behavior or broad tokenizer superiority.
 - `artifacts`:
-  - [2026-04-23-stress-100-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-23-stress-100-bsq-style-report.json)
-  - [stress-100-phrases-2026-04-23.txt](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\stress-100-phrases-2026-04-23.txt)
-  - [stress-100-groups-2026-04-23.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\stress-100-groups-2026-04-23.json)
+  - [2026-04-23-stress-100-bsq-style-report.json](bench\2026-04-23-stress-100-bsq-style-report.json)
+  - [stress-100-phrases-2026-04-23.txt](bench\stress-100-phrases-2026-04-23.txt)
+  - [stress-100-groups-2026-04-23.json](bench\stress-100-groups-2026-04-23.json)
 - `notes`:
   - The JSON report's `evidenceAssessment.resultLabel` is `directional` because count compression and collapse checks pass. This ledger labels the run `failed` because the grouped-stress separation objective failed across all five groups.
   - This is a broader stress test than the blind holdout and it reinforces the same conclusion: current heuristic embeddings compress well but do not generalize grouping behavior.

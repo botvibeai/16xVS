@@ -21,8 +21,8 @@
   - No semantic fixture was included, so this run does not support semantic behavior claims.
   - This does not prove target 16xVS BSQ performance.
 - `artifacts`:
-  - [2026-04-20-sample-baseline-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-sample-baseline-report.json)
-  - [latest-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\latest-report.json)
+  - [2026-04-20-sample-baseline-report.json](bench\2026-04-20-sample-baseline-report.json)
+  - [latest-report.json](bench\latest-report.json)
 - `notes`:
   - This refresh keeps the original sample benchmark role but adds the current evidence-assessment schema.
 - `next_action`:

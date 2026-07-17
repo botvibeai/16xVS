@@ -30,8 +30,8 @@
 
 ## Artifacts
 
-- [v19 lock proof package doc](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\v19-lock-proof-package.md)
-- [checkpoint manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\release\v19-lock-checkpoints.json)
-- [proof gates](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\proof-gates.mjs)
-- [proof package command](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\build-proof-package.mjs)
-- [upward sandbox command](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\create-upward-sandbox.mjs)
+- [v19 lock proof package doc](docs\proofs\v19-lock-proof-package.md)
+- [checkpoint manifest](data\release\v19-lock-checkpoints.json)
+- [proof gates](core\proof-gates.mjs)
+- [proof package command](scripts\build-proof-package.mjs)
+- [upward sandbox command](scripts\create-upward-sandbox.mjs)

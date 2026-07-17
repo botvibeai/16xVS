@@ -51,7 +51,7 @@ The worst repeating group is `multilingual_equity_booklike`.
 
 ## Artifacts
 
-- [code-domain fortify summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-code-domain\README.md)
-- [booklike sweep summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\README.md)
-- [code-domain corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\code-domain-holdout-2026-05-08.txt)
-- [code-domain semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\code-domain-semantic-2026-05-08.json)
+- [code-domain fortify summary](bench\fortify-2026-05-08-code-domain\README.md)
+- [booklike sweep summary](bench\fortify-2026-05-08-booklike-sweep\README.md)
+- [code-domain corpus](bench\code-domain-holdout-2026-05-08.txt)
+- [code-domain semantic groups](bench\code-domain-semantic-2026-05-08.json)

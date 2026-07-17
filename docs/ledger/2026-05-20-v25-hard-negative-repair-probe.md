@@ -78,9 +78,9 @@
 
 ## Artifacts
 
-- [v25 probe summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-20-v25-hard-negative-repair\README.md)
-- [v25 summary json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-20-v25-hard-negative-repair\summary.json)
-- [v25 spec generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v25-hard-negative-repair-spec.mjs)
-- [v25 probe builder](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\build-v25-hard-negative-proof-probe.mjs)
-- [v25 hard-negative miner](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\v25-hard-negative-miner.mjs)
-- [v25 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v25-hard-negative-repair-hierarchical-packer-v2.json)
+- [v25 probe summary](bench\fortify-2026-05-20-v25-hard-negative-repair\README.md)
+- [v25 summary json](bench\fortify-2026-05-20-v25-hard-negative-repair\summary.json)
+- [v25 spec generator](scripts\generate-v25-hard-negative-repair-spec.mjs)
+- [v25 probe builder](scripts\build-v25-hard-negative-proof-probe.mjs)
+- [v25 hard-negative miner](core\v25-hard-negative-miner.mjs)
+- [v25 hierarchical model](models\learned-hybrid-prototype-v25-hard-negative-repair-hierarchical-packer-v2.json)

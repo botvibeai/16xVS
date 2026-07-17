@@ -27,7 +27,7 @@
   - The result does not prove the final visual tokenizer architecture.
   - Cross-language grouping is improving, but it is still not strong enough overall to support semantic multilingual claims.
 - `artifacts`:
-  - [multilingual-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-report.json)
+  - [multilingual-report.json](bench\multilingual-report.json)
 - `notes`:
   - The multilingual fixture source was corrected to clean UTF-8 and the report was regenerated on `2026-04-10T18:53:04.503Z`.
   - The top-line count metrics remained unchanged after the fixture cleanup, which increases confidence that the count signal is real for this corpus.

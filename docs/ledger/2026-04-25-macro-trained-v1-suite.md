@@ -45,12 +45,12 @@
   - The trained macro model still does not support the `99.99%` raw-storage reduction claim.
   - The trained macro model still does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [macro trained model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-macro-trained-v1.json)
-  - [macro trained frozen suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-macro-trained-v1\suite-summary.json)
-  - [macro trained quote report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-benchmark-v3-macro-trained-v1.json)
-  - [macro trained quote paragraph report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-quote-paragraph-benchmark-v3-macro-trained-v1.json)
-  - [macro trained storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-macro-trained-v1.json)
-  - [derived macro baseline](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-macro-packer-v1-suite.md)
+  - [macro trained model](models\learned-hybrid-prototype-v3-macro-trained-v1.json)
+  - [macro trained frozen suite summary](bench\eval-suite-learned-hybrid-v3-macro-trained-v1\suite-summary.json)
+  - [macro trained quote report](bench\2026-04-25-quote-benchmark-v3-macro-trained-v1.json)
+  - [macro trained quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3-macro-trained-v1.json)
+  - [macro trained storage projection](bench\2026-04-25-storage-projection-v3-macro-trained-v1.json)
+  - [derived macro baseline](docs\ledger\2026-04-25-macro-packer-v1-suite.md)
 - `notes`:
   - Training in macro mode did not buy the key thing we needed: a better blind unseen-domain result.
   - It made the storage-focused line slightly more coherent on paraphrase and multilingual fixtures, but the real gate remains closed.

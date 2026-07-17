@@ -11,7 +11,7 @@ This is a copied experiment lane created from the locked v19 proof baseline.
 
 ## Source References
 
-- source project: C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc
+- source project: .
 - source lock: bench/proof-locks/2026-05-08-040602355z-v19-lock
 
 ## Copied Lock Files

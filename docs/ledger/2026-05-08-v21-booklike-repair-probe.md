@@ -40,7 +40,7 @@
 
 ## Artifacts
 
-- [v21 generator](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\generate-v21-booklike-repair-spec.mjs)
-- [v21 summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-v21-booklike-repair\README.md)
-- [v21 spec](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v21-booklike-repair.json)
-- [v21 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v21-booklike-repair-hierarchical-packer-v2.json)
+- [v21 generator](scripts\generate-v21-booklike-repair-spec.mjs)
+- [v21 summary](bench\fortify-2026-05-08-v21-booklike-repair\README.md)
+- [v21 spec](data\training\embedding-training-spec-v21-booklike-repair.json)
+- [v21 model](models\learned-hybrid-prototype-v21-booklike-repair-hierarchical-packer-v2.json)

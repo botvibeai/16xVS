@@ -38,19 +38,19 @@
   - The blind holdout and stress suite still fail, so broad unseen-domain semantic generalization remains unresolved.
   - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [training spec v7 control bridge](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v7-control-bridge.json)
-  - [training pairs v7 control bridge](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v7-control-bridge.json)
-  - [v8 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v8-control-bridge-base.json)
-  - [v8 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json)
-  - [book-root v8 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
-  - [booklike v8 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-booklike-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
-  - [mega-book v8 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-mega-book-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
-  - [book-fold storage projection v8](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-folding-storage-projection-v8-control-bridge-hierarchical-packer-v2.json)
-  - [governance adversarial v8 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-governance-adversarial-v8-control-bridge-hierarchical-packer-v2.json)
-  - [frozen suite summary v8](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2\suite-summary.json)
-  - [v7 book-root round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-06-v7-book-root-round.md)
+  - [training spec v7 control bridge](data\training\embedding-training-spec-v7-control-bridge.json)
+  - [training pairs v7 control bridge](data\training\embedding-training-pairs-v7-control-bridge.json)
+  - [v8 base model](models\learned-hybrid-prototype-v8-control-bridge-base.json)
+  - [v8 hierarchical model](models\learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json)
+  - [book-root v8 report](bench\2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [booklike v8 report](bench\2026-05-06-booklike-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [mega-book v8 report](bench\2026-05-06-mega-book-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [book-fold storage projection v8](bench\2026-05-06-book-folding-storage-projection-v8-control-bridge-hierarchical-packer-v2.json)
+  - [governance adversarial v8 report](bench\2026-05-07-governance-adversarial-v8-control-bridge-hierarchical-packer-v2.json)
+  - [frozen suite summary v8](bench\eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2\suite-summary.json)
+  - [v7 book-root round](docs\ledger\2026-05-06-v7-book-root-round.md)
 - `notes`:
-  - `v8` is the first convincing proof that the repo can explicitly train the user’s multilingual-governance bridge idea without losing the fold.
+  - `v8` is the first convincing proof that the repo can explicitly train the userâ€™s multilingual-governance bridge idea without losing the fold.
   - The cost of that bridge is a heavy governance-adversarial regression, especially around `legal_hold`, plus a broader chapter-style grouping regression on the older `booklike` corpus.
   - This means the next merge problem is no longer vague: the repo now needs the `v8` bridge behavior and the `v6` governance boundary behavior in the same model.
 - `next_action`:

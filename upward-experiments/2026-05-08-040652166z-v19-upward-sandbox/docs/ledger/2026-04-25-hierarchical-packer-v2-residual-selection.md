@@ -47,13 +47,13 @@
   - The residual-selection change does not support the `99.99%` raw-storage reduction claim.
   - The residual-selection change does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [hierarchical packer v2 model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
-  - [hierarchical packer v2 suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2\suite-summary.json)
-  - [hierarchical v2 protocol longform report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v2.json)
-  - [hierarchical v2 booklike report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
-  - [hierarchical v2 booklike storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-hierarchical-packer-v2-booklike.json)
-  - [hierarchical packer v1 suite ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
-  - [booklike storage pressure ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-booklike-storage-pressure.md)
+  - [hierarchical packer v2 model](models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
+  - [hierarchical packer v2 suite summary](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2\suite-summary.json)
+  - [hierarchical v2 protocol longform report](bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v2.json)
+  - [hierarchical v2 booklike report](bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
+  - [hierarchical v2 booklike storage projection](bench\2026-04-25-storage-projection-v3-hierarchical-packer-v2-booklike.json)
+  - [hierarchical packer v1 suite ledger](docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+  - [booklike storage pressure ledger](docs\ledger\2026-04-25-booklike-storage-pressure.md)
 - `notes`:
   - The main gain here is structural cleanliness, not a new order-of-magnitude storage jump.
   - `v2` keeps the same headline storage numbers as `v1` while slightly reducing semantic bleed on the larger booklike corpus.

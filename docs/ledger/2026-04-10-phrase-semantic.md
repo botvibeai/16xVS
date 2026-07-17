@@ -27,7 +27,7 @@
   - The current candidate does not justify semantic superiority claims.
   - The current candidate is not a proxy for full BSQ performance.
 - `artifacts`:
-  - [phrase-semantic-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\phrase-semantic-report.json)
+  - [phrase-semantic-report.json](bench\phrase-semantic-report.json)
 - `notes`:
   - This is the clearest negative result in the current evidence set.
   - Compression signal survived, and one English semantic group (`launch`) is now positive.

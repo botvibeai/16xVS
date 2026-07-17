@@ -60,7 +60,7 @@ The Worker expects three R2 buckets:
 - `16xvs-poc-fallback`
 - `16xvs-poc-vault`
 
-Create them before deployment or rename the bindings in [wrangler.jsonc](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\wrangler.jsonc).
+Create them before deployment or rename the bindings in [wrangler.jsonc](wrangler.jsonc).
 
 ## Local commands
 
@@ -181,8 +181,8 @@ It is useful for baseline and directional measurement, but it is not proof that 
 
 Inputs:
 
-- default sample corpus: [sample-corpus.txt](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\sample-corpus.txt)
-- semantic fixture groups: [semantic-phrases.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\semantic-phrases.json)
+- default sample corpus: [sample-corpus.txt](bench\sample-corpus.txt)
+- semantic fixture groups: [semantic-phrases.json](bench\semantic-phrases.json)
 - custom corpus file via `node ./scripts/benchmark.mjs --input <path>`
 
 Output:
@@ -193,14 +193,14 @@ Output:
 
 `16xVS` now has a dedicated documentation backbone:
 
-- [docs/README.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\README.md)
-- [docs/status.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\status.md)
-- [docs/ledger/README.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\README.md)
-- [docs/proofs/current-proof-dossier.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\current-proof-dossier.md)
-- [docs/proofs/v19-lock-proof-package.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\v19-lock-proof-package.md)
-- [docs/failures/current-failures.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\failures\current-failures.md)
-- [docs/math/bsq-and-protocol-foundation.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\math\bsq-and-protocol-foundation.md)
-- [docs/math/hierarchical-folding-architecture.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\math\hierarchical-folding-architecture.md)
+- [docs/README.md](docs\README.md)
+- [docs/status.md](docs\status.md)
+- [docs/ledger/README.md](docs\ledger\README.md)
+- [docs/proofs/current-proof-dossier.md](docs\proofs\current-proof-dossier.md)
+- [docs/proofs/v19-lock-proof-package.md](docs\proofs\v19-lock-proof-package.md)
+- [docs/failures/current-failures.md](docs\failures\current-failures.md)
+- [docs/math/bsq-and-protocol-foundation.md](docs\math\bsq-and-protocol-foundation.md)
+- [docs/math/hierarchical-folding-architecture.md](docs\math\hierarchical-folding-architecture.md)
 
 Evidence labels:
 
@@ -218,12 +218,12 @@ Future benchmark runs should keep the raw JSON in `bench/` and add a matching le
 
 Current dated artifacts include:
 
-- [2026-04-20-sample-baseline-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-sample-baseline-report.json)
-- [2026-04-20-google-1000-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-google-1000-bsq-style-report.json)
-- [2026-04-20-phrase-semantic-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-phrase-semantic-bsq-style-report.json)
-- [2026-04-20-multilingual-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-multilingual-bsq-style-report.json)
-- [2026-04-20-perturbation-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-perturbation-bsq-style-report.json)
-- [2026-04-20-blind-holdout-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-blind-holdout-bsq-style-report.json)
+- [2026-04-20-sample-baseline-report.json](bench\2026-04-20-sample-baseline-report.json)
+- [2026-04-20-google-1000-bsq-style-report.json](bench\2026-04-20-google-1000-bsq-style-report.json)
+- [2026-04-20-phrase-semantic-bsq-style-report.json](bench\2026-04-20-phrase-semantic-bsq-style-report.json)
+- [2026-04-20-multilingual-bsq-style-report.json](bench\2026-04-20-multilingual-bsq-style-report.json)
+- [2026-04-20-perturbation-bsq-style-report.json](bench\2026-04-20-perturbation-bsq-style-report.json)
+- [2026-04-20-blind-holdout-bsq-style-report.json](bench\2026-04-20-blind-holdout-bsq-style-report.json)
 
 Draft a ledger entry from a report with:
 
@@ -235,21 +235,21 @@ npm run ledger:from-report -- --report ./bench/latest-report.json --title "Sampl
 
 The repo now has the first learned-encoder scaffold pieces:
 
-- training-only phrase groups: [embedding-training-spec.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec.json)
-- generated training pairs: [embedding-training-pairs.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs.json)
-- expanded training spec: [embedding-training-spec-v2.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v2.json)
-- expanded training pairs: [embedding-training-pairs-v2.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v2.json)
-- frozen evaluation manifest: [frozen-eval-suite.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\eval\frozen-eval-suite.json)
-- suite summary output: [suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
-- learned encoder model output: [learned-feature-prototype.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-feature-prototype.json)
-- learned suite summary: [eval-suite-learned-latest/suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-latest\suite-summary.json)
-- best local-only hybrid model output: [learned-hybrid-prototype-v3.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3.json)
-- hybrid `v3` suite summary: [eval-suite-learned-hybrid-v3/suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3\suite-summary.json)
-- storage-focused macro model: [learned-hybrid-prototype-v3-macro-packer-v1.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-macro-packer-v1.json)
-- storage-focused macro suite summary: [eval-suite-learned-hybrid-v3-macro-packer-v1/suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-macro-packer-v1\suite-summary.json)
-- storage-focused hierarchical model `v1`: [learned-hybrid-prototype-v3-hierarchical-packer-v1.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v1.json)
-- storage-focused hierarchical model `v2`: [learned-hybrid-prototype-v3-hierarchical-packer-v2.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
-- storage-focused hierarchical `v2` suite summary: [eval-suite-learned-hybrid-v3-hierarchical-packer-v2/suite-summary.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2\suite-summary.json)
+- training-only phrase groups: [embedding-training-spec.json](data\training\embedding-training-spec.json)
+- generated training pairs: [embedding-training-pairs.json](data\training\embedding-training-pairs.json)
+- expanded training spec: [embedding-training-spec-v2.json](data\training\embedding-training-spec-v2.json)
+- expanded training pairs: [embedding-training-pairs-v2.json](data\training\embedding-training-pairs-v2.json)
+- frozen evaluation manifest: [frozen-eval-suite.json](data\eval\frozen-eval-suite.json)
+- suite summary output: [suite-summary.json](bench\eval-suite-latest\suite-summary.json)
+- learned encoder model output: [learned-feature-prototype.json](models\learned-feature-prototype.json)
+- learned suite summary: [eval-suite-learned-latest/suite-summary.json](bench\eval-suite-learned-latest\suite-summary.json)
+- best local-only hybrid model output: [learned-hybrid-prototype-v3.json](models\learned-hybrid-prototype-v3.json)
+- hybrid `v3` suite summary: [eval-suite-learned-hybrid-v3/suite-summary.json](bench\eval-suite-learned-hybrid-v3\suite-summary.json)
+- storage-focused macro model: [learned-hybrid-prototype-v3-macro-packer-v1.json](models\learned-hybrid-prototype-v3-macro-packer-v1.json)
+- storage-focused macro suite summary: [eval-suite-learned-hybrid-v3-macro-packer-v1/suite-summary.json](bench\eval-suite-learned-hybrid-v3-macro-packer-v1\suite-summary.json)
+- storage-focused hierarchical model `v1`: [learned-hybrid-prototype-v3-hierarchical-packer-v1.json](models\learned-hybrid-prototype-v3-hierarchical-packer-v1.json)
+- storage-focused hierarchical model `v2`: [learned-hybrid-prototype-v3-hierarchical-packer-v2.json](models\learned-hybrid-prototype-v3-hierarchical-packer-v2.json)
+- storage-focused hierarchical `v2` suite summary: [eval-suite-learned-hybrid-v3-hierarchical-packer-v2/suite-summary.json](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2\suite-summary.json)
 
 Separation rule:
 

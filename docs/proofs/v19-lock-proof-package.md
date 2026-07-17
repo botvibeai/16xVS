@@ -7,7 +7,7 @@ This is the release-style proof boundary for the first shippable evidence bundle
 - `baseline`: `v19-validated-router`
 - `claim level`: `directional-proof-lock`
 - `proof command`: `npm run proof:package`
-- `checkpoint manifest`: [v19-lock-checkpoints.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\release\v19-lock-checkpoints.json)
+- `checkpoint manifest`: [v19-lock-checkpoints.json](data\release\v19-lock-checkpoints.json)
 
 ## What Is Proven
 

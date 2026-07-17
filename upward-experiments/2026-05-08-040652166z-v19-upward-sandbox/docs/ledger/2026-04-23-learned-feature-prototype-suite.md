@@ -39,9 +39,9 @@
   - The first learned prototype regressed the controlled phrase and controlled multilingual suites relative to the heuristic baseline.
   - This is not yet evidence that a learned encoder solves the problem.
 - `artifacts`:
-  - [learned-feature-prototype.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-feature-prototype.json)
-  - [learned suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-latest\suite-summary.json)
-  - [baseline suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+  - [learned-feature-prototype.json](models\learned-feature-prototype.json)
+  - [learned suite summary](bench\eval-suite-learned-latest\suite-summary.json)
+  - [baseline suite summary](bench\eval-suite-latest\suite-summary.json)
 - `notes`:
   - This is a real prototype, not a paper design, and it gives a direct answer: the first learned encoder is not good enough.
   - The holdout minima improved in some places, but the model failed every pass/fail gate and regressed the previously positive controlled suites.

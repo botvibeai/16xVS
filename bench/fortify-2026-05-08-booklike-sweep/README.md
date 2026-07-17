@@ -23,9 +23,9 @@ This sweep does not solve booklike. It narrows the next training or derivation t
 
 ## Artifacts
 
-- [v3](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v3.json)
-- [v6](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v6.json)
-- [v8](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v8.json)
-- [v9](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v9.json)
-- [v10](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v10.json)
-- [v13](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-08-booklike-sweep\booklike-v13.json)
+- [v3](bench\fortify-2026-05-08-booklike-sweep\booklike-v3.json)
+- [v6](bench\fortify-2026-05-08-booklike-sweep\booklike-v6.json)
+- [v8](bench\fortify-2026-05-08-booklike-sweep\booklike-v8.json)
+- [v9](bench\fortify-2026-05-08-booklike-sweep\booklike-v9.json)
+- [v10](bench\fortify-2026-05-08-booklike-sweep\booklike-v10.json)
+- [v13](bench\fortify-2026-05-08-booklike-sweep\booklike-v13.json)

@@ -42,10 +42,10 @@
   - The hybrid second prototype did not pass the mixed-format stress suite.
   - This is still not evidence that the learned path solves unseen semantic generalization.
 - `artifacts`:
-  - [learned hybrid model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v2.json)
-  - [hybrid suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v2\suite-summary.json)
-  - [first learned suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-latest\suite-summary.json)
-  - [heuristic suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-latest\suite-summary.json)
+  - [learned hybrid model](models\learned-hybrid-prototype-v2.json)
+  - [hybrid suite summary](bench\eval-suite-learned-hybrid-v2\suite-summary.json)
+  - [first learned suite summary](bench\eval-suite-learned-latest\suite-summary.json)
+  - [heuristic suite summary](bench\eval-suite-latest\suite-summary.json)
 - `notes`:
   - This was a local, principled iteration rather than a benchmark rewrite. The frozen suite stayed fixed.
   - The hybrid path recovered one important regression from the first learned model: controlled phrase grouping is positive again.

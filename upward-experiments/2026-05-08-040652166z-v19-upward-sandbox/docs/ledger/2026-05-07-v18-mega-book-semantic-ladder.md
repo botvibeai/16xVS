@@ -43,14 +43,14 @@ The important result is that `v10` clears the v18 ladder without tripping collap
 
 ## Artifacts
 
-- [mega-book ladder core](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\mega-book-ladder.mjs)
-- [mega-book ladder runner](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\run-mega-book-ladder.mjs)
-- [mega-book ladder tests](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\test\mega-book-ladder.test.mjs)
-- [v18 ladder corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\mega-book-ladder-corpus-2026-05-07.txt)
-- [v18 ladder semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\mega-book-ladder-semantic-2026-05-07.json)
-- [v18 auto-routed report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v18-confidence-routed.json)
-- [v18 v10 head comparison](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v18-v10-head-comparison.json)
-- [v18 v13 head comparison](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-ladder-v18-v13-head-comparison.json)
+- [mega-book ladder core](core\mega-book-ladder.mjs)
+- [mega-book ladder runner](scripts\run-mega-book-ladder.mjs)
+- [mega-book ladder tests](test\mega-book-ladder.test.mjs)
+- [v18 ladder corpus](bench\mega-book-ladder-corpus-2026-05-07.txt)
+- [v18 ladder semantic groups](bench\mega-book-ladder-semantic-2026-05-07.json)
+- [v18 auto-routed report](bench\2026-05-07-mega-book-ladder-v18-confidence-routed.json)
+- [v18 v10 head comparison](bench\2026-05-07-mega-book-ladder-v18-v10-head-comparison.json)
+- [v18 v13 head comparison](bench\2026-05-07-mega-book-ladder-v18-v13-head-comparison.json)
 
 ## Next Action
 

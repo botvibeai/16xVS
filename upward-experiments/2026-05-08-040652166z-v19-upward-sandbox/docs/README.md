@@ -25,4 +25,4 @@ Implementation layers that must stay separated in every document:
 
 No proof document should treat target 16xVS math as already implemented unless a ledger entry and artifact say so.
 
-The current lock proof package boundary is documented in [proofs/v19-lock-proof-package.md](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\proofs\v19-lock-proof-package.md).
+The current lock proof package boundary is documented in [proofs/v19-lock-proof-package.md](docs\proofs\v19-lock-proof-package.md).

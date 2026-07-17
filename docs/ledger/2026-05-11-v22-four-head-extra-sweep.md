@@ -32,5 +32,5 @@
 
 ## Artifacts
 
-- [extra sweep summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-11-v22-four-head-extra\README.md)
-- [extra sweep reports](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\fortify-2026-05-11-v22-four-head-extra)
+- [extra sweep summary](bench\fortify-2026-05-11-v22-four-head-extra\README.md)
+- [extra sweep reports](bench\fortify-2026-05-11-v22-four-head-extra)

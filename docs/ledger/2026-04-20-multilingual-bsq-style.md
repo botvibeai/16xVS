@@ -32,8 +32,8 @@
   - This does not prove target 16xVS BSQ behavior because the embedding source is still heuristic.
   - This does not prove broad real-world tokenizer superiority.
 - `artifacts`:
-  - [2026-04-20-multilingual-bsq-style-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-20-multilingual-bsq-style-report.json)
-  - [multilingual-report.json](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\multilingual-report.json)
+  - [2026-04-20-multilingual-bsq-style-report.json](bench\2026-04-20-multilingual-bsq-style-report.json)
+  - [multilingual-report.json](bench\multilingual-report.json)
 - `notes`:
   - This is the strongest current multilingual signal: count compression and controlled labeled semantic separation are both positive.
   - The result is still a controlled fixture result, not a production tokenizer proof.

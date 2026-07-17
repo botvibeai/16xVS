@@ -16,7 +16,7 @@
 
 Model-role audit:
 
-- [model role audit JSON](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-model-role-audit.json)
+- [model role audit JSON](bench\2026-05-07-model-role-audit.json)
 
 Key matrix:
 
@@ -49,7 +49,7 @@ Working hypothesis:
 
 A non-production oracle routing audit was created:
 
-- [oracle specialist routing audit](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-oracle-specialist-routing-audit.json)
+- [oracle specialist routing audit](bench\2026-05-07-oracle-specialist-routing-audit.json)
 
 It routes:
 

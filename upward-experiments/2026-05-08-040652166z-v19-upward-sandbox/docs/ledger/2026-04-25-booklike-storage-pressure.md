@@ -32,13 +32,13 @@
   - The repo still does not support the `99.99%` raw-storage reduction claim.
   - The repo still does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [booklike corpus](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\booklike-corpus-2026-04-25.txt)
-  - [booklike semantic groups](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\booklike-semantic-2026-04-25.json)
-  - [macro booklike report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-booklike-benchmark-v3-macro-packer-v1.json)
-  - [hierarchical booklike report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v1.json)
-  - [macro booklike storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-macro-packer-v1-booklike.json)
-  - [hierarchical booklike storage projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1-booklike.json)
-  - [hierarchical baseline suite ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+  - [booklike corpus](bench\booklike-corpus-2026-04-25.txt)
+  - [booklike semantic groups](bench\booklike-semantic-2026-04-25.json)
+  - [macro booklike report](bench\2026-04-25-booklike-benchmark-v3-macro-packer-v1.json)
+  - [hierarchical booklike report](bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v1.json)
+  - [macro booklike storage projection](bench\2026-04-25-storage-projection-v3-macro-packer-v1-booklike.json)
+  - [hierarchical booklike storage projection](bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1-booklike.json)
+  - [hierarchical baseline suite ledger](docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
 - `notes`:
   - The book-like corpus is a stronger storage pressure test than the earlier six-entry protocol-longform set because it broadens thematic coverage and increases total long-form bytes.
   - The semantic failure is informative: storage improvements are carrying farther than semantic grouping improvements on longer entries.

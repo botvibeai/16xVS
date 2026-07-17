@@ -36,13 +36,13 @@
   - This rerun does not support the `99.99%` raw-source reduction claim.
   - This rerun does not support the `Library of Congress -> 1.25 GB` raw-source claim.
 - `artifacts`:
-  - [verification suite summary](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\suite-summary.json)
-  - [controlled phrase report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_phrase-report.json)
-  - [controlled multilingual report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_multilingual-report.json)
-  - [blind holdout report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\blind_holdout-report.json)
-  - [paraphrase holdout report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\paraphrase_holdout-report.json)
-  - [stress 100 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\stress_100-report.json)
-  - [prior residual-selection ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+  - [verification suite summary](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\suite-summary.json)
+  - [controlled phrase report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_phrase-report.json)
+  - [controlled multilingual report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_multilingual-report.json)
+  - [blind holdout report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\blind_holdout-report.json)
+  - [paraphrase holdout report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\paraphrase_holdout-report.json)
+  - [stress 100 report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\stress_100-report.json)
+  - [prior residual-selection ledger](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
 - `notes`:
   - This was a verification rerun, not a modeling change.
   - The result is useful because it confirms no drift in the current storage-focused baseline between the earlier record and the April 27, 2026 rerun.

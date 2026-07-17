@@ -22,10 +22,10 @@
   - This archival proof does not say anything about tokenizer quality by itself.
   - The existence of a remote vault snapshot does not validate the `99.99%` or `1.25 GB` raw-source claims.
 - `artifacts`:
-  - [vault snapshot script](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\scripts\create-vault-snapshot.mjs)
-  - [snapshot core helper](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\core\vault-snapshot.mjs)
-  - [local snapshot manifest](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\vault-snapshots\2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final\manifest.json)
-  - [hierarchical packer v2 ledger](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+  - [vault snapshot script](scripts\create-vault-snapshot.mjs)
+  - [snapshot core helper](core\vault-snapshot.mjs)
+  - [local snapshot manifest](vault-snapshots\2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final\manifest.json)
+  - [hierarchical packer v2 ledger](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
 - `notes`:
   - This snapshot supersedes the earlier hierarchical final snapshot as the best remote preservation point for the current storage-focused baseline.
   - The snapshot manifest now calls out both the earlier hierarchical `v1` artifacts and the current `v2` refinement so the storage evidence chain is preserved.

@@ -36,16 +36,16 @@
   - The round regresses the frozen suite relative to the current `v3-hierarchical-packer-v2` baseline: paraphrase falls from positive to `-0.4`, controlled multilingual worsens from `-4.7619` to `-8`, and blind holdout worsens from `-14.3333` to `-17.9167`.
   - The round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
 - `artifacts`:
-  - [training spec v6 book root](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-spec-v6-book-root.json)
-  - [training pairs v6 book root](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\data\training\embedding-training-pairs-v6-book-root.json)
-  - [v7 base model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v7-book-root-base.json)
-  - [v7 hierarchical model](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\models\learned-hybrid-prototype-v7-book-root-hierarchical-packer-v2.json)
-  - [book-root v7 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v7-book-root-hierarchical-packer-v2.json)
-  - [mega-book v7 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-mega-book-benchmark-v7-book-root-hierarchical-packer-v2.json)
-  - [booklike v7 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-booklike-benchmark-v7-book-root-hierarchical-packer-v2.json)
-  - [book-fold storage projection v7](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-folding-storage-projection-v7-book-root-hierarchical-packer-v2.json)
-  - [frozen suite summary v7](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\eval-suite-learned-hybrid-v7-book-root-hierarchical-packer-v2\suite-summary.json)
-  - [book folding round baseline](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-06-book-folding-round.md)
+  - [training spec v6 book root](data\training\embedding-training-spec-v6-book-root.json)
+  - [training pairs v6 book root](data\training\embedding-training-pairs-v6-book-root.json)
+  - [v7 base model](models\learned-hybrid-prototype-v7-book-root-base.json)
+  - [v7 hierarchical model](models\learned-hybrid-prototype-v7-book-root-hierarchical-packer-v2.json)
+  - [book-root v7 report](bench\2026-05-06-book-root-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [mega-book v7 report](bench\2026-05-06-mega-book-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [booklike v7 report](bench\2026-05-06-booklike-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [book-fold storage projection v7](bench\2026-05-06-book-folding-storage-projection-v7-book-root-hierarchical-packer-v2.json)
+  - [frozen suite summary v7](bench\eval-suite-learned-hybrid-v7-book-root-hierarchical-packer-v2\suite-summary.json)
+  - [book folding round baseline](docs\ledger\2026-05-06-book-folding-round.md)
 - `notes`:
   - The remaining synthetic book-root failure is concentrated in the `control_book_root` pair, which blends multilingual equity and governance evidence language.
   - This is a useful signal because it suggests the next book-root attempt should target the control-layer bridge rather than pushing harder on economics or systems.

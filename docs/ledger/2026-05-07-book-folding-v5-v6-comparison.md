@@ -34,14 +34,14 @@
   - `v6` is also worse than the `v3` baseline on the synthetic book-root semantic grouping with a minimum separation margin of `-9.5`.
   - These newer specialist models do not become better long-form folding baselines than `v3-hierarchical-packer-v2`.
 - `artifacts`:
-  - [book-root v3 baseline report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
-  - [mega-book v3 baseline report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
-  - [book-root v5 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
-  - [mega-book v5 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
-  - [book-root v6 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-root-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
-  - [mega-book v6 report](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-mega-book-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
-  - [v5 v6 folding comparison projection](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\bench\2026-05-07-book-folding-comparison-projection-v5-v6.json)
-  - [book folding round](C:\Users\BotVi\Downloads\BotVibe AI LLC\CODEX-AGENT\16xvs-poc\docs\ledger\2026-05-06-book-folding-round.md)
+  - [book-root v3 baseline report](bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
+  - [mega-book v3 baseline report](bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-root v5 report](bench\2026-05-07-book-root-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [mega-book v5 report](bench\2026-05-07-mega-book-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [book-root v6 report](bench\2026-05-07-book-root-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [mega-book v6 report](bench\2026-05-07-mega-book-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v5 v6 folding comparison projection](bench\2026-05-07-book-folding-comparison-projection-v5-v6.json)
+  - [book folding round](docs\ledger\2026-05-06-book-folding-round.md)
 - `notes`:
   - This comparison is useful because it isolates the fold from the newer semantic-specialization work.
   - On this synthetic book-scale shape, the newer models add no fold benefit and lose semantic ground.
