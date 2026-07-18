@@ -1,6 +1,7 @@
 import "./auto-route.test.mjs";
 import "./benchmark-evidence.test.mjs";
 import "./head-validator.test.mjs";
+import "./immutable-r2-replication.test.mjs";
 import "./learned-encoder.test.mjs";
 import "./mega-book-ladder.test.mjs";
 import "./multi-head-routing.test.mjs";
