@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "16xvs-specialist-rebuild-v1",
+  "policy": {
+    "sourceModelsAreNeverOverwritten": true,
+    "outputRoot": "recovery-output/rebuilt-models",
+    "promotionRequiresExpectedTrainingSummary": true,
+    "exactOriginalBytesRequireRecoveredModelHash": true
+  },
+  "commonTraining": {
+    "dimensions": 256,
+    "epochs": 40,
+    "learningRate": 0.05,
+    "negativeMargin": 0.15,
+    "seed": 19,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "prototypeNegativesPerItem": 2
+  },
+  "heads": [
+    {
+      "id": "bookRoot",
+      "modelName": "learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2",
+      "trainingPairs": "data/training/embedding-training-pairs-v7-control-bridge.json",
+      "originalPath": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+      "expectedTrainingSummary": {
+        "positivePairCount": 308,
+        "negativePairCount": 1696,
+        "averagePositiveSimilarity": 0.798461,
+        "averageNegativeSimilarity": 0.148425
+      },
+      "patchConfig": {
+        "packingMode": "hierarchical",
+        "maxWordsPerPatch": 96,
+        "maxCharsPerPatch": 512,
+        "maxEntryWordsForSinglePatch": 96,
+        "maxEntryCharsForSinglePatch": 512,
+        "maxResidualPatches": 2,
+        "residualMaxWordsPerPatch": 28,
+        "residualMaxCharsPerPatch": 180
+      },
+      "evidenceReport": "bench/2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json"
+    },
+    {
+      "id": "default",
+      "modelName": "learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2",
+      "trainingPairs": "data/training/embedding-training-pairs-v8-merge-bridge-governance.json",
+      "originalPath": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+      "expectedTrainingSummary": {
+        "positivePairCount": 579,
+        "negativePairCount": 2064,
+        "averagePositiveSimilarity": 0.75074,
+        "averageNegativeSimilarity": 0.170304
+      },
+      "patchConfig": {
+        "packingMode": "hierarchical",
+        "maxWordsPerPatch": 96,
+        "maxCharsPerPatch": 512,
+        "maxEntryWordsForSinglePatch": 96,
+        "maxEntryCharsForSinglePatch": 512,
+        "maxResidualPatches": 2,
+        "residualMaxWordsPerPatch": 24,
+        "residualMaxCharsPerPatch": 160
+      },
+      "evidenceReport": "bench/2026-05-07-book-root-benchmark-v10-constrained-merge-hierarchical-packer-v2.json"
+    },
+    {
+      "id": "governance",
+      "modelName": "learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2",
+      "trainingPairs": "data/training/embedding-training-pairs-v13-balanced-triad.json",
+      "originalPath": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+      "expectedTrainingSummary": {
+        "positivePairCount": 751,
+        "negativePairCount": 2080,
+        "averagePositiveSimilarity": 0.750393,
+        "averageNegativeSimilarity": 0.187703
+      },
+      "patchConfig": {
+        "packingMode": "hierarchical",
+        "maxWordsPerPatch": 96,
+        "maxCharsPerPatch": 512,
+        "maxEntryWordsForSinglePatch": 96,
+        "maxEntryCharsForSinglePatch": 512,
+        "maxResidualPatches": 2,
+        "residualMaxWordsPerPatch": 24,
+        "residualMaxCharsPerPatch": 160
+      },
+      "evidenceReport": "bench/2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json"
+    },
+    {
+      "id": "booklikeRepair",
+      "modelName": "learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2",
+      "trainingPairs": "data/training/embedding-training-pairs-v22-governance-evidence-booklike.json",
+      "originalPath": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+      "expectedTrainingSummary": {
+        "positivePairCount": 1093,
+        "negativePairCount": 1856,
+        "averagePositiveSimilarity": 0.730986,
+        "averageNegativeSimilarity": 0.22789
+      },
+      "patchConfig": {
+        "packingMode": "hierarchical",
+        "maxWordsPerPatch": 96,
+        "maxCharsPerPatch": 512,
+        "maxEntryWordsForSinglePatch": 96,
+        "maxEntryCharsForSinglePatch": 512,
+        "maxResidualPatches": 2,
+        "residualMaxWordsPerPatch": 28,
+        "residualMaxCharsPerPatch": 180
+      },
+      "evidenceReport": "bench/fortify-2026-05-08-v22-governance-evidence-booklike/booklike-v22-governance-evidence-booklike.json"
+    }
+  ]
+}
