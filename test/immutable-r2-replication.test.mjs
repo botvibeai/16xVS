@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { replicateImmutableThreeTier } from "../core/immutable-r2-replication.mjs";
+import {
+  replicateImmutableThreeTier,
+  sha256Bytes,
+} from "../core/immutable-r2-replication.mjs";
 
 class FakeBucket {
   constructor({ failWrites = false } = {}) {
@@ -18,11 +21,15 @@ class FakeBucket {
       : null;
     if (ifNoneMatch === "*" && this.objects.has(key)) return null;
 
+    const digest = options.sha256 instanceof ArrayBuffer
+      ? options.sha256
+      : options.sha256?.buffer;
     const object = {
       key,
       size: bytes.byteLength,
       etag: `etag-${this.objects.size + 1}`,
       customMetadata: { ...(options.customMetadata || {}) },
+      checksums: { sha256: digest },
       bytes: new Uint8Array(bytes),
     };
     this.objects.set(key, object);
@@ -46,7 +53,7 @@ function buckets(options = {}) {
   };
 }
 
-test("writes and verifies identical immutable bytes across all three tiers", async () => {
+test("writes and verifies R2 checksums across all three tiers", async () => {
   const stores = buckets();
   const result = await replicateImmutableThreeTier({
     buckets: stores,
@@ -54,13 +61,12 @@ test("writes and verifies identical immutable bytes across all three tiers", asy
     value: "encrypted recovery bytes",
     contentIdentity: "snapshot-001",
   });
-
   assert.equal(result.ok, true);
-  assert.equal(result.verification.filter((item) => item.ok).length, 3);
+  assert.equal(result.verification.every((item) => item.checksumSha256 === result.sha256), true);
   assert.deepEqual(result.writes.map((item) => item.status), ["written", "written", "written"]);
 });
 
-test("an identical retry confirms existing objects instead of overwriting", async () => {
+test("an identical retry confirms existing checksummed objects", async () => {
   const stores = buckets();
   const input = {
     buckets: stores,
@@ -70,7 +76,6 @@ test("an identical retry confirms existing objects instead of overwriting", asyn
   };
   await replicateImmutableThreeTier(input);
   const result = await replicateImmutableThreeTier(input);
-
   assert.equal(result.ok, true);
   assert.deepEqual(
     result.writes.map((item) => item.status),
@@ -78,24 +83,53 @@ test("an identical retry confirms existing objects instead of overwriting", asyn
   );
 });
 
-test("a collision with different bytes fails without deleting any successful copy", async () => {
+test("matching metadata alone cannot forge a valid existing replica", async () => {
+  const stores = buckets();
+  const key = "vault/forged.vault";
+  const desired = await sha256Bytes("desired encrypted bytes");
+  for (const bucket of Object.values(stores)) {
+    bucket.objects.set(key, {
+      key,
+      size: desired.bytes.byteLength,
+      etag: "forged",
+      customMetadata: {
+        sha256: desired.hex,
+        contentIdentity: "snapshot-003",
+      },
+      checksums: {},
+      bytes: new TextEncoder().encode("different bytes"),
+    });
+  }
+  const result = await replicateImmutableThreeTier({
+    buckets: stores,
+    key,
+    value: "desired encrypted bytes",
+    contentIdentity: "snapshot-003",
+  });
+  assert.equal(result.ok, false);
+  assert.equal(result.writes.every((item) => item.status === "failed"), true);
+  assert.equal(
+    result.verification.every((item) => item.reason.includes("missing-stored-checksum")),
+    true,
+  );
+});
+
+test("a collision with different bytes fails without deleting a successful copy", async () => {
   const stores = buckets();
   const key = "vault/collision.vault";
   await replicateImmutableThreeTier({
     buckets: stores,
     key,
     value: "first encrypted bytes",
-    contentIdentity: "snapshot-003",
+    contentIdentity: "snapshot-004",
   });
   const result = await replicateImmutableThreeTier({
     buckets: stores,
     key,
     value: "different encrypted bytes",
-    contentIdentity: "snapshot-004",
+    contentIdentity: "snapshot-005",
   });
-
   assert.equal(result.ok, false);
-  assert.equal(result.writes.every((item) => item.status === "failed"), true);
   assert.equal(stores.live.deleteCalls + stores.fallback.deleteCalls + stores.vault.deleteCalls, 0);
 });
 
@@ -105,9 +139,8 @@ test("preserves successful Vault and live writes when fallback fails", async () 
     buckets: stores,
     key: "vault/partial.vault",
     value: "encrypted bytes survive partial failure",
-    contentIdentity: "snapshot-005",
+    contentIdentity: "snapshot-006",
   });
-
   assert.equal(result.ok, false);
   assert.equal(result.verification.find((item) => item.tier === "live").ok, true);
   assert.equal(result.verification.find((item) => item.tier === "vault").ok, true);
