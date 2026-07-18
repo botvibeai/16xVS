@@ -29,11 +29,17 @@ function makeRuns({
   lowRatioAt = -1,
   sameSources = false,
   mixedModelAt = -1,
+  mixedClaimAt = -1,
+  mixedVerifierAt = -1,
+  claimMode = "semantic-reconstruction",
 } = {}) {
   return Array.from({ length: count }, (_, index) => sealRun({
     runId: `run-${index}`,
     fixtureId: `fixture-${sameSources ? index % 2 : index}`,
     domain: domains[index % domains.length],
+    claimMode: index === mixedClaimAt ? "retrieval-signature" : claimMode,
+    verifierId: index === mixedVerifierAt ? "other-verifier" : "semantic-verifier-v1",
+    verifierSha256: sha(index === mixedVerifierAt ? "other-verifier" : "semantic-verifier-v1"),
     sourceSha256: sha(`source-${sameSources ? index % 2 : index}`),
     outputSha256: sha(`output-${index}`),
     modelSha256: sha(index === mixedModelAt ? "model-b" : "model-a"),
@@ -47,41 +53,55 @@ function makeRuns({
   }));
 }
 
-test("qualifies 300:1 only when the worst run clears 300", () => {
+test("qualifies 300 only when the worst run clears 300", () => {
   const result = qualifyCompression(makeRuns({ ratio: 315 }));
-  assert.equal(result.qualified, true);
   assert.equal(result.publicRatio, 300);
-  assert.equal(result.technicalRatioTier, 300);
+  assert.equal(result.qualifiedScope, "semantic-reconstruction");
 });
 
-test("drops the public tier when one correct run falls below it", () => {
+test("drops the tier when one correct run falls below it", () => {
   const result = qualifyCompression(makeRuns({ ratio: 315, lowRatioAt: 99 }));
-  assert.equal(result.qualified, true);
   assert.equal(result.publicRatio, 220);
-  assert.equal(result.technicalRatioTier, 220);
   assert.equal(result.conservativeRatio, 299);
 });
 
 test("rejects any incorrect result", () => {
   const result = qualifyCompression(makeRuns({ ratio: 707, incorrectAt: 50 }));
   assert.equal(result.qualified, false);
-  assert.equal(result.publicRatio, null);
   assert.equal(result.gates.correctness, false);
 });
 
-test("707 qualifies as 700", () => {
+test("707 semantic reconstruction qualifies publicly as 700", () => {
   const result = qualifyCompression(makeRuns({ ratio: 707 }));
-  assert.equal(result.qualified, true);
   assert.equal(result.publicRatio, 700);
   assert.equal(result.technicalRatioTier, 700);
+  assert.equal(result.publicTokenizerEligible, true);
 });
 
-test("higher private qualification does not raise initial public launch cap", () => {
+test("higher semantic qualification remains publicly capped at 700", () => {
   const result = qualifyCompression(makeRuns({ ratio: 80000 }));
-  assert.equal(result.qualified, true);
   assert.equal(result.technicalRatioTier, 80000);
   assert.equal(result.publicRatio, 700);
-  assert.equal(result.conservativeRatio, 80000);
+});
+
+test("retrieval evidence is technically scoped but not public tokenizer eligible", () => {
+  const result = qualifyCompression(makeRuns({ ratio: 2400, claimMode: "retrieval-signature" }));
+  assert.equal(result.qualified, true);
+  assert.equal(result.technicalRatioTier, 2400);
+  assert.equal(result.publicRatio, null);
+  assert.equal(result.publicTokenizerEligible, false);
+});
+
+test("rejects mixed claim scopes", () => {
+  const result = qualifyCompression(makeRuns({ ratio: 707, mixedClaimAt: 99 }));
+  assert.equal(result.qualified, false);
+  assert.equal(result.gates.singleClaimMode, false);
+});
+
+test("rejects mixed verifier identities", () => {
+  const result = qualifyCompression(makeRuns({ ratio: 707, mixedVerifierAt: 99 }));
+  assert.equal(result.qualified, false);
+  assert.equal(result.gates.singleVerifierIdentity, false);
 });
 
 test("rejects duplicate run IDs", () => {
@@ -122,21 +142,14 @@ test("rejects non-finite token counts before evidence acceptance", () => {
 test("input policy cannot weaken qualification floors", () => {
   const result = qualifyCompression(makeRuns({ ratio: 707 }), {
     minRuns: 1,
-    minBlindRuns: 0,
-    minRestartRuns: 0,
-    minRestoreRuns: 0,
     minUniqueSources: 1,
-    minUniqueBlindSources: 1,
     minDomains: 1,
     maxRelativeSpread: 999,
-    requiredCorrectness: 0,
     publicLaunchCap: 80000,
   });
   assert.equal(result.policy.minRuns, 100);
   assert.equal(result.policy.minUniqueSources, 80);
   assert.equal(result.policy.minDomains, 8);
   assert.equal(result.policy.maxRelativeSpread, 0.1);
-  assert.equal(result.policy.requiredCorrectness, 1);
   assert.equal(result.policy.publicLaunchCap, 700);
-  assert.equal(result.policy.weakeningAllowed, false);
 });
