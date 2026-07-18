@@ -1,5 +1,6 @@
 import "./auto-route.test.mjs";
 import "./benchmark-evidence.test.mjs";
+import "./compression-measurement.test.mjs";
 import "./governed-preprocess-runner.test.mjs";
 import "./head-validator.test.mjs";
 import "./immutable-r2-replication.test.mjs";
