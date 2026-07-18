@@ -26,14 +26,27 @@ export async function sha256Bytes(value) {
   return { bytes, digest, hex: toHex(digest) };
 }
 
-function objectMatches(object, expected) {
-  if (!object) return false;
+function inspectObject(object, expected) {
+  if (!object) return { ok: false, reasons: ["missing"], actual: null };
   const metadata = object.customMetadata || {};
-  return (
-    Number(object.size) === expected.size &&
-    metadata.sha256 === expected.sha256 &&
-    metadata.contentIdentity === expected.contentIdentity
-  );
+  const actualChecksum = object.checksums?.sha256 ? toHex(object.checksums.sha256) : null;
+  const reasons = [];
+  if (Number(object.size) !== expected.size) reasons.push("size");
+  if (metadata.sha256 !== expected.sha256) reasons.push("metadata-sha256");
+  if (metadata.contentIdentity !== expected.contentIdentity) reasons.push("content-identity");
+  if (actualChecksum !== expected.sha256) {
+    reasons.push(actualChecksum ? "stored-checksum" : "missing-stored-checksum");
+  }
+  return {
+    ok: reasons.length === 0,
+    reasons,
+    actual: {
+      size: Number(object.size),
+      metadataSha256: metadata.sha256 || null,
+      contentIdentity: metadata.contentIdentity || null,
+      checksumSha256: actualChecksum,
+    },
+  };
 }
 
 async function putImmutable(bucket, tier, key, bytes, expected, metadata) {
@@ -52,36 +65,59 @@ async function putImmutable(bucket, tier, key, bytes, expected, metadata) {
   });
 
   if (result) {
-    if (!objectMatches(result, expected)) {
-      throw new Error(`${tier} write returned mismatched metadata for ${key}`);
+    const inspection = inspectObject(result, expected);
+    if (!inspection.ok) {
+      throw new Error(
+        `${tier} write verification failed for ${key}: ${inspection.reasons.join(",")}`,
+      );
     }
-    return { tier, key, status: "written", size: result.size, etag: result.etag || null };
+    return {
+      tier,
+      key,
+      status: "written",
+      size: result.size,
+      etag: result.etag || null,
+      checksumSha256: inspection.actual.checksumSha256,
+    };
   }
 
   const existing = await bucket.head(key);
-  if (!objectMatches(existing, expected)) {
-    throw new Error(`${tier} immutable key collision for ${key}`);
+  const inspection = inspectObject(existing, expected);
+  if (!inspection.ok) {
+    throw new Error(
+      `${tier} immutable key collision or unverifiable object for ${key}: ${inspection.reasons.join(",")}`,
+    );
   }
-  return { tier, key, status: "confirmed-existing", size: existing.size, etag: existing.etag || null };
+  return {
+    tier,
+    key,
+    status: "confirmed-existing",
+    size: existing.size,
+    etag: existing.etag || null,
+    checksumSha256: inspection.actual.checksumSha256,
+  };
 }
 
 export async function verifyImmutableReplica(bucket, tier, key, expected) {
   const object = await bucket.head(key);
-  if (!object) return { tier, key, ok: false, reason: "missing" };
-  if (!objectMatches(object, expected)) {
+  const inspection = inspectObject(object, expected);
+  if (!inspection.ok) {
     return {
       tier,
       key,
       ok: false,
-      reason: "metadata-mismatch",
-      actual: {
-        size: object.size,
-        sha256: object.customMetadata?.sha256 || null,
-        contentIdentity: object.customMetadata?.contentIdentity || null,
-      },
+      reason: inspection.reasons.join(","),
+      actual: inspection.actual,
     };
   }
-  return { tier, key, ok: true, size: object.size, etag: object.etag || null };
+  return {
+    tier,
+    key,
+    ok: true,
+    size: object.size,
+    etag: object.etag || null,
+    checksumSha256: inspection.actual.checksumSha256,
+  };
 }
 
 export async function replicateImmutableThreeTier({
@@ -110,8 +146,8 @@ export async function replicateImmutableThreeTier({
     ...metadata,
     contentIdentity,
     replicatedAt: new Date().toISOString(),
+    verificationPolicy: "r2-sha256-v1",
   });
-
   const tiers = [
     ["live", buckets.live],
     ["fallback", buckets.fallback],
@@ -123,14 +159,12 @@ export async function replicateImmutableThreeTier({
       putImmutable(bucket, tier, key, hashed.bytes, expected, commonMetadata),
     ),
   );
-
   const writes = settled.map((result, index) => {
     const tier = tiers[index][0];
     return result.status === "fulfilled"
       ? result.value
       : { tier, key, status: "failed", error: String(result.reason?.message || result.reason) };
   });
-
   const verification = await Promise.all(
     tiers.map(([tier, bucket]) => verifyImmutableReplica(bucket, tier, key, expected)),
   );
@@ -149,6 +183,7 @@ export async function replicateImmutableThreeTier({
       appendOnly: true,
       rollbackDeletes: false,
       requiredTiers: ["live", "fallback", "vault"],
+      verification: "r2-stored-sha256-plus-metadata",
     },
   };
 }
