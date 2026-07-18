@@ -14,7 +14,7 @@
     "vault:seal": "node ./scripts/secure-vault.mjs seal",
     "vault:open": "node ./scripts/secure-vault.mjs open",
     "vault:secure:test": "node ./test/secure-vault.test.mjs",
-    "preprocess:test": "node --test ./test/preprocess-governance.test.mjs",
+    "preprocess:test": "node --test ./test/preprocess-governance.test.mjs ./test/governed-preprocess-runner.test.mjs",
     "proof:qualify": "node ./scripts/qualify-compression.mjs",
     "recovery:scan:compression": "node ./scripts/recovery-scan-compression-evidence.mjs",
     "recovery:rebuild:specialists": "node ./scripts/rebuild-specialist-models-readonly.mjs",
