@@ -1,6 +1,14 @@
 import crypto from "node:crypto";
 
 const PUBLIC_TIERS = Object.freeze([220, 300, 500, 700, 1000, 2400, 80000]);
+const POLICY_FLOOR = Object.freeze({
+  minRuns: 100,
+  minBlindRuns: 20,
+  minRestartRuns: 3,
+  minRestoreRuns: 3,
+  maxRelativeSpread: 0.1,
+  requiredCorrectness: 1,
+});
 
 function round(value, places = 4) {
   const factor = 10 ** places;
@@ -11,29 +19,61 @@ function hashCanonical(value) {
   return crypto.createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }
 
+function integerAtLeast(value, floor) {
+  return Number.isInteger(value) ? Math.max(value, floor) : floor;
+}
+
+function strictPolicy(options = {}) {
+  return {
+    minRuns: integerAtLeast(options.minRuns, POLICY_FLOOR.minRuns),
+    minBlindRuns: integerAtLeast(options.minBlindRuns, POLICY_FLOOR.minBlindRuns),
+    minRestartRuns: integerAtLeast(options.minRestartRuns, POLICY_FLOOR.minRestartRuns),
+    minRestoreRuns: integerAtLeast(options.minRestoreRuns, POLICY_FLOOR.minRestoreRuns),
+    maxRelativeSpread:
+      Number.isFinite(options.maxRelativeSpread) && options.maxRelativeSpread >= 0
+        ? Math.min(options.maxRelativeSpread, POLICY_FLOOR.maxRelativeSpread)
+        : POLICY_FLOOR.maxRelativeSpread,
+    requiredCorrectness: POLICY_FLOOR.requiredCorrectness,
+  };
+}
+
 function assertRun(run, index) {
   if (!run || typeof run !== "object") throw new Error(`run ${index} must be an object`);
-  for (const key of ["sourceTokens", "outputTokens", "correct", "blind", "restored", "restarted"]) {
+  for (const key of ["runId", "sourceTokens", "outputTokens", "correct", "blind", "restored", "restarted"]) {
     if (!(key in run)) throw new Error(`run ${index} missing ${key}`);
+  }
+  if (typeof run.runId !== "string" || !run.runId.trim()) {
+    throw new Error(`run ${index} runId must be a non-empty string`);
+  }
+  if (!Number.isFinite(run.sourceTokens) || !Number.isFinite(run.outputTokens)) {
+    throw new Error(`run ${index} token counts must be finite numbers`);
   }
   if (!(run.sourceTokens > 0) || !(run.outputTokens > 0)) {
     throw new Error(`run ${index} token counts must be positive`);
   }
+  for (const key of ["correct", "blind", "restored", "restarted"]) {
+    if (typeof run[key] !== "boolean") throw new Error(`run ${index} ${key} must be boolean`);
+  }
+}
+
+function assertUniqueRunIds(runs) {
+  const seen = new Set();
+  for (const [index, run] of runs.entries()) {
+    if (seen.has(run.runId)) throw new Error(`duplicate runId at run ${index}: ${run.runId}`);
+    seen.add(run.runId);
+  }
 }
 
 export function qualifyCompression(runs, options = {}) {
-  const minRuns = options.minRuns ?? 100;
-  const minBlindRuns = options.minBlindRuns ?? 20;
-  const minRestartRuns = options.minRestartRuns ?? 3;
-  const minRestoreRuns = options.minRestoreRuns ?? 3;
-  const maxRelativeSpread = options.maxRelativeSpread ?? 0.1;
-  const requiredCorrectness = options.requiredCorrectness ?? 1;
+  const policy = strictPolicy(options);
+  const { minRuns, minBlindRuns, minRestartRuns, minRestoreRuns, maxRelativeSpread, requiredCorrectness } = policy;
 
   if (!Array.isArray(runs) || runs.length < minRuns) {
     return { qualified: false, reason: `requires at least ${minRuns} runs`, runCount: runs?.length ?? 0 };
   }
 
   runs.forEach(assertRun);
+  assertUniqueRunIds(runs);
   const ratios = runs.map((run) => run.sourceTokens / run.outputTokens);
   const sorted = ratios.slice().sort((a, b) => a - b);
   const minimum = sorted[0];
@@ -67,6 +107,7 @@ export function qualifyCompression(runs, options = {}) {
     conservativeRatio: round(conservativeRatio),
     metrics: {
       runCount: runs.length,
+      uniqueRunCount: new Set(runs.map((run) => run.runId)).size,
       blindRunCount: blindRuns.length,
       restartRunCount: restartRuns.length,
       restoreRunCount: restoreRuns.length,
@@ -79,17 +120,13 @@ export function qualifyCompression(runs, options = {}) {
     },
     gates,
     policy: {
-      minRuns,
-      minBlindRuns,
-      minRestartRuns,
-      minRestoreRuns,
-      maxRelativeSpread,
-      requiredCorrectness,
+      ...policy,
       promotionRule: "Public claim uses the highest approved tier not exceeding the worst successful run.",
+      weakeningAllowed: false,
     },
   };
 
   return { ...report, evidenceSha256: hashCanonical(report) };
 }
 
-export { PUBLIC_TIERS };
+export { PUBLIC_TIERS, POLICY_FLOOR };
