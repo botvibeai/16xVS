@@ -6,6 +6,8 @@ import "./mega-book-ladder.test.mjs";
 import "./multi-head-routing.test.mjs";
 import "./package-hygiene.test.mjs";
 import "./proof-gates.test.mjs";
+import "./qualification-gate.test.mjs";
+import "./secure-vault.test.mjs";
 import "./training-pipeline.test.mjs";
 import "./v23-proof-package.test.mjs";
 import "./v25-hard-negative-repair.test.mjs";
