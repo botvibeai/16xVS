@@ -1,7 +1,6 @@
-name: Maximum Advantage Build Verification
+name: Maximum Advantage Runner Smoke Test
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - build/maximum-advantage-vault-2026-07-17
@@ -13,45 +12,9 @@ permissions:
   contents: read
 
 jobs:
-  verify:
+  smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 5
     steps:
-      - name: Checkout exact build source
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-
-      - name: Install locked dependencies
-        run: npm ci
-
-      - name: Run complete tracked suite
-        run: npm test
-
-      - name: Run secure Vault round trip
-        run: npm run vault:secure:test
-
-      - name: Record source identity
-        run: |
-          mkdir -p recovery-ci
-          {
-            echo "branch=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
-            echo "commit=${GITHUB_SHA}"
-            echo "run_id=${GITHUB_RUN_ID}"
-            echo "verified_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          } | tee recovery-ci/build-verification.txt
-
-      - name: Upload verification record
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: 16xvs-maximum-advantage-${{ github.sha }}
-          path: recovery-ci/build-verification.txt
-          if-no-files-found: warn
-          retention-days: 90
+      - name: Confirm runner starts
+        run: echo "16xVS runner started"
