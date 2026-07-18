@@ -8,7 +8,9 @@ const SHA256_RE = /^[a-f0-9]{64}$/i;
 function stableValue(value) {
   if (Array.isArray(value)) return value.map(stableValue);
   if (!value || typeof value !== "object") return value;
-  return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableValue(value[key])]));
+  return Object.fromEntries(
+    Object.keys(value).sort().map((key) => [key, stableValue(value[key])]),
+  );
 }
 
 function sha256Canonical(value) {
@@ -16,7 +18,9 @@ function sha256Canonical(value) {
 }
 
 function assertId(value, label) {
-  if (typeof value !== "string" || !value.trim()) throw new Error(`${label} must be a non-empty string`);
+  if (typeof value !== "string" || !value.trim()) {
+    throw new Error(`${label} must be a non-empty string`);
+  }
 }
 
 function assertSha(value, label, required = true) {
@@ -46,6 +50,8 @@ export function measureCompressionPipeline(input = {}) {
     ["runId", input.runId],
     ["fixtureId", input.fixtureId],
     ["domain", input.domain],
+    ["claimMode", input.claimMode],
+    ["verifierId", input.verifierId],
   ]) {
     assertId(value, label);
   }
@@ -54,6 +60,7 @@ export function measureCompressionPipeline(input = {}) {
     ["preprocessedSha256", input.preprocessedSha256],
     ["outputSha256", input.outputSha256],
     ["modelSha256", input.modelSha256],
+    ["verifierSha256", input.verifierSha256],
   ]) {
     assertSha(value, label);
   }
@@ -99,11 +106,16 @@ export function measureCompressionPipeline(input = {}) {
     runId: input.runId,
     fixtureId: input.fixtureId,
     domain: input.domain,
+    claim: {
+      mode: input.claimMode,
+      verifierId: input.verifierId,
+    },
     identities: {
       sourceSha256: input.sourceSha256.toLowerCase(),
       preprocessedSha256: input.preprocessedSha256.toLowerCase(),
       outputSha256: input.outputSha256.toLowerCase(),
       modelSha256: input.modelSha256.toLowerCase(),
+      verifierSha256: input.verifierSha256.toLowerCase(),
       retentionSha256: input.retentionSha256?.toLowerCase() || null,
       semanticSha256: input.semanticSha256?.toLowerCase() || null,
       restoredFromSha256: input.restoredFromSha256?.toLowerCase() || null,
@@ -162,6 +174,9 @@ export function buildQualificationRun(measurement) {
     runId: measurement.runId,
     fixtureId: measurement.fixtureId,
     domain: measurement.domain,
+    claimMode: measurement.claim.mode,
+    verifierId: measurement.claim.verifierId,
+    verifierSha256: measurement.identities.verifierSha256,
     sourceSha256: measurement.identities.sourceSha256,
     outputSha256: measurement.identities.outputSha256,
     modelSha256: measurement.identities.modelSha256,
