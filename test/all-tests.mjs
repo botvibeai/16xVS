@@ -6,6 +6,7 @@ import "./learned-encoder.test.mjs";
 import "./mega-book-ladder.test.mjs";
 import "./multi-head-routing.test.mjs";
 import "./package-hygiene.test.mjs";
+import "./preprocess-governance.test.mjs";
 import "./proof-gates.test.mjs";
 import "./qualification-gate.test.mjs";
 import "./recovery-scan-compression-evidence.test.mjs";
