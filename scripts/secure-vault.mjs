@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+
 import { sealVaultFile, openVaultFile } from "../core/secure-vault.mjs";
 
 function parseArgs(argv) {
@@ -15,9 +16,17 @@ function parseArgs(argv) {
   return out;
 }
 
+function rejectDirectPassphraseEnvironment() {
+  if (Object.prototype.hasOwnProperty.call(process.env, "16XVS_VAULT_PASSPHRASE")) {
+    throw new Error(
+      "Direct passphrase environment variables are disabled. Enter the Vault phrase through the hidden terminal prompt.",
+    );
+  }
+}
+
 async function hiddenPrompt(message) {
   if (!process.stdin.isTTY || !process.stdout.isTTY) {
-    throw new Error("Interactive passphrase entry requires a terminal. Set 16XVS_VAULT_PASSPHRASE for non-interactive use.");
+    throw new Error("Vault passphrase entry requires an interactive terminal.");
   }
 
   process.stdout.write(message);
@@ -51,9 +60,7 @@ async function hiddenPrompt(message) {
 }
 
 async function getPassphrase({ confirm = false } = {}) {
-  const fromEnvironment = process.env["16XVS_VAULT_PASSPHRASE"];
-  if (fromEnvironment) return fromEnvironment;
-
+  rejectDirectPassphraseEnvironment();
   const first = await hiddenPrompt("Vault passphrase: ");
   if (!confirm) return first;
   const second = await hiddenPrompt("Repeat Vault passphrase: ");
@@ -66,10 +73,33 @@ async function ensureReadable(filePath) {
   if (!stats.isFile()) throw new Error(`Not a file: ${filePath}`);
 }
 
+function safeSealResult(result) {
+  return {
+    ok: true,
+    action: "sealed",
+    output: path.basename(result.outputPath),
+    sourceBytes: result.sourceBytes,
+    ciphertextBytes: result.ciphertextBytes,
+    version: result.version,
+  };
+}
+
+function safeOpenResult(result) {
+  return {
+    ok: true,
+    action: "opened",
+    output: path.basename(result.outputPath),
+    sourceBytes: result.sourceBytes,
+    version: result.version,
+  };
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (!args.command || !args.input || !args.output) {
-    throw new Error("Usage: node scripts/secure-vault.mjs <seal|open> --input <file> --output <file> [--label <text>]");
+    throw new Error(
+      "Usage: node scripts/secure-vault.mjs <seal|open> --input <file> --output <file> [--label <text>]",
+    );
   }
 
   const inputPath = path.resolve(args.input);
@@ -84,14 +114,14 @@ async function main() {
       passphrase,
       metadata: { label: args.label || null },
     });
-    console.log(JSON.stringify({ ok: true, action: "sealed", ...result }, null, 2));
+    console.log(JSON.stringify(safeSealResult(result), null, 2));
     return;
   }
 
   if (args.command === "open") {
     const passphrase = await getPassphrase();
     const result = await openVaultFile({ inputPath, outputPath, passphrase });
-    console.log(JSON.stringify({ ok: true, action: "opened", ...result }, null, 2));
+    console.log(JSON.stringify(safeOpenResult(result), null, 2));
     return;
   }
 
