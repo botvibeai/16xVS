@@ -11,7 +11,9 @@ node_modules/
 # Generated heavyweight artifacts kept outside Git
 models/
 vault-snapshots/
+recovery-output/
 *.zip
+*.16xvsvault
 
 # OS/editor noise
 Thumbs.db
