@@ -5,6 +5,7 @@ import { qualifyCompression } from "../core/qualification-gate.mjs";
 
 function makeRuns({ ratio, count = 100, incorrectAt = -1, lowRatioAt = -1 } = {}) {
   return Array.from({ length: count }, (_, index) => ({
+    runId: `run-${index}`,
     sourceTokens: index === lowRatioAt ? 299 : ratio,
     outputTokens: 1,
     correct: index !== incorrectAt,
@@ -45,4 +46,34 @@ test("can report 80000 only when every required run clears it", () => {
   const result = qualifyCompression(makeRuns({ ratio: 80000 }));
   assert.equal(result.qualified, true);
   assert.equal(result.publicRatio, 80000);
+});
+
+test("rejects duplicate run evidence", () => {
+  const runs = makeRuns({ ratio: 707 });
+  runs[99].runId = runs[0].runId;
+  assert.throws(() => qualifyCompression(runs), /duplicate runId/i);
+});
+
+test("rejects non-finite token counts", () => {
+  const runs = makeRuns({ ratio: 707 });
+  runs[0].sourceTokens = Infinity;
+  assert.throws(() => qualifyCompression(runs), /finite numbers/i);
+});
+
+test("input policy cannot weaken the qualification floor", () => {
+  const result = qualifyCompression(makeRuns({ ratio: 707 }), {
+    minRuns: 1,
+    minBlindRuns: 0,
+    minRestartRuns: 0,
+    minRestoreRuns: 0,
+    maxRelativeSpread: 999,
+    requiredCorrectness: 0,
+  });
+  assert.equal(result.policy.minRuns, 100);
+  assert.equal(result.policy.minBlindRuns, 20);
+  assert.equal(result.policy.minRestartRuns, 3);
+  assert.equal(result.policy.minRestoreRuns, 3);
+  assert.equal(result.policy.maxRelativeSpread, 0.1);
+  assert.equal(result.policy.requiredCorrectness, 1);
+  assert.equal(result.policy.weakeningAllowed, false);
 });
