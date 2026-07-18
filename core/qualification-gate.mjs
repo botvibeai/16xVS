@@ -14,6 +14,16 @@ const QUALIFIED_TIERS = Object.freeze([
   40000,
   80000,
 ]);
+const CLAIM_MODES = Object.freeze([
+  "retrieval-signature",
+  "semantic-reconstruction",
+  "lossless-roundtrip",
+  "task-preserving",
+]);
+const PUBLIC_TOKENIZER_MODES = new Set([
+  "semantic-reconstruction",
+  "lossless-roundtrip",
+]);
 const POLICY_FLOOR = Object.freeze({
   minRuns: 100,
   minBlindRuns: 20,
@@ -36,7 +46,9 @@ function round(value, places = 4) {
 function stableValue(value) {
   if (Array.isArray(value)) return value.map(stableValue);
   if (!value || typeof value !== "object") return value;
-  return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableValue(value[key])]));
+  return Object.fromEntries(
+    Object.keys(value).sort().map((key) => [key, stableValue(value[key])]),
+  );
 }
 
 function hashCanonical(value) {
@@ -54,7 +66,10 @@ function strictPolicy(options = {}) {
     minRestartRuns: integerAtLeast(options.minRestartRuns, POLICY_FLOOR.minRestartRuns),
     minRestoreRuns: integerAtLeast(options.minRestoreRuns, POLICY_FLOOR.minRestoreRuns),
     minUniqueSources: integerAtLeast(options.minUniqueSources, POLICY_FLOOR.minUniqueSources),
-    minUniqueBlindSources: integerAtLeast(options.minUniqueBlindSources, POLICY_FLOOR.minUniqueBlindSources),
+    minUniqueBlindSources: integerAtLeast(
+      options.minUniqueBlindSources,
+      POLICY_FLOOR.minUniqueBlindSources,
+    ),
     minDomains: integerAtLeast(options.minDomains, POLICY_FLOOR.minDomains),
     maxRelativeSpread:
       Number.isFinite(options.maxRelativeSpread) && options.maxRelativeSpread >= 0
@@ -89,6 +104,9 @@ function assertRun(run, index) {
     "runId",
     "fixtureId",
     "domain",
+    "claimMode",
+    "verifierId",
+    "verifierSha256",
     "sourceSha256",
     "outputSha256",
     "modelSha256",
@@ -102,9 +120,22 @@ function assertRun(run, index) {
   ]) {
     if (!(key in run)) throw new Error(`run ${index} missing ${key}`);
   }
-  if (typeof run.runId !== "string" || !run.runId.trim()) throw new Error(`run ${index} runId must be a non-empty string`);
-  if (typeof run.fixtureId !== "string" || !run.fixtureId.trim()) throw new Error(`run ${index} fixtureId must be a non-empty string`);
-  if (typeof run.domain !== "string" || !run.domain.trim()) throw new Error(`run ${index} domain must be a non-empty string`);
+  if (typeof run.runId !== "string" || !run.runId.trim()) {
+    throw new Error(`run ${index} runId must be a non-empty string`);
+  }
+  if (typeof run.fixtureId !== "string" || !run.fixtureId.trim()) {
+    throw new Error(`run ${index} fixtureId must be a non-empty string`);
+  }
+  if (typeof run.domain !== "string" || !run.domain.trim()) {
+    throw new Error(`run ${index} domain must be a non-empty string`);
+  }
+  if (!CLAIM_MODES.includes(run.claimMode)) {
+    throw new Error(`run ${index} has unsupported claimMode`);
+  }
+  if (typeof run.verifierId !== "string" || !run.verifierId.trim()) {
+    throw new Error(`run ${index} verifierId must be a non-empty string`);
+  }
+  assertSha256(run.verifierSha256, "verifierSha256", index);
   assertSha256(run.sourceSha256, "sourceSha256", index);
   assertSha256(run.outputSha256, "outputSha256", index);
   assertSha256(run.modelSha256, "modelSha256", index);
@@ -113,7 +144,9 @@ function assertRun(run, index) {
   if (!Number.isFinite(run.sourceTokens) || !Number.isFinite(run.outputTokens)) {
     throw new Error(`run ${index} token counts must be finite numbers`);
   }
-  if (!(run.sourceTokens > 0) || !(run.outputTokens > 0)) throw new Error(`run ${index} token counts must be positive`);
+  if (!(run.sourceTokens > 0) || !(run.outputTokens > 0)) {
+    throw new Error(`run ${index} token counts must be positive`);
+  }
   for (const key of ["correct", "blind", "restored", "restarted"]) {
     if (typeof run[key] !== "boolean") throw new Error(`run ${index} ${key} must be boolean`);
   }
@@ -138,7 +171,11 @@ function highestTierAtOrBelow(value) {
 export function qualifyCompression(runs, options = {}) {
   const policy = strictPolicy(options);
   if (!Array.isArray(runs) || runs.length < policy.minRuns) {
-    return { qualified: false, reason: `requires at least ${policy.minRuns} runs`, runCount: runs?.length ?? 0 };
+    return {
+      qualified: false,
+      reason: `requires at least ${policy.minRuns} runs`,
+      runCount: runs?.length ?? 0,
+    };
   }
 
   runs.forEach(assertRun);
@@ -160,32 +197,46 @@ export function qualifyCompression(runs, options = {}) {
   const fixtureIds = new Set(runs.map((run) => run.fixtureId));
   const domains = new Set(runs.map((run) => run.domain));
   const modelHashes = new Set(runs.map((run) => run.modelSha256));
+  const claimModes = new Set(runs.map((run) => run.claimMode));
+  const verifierIdentities = new Set(
+    runs.map((run) => `${run.verifierId}:${run.verifierSha256}`),
+  );
   const relativeSpread = median > 0 ? (maximum - minimum) / median : Infinity;
 
   const gates = {
     runCount: runs.length >= policy.minRuns,
     correctness: correctness >= policy.requiredCorrectness,
     blindCoverage: blindRuns.length >= policy.minBlindRuns && blindRuns.every((run) => run.correct),
-    restartCoverage: restartRuns.length >= policy.minRestartRuns && restartRuns.every((run) => run.correct),
-    restoreCoverage: restoreRuns.length >= policy.minRestoreRuns && restoreRuns.every((run) => run.correct),
+    restartCoverage:
+      restartRuns.length >= policy.minRestartRuns && restartRuns.every((run) => run.correct),
+    restoreCoverage:
+      restoreRuns.length >= policy.minRestoreRuns && restoreRuns.every((run) => run.correct),
     sourceDiversity: sourceHashes.size >= policy.minUniqueSources,
     blindSourceDiversity: blindSourceHashes.size >= policy.minUniqueBlindSources,
     fixtureDiversity: fixtureIds.size >= policy.minUniqueSources,
     domainCoverage: domains.size >= policy.minDomains,
     singleModelIdentity: modelHashes.size === 1,
+    singleClaimMode: claimModes.size === 1,
+    singleVerifierIdentity: verifierIdentities.size === 1,
     stability: relativeSpread <= policy.maxRelativeSpread,
   };
 
   const allGatesPass = Object.values(gates).every(Boolean);
   const conservativeRatio = minimum;
   const technicalRatioTier = allGatesPass ? highestTierAtOrBelow(conservativeRatio) : null;
-  const publicRatio = allGatesPass
+  const qualifiedScope = claimModes.size === 1 ? [...claimModes][0] : null;
+  const publicTokenizerEligible = Boolean(
+    qualifiedScope && PUBLIC_TOKENIZER_MODES.has(qualifiedScope),
+  );
+  const publicRatio = allGatesPass && publicTokenizerEligible
     ? highestTierAtOrBelow(Math.min(conservativeRatio, policy.publicLaunchCap))
     : null;
 
   const report = {
-    schemaVersion: "16xvs-compression-qualification-v2",
+    schemaVersion: "16xvs-compression-qualification-v3",
     qualified: allGatesPass && technicalRatioTier !== null,
+    qualifiedScope,
+    publicTokenizerEligible,
     publicRatio,
     technicalRatioTier,
     conservativeRatio: round(conservativeRatio),
@@ -198,6 +249,8 @@ export function qualifyCompression(runs, options = {}) {
       uniqueFixtureCount: fixtureIds.size,
       domainCount: domains.size,
       modelCount: modelHashes.size,
+      claimModeCount: claimModes.size,
+      verifierIdentityCount: verifierIdentities.size,
       blindRunCount: blindRuns.length,
       restartRunCount: restartRuns.length,
       restoreRunCount: restoreRuns.length,
@@ -210,17 +263,24 @@ export function qualifyCompression(runs, options = {}) {
     },
     identities: {
       modelSha256: modelHashes.size === 1 ? [...modelHashes][0] : null,
+      verifierIdentity: verifierIdentities.size === 1 ? [...verifierIdentities][0] : null,
       restoredArtifactSha256: [...new Set(restoreRuns.map((run) => run.restoredFromSha256))],
     },
     gates,
     policy: {
       ...policy,
-      promotionRule: "Technical qualification uses the highest approved tier not exceeding the worst successful run.",
-      publicRule: "Initial public launch recommendation is capped at 700:1 even when private technical qualification is higher.",
+      promotionRule:
+        "Technical qualification uses the highest approved tier not exceeding the worst successful run.",
+      publicRule:
+        "Only semantic-reconstruction or lossless-roundtrip evidence can produce a public tokenizer recommendation, initially capped at 700:1.",
       weakeningAllowed: false,
     },
   };
   return { ...report, reportSha256: hashCanonical(report) };
 }
 
-export { QUALIFIED_TIERS, POLICY_FLOOR };
+export {
+  CLAIM_MODES,
+  POLICY_FLOOR,
+  QUALIFIED_TIERS,
+};
