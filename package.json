@@ -14,6 +14,7 @@
     "vault:seal": "node ./scripts/secure-vault.mjs seal",
     "vault:open": "node ./scripts/secure-vault.mjs open",
     "vault:secure:test": "node ./test/secure-vault.test.mjs",
+    "proof:qualify": "node ./scripts/qualify-compression.mjs",
     "training:data": "node ./scripts/build-training-data.mjs",
     "training:data:v2": "node ./scripts/build-training-data.mjs --input ./data/training/embedding-training-spec-v2.json --output ./data/training/embedding-training-pairs-v2.json",
     "eval:suite": "node ./scripts/run-eval-suite.mjs",
