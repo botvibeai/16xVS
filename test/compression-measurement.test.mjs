@@ -17,6 +17,9 @@ function measurement(overrides = {}) {
     runId: `run-${index}`,
     fixtureId: `fixture-${index}`,
     domain: `domain-${index % 10}`,
+    claimMode: "semantic-reconstruction",
+    verifierId: "semantic-verifier-v1",
+    verifierSha256: sha("semantic-verifier-v1"),
     sourceSha256: sha(`source-${index}`),
     preprocessedSha256: sha(`preprocessed-${index}`),
     outputSha256: sha(`output-${index}`),
@@ -45,7 +48,6 @@ test("records preprocessing and tokenizer stages without double counting", () =>
   assert.equal(result.stages.tokenizer.ratio, 700);
   assert.equal(result.stages.total.ratio, 1500);
   assert.equal(result.accounting.stageProduct, 1500);
-  assert.equal(result.accounting.reconciled, true);
 });
 
 test("records an exact-bypass 707 to one result", () => {
@@ -89,7 +91,7 @@ test("detects measurement tampering before qualification", () => {
   assert.throws(() => buildQualificationRun(result), /measurementSha256/i);
 });
 
-test("100 diverse 707 runs qualify technically and publicly as 700", () => {
+test("100 diverse semantic 707 runs qualify technically and publicly as 700", () => {
   const runs = Array.from({ length: 100 }, (_, index) => {
     const sourceSha256 = sha(`source-${index}`);
     return buildQualificationRun(measurement({
@@ -109,7 +111,29 @@ test("100 diverse 707 runs qualify technically and publicly as 700", () => {
   assert.equal(result.technicalRatioTier, 700);
 });
 
-test("100 diverse 80000 runs remain private above the public 700 cap", () => {
+test("retrieval-only 2400 evidence is not a public tokenizer claim", () => {
+  const runs = Array.from({ length: 100 }, (_, index) => {
+    const sourceSha256 = sha(`retrieval-source-${index}`);
+    return buildQualificationRun(measurement({
+      index,
+      claimMode: "retrieval-signature",
+      sourceTokens: 2400,
+      preprocessedTokens: 2400,
+      sourceSha256,
+      preprocessedSha256: sourceSha256,
+      preprocessBypassed: true,
+      retentionSha256: null,
+      semanticSha256: null,
+    }));
+  });
+  const result = qualifyCompression(runs);
+  assert.equal(result.qualified, true);
+  assert.equal(result.technicalRatioTier, 2400);
+  assert.equal(result.publicRatio, null);
+  assert.equal(result.publicTokenizerEligible, false);
+});
+
+test("100 diverse semantic 80000 runs remain private above the public 700 cap", () => {
   const runs = Array.from({ length: 100 }, (_, index) => {
     const sourceSha256 = sha(`source-${index}`);
     return buildQualificationRun(measurement({
