@@ -12,6 +12,7 @@ import "./preprocess-governance.test.mjs";
 import "./proof-gates.test.mjs";
 import "./qualification-gate.test.mjs";
 import "./recovery-scan-compression-evidence.test.mjs";
+import "./secure-vault-cli.test.mjs";
 import "./secure-vault.test.mjs";
 import "./specialist-model-rebuild-manifest.test.mjs";
 import "./training-pipeline.test.mjs";
