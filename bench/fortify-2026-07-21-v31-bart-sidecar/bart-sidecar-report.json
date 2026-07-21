@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "v31-bart-sidecar-report-v1",
+  "generatedAt": "2026-07-21T05:38:17.875Z",
+  "model": "@cf/facebook/bart-large-cnn",
+  "executed": false,
+  "noExternalCalls": true,
+  "reason": "Sidecar is adapter-ready but does not call Workers AI by default. Live calls require separate explicit approval and must route only through the testing Worker.",
+  "testingOnly": {
+    "schemaVersion": "v31-testing-only-config-validation-v1",
+    "ok": true,
+    "reasons": [],
+    "expected": {
+      "configPath": "wrangler.testing.jsonc",
+      "workerName": "16xvs-poc-testing",
+      "workerUrl": "https://16xvs-poc-testing.michael-38d.workers.dev",
+      "requiredVars": {
+        "DEPLOYMENT_ROLE": "testing",
+        "DATA_STACK": "testing"
+      },
+      "requiredBuckets": [
+        "16xvs-poc-testing-live",
+        "16xvs-poc-testing-fallback",
+        "16xvs-poc-testing-vault"
+      ]
+    },
+    "actual": {
+      "workerName": "16xvs-poc-testing",
+      "vars": {
+        "DEPLOYMENT_ROLE": "testing",
+        "DATA_STACK": "testing",
+        "PROOF_BASELINE": "v30-plus-experiments"
+      },
+      "bucketNames": [
+        "16xvs-poc-testing-fallback",
+        "16xvs-poc-testing-live",
+        "16xvs-poc-testing-vault"
+      ]
+    }
+  },
+  "audit": {
+    "schemaVersion": "v31-meaning-purification-audit-v1",
+    "generatedAt": "2026-07-21T05:38:17.875Z",
+    "summary": {
+      "caseCount": 2,
+      "localPurificationPassed": true,
+      "bartEvaluated": false,
+      "bartPassed": true
+    },
+    "results": [
+      {
+        "id": "noisy-book-route",
+        "sourceAnchors": {
+          "names": true,
+          "numbers": true,
+          "negation": true,
+          "causality": true,
+          "quoteAttribution": true,
+          "routeLineage": true
+        },
+        "purified": {
+          "text": "Nora said at 04:21 that chapter 6 is not safe because the parent child route lineage would fold into the wrong book root unless the rescue number 17 stays attached.",
+          "anchors": {
+            "names": true,
+            "numbers": true,
+            "negation": true,
+            "causality": true,
+            "quoteAttribution": true,
+            "routeLineage": true
+          },
+          "missingAnchors": [],
+          "pass": true
+        },
+        "bart": {
+          "text": null,
+          "anchors": null,
+          "missingAnchors": [],
+          "pass": null
+        }
+      },
+      {
+        "id": "noisy-quote-causality",
+        "sourceAnchors": {
+          "names": true,
+          "numbers": true,
+          "negation": true,
+          "causality": true,
+          "quoteAttribution": true,
+          "routeLineage": true
+        },
+        "purified": {
+          "text": "Maya quoted Owen and said the clinic should not close because 42 patients need the telehealth chapter route to keep the child records with the right book.",
+          "anchors": {
+            "names": true,
+            "numbers": true,
+            "negation": true,
+            "causality": true,
+            "quoteAttribution": true,
+            "routeLineage": true
+          },
+          "missingAnchors": [],
+          "pass": true
+        },
+        "bart": {
+          "text": null,
+          "anchors": null,
+          "missingAnchors": [],
+          "pass": null
+        }
+      }
+    ]
+  },
+  "ok": true
+}

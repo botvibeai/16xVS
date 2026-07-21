@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "v32-anchor-mutation-guard-v1",
+  "summary": {
+    "caseCount": 3,
+    "pass": true
+  },
+  "results": [
+    {
+      "id": "good-anchor-preservation",
+      "sourceAnchors": {
+        "names": true,
+        "numbers": true,
+        "negation": true,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "candidateAnchors": {
+        "names": true,
+        "numbers": true,
+        "negation": true,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "missingAnchors": [],
+      "expectedMissingAnchors": [],
+      "pass": true
+    },
+    {
+      "id": "bad-negation-drop",
+      "sourceAnchors": {
+        "names": true,
+        "numbers": true,
+        "negation": true,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "candidateAnchors": {
+        "names": true,
+        "numbers": true,
+        "negation": false,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "missingAnchors": [
+        "negation"
+      ],
+      "expectedMissingAnchors": [
+        "negation"
+      ],
+      "pass": true
+    },
+    {
+      "id": "bad-number-drop",
+      "sourceAnchors": {
+        "names": true,
+        "numbers": true,
+        "negation": true,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "candidateAnchors": {
+        "names": true,
+        "numbers": false,
+        "negation": true,
+        "causality": true,
+        "quoteAttribution": true,
+        "routeLineage": true
+      },
+      "missingAnchors": [
+        "numbers"
+      ],
+      "expectedMissingAnchors": [
+        "numbers"
+      ],
+      "pass": true
+    }
+  ]
+}

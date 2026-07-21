@@ -1,0 +1,93 @@
+{
+  "proofId": "v30-commercial-baseline-gap-report",
+  "claimLevel": "local-commercial-stretch-proof",
+  "achievedRatio": 220.49,
+  "averageSourceBpe": 220.49,
+  "averageEquivalentOutputTokens": 1,
+  "correctness": {
+    "correct": 100,
+    "total": 100,
+    "rate": 1,
+    "tiedOrWrong": []
+  },
+  "targets": {
+    "P0": {
+      "label": "Beat commercial-safe 10x",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 20,
+      "requiredCorrect": 100,
+      "pass": true
+    },
+    "P1": {
+      "label": "Beat aggressive 20x",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 10,
+      "requiredCorrect": 100,
+      "pass": true
+    },
+    "P2": {
+      "label": "Stretch: true 220 BPE -> 1 local 16xVS fold token",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 1,
+      "requiredCorrect": 100,
+      "pass": true
+    }
+  },
+  "baselineDeltas": [
+    {
+      "id": "accuracy-preserving-commercial-2x",
+      "ratio": 2,
+      "label": "Commercial light-compression benchmark",
+      "applesToApples": true,
+      "claimLevel": "commercial-reference",
+      "achievedRatio": 220.49,
+      "deltaRatio": 218.49,
+      "percentOverBaseline": 10924.5,
+      "beats": true
+    },
+    {
+      "id": "commercial-safe-10x",
+      "ratio": 10,
+      "label": "Commercial-safe target: up to 90% fewer tokens / 10x",
+      "applesToApples": true,
+      "claimLevel": "commercial-safe-number-to-beat",
+      "achievedRatio": 220.49,
+      "deltaRatio": 210.49,
+      "percentOverBaseline": 2104.9,
+      "beats": true
+    },
+    {
+      "id": "research-open-20x",
+      "ratio": 20,
+      "label": "Research/open-source aggressive target",
+      "applesToApples": true,
+      "claimLevel": "research-directional-number-to-beat",
+      "achievedRatio": 220.49,
+      "deltaRatio": 200.49,
+      "percentOverBaseline": 1002.45,
+      "beats": true
+    },
+    {
+      "id": "query-aware-demo-226x",
+      "ratio": 226,
+      "label": "Aggressive query-aware extraction demo",
+      "applesToApples": false,
+      "claimLevel": "not-full-semantic-compression-baseline",
+      "achievedRatio": 220.49,
+      "deltaRatio": -5.51,
+      "percentOverBaseline": -2.4381,
+      "beats": false
+    }
+  ],
+  "compresr226xMath": {
+    "sourceTokensForOneTokenToBeat": 227,
+    "sourceTokensForOneTokenToBeatBy10Percent": 249,
+    "sourceTokensForOneTokenToBeatBy20Percent": 272,
+    "target220To1Beats226x": false
+  },
+  "notes": [
+    "The 226x number is recorded as a query-aware extraction demo, not a full semantic compression baseline.",
+    "Residual and cold-path tokens count against output size; this V30 local proof uses no cold-path fallback.",
+    "This is a local proof harness only; it does not call commercial APIs or deploy a Worker."
+  ]
+}

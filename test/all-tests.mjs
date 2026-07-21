@@ -17,4 +17,6 @@ import "./v28-runtime-governance.test.mjs";
 import "./v29-report-gap-audit.test.mjs";
 import "./v30-commercial-baseline.test.mjs";
 import "./v30-pressure-cooker.test.mjs";
+import "./v31-book-fold-attack.test.mjs";
+import "./v32-707-stabilization.test.mjs";
 import "./vault-snapshot.test.mjs";
