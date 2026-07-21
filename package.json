@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
+    "deploy:primary": "wrangler deploy -c wrangler.jsonc --message \"16xVS V30 primary\"",
+    "deploy:secondary": "wrangler deploy -c wrangler.secondary.jsonc --message \"16xVS V30 secondary hot standby\"",
+    "deploy:testing": "wrangler deploy -c wrangler.testing.jsonc --message \"16xVS testing sandbox\"",
     "test": "node ./test/all-tests.mjs",
     "benchmark": "node ./scripts/benchmark.mjs",
     "benchmark:model": "node ./scripts/run-benchmark-with-model.mjs",

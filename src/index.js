@@ -2,12 +2,22 @@ const CATALOG_NAME = "16xvs-poc";
 const RECORD_PREFIX = "glyph:";
 const MAX_LIBRARY_LIMIT = 64;
 const MAX_MATCH_LIMIT = 20;
+const MAX_R2_FALLBACK_LIMIT = 1000;
 const POPCOUNT_NIBBLE = [0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4];
 const STORAGE_TIERS = [
   { name: "live", binding: "LIVE_TOKENS", required: true },
   { name: "fallback", binding: "FALLBACK_TOKENS", required: false },
   { name: "vault", binding: "VAULT_TOKENS", required: false, storageClass: "InfrequentAccess" },
 ];
+
+export function runtimeMetadata(env = {}) {
+  return {
+    role: typeof env.DEPLOYMENT_ROLE === "string" ? env.DEPLOYMENT_ROLE : "primary",
+    dataStack: typeof env.DATA_STACK === "string" ? env.DATA_STACK : "production",
+    proofBaseline: typeof env.PROOF_BASELINE === "string" ? env.PROOF_BASELINE : "v30",
+    catalogRecovery: "durable-object-with-r2-fallback",
+  };
+}
 
 function json(data, init = {}) {
   const headers = new Headers(init.headers || {});
@@ -173,6 +183,89 @@ function storageSummary(storage) {
 function isRecordDegraded(record) {
   if (!record?.storage) return true;
   return !record.storage.quorumMet || !record.storage.liveReady;
+}
+
+function buildR2FallbackWrite(tier, object) {
+  return {
+    tier: tier.name,
+    binding: tier.binding,
+    key: object.key,
+    ok: true,
+    etag: object.etag || null,
+    version: object.version || null,
+    uploaded: isoOrNull(object.uploaded),
+    storageClass: object.storageClass || tier.storageClass || "Standard",
+    error: null,
+  };
+}
+
+function buildR2FallbackStorage(record, tierWrites) {
+  const storage = Object.fromEntries(tierWrites.map((write) => [write.tier, write]));
+  const summary = storageSummary(storage);
+  return {
+    mode: summary.mode,
+    successfulTiers: summary.successfulTiers,
+    copyCount: summary.copyCount,
+    quorumMet: summary.quorumMet,
+    liveReady: summary.liveReady,
+    key: record?.storage?.key || tierWrites[0]?.key || buildStorageKey(record),
+    live: storage.live,
+    fallback: storage.fallback,
+    vault: storage.vault,
+  };
+}
+
+async function listRecordsFromTier(env, tier, limit) {
+  const bucket = env[tier.binding];
+  if (!bucket?.list || !bucket?.get) return [];
+
+  const records = [];
+  let cursor;
+
+  do {
+    const page = await bucket.list({
+      prefix: "glyphs/",
+      cursor,
+      limit: Math.min(1000, Math.max(1, limit - records.length)),
+    });
+
+    for (const object of page.objects || []) {
+      try {
+        const stored = await bucket.get(object.key);
+        if (!stored) continue;
+        const record = await stored.json();
+        if (!record?.id || !record?.glyph?.hex) continue;
+        records.push({ record, tierWrite: buildR2FallbackWrite(tier, object) });
+      } catch {
+        // Ignore malformed objects during cold catalog recovery.
+      }
+    }
+
+    cursor = page.truncated ? page.cursor : null;
+  } while (cursor && records.length < limit);
+
+  return records;
+}
+
+export async function listRecordsFromR2Fallback(env, limit = MAX_LIBRARY_LIMIT) {
+  const byId = new Map();
+
+  for (const tier of STORAGE_TIERS) {
+    const records = await listRecordsFromTier(env, tier, limit);
+    for (const { record, tierWrite } of records) {
+      if (!byId.has(record.id)) byId.set(record.id, { record, tierWrites: [] });
+      byId.get(record.id).tierWrites.push(tierWrite);
+    }
+  }
+
+  return [...byId.values()]
+    .map(({ record, tierWrites }) => ({
+      ...record,
+      storage: buildR2FallbackStorage(record, tierWrites),
+    }))
+    .sort((left, right) => (right.createdAtMs || 0) - (left.createdAtMs || 0))
+    .slice(0, limit)
+    .map(summarizeRecord);
 }
 
 function buildStorageKey(record) {
@@ -408,12 +501,14 @@ export class GlyphCatalog {
       reverse: true,
       limit,
     });
-    return [...items.values()].map(summarizeRecord);
+    const records = [...items.values()].map(summarizeRecord);
+    return records.length > 0 ? records : listRecordsFromR2Fallback(this.env, limit);
   }
 
   async listAllRecords() {
     const items = await this.state.storage.list({ prefix: RECORD_PREFIX });
-    return [...items.values()].map(summarizeRecord);
+    const records = [...items.values()].map(summarizeRecord);
+    return records.length > 0 ? records : listRecordsFromR2Fallback(this.env, MAX_R2_FALLBACK_LIMIT);
   }
 
   async fetch(request) {
@@ -427,6 +522,7 @@ export class GlyphCatalog {
       return json({
         ok: true,
         service: "16xvs-glyph-catalog",
+        runtime: runtimeMetadata(this.env),
         recordCount: records.length,
         durability: {
           doubleCount,

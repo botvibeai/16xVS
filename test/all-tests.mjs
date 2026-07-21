@@ -1,5 +1,6 @@
 import "./auto-route.test.mjs";
 import "./benchmark-evidence.test.mjs";
+import "./cloudflare-topology.test.mjs";
 import "./head-validator.test.mjs";
 import "./learned-encoder.test.mjs";
 import "./mega-book-ladder.test.mjs";
