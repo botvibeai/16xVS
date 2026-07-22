@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16xVS Live Compression Lab | BPE to 16xVS Count</title>
+    <meta name="description" content="Paste any prompt and compare BPE-style token count to 16xVS root and residual token estimates.">
+    <link rel="stylesheet" href="/site.css">
+  </head>
+  <body data-page="lab">
+    <div class="site-noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/brand/16xvs-logo-lockup.png" alt="16xVS"></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/live-compression-lab/" aria-current="page">Live Lab</a>
+        <a href="/llm-token-saving-calculator/">Savings Calculator</a>
+        <a href="/hindi/">Hindi</a>
+        <a href="/proof/">Proof</a>
+        <a href="/poc/">POC</a>
+      </nav>
+      <a class="nav-cta" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Private Audit</a>
+    </header>
+
+    <main>
+      <section class="page-hero section-pad">
+        <p class="section-label">Live compression lab</p>
+        <h1>BPE to 16xVS count, live.</h1>
+        <p>Paste a phrase, quote, booklet section, or multilingual text. The public lab uses conservative 300x-400x positioning and shows stronger estimates only when the input earns route confidence.</p>
+      </section>
+
+      <section class="lab-card section-pad">
+        <div class="lab-shell wide">
+          <div class="input-panel">
+            <div class="example-bar" data-example-bar></div>
+            <label class="field-label" for="lab-prompt">Prompt, quote, or document chunk</label>
+            <textarea id="lab-prompt" data-lab-input placeholder="Paste any prompt. Use the examples above for quick tests."></textarea>
+            <div class="tool-row">
+              <button class="button primary" type="button" data-run-lab>Run Compression Test</button>
+              <button class="button ghost" type="button" data-copy-result>Copy Result</button>
+            </div>
+            <p class="fine-print">Privacy warning: do not paste secrets or customer data into the public lab. Private audits use controlled intake.</p>
+          </div>
+          <div class="result-panel sticky" data-result-panel>
+            <p class="section-label">Your result</p>
+            <div class="result-grid">
+              <div><span>BPE estimate</span><strong data-bpe-count>0</strong></div>
+              <div><span>16xVS equivalent</span><strong data-vs-count>0</strong></div>
+              <div><span>Root tokens</span><strong data-root-count>0</strong></div>
+              <div><span>Residual tokens</span><strong data-residual-count>0</strong></div>
+              <div><span>Reduction</span><strong data-reduction>0%</strong></div>
+              <div><span>Ratio</span><strong data-ratio>0x</strong></div>
+            </div>
+            <div class="risk-card" data-risk-card>Waiting for input.</div>
+            <div class="share-box" data-share-box>Run a prompt to generate share copy.</div>
+            <a class="button primary full" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Audit This At Company Scale</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad example-section">
+        <div class="section-head">
+          <p class="section-label">Copy-paste examples</p>
+          <h2>Fast tests for Reddit, teams, and demos.</h2>
+          <p>Examples include phrases, quotes, a mini booklet, Hindi, Arabic, Japanese, Russian, and code-safe text.</p>
+        </div>
+        <div class="example-list" data-example-list></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>16xVS Live Compression Lab</span><span>Public estimate, private audit available.</span></footer>
+    <script type="module" src="/site.js"></script>
+  </body>
+</html>

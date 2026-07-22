@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "v33-testing-worker-1000-summary-v1",
+  "generatedAt": "2026-07-22T03:09:39.392Z",
+  "claimLevel": "v33-testing-worker-707-1000-pass",
+  "pass": true,
+  "testingWorkerOnly": true,
+  "noPrimarySecondary": true,
+  "noRawPromptStoredInReport": true,
+  "workerUrl": "https://16xvs-poc-testing.michael-38d.workers.dev",
+  "targetBpe": 707,
+  "requestedRuns": 1000,
+  "completedRuns": 1000,
+  "batchCount": 10,
+  "batchFailures": [],
+  "correct": 1000,
+  "total": 1000,
+  "tiedOrWrongCount": 0,
+  "coldPathCount": 0,
+  "residualCount": 0,
+  "averageSourceBpe": 755.81,
+  "averageEquivalentOutputTokens": 1,
+  "averageCompressionRatio": 755.81,
+  "averageReductionPercent": 99.8677,
+  "minOwnVsOutsideMargin": 9,
+  "languageProbeSummary": {
+    "english-control": {
+      "total": 250,
+      "correct": 250,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 15,
+      "pass": true
+    },
+    "hindi": {
+      "total": 250,
+      "correct": 250,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 9,
+      "pass": true
+    },
+    "russian": {
+      "total": 250,
+      "correct": 250,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 14,
+      "pass": true
+    },
+    "arabic": {
+      "total": 250,
+      "correct": 250,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 13,
+      "pass": true
+    }
+  },
+  "modes": [
+    "language-equity-arabic",
+    "language-equity-english-control",
+    "language-equity-hindi",
+    "language-equity-russian"
+  ]
+}

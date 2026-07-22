@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "v33-repeatability-report-v1",
+  "summary": {
+    "pass": true,
+    "firstPass": true,
+    "secondPass": true,
+    "compared": 100,
+    "mismatches": []
+  }
+}

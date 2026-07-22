@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LLM Token Saving Calculator | 16xVS</title>
+    <meta name="description" content="Estimate monthly AI token, storage, and cost savings using conservative 16xVS compression scenarios.">
+    <link rel="stylesheet" href="/site.css">
+  </head>
+  <body data-page="calculator">
+    <div class="site-noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="/"><img src="/brand/16xvs-logo-lockup.png" alt="16xVS"></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/live-compression-lab/">Live Lab</a>
+        <a href="/llm-token-saving-calculator/" aria-current="page">Savings Calculator</a>
+        <a href="/proof/">Proof</a>
+        <a href="/poc/">POC</a>
+      </nav>
+      <a class="nav-cta" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Private Audit</a>
+    </header>
+
+    <main>
+      <section class="page-hero section-pad">
+        <p class="section-label">LLM token saving calculator</p>
+        <h1>Model the monthly cost gap.</h1>
+        <p>Use conservative 300x-400x scenarios for public estimates. Private audits replace assumptions with measured workload results.</p>
+      </section>
+
+      <section class="calculator-shell section-pad">
+        <form class="calc-form" data-savings-form>
+          <label><span>Monthly LLM calls</span><input name="monthlyCalls" type="number" min="1" value="100000"></label>
+          <label><span>Average BPE tokens per call</span><input name="avgTokens" type="number" min="1" value="2800"></label>
+          <label><span>Current model cost per 1M tokens ($)</span><input name="costPerMillion" type="number" min="0" step="0.01" value="5.00"></label>
+          <label><span>Modeled 16xVS compression ratio</span><select name="ratio"><option value="300">300x public-safe</option><option value="350" selected>350x conservative</option><option value="400">400x strong public model</option><option value="520">520x private audit scenario</option></select></label>
+        </form>
+        <div class="calc-results" data-savings-results>
+          <div><span>Current monthly tokens</span><strong data-current-tokens>0</strong></div>
+          <div><span>16xVS equivalent tokens</span><strong data-vs-monthly>0</strong></div>
+          <div><span>Estimated tokens removed</span><strong data-removed-tokens>0</strong></div>
+          <div><span>Current estimated spend</span><strong data-current-spend>$0</strong></div>
+          <div><span>Modeled spend after fold</span><strong data-vs-spend>$0</strong></div>
+          <div><span>Modeled monthly savings</span><strong data-monthly-savings>$0</strong></div>
+        </div>
+      </section>
+
+      <section class="cta-panel section-pad">
+        <div>
+          <p class="section-label">Need real numbers?</p>
+          <h2>Turn this estimate into a private audit.</h2>
+          <p>We test your actual prompts or document workloads and return a compression, correctness, residual, and savings report.</p>
+        </div>
+        <a class="button primary" href="mailto:founder@botvibe.ai?subject=16xVS%20Savings%20Audit">Request Savings Audit</a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>16xVS Savings Calculator</span><span>Estimates only. Audit required for production claims.</span></footer>
+    <script type="module" src="/site.js"></script>
+  </body>
+</html>

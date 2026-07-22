@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "v32-route-confusion-guard-v1",
+  "summary": {
+    "acceptedBookRootNoise": true,
+    "rejectedAmbiguousCrossLane": true,
+    "pass": true
+  },
+  "accepted": {
+    "schemaVersion": "v28-runtime-policy-contract-v1",
+    "laneId": "book-root",
+    "classifiedLaneId": "book-root",
+    "headId": "bookRoot",
+    "eligibleHeads": [
+      "bookRoot",
+      "default"
+    ],
+    "confidence": 1,
+    "accepted": true,
+    "rejectReason": null,
+    "classifier": {
+      "laneId": "book-root",
+      "confidence": 1,
+      "accepted": true,
+      "rejectReason": null,
+      "minimumConfidence": 0.05,
+      "ranked": [
+        {
+          "laneId": "book-root",
+          "confidence": 1,
+          "exactHits": 9,
+          "bloomHits": 11,
+          "tagCount": 10
+        },
+        {
+          "laneId": "archive-pressure",
+          "confidence": 0.225,
+          "exactHits": 1,
+          "bloomHits": 5,
+          "tagCount": 10
+        },
+        {
+          "laneId": "booklike",
+          "confidence": 0.2188,
+          "exactHits": 1,
+          "bloomHits": 3,
+          "tagCount": 8
+        },
+        {
+          "laneId": "blind-holdout",
+          "confidence": 0.2083,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 6
+        },
+        {
+          "laneId": "quote",
+          "confidence": 0.1875,
+          "exactHits": 1,
+          "bloomHits": 2,
+          "tagCount": 8
+        },
+        {
+          "laneId": "stress-100",
+          "confidence": 0.1786,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 7
+        },
+        {
+          "laneId": "mega-book-ladder",
+          "confidence": 0.1563,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 8
+        },
+        {
+          "laneId": "quote-paragraph",
+          "confidence": 0.1563,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 8
+        },
+        {
+          "laneId": "governance-adversarial",
+          "confidence": 0.0227,
+          "exactHits": 0,
+          "bloomHits": 1,
+          "tagCount": 11
+        }
+      ]
+    }
+  },
+  "ambiguous": {
+    "schemaVersion": "v28-runtime-policy-contract-v1",
+    "laneId": "book-root",
+    "classifiedLaneId": "blind-holdout",
+    "headId": "bookRoot",
+    "eligibleHeads": [
+      "bookRoot",
+      "default"
+    ],
+    "confidence": 0,
+    "accepted": false,
+    "rejectReason": "lane confidence below threshold",
+    "classifier": {
+      "laneId": "blind-holdout",
+      "confidence": 0.4167,
+      "accepted": true,
+      "rejectReason": null,
+      "minimumConfidence": 0.05,
+      "ranked": [
+        {
+          "laneId": "blind-holdout",
+          "confidence": 0.4167,
+          "exactHits": 2,
+          "bloomHits": 2,
+          "tagCount": 6
+        },
+        {
+          "laneId": "archive-pressure",
+          "confidence": 0.4,
+          "exactHits": 3,
+          "bloomHits": 4,
+          "tagCount": 10
+        },
+        {
+          "laneId": "governance-adversarial",
+          "confidence": 0.3409,
+          "exactHits": 3,
+          "bloomHits": 3,
+          "tagCount": 11
+        },
+        {
+          "laneId": "quote-paragraph",
+          "confidence": 0.3125,
+          "exactHits": 2,
+          "bloomHits": 2,
+          "tagCount": 8
+        },
+        {
+          "laneId": "stress-100",
+          "confidence": 0.1786,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 7
+        },
+        {
+          "laneId": "booklike",
+          "confidence": 0.1563,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 8
+        },
+        {
+          "laneId": "quote",
+          "confidence": 0.1563,
+          "exactHits": 1,
+          "bloomHits": 1,
+          "tagCount": 8
+        },
+        {
+          "laneId": "book-root",
+          "confidence": 0.025,
+          "exactHits": 0,
+          "bloomHits": 1,
+          "tagCount": 10
+        },
+        {
+          "laneId": "mega-book-ladder",
+          "confidence": 0,
+          "exactHits": 0,
+          "bloomHits": 0,
+          "tagCount": 8
+        }
+      ]
+    }
+  }
+}

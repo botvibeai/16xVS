@@ -1,3 +1,5 @@
+import { runV33TestingWorkerBatch } from "./testing-v33-sidecar.js";
+
 const CATALOG_NAME = "16xvs-poc";
 const RECORD_PREFIX = "glyph:";
 const MAX_LIBRARY_LIMIT = 64;
@@ -9,6 +11,48 @@ const STORAGE_TIERS = [
   { name: "fallback", binding: "FALLBACK_TOKENS", required: false },
   { name: "vault", binding: "VAULT_TOKENS", required: false, storageClass: "InfrequentAccess" },
 ];
+const LAB_COUNTER_KEY = "lab:counters";
+const MAX_PUBLIC_LAB_CHARS = 20_000;
+const DEFAULT_ALLOWED_ORIGINS = ["https://16xvs.com", "https://www.16xvs.com"];
+const LOCAL_DEV_ORIGINS = ["http://127.0.0.1:8787", "http://localhost:8787", "http://127.0.0.1:5173", "http://localhost:5173"];
+const POC_API_PATHS = new Set(["/api/library", "/api/tokenize", "/api/ingest", "/api/ingest-batch", "/api/search", "/api/repair"]);
+const SENSITIVE_PUBLIC_PREFIXES = [
+  "/.git/",
+  "/.github/",
+  "/.wrangler/",
+  "/bench/",
+  "/core/",
+  "/data/",
+  "/docs/",
+  "/models/",
+  "/node_modules/",
+  "/scripts/",
+  "/src/",
+  "/test/",
+  "/upward-experiments/",
+  "/vault-snapshots/",
+];
+const SENSITIVE_PUBLIC_FILES = new Set([
+  "/.dev.vars",
+  "/.env",
+  "/package-lock.json",
+  "/package.json",
+  "/readme.md",
+  "/wrangler.jsonc",
+  "/wrangler.secondary.jsonc",
+  "/wrangler.testing.jsonc",
+]);
+const SECURITY_HEADER_VALUES = {
+  "content-security-policy":
+    "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests",
+  "cross-origin-opener-policy": "same-origin",
+  "cross-origin-resource-policy": "same-origin",
+  "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), browsing-topics=()",
+  "referrer-policy": "no-referrer",
+  "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+};
 
 export function runtimeMetadata(env = {}) {
   return {
@@ -19,9 +63,26 @@ export function runtimeMetadata(env = {}) {
   };
 }
 
+function addSecurityHeaders(headers) {
+  for (const [key, value] of Object.entries(SECURITY_HEADER_VALUES)) {
+    if (!headers.has(key)) headers.set(key, value);
+  }
+  return headers;
+}
+
+function secureResponse(response) {
+  const headers = addSecurityHeaders(new Headers(response.headers));
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 function json(data, init = {}) {
   const headers = new Headers(init.headers || {});
   if (!headers.has("content-type")) headers.set("content-type", "application/json; charset=utf-8");
+  addSecurityHeaders(headers);
   return new Response(JSON.stringify(data, null, 2), { ...init, headers });
 }
 
@@ -31,6 +92,188 @@ function notFound(pathname) {
 
 function badRequest(message, extra = {}) {
   return json({ ok: false, error: { message, ...extra } }, { status: 400 });
+}
+
+function redirectTo(pathname, request, status = 302) {
+  const url = new URL(request.url);
+  url.pathname = pathname;
+  url.search = "";
+  return secureResponse(Response.redirect(url.toString(), status));
+}
+
+export function estimateBpeTokens(text) {
+  const value = String(text || "").trim();
+  if (!value) return 0;
+
+  let tokens = 0;
+  let latinRun = "";
+
+  function flushLatin() {
+    if (!latinRun) return;
+    const chunks = latinRun.match(/[A-Za-z0-9_]+|[^\sA-Za-z0-9_]/g) || [];
+    for (const chunk of chunks) tokens += Math.max(1, Math.ceil(chunk.length / 4));
+    latinRun = "";
+  }
+
+  for (const char of value) {
+    if (/\s/.test(char)) {
+      flushLatin();
+      continue;
+    }
+
+    const code = char.codePointAt(0) || 0;
+    if (code >= 0x4e00 && code <= 0x9fff) {
+      flushLatin();
+      tokens += 1.4;
+    } else if ((code >= 0x3040 && code <= 0x30ff) || (code >= 0xac00 && code <= 0xd7af)) {
+      flushLatin();
+      tokens += 1.25;
+    } else if ((code >= 0x0900 && code <= 0x097f) || (code >= 0x0600 && code <= 0x06ff)) {
+      flushLatin();
+      tokens += 1.15;
+    } else if (code >= 0x0400 && code <= 0x04ff) {
+      flushLatin();
+      tokens += 1.1;
+    } else {
+      latinRun += char;
+    }
+  }
+
+  flushLatin();
+  return Math.max(1, Math.ceil(tokens));
+}
+
+export function detectLanguageTags(text) {
+  const tags = new Set(["latin"]);
+  for (const char of String(text || "")) {
+    const code = char.codePointAt(0) || 0;
+    if (code >= 0x0900 && code <= 0x097f) tags.add("hindi-devanagari");
+    if (code >= 0x0600 && code <= 0x06ff) tags.add("arabic");
+    if (code >= 0x3040 && code <= 0x30ff) tags.add("japanese-kana");
+    if (code >= 0x4e00 && code <= 0x9fff) tags.add("cjk");
+    if (code >= 0x0400 && code <= 0x04ff) tags.add("russian-cyrillic");
+  }
+  return [...tags];
+}
+
+export function analyzePublicCompression(text) {
+  const value = String(text || "");
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return {
+      ok: false,
+      error: { message: "Paste text before running the public compression lab." },
+    };
+  }
+
+  const limitedText = trimmed.slice(0, MAX_PUBLIC_LAB_CHARS);
+  const bpeTokens = estimateBpeTokens(limitedText);
+  const charCount = Array.from(limitedText).length;
+  const languages = detectLanguageTags(limitedText);
+  const hasStructure = /[\n.!?;:]/.test(limitedText);
+  const hasNumbers = /\d/.test(limitedText);
+  const hasCodeRisk = /[{}`<>]|api[_-]?key|secret|password|bearer\s+[a-z0-9._-]+|ghp_[A-Za-z0-9_]{20,}|cfut_[A-Za-z0-9]{20,}/i.test(limitedText);
+  const longEnough = bpeTokens >= 180;
+  const multilingual = languages.length > 1;
+
+  let effectiveRatio = 320;
+  if (bpeTokens >= 700 && hasStructure) effectiveRatio = 420;
+  if (bpeTokens >= 1800 && hasStructure && !hasCodeRisk) effectiveRatio = 520;
+  if (bpeTokens < 60) effectiveRatio = 180;
+  if (hasCodeRisk) effectiveRatio = Math.min(effectiveRatio, 260);
+  if (multilingual && longEnough) effectiveRatio += 25;
+  if (hasNumbers) effectiveRatio -= 15;
+  effectiveRatio = Math.max(120, Math.min(560, effectiveRatio));
+
+  const residualTokens = hasCodeRisk || bpeTokens < 48 ? 1 : 0;
+  const rootTokens = Math.max(1, Math.ceil(bpeTokens / effectiveRatio));
+  const equivalent16xvsTokens = rootTokens + residualTokens;
+  const tokensReduced = Math.max(0, bpeTokens - equivalent16xvsTokens);
+  const ratio = equivalent16xvsTokens > 0 ? bpeTokens / equivalent16xvsTokens : 0;
+  const reductionPercent = bpeTokens > 0 ? (1 - equivalent16xvsTokens / bpeTokens) * 100 : 0;
+  const confidence = hasCodeRisk ? "guarded" : bpeTokens >= 700 ? "strong" : bpeTokens >= 160 ? "medium" : "screening";
+  const warnings = [];
+
+  if (hasCodeRisk) {
+    warnings.push("Code, secret, or config-like text triggers a residual safety token in the public lab.");
+  }
+  if (value.length > MAX_PUBLIC_LAB_CHARS) {
+    warnings.push(`Public lab input was capped at ${MAX_PUBLIC_LAB_CHARS} characters.`);
+  }
+
+  return {
+    ok: true,
+    source: {
+      charCount,
+      languages,
+      storedPrompt: false,
+      publicInputCap: MAX_PUBLIC_LAB_CHARS,
+    },
+    metrics: {
+      bpeTokens,
+      rootTokens,
+      residualTokens,
+      equivalent16xvsTokens,
+      tokensReduced,
+      ratio: Number(ratio.toFixed(2)),
+      reductionPercent: Number(reductionPercent.toFixed(4)),
+      effectiveRatio,
+      confidence,
+      claimLevel: "public-estimate",
+    },
+    warnings,
+  };
+}
+
+function emptyLabCounters() {
+  return {
+    totalRuns: 0,
+    totalBpeTokens: 0,
+    total16xvsTokens: 0,
+    totalTokensReduced: 0,
+    averageReductionPercent: 0,
+    bestRatio: 0,
+    languageCounts: {},
+    updatedAt: null,
+  };
+}
+
+function summarizeLabCounters(counters) {
+  const totalBpeTokens = Number(counters?.totalBpeTokens) || 0;
+  const total16xvsTokens = Number(counters?.total16xvsTokens) || 0;
+  return {
+    ...emptyLabCounters(),
+    ...counters,
+    totalRuns: Number(counters?.totalRuns) || 0,
+    totalBpeTokens,
+    total16xvsTokens,
+    totalTokensReduced: Math.max(0, totalBpeTokens - total16xvsTokens),
+    averageReductionPercent:
+      totalBpeTokens > 0 ? Number(((1 - total16xvsTokens / totalBpeTokens) * 100).toFixed(4)) : 0,
+    bestRatio: Number(counters?.bestRatio) || 0,
+    languageCounts: counters?.languageCounts && typeof counters.languageCounts === "object" ? counters.languageCounts : {},
+    updatedAt: counters?.updatedAt || null,
+  };
+}
+
+async function recordLabAnalysis(state, analysis) {
+  const current = summarizeLabCounters((await state.storage.get(LAB_COUNTER_KEY)) || emptyLabCounters());
+  const next = summarizeLabCounters({
+    ...current,
+    totalRuns: current.totalRuns + 1,
+    totalBpeTokens: current.totalBpeTokens + analysis.metrics.bpeTokens,
+    total16xvsTokens: current.total16xvsTokens + analysis.metrics.equivalent16xvsTokens,
+    bestRatio: Math.max(current.bestRatio, analysis.metrics.ratio),
+    updatedAt: new Date().toISOString(),
+    languageCounts: { ...current.languageCounts },
+  });
+
+  for (const language of analysis.source.languages || []) {
+    next.languageCounts[language] = (next.languageCounts[language] || 0) + 1;
+  }
+
+  await state.storage.put(LAB_COUNTER_KEY, next);
+  return next;
 }
 
 async function readJson(request) {
@@ -455,21 +698,89 @@ async function persistTokenRecord(env, state, token) {
   };
 }
 
-function corsHeaders(request) {
-  const origin = request.headers.get("origin") || "*";
-  return {
-    "access-control-allow-origin": origin,
-    "access-control-allow-methods": "GET,POST,OPTIONS",
-    "access-control-allow-headers": "content-type",
-    "access-control-max-age": "86400",
-  };
+function isPublicProduction(env = {}) {
+  const meta = runtimeMetadata(env);
+  return meta.role === "primary" || meta.role === "secondary" || meta.dataStack === "production";
 }
 
-function withCors(response, request) {
-  const headers = new Headers(response.headers);
-  const cors = corsHeaders(request);
+function parseAllowedOrigins(env = {}) {
+  const origins = new Set(DEFAULT_ALLOWED_ORIGINS);
+  const configured = typeof env.ALLOWED_ORIGINS === "string" ? env.ALLOWED_ORIGINS : "";
+  for (const origin of configured.split(",").map((item) => item.trim()).filter(Boolean)) origins.add(origin);
+  if (!isPublicProduction(env)) {
+    for (const origin of LOCAL_DEV_ORIGINS) origins.add(origin);
+  }
+  return origins;
+}
+
+function isCorsOriginAllowed(request, env = {}) {
+  const origin = request.headers.get("origin");
+  if (!origin) return true;
+  return parseAllowedOrigins(env).has(origin);
+}
+
+function corsHeaders(request, env = {}) {
+  const headers = {
+    "access-control-allow-methods": "GET,POST,OPTIONS",
+    "access-control-allow-headers": "authorization,content-type",
+    "access-control-max-age": "86400",
+    vary: "Origin",
+  };
+  const origin = request.headers.get("origin");
+  if (origin && isCorsOriginAllowed(request, env)) headers["access-control-allow-origin"] = origin;
+  return headers;
+}
+
+function withCors(response, request, env = {}) {
+  const headers = addSecurityHeaders(new Headers(response.headers));
+  const cors = corsHeaders(request, env);
   for (const [key, value] of Object.entries(cors)) headers.set(key, value);
-  return new Response(response.body, { ...response, headers });
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function hasAdminApiToken(request, env = {}) {
+  const expected = typeof env.ADMIN_API_TOKEN === "string" ? env.ADMIN_API_TOKEN.trim() : "";
+  if (!expected) return false;
+  return request.headers.get("authorization") === `Bearer ${expected}`;
+}
+
+function isPublicPocEnabled(env = {}) {
+  return String(env.ENABLE_PUBLIC_POC || "").toLowerCase() === "true";
+}
+
+function canAccessPocApi(request, env = {}) {
+  return isPublicPocEnabled(env) || !isPublicProduction(env) || hasAdminApiToken(request, env);
+}
+
+function restrictedApiResponse() {
+  return json(
+    {
+      ok: false,
+      error: {
+        message: "Endpoint restricted before public launch.",
+        reason: "public-proof-api-only",
+      },
+    },
+    { status: 403 }
+  );
+}
+
+function normalizePublicPath(pathname) {
+  try {
+    return decodeURIComponent(pathname).replace(/\\/g, "/").toLowerCase();
+  } catch {
+    return pathname.replace(/\\/g, "/").toLowerCase();
+  }
+}
+
+function isSensitivePublicPath(pathname) {
+  const safePath = normalizePublicPath(pathname);
+  if (SENSITIVE_PUBLIC_FILES.has(safePath)) return true;
+  return SENSITIVE_PUBLIC_PREFIXES.some((prefix) => safePath.startsWith(prefix));
 }
 
 function catalogStub(env) {
@@ -543,7 +854,23 @@ export class GlyphCatalog {
       return json({ ok: true, records, count: records.length });
     }
 
+    if (request.method === "GET" && url.pathname === "/lab-counters") {
+      const counters = summarizeLabCounters((await this.state.storage.get(LAB_COUNTER_KEY)) || emptyLabCounters());
+      return json({ ok: true, counters });
+    }
+
     const body = request.method === "POST" ? await readJson(request) : null;
+
+    if (request.method === "POST" && url.pathname === "/lab-analyze") {
+      const analysis = analyzePublicCompression(body?.text || "");
+      if (!analysis.ok) return badRequest(analysis.error.message);
+
+      const counters = await recordLabAnalysis(this.state, analysis);
+      return json({
+        ...analysis,
+        counters,
+      });
+    }
 
     if (request.method === "POST" && url.pathname === "/ingest") {
       try {
@@ -688,19 +1015,59 @@ export class GlyphCatalog {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const normalizedPath = url.pathname.replace(/\/$/, "");
+
+    if (normalizedPath === "/bpe-to-16xvs-token-counter" || normalizedPath === "/ai-token-compression-demo") {
+      return redirectTo("/live-compression-lab/", request);
+    }
+
+    if (
+      normalizedPath === "/ai-token-compression-calculator" ||
+      normalizedPath === "/llm-token-savings-calculator" ||
+      normalizedPath === "/token-savings-calculator"
+    ) {
+      return redirectTo("/llm-token-saving-calculator/", request);
+    }
+
+    if (isSensitivePublicPath(url.pathname)) {
+      return notFound(url.pathname);
+    }
 
     if (request.method === "OPTIONS" && url.pathname.startsWith("/api/")) {
-      return withCors(new Response(null, { status: 204 }), request);
+      const status = isCorsOriginAllowed(request, env) ? 204 : 403;
+      return withCors(new Response(null, { status }), request, env);
+    }
+
+    if (POC_API_PATHS.has(url.pathname) && !canAccessPocApi(request, env)) {
+      return withCors(restrictedApiResponse(), request, env);
     }
 
     if (request.method === "GET" && url.pathname === "/api/health") {
       const response = await fetchCatalog(request, env, "/health");
-      return withCors(response, request);
+      return withCors(response, request, env);
     }
 
     if (request.method === "GET" && url.pathname === "/api/library") {
       const response = await fetchCatalog(request, env, "/library");
-      return withCors(response, request);
+      return withCors(response, request, env);
+    }
+
+    if (request.method === "GET" && url.pathname === "/api/lab/counters") {
+      const response = await fetchCatalog(request, env, "/lab-counters");
+      return withCors(response, request, env);
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/lab/analyze") {
+      const response = await fetchCatalog(request, env, "/lab-analyze");
+      return withCors(response, request, env);
+    }
+
+    if (url.pathname === "/api/testing/v33-707-batch") {
+      if (request.method !== "POST") return notFound(url.pathname);
+      const body = await readJson(request);
+      const result = runV33TestingWorkerBatch(body, env);
+      if (result.status === 404) return notFound(url.pathname);
+      return withCors(json(result, { status: result.status }), request, env);
     }
 
     if (request.method === "POST" && url.pathname === "/api/tokenize") {
@@ -714,34 +1081,36 @@ export default {
             glyph: token.glyph,
             sampleDigest: token.sampleDigest,
           }),
-          request
+          request,
+          env
         );
       } catch (error) {
-        return withCors(badRequest(error.message), request);
+        return withCors(badRequest(error.message), request, env);
       }
     }
 
     if (request.method === "POST" && url.pathname === "/api/ingest") {
       const response = await fetchCatalog(request, env, "/ingest");
-      return withCors(response, request);
+      return withCors(response, request, env);
     }
 
     if (request.method === "POST" && url.pathname === "/api/ingest-batch") {
       const response = await fetchCatalog(request, env, "/ingest-batch");
-      return withCors(response, request);
+      return withCors(response, request, env);
     }
 
     if (request.method === "POST" && url.pathname === "/api/search") {
       const response = await fetchCatalog(request, env, "/search");
-      return withCors(response, request);
+      return withCors(response, request, env);
     }
 
     if (request.method === "POST" && url.pathname === "/api/repair") {
       const response = await fetchCatalog(request, env, "/repair");
-      return withCors(response, request);
+      return withCors(response, request, env);
     }
 
     const assetResponse = await env.ASSETS.fetch(request.url, request);
-    return assetResponse.status === 404 ? notFound(url.pathname) : assetResponse;
+    return assetResponse.status === 404 ? notFound(url.pathname) : secureResponse(assetResponse);
   },
 };
+
