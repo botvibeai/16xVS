@@ -1,0 +1,33 @@
+# EXP-2026-04-25-010 Vault Snapshot Hierarchical V2 Final
+
+- `id`: `EXP-2026-04-25-010`
+- `date`: `2026-04-25`
+- `corpus`: Repository evidence set after the `hierarchical-packer-v2` residual-selection round
+- `method`: Created a hashed repo snapshot with `npm run vault:snapshot -- --label hierarchical-packer-v2-final`, compressed the snapshot directory, and uploaded both the zip archive and manifest to the remote `16xvs-poc-vault` R2 bucket.
+- `implementation_path`: `vault snapshot/export flow`
+- `baseline`: `previous remote archive did not include the latest hierarchical-packer-v2 residual-selection artifacts`
+- `metrics`:
+  - `snapshotId`: `2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final`
+  - `fileCount`: `188`
+  - `totalBytes`: `88386645`
+  - `criticalArtifacts.count`: `21`
+  - `remoteArchiveObject`: `backups/2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final.zip`
+  - `remoteManifestObject`: `backups/2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final-manifest.json`
+- `result_label`: `proven`
+- `claim_supported`:
+  - The repo can produce a file-hashed snapshot that includes the latest `hierarchical-packer-v2` model, suite summary, long-form reports, and ledger entry.
+  - The snapshot can be compressed locally and uploaded into the remote `vault` bucket as both a zip archive and a matching manifest.
+  - The latest remote snapshot explicitly marks the new `hierarchical-packer-v2` storage artifacts as critical artifacts in the manifest.
+- `claim_not_supported`:
+  - This archival proof does not say anything about tokenizer quality by itself.
+  - The existence of a remote vault snapshot does not validate the `99.99%` or `1.25 GB` raw-source claims.
+- `artifacts`:
+  - [vault snapshot script](scripts\create-vault-snapshot.mjs)
+  - [snapshot core helper](core\vault-snapshot.mjs)
+  - [local snapshot manifest](vault-snapshots\2026-04-25T07-05-34-827Z-hierarchical-packer-v2-final\manifest.json)
+  - [hierarchical packer v2 ledger](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+- `notes`:
+  - This snapshot supersedes the earlier hierarchical final snapshot as the best remote preservation point for the current storage-focused baseline.
+  - The snapshot manifest now calls out both the earlier hierarchical `v1` artifacts and the current `v2` refinement so the storage evidence chain is preserved.
+- `next_action`:
+  - Keep cutting a dated vault snapshot after each meaningful semantic or storage round.

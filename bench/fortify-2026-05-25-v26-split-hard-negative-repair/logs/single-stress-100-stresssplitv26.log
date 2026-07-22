@@ -1,0 +1,24 @@
+label=single-stress-100-stressSplitV26
+startedAt=2026-05-25T19:01:07.645Z
+endedAt=2026-05-25T19:01:09.120Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "bench/stress-100-phrases-2026-04-23.txt",
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/single-head/stress-100-v26-stressSplitV26-single-head.json",
+  "encoderModel": "models/learned-hybrid-prototype-v26-stress-split-repair-hierarchical-packer-v2.json",
+  "entries": 100,
+  "patchesPerToken": 0.1236,
+  "avgPatchesPerEntry": 1,
+  "singlePatchCount": 100,
+  "singlePatchRate": 1,
+  "patchHistogram": [
+    {
+      "patchCount": 1,
+      "entries": 100
+    }
+  ],
+  "semanticAllPositive": false,
+  "minSemanticMargin": -26.8111
+}

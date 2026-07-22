@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "v33-testing-worker-1000-summary-v1",
+  "generatedAt": "2026-07-22T02:53:21.525Z",
+  "claimLevel": "v33-testing-worker-707-1000-pass",
+  "pass": true,
+  "testingWorkerOnly": true,
+  "noPrimarySecondary": true,
+  "noRawPromptStoredInReport": true,
+  "workerUrl": "https://16xvs-poc-testing.michael-38d.workers.dev",
+  "targetBpe": 707,
+  "requestedRuns": 1000,
+  "completedRuns": 1000,
+  "batchCount": 10,
+  "batchFailures": [],
+  "correct": 1000,
+  "total": 1000,
+  "tiedOrWrongCount": 0,
+  "coldPathCount": 0,
+  "residualCount": 0,
+  "averageSourceBpe": 707.93,
+  "averageEquivalentOutputTokens": 1,
+  "averageCompressionRatio": 707.93,
+  "averageReductionPercent": 99.8587,
+  "minOwnVsOutsideMargin": 3,
+  "languageProbeSummary": {
+    "english-control": {
+      "total": 900,
+      "correct": 900,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 3,
+      "pass": true
+    },
+    "hindi": {
+      "total": 25,
+      "correct": 25,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 13,
+      "pass": true
+    },
+    "russian": {
+      "total": 25,
+      "correct": 25,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 14,
+      "pass": true
+    },
+    "arabic": {
+      "total": 25,
+      "correct": 25,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 12,
+      "pass": true
+    },
+    "japanese": {
+      "total": 25,
+      "correct": 25,
+      "tiedOrWrongCount": 0,
+      "coldPathCount": 0,
+      "residualCount": 0,
+      "minOwnVsOutsideMargin": 12,
+      "pass": true
+    }
+  },
+  "modes": [
+    "mixed-adversarial-sibling",
+    "mixed-blind-holdout",
+    "mixed-noisy-raw",
+    "mixed-paraphrase",
+    "mixed-route-confusion",
+    "mutation-swarm",
+    "route-noise-surge",
+    "worker-causal-negation-shuffle",
+    "worker-multilingual-anchor",
+    "worker-punctuation-jitter"
+  ]
+}

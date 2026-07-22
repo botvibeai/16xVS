@@ -1,0 +1,1678 @@
+{
+  "generatedAt": "2026-05-16T21:49:55.759Z",
+  "input": "bench\\quote-corpus-2026-04-25.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 24,
+      "residualMaxCharsPerPatch": 160
+    },
+    "trainingSummary": {
+      "positivePairCount": 579,
+      "negativePairCount": 2064,
+      "averagePositiveSimilarity": 0.75074,
+      "averageNegativeSimilarity": 0.170304,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 25,
+    "words": 114,
+    "codepoints": 686,
+    "sourceBytes": 686,
+    "tiktokenCount": 151,
+    "fixtureGlyphCount": 686,
+    "fixtureBinaryBytes": 21952,
+    "experimentalPatchCount": 25,
+    "experimentalBinaryBytes": 800,
+    "avgTiktokenPerEntry": 6.04,
+    "avgGlyphsPerEntry": 27.44,
+    "avgExperimentalPatchesPerEntry": 1,
+    "glyphsPerToken": 4.543,
+    "binaryBytesPerToken": 145.3775,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.1656,
+    "experimentalBinaryBytesPerToken": 5.298,
+    "experimentalBinaryVsSourceRatio": 1.1662
+  },
+  "semantic": {
+    "input": "bench\\quote-semantic-2026-04-25.json",
+    "groups": [
+      {
+        "group": "discipline_quotes",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 83.6,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "Start now.",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Do the hard part first.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Discipline outlasts motivation.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Small steps beat perfect plans.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Finish what you begin.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "truth_quotes",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 83,
+        "avgTokenOverlap": 0.0143,
+        "entries": [
+          {
+            "text": "Say the plain thing.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Truth survives delay.",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Clear words cut fog.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Facts do not bend for comfort.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Name the problem exactly.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "patience_quotes",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 78.6,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "Wait, then move.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Patience protects good work.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Slow decisions can save fast systems.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Rush invites repair bills.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Time clarifies weak ideas.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "courage_quotes",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 75.6,
+        "avgTokenOverlap": 0.0336,
+        "entries": [
+          {
+            "text": "Choose the hard truth.",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Stand up before you are ready.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Fear shrinks after the first step.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Courage is action under pressure.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Go where the risk matters.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "craft_quotes",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 84.6,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "Measure twice, ship once.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Good systems reward clean thinking.",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Design must survive contact with use.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Quality is built in small corrections.",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "Tools matter, but judgment matters more.",
+            "tiktokenCount": 8,
+            "experimentalPatchCount": 1
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "discipline_quotes",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 83.6,
+        "avgNearestOutsideSignatureDistance": 65.6,
+        "separationMargin": -18,
+        "examples": [
+          {
+            "text": "Start now.",
+            "nearestOutside": {
+              "text": "Measure twice, ship once.",
+              "signatureDistance": 57
+            }
+          },
+          {
+            "text": "Do the hard part first.",
+            "nearestOutside": {
+              "text": "Choose the hard truth.",
+              "signatureDistance": 48
+            }
+          },
+          {
+            "text": "Discipline outlasts motivation.",
+            "nearestOutside": {
+              "text": "Time clarifies weak ideas.",
+              "signatureDistance": 80
+            }
+          },
+          {
+            "text": "Small steps beat perfect plans.",
+            "nearestOutside": {
+              "text": "Measure twice, ship once.",
+              "signatureDistance": 78
+            }
+          },
+          {
+            "text": "Finish what you begin.",
+            "nearestOutside": {
+              "text": "Truth survives delay.",
+              "signatureDistance": 65
+            }
+          }
+        ]
+      },
+      {
+        "group": "truth_quotes",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 83,
+        "avgNearestOutsideSignatureDistance": 67.8,
+        "separationMargin": -15.2,
+        "examples": [
+          {
+            "text": "Say the plain thing.",
+            "nearestOutside": {
+              "text": "Wait, then move.",
+              "signatureDistance": 65
+            }
+          },
+          {
+            "text": "Truth survives delay.",
+            "nearestOutside": {
+              "text": "Finish what you begin.",
+              "signatureDistance": 65
+            }
+          },
+          {
+            "text": "Clear words cut fog.",
+            "nearestOutside": {
+              "text": "Stand up before you are ready.",
+              "signatureDistance": 60
+            }
+          },
+          {
+            "text": "Facts do not bend for comfort.",
+            "nearestOutside": {
+              "text": "Quality is built in small corrections.",
+              "signatureDistance": 71
+            }
+          },
+          {
+            "text": "Name the problem exactly.",
+            "nearestOutside": {
+              "text": "Finish what you begin.",
+              "signatureDistance": 78
+            }
+          }
+        ]
+      },
+      {
+        "group": "patience_quotes",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 78.6,
+        "avgNearestOutsideSignatureDistance": 64.2,
+        "separationMargin": -14.4,
+        "examples": [
+          {
+            "text": "Wait, then move.",
+            "nearestOutside": {
+              "text": "Go where the risk matters.",
+              "signatureDistance": 57
+            }
+          },
+          {
+            "text": "Patience protects good work.",
+            "nearestOutside": {
+              "text": "Start now.",
+              "signatureDistance": 67
+            }
+          },
+          {
+            "text": "Slow decisions can save fast systems.",
+            "nearestOutside": {
+              "text": "Measure twice, ship once.",
+              "signatureDistance": 67
+            }
+          },
+          {
+            "text": "Rush invites repair bills.",
+            "nearestOutside": {
+              "text": "Say the plain thing.",
+              "signatureDistance": 70
+            }
+          },
+          {
+            "text": "Time clarifies weak ideas.",
+            "nearestOutside": {
+              "text": "Measure twice, ship once.",
+              "signatureDistance": 60
+            }
+          }
+        ]
+      },
+      {
+        "group": "courage_quotes",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 75.6,
+        "avgNearestOutsideSignatureDistance": 58.6,
+        "separationMargin": -17,
+        "examples": [
+          {
+            "text": "Choose the hard truth.",
+            "nearestOutside": {
+              "text": "Do the hard part first.",
+              "signatureDistance": 48
+            }
+          },
+          {
+            "text": "Stand up before you are ready.",
+            "nearestOutside": {
+              "text": "Measure twice, ship once.",
+              "signatureDistance": 59
+            }
+          },
+          {
+            "text": "Fear shrinks after the first step.",
+            "nearestOutside": {
+              "text": "Do the hard part first.",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "Courage is action under pressure.",
+            "nearestOutside": {
+              "text": "Wait, then move.",
+              "signatureDistance": 65
+            }
+          },
+          {
+            "text": "Go where the risk matters.",
+            "nearestOutside": {
+              "text": "Wait, then move.",
+              "signatureDistance": 57
+            }
+          }
+        ]
+      },
+      {
+        "group": "craft_quotes",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 84.6,
+        "avgNearestOutsideSignatureDistance": 66.4,
+        "separationMargin": -18.2,
+        "examples": [
+          {
+            "text": "Measure twice, ship once.",
+            "nearestOutside": {
+              "text": "Start now.",
+              "signatureDistance": 57
+            }
+          },
+          {
+            "text": "Good systems reward clean thinking.",
+            "nearestOutside": {
+              "text": "Clear words cut fog.",
+              "signatureDistance": 66
+            }
+          },
+          {
+            "text": "Design must survive contact with use.",
+            "nearestOutside": {
+              "text": "Say the plain thing.",
+              "signatureDistance": 76
+            }
+          },
+          {
+            "text": "Quality is built in small corrections.",
+            "nearestOutside": {
+              "text": "Wait, then move.",
+              "signatureDistance": 62
+            }
+          },
+          {
+            "text": "Tools matter, but judgment matters more.",
+            "nearestOutside": {
+              "text": "Go where the risk matters.",
+              "signatureDistance": 71
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 25,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 64.52,
+    "avgNearestTokenOverlap": 0.0357,
+    "examples": [
+      {
+        "text": "Start now.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Measure twice, ship once.",
+          "signatureDistance": 57,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Do the hard part first.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Choose the hard truth.",
+          "signatureDistance": 48,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2857
+        }
+      },
+      {
+        "text": "Discipline outlasts motivation.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Time clarifies weak ideas.",
+          "signatureDistance": 80,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Small steps beat perfect plans.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Measure twice, ship once.",
+          "signatureDistance": 78,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Finish what you begin.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Truth survives delay.",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Say the plain thing.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Wait, then move.",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Truth survives delay.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Finish what you begin.",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Clear words cut fog.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Stand up before you are ready.",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Facts do not bend for comfort.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Quality is built in small corrections.",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Name the problem exactly.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Finish what you begin.",
+          "signatureDistance": 78,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Wait, then move.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Go where the risk matters.",
+          "signatureDistance": 57,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Patience protects good work.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Start now.",
+          "signatureDistance": 67,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Slow decisions can save fast systems.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Measure twice, ship once.",
+          "signatureDistance": 67,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Rush invites repair bills.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Say the plain thing.",
+          "signatureDistance": 70,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Time clarifies weak ideas.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Measure twice, ship once.",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Choose the hard truth.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Do the hard part first.",
+          "signatureDistance": 48,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2857
+        }
+      },
+      {
+        "text": "Stand up before you are ready.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Measure twice, ship once.",
+          "signatureDistance": 59,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Fear shrinks after the first step.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Do the hard part first.",
+          "signatureDistance": 64,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2222
+        }
+      },
+      {
+        "text": "Courage is action under pressure.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Wait, then move.",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "Go where the risk matters.",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "Wait, then move.",
+          "signatureDistance": 57,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "Start now.",
+      "words": 2,
+      "codepoints": 10,
+      "sourceBytes": 10,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 10,
+      "fixtureBinaryBytes": 320,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.3333,
+      "binaryBytesPerToken": 106.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 3.2,
+      "experimentalPatches": [
+        "Start now."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.141331,
+      "experimentalSignatureHex": "582cd7101ad00d69ad34bb97464a7a8585ff84a765859716616db82391e5b01e"
+    },
+    {
+      "text": "Do the hard part first.",
+      "words": 5,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.8333,
+      "binaryBytesPerToken": 122.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "Do the hard part first."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.191201,
+      "experimentalSignatureHex": "ed60d50318940d676c56f4b74a6946a5b7f62d25e54f895ee4e5b9e381e5921e"
+    },
+    {
+      "text": "Discipline outlasts motivation.",
+      "words": 3,
+      "codepoints": 31,
+      "sourceBytes": 31,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 31,
+      "fixtureBinaryBytes": 992,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4286,
+      "binaryBytesPerToken": 141.7143,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.0323,
+      "experimentalPatches": [
+        "Discipline outlasts motivation."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.183918,
+      "experimentalSignatureHex": "c32fc49898626dd968597a13d65a7c8536f625e78d2b8b6e48e5b16311bb900e"
+    },
+    {
+      "text": "Small steps beat perfect plans.",
+      "words": 5,
+      "codepoints": 31,
+      "sourceBytes": 31,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 31,
+      "fixtureBinaryBytes": 992,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.1667,
+      "binaryBytesPerToken": 165.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.0323,
+      "experimentalPatches": [
+        "Small steps beat perfect plans."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.136007,
+      "experimentalSignatureHex": "6baef0618adc0b6b2cfaa082c26927a5a6b70eb662a58b1e696f9b6a5369920e"
+    },
+    {
+      "text": "Finish what you begin.",
+      "words": 4,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4,
+      "binaryBytesPerToken": 140.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "Finish what you begin."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.220804,
+      "experimentalSignatureHex": "e965c4131ad44e6b6e5e92135a435aeda4b722b36585b7b6f46d98eeb2ceb24e"
+    },
+    {
+      "text": "Say the plain thing.",
+      "words": 4,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "Say the plain thing."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.170558,
+      "experimentalSignatureHex": "5b6dc649fbd20c696c7e8a934249ae8d97b6acb7f40fdb9e54a5886a92e6971e"
+    },
+    {
+      "text": "Truth survives delay.",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.25,
+      "binaryBytesPerToken": 168,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "Truth survives delay."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.204475,
+      "experimentalSignatureHex": "6967c4155ad8dce26d6c881352595ec5b4a6a7f7e1c583a6f0a50a439ac5b4ae"
+    },
+    {
+      "text": "Clear words cut fog.",
+      "words": 4,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "Clear words cut fog."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.101721,
+      "experimentalSignatureHex": "472ed51b1ad4ad6b68fbec965e5a7ec5b5b786a565cfadacf0ed897b90e5936e"
+    },
+    {
+      "text": "Facts do not bend for comfort.",
+      "words": 6,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.75,
+      "binaryBytesPerToken": 120,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "Facts do not bend for comfort."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.161071,
+      "experimentalSignatureHex": "4f6ec45378d4ca596ed54897d1465ca794ffa8a7e5a591eed8edd9a0e1ed961c"
+    },
+    {
+      "text": "Name the problem exactly.",
+      "words": 4,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "Name the problem exactly."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.192053,
+      "experimentalSignatureHex": "e461cc399a908b6b7d79db134a4d7eed9696866560c7afbca2239003c3f7964a"
+    },
+    {
+      "text": "Wait, then move.",
+      "words": 3,
+      "codepoints": 16,
+      "sourceBytes": 16,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3.2,
+      "binaryBytesPerToken": 102.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 2,
+      "experimentalPatches": [
+        "Wait, then move."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.156186,
+      "experimentalSignatureHex": "4b6ed5171adc4d6f68469993465c7e8db6af0db6e5e7afbec4e5886383ef971e"
+    },
+    {
+      "text": "Patience protects good work.",
+      "words": 4,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.6667,
+      "binaryBytesPerToken": 149.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "Patience protects good work."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.108891,
+      "experimentalSignatureHex": "d92dd4133896bb6bfa19c8974e697ee5a5b689b7e5a59596f66590a3b1e5132e"
+    },
+    {
+      "text": "Slow decisions can save fast systems.",
+      "words": 6,
+      "codepoints": 37,
+      "sourceBytes": 37,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 37,
+      "fixtureBinaryBytes": 1184,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2857,
+      "binaryBytesPerToken": 169.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.8649,
+      "experimentalPatches": [
+        "Slow decisions can save fast systems."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.229319,
+      "experimentalSignatureHex": "6d6ddc4adaf89c696c54a18147485cc5a6ade4a784cd993ed1ed997b938d139e"
+    },
+    {
+      "text": "Rush invites repair bills.",
+      "words": 4,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.3333,
+      "binaryBytesPerToken": 138.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "Rush invites repair bills."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.171483,
+      "experimentalSignatureHex": "582fc6370ad44e6968719ab34a5ab8ad85e76475e5a709da5a45986ad2e5b30c"
+    },
+    {
+      "text": "Time clarifies weak ideas.",
+      "words": 4,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.3333,
+      "binaryBytesPerToken": 138.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "Time clarifies weak ideas."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.179803,
+      "experimentalSignatureHex": "6d2cd51a9ad66ceb6c70fb5bc2495ec595ff6eb7c421098efca7b84397c4970e"
+    },
+    {
+      "text": "Choose the hard truth.",
+      "words": 4,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.4,
+      "binaryBytesPerToken": 140.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "Choose the hard truth."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.188107,
+      "experimentalSignatureHex": "e56cd42b5a950d6fec56f4b747497a85b6a42927e58785a67067c96b81f59a1e"
+    },
+    {
+      "text": "Stand up before you are ready.",
+      "words": 6,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2857,
+      "binaryBytesPerToken": 137.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "Stand up before you are ready."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.212252,
+      "experimentalSignatureHex": "cd6ed50b98de4c735864a897d2723c85a4b78437a585abe4f0e5184311e5977e"
+    },
+    {
+      "text": "Fear shrinks after the first step.",
+      "words": 6,
+      "codepoints": 34,
+      "sourceBytes": 34,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 34,
+      "fixtureBinaryBytes": 1088,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.25,
+      "binaryBytesPerToken": 136,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.9412,
+      "experimentalPatches": [
+        "Fear shrinks after the first step."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.140475,
+      "experimentalSignatureHex": "e5acd59318562c6bec74d6974a4954a5b4fd16a56d875fce69ed08eb91691a1b"
+    },
+    {
+      "text": "Courage is action under pressure.",
+      "words": 5,
+      "codepoints": 33,
+      "sourceBytes": 33,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 33,
+      "fixtureBinaryBytes": 1056,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.7143,
+      "binaryBytesPerToken": 150.8571,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.9697,
+      "experimentalPatches": [
+        "Courage is action under pressure."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.200493,
+      "experimentalSignatureHex": "6b6dc55efad44d79ecb18893c27c3ccda6b707a5e5c583aafeadd843717d970f"
+    },
+    {
+      "text": "Go where the risk matters.",
+      "words": 5,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.3333,
+      "binaryBytesPerToken": 138.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "Go where the risk matters."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.198443,
+      "experimentalSignatureHex": "596ed71718964d6b6d5c89b7474b5a0796b78ea775a50decf465816b81e9925a"
+    },
+    {
+      "text": "Measure twice, ship once.",
+      "words": 4,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.1667,
+      "binaryBytesPerToken": 133.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "Measure twice, ship once."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.158427,
+      "experimentalSignatureHex": "fd64df0e3a9a0e6b6c7c8b93d64a7e85a4ff86b7c5a5838afae59a6b9365911e"
+    },
+    {
+      "text": "Good systems reward clean thinking.",
+      "words": 5,
+      "codepoints": 35,
+      "sourceBytes": 35,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 35,
+      "fixtureBinaryBytes": 1120,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.8333,
+      "binaryBytesPerToken": 186.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 0.9143,
+      "experimentalPatches": [
+        "Good systems reward clean thinking."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.130082,
+      "experimentalSignatureHex": "6f6fdd1388d78d7968d3a6b5c6497ea5b4b6c477a505970fd2ed19e39041963e"
+    },
+    {
+      "text": "Design must survive contact with use.",
+      "words": 6,
+      "codepoints": 37,
+      "sourceBytes": 37,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 37,
+      "fixtureBinaryBytes": 1184,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2857,
+      "binaryBytesPerToken": 169.1429,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.8649,
+      "experimentalPatches": [
+        "Design must survive contact with use."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.196636,
+      "experimentalSignatureHex": "a969c64f28d468e96c69ccd7c2655e8585b6a6e7560e9576f8a5db7393c7b9df"
+    },
+    {
+      "text": "Quality is built in small corrections.",
+      "words": 6,
+      "codepoints": 38,
+      "sourceBytes": 38,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 38,
+      "fixtureBinaryBytes": 1216,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.4286,
+      "binaryBytesPerToken": 173.7143,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 0.8421,
+      "experimentalPatches": [
+        "Quality is built in small corrections."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.221012,
+      "experimentalSignatureHex": "cb4cd5775a751d692c56ea81565c5cc5b677a5a7e4c5298fb865d9e363ef941e"
+    },
+    {
+      "text": "Tools matter, but judgment matters more.",
+      "words": 6,
+      "codepoints": 40,
+      "sourceBytes": 40,
+      "tiktokenCount": 8,
+      "fixtureGlyphCount": 40,
+      "fixtureBinaryBytes": 1280,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.125,
+      "experimentalBinaryBytesPerToken": 4,
+      "experimentalBinaryVsSourceRatio": 0.8,
+      "experimentalPatches": [
+        "Tools matter, but judgment matters more."
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.218731,
+      "experimentalSignatureHex": "4befcf4ff94c68f3ec3de892565a5a8786be80a515e509a0fced81e1a3e59426"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.1656,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 5,
+      "groups": [
+        {
+          "group": "discipline_quotes",
+          "separationMargin": -18
+        },
+        {
+          "group": "truth_quotes",
+          "separationMargin": -15.2
+        },
+        {
+          "group": "patience_quotes",
+          "separationMargin": -14.4
+        },
+        {
+          "group": "courage_quotes",
+          "separationMargin": -17
+        },
+        {
+          "group": "craft_quotes",
+          "separationMargin": -18.2
+        }
+      ],
+      "minSeparationMargin": -18.2,
+      "maxSeparationMargin": -14.4,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "discipline_quotes",
+        "truth_quotes",
+        "patience_quotes",
+        "courage_quotes",
+        "craft_quotes"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 64.52,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  },
+  "validatedHeadCandidate": {
+    "headId": "default",
+    "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json"
+  },
+  "autoRoute": {
+    "routeId": "default",
+    "candidateRouteId": "default",
+    "lexicalSelectedHead": "default",
+    "selectedHead": "default",
+    "scores": {
+      "bookRoot": 0,
+      "governance": 0,
+      "archive": 5
+    },
+    "ranked": [
+      {
+        "routeId": "archive",
+        "score": 5
+      },
+      {
+        "routeId": "bookRoot",
+        "score": 0
+      },
+      {
+        "routeId": "governance",
+        "score": 0
+      }
+    ],
+    "minimumScore": 6,
+    "confidenceGuard": {
+      "enabled": true,
+      "accepted": true,
+      "reason": "no corpus shape guard required",
+      "thresholds": {
+        "bookRootMinimumAverageWordsPerEntry": 240,
+        "bookRootMinimumMinWordsPerEntry": 220
+      },
+      "corpusShape": {
+        "entries": 25,
+        "totalWords": 114,
+        "averageWordsPerEntry": 4.56,
+        "minWordsPerEntry": 2,
+        "maxWordsPerEntry": 6
+      }
+    },
+    "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+    "selectionPolicy": "ranked-accepted-head"
+  },
+  "headValidation": {
+    "selectedHeadId": "default",
+    "reason": "no ranked head passed; preserving v19 selection for inspection",
+    "candidateHeadId": "default",
+    "fallbackHeadId": "default",
+    "candidateValidation": {
+      "accepted": false,
+      "reasons": [
+        "semantic margins are not all positive"
+      ],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -18.2,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 64.52,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662
+      }
+    },
+    "fallbackValidation": {
+      "accepted": false,
+      "reasons": [
+        "semantic margins are not all positive"
+      ],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -18.2,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 64.52,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662
+      }
+    },
+    "policy": "ranked-accepted-head",
+    "legacySelection": {
+      "selectedHeadId": "default",
+      "reason": "candidate and fallback failed validation; preserving routed candidate for inspection",
+      "candidateHeadId": "default",
+      "fallbackHeadId": "default",
+      "candidateValidation": {
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.52,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      },
+      "fallbackValidation": {
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.52,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      }
+    },
+    "fullHeadRanking": [
+      {
+        "rank": 1,
+        "headId": "quoteRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -12.8,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 58,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -12.8,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 58,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.1662
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "headId": "booklikeRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -15,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 60.96,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -15,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 60.96,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.1662
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "headId": "governance",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -17.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.04,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -17.2,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 64.04,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.1662
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "headId": "default",
+        "routeFitRole": "candidate",
+        "routeFitScore": 2,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.52,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -18.2,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 64.52,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.1662
+          }
+        }
+      },
+      {
+        "rank": 5,
+        "headId": "bookRoot",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": false,
+        "reasons": [
+          "semantic margins are not all positive"
+        ],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 66.88,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": false,
+            "minSemanticMargin": -18.4,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 66.88,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.1662
+          }
+        }
+      }
+    ],
+    "selectionPolicy": "ranked-accepted-head",
+    "reports": {
+      "default": {
+        "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.52,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      },
+      "bookRoot": {
+        "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 66.88,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      },
+      "governance": {
+        "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -17.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 64.04,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      },
+      "booklikeRepair": {
+        "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -15,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 60.96,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      },
+      "quoteRepair": {
+        "model": "models/learned-hybrid-prototype-v24-quote-repair-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -12.8,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 58,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1662
+        }
+      }
+    }
+  },
+  "multiHeadStorage": {
+    "storedHeadCount": 5,
+    "codeBytesPerPatch": 32,
+    "selectedHeadBinaryBytes": 800,
+    "allHeadsBinaryBytes": 4000,
+    "selectedHeadBinaryVsSourceRatio": 1.1662,
+    "allHeadsBinaryVsSourceRatio": 5.8309
+  }
+}

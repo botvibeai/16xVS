@@ -1,0 +1,41 @@
+# EXP-2026-04-25-001 Quote Benchmark V3
+
+- `id`: `EXP-2026-04-25-001`
+- `date`: `2026-04-25`
+- `corpus`: `bench/quote-corpus-2026-04-25.txt`
+- `method`: Ran a quote-focused benchmark against the current best local-only learned model `models/learned-hybrid-prototype-v3.json`, measured patch-count distribution, and checked labeled quote-theme separation using `bench/quote-semantic-2026-04-25.json`.
+- `implementation_path`: `learned hybrid prototype v3`
+- `baseline`: `quote-style compression question against the current best local-only model`
+- `metrics`:
+  - `entries`: `25`
+  - `tiktokenCount`: `151`
+  - `experimentalPatchCount`: `54`
+  - `avgExperimentalPatchesPerEntry`: `2.16`
+  - `experimentalPatchesPerToken`: `0.3576`
+  - `singlePatchCount`: `1`
+  - `singlePatchRate`: `0.04`
+  - `singlePatchExample`: `Start now.`
+  - `semantic.allMarginsPositive`: `false`
+  - `semantic.minMargin`: `-18.2`
+  - `collapse.signatureCollapse`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The current best local-only model still compresses quote-style text below `tiktoken` token count.
+  - The current best local-only model can reduce a very short quote to one visual patch.
+  - The current best local-only model does not trip collapse guardrails on this quote corpus.
+- `claim_not_supported`:
+  - The current best local-only model does not reduce normal quote-length lines to a single visual token yet.
+  - The current best local-only model does not show positive quote-theme separation on this corpus.
+  - This is not evidence that quote-sized meaning is fully captured in one patch.
+- `artifacts`:
+  - [quote corpus](bench\quote-corpus-2026-04-25.txt)
+  - [quote semantic groups](bench\quote-semantic-2026-04-25.json)
+  - [quote benchmark report](bench\2026-04-25-quote-benchmark-v3.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
+- `notes`:
+  - This benchmark directly answers the founder question about quote-level collapse into a single visual token.
+  - Under the current patch packer, most quote-style lines still take `2` or `3` patches.
+  - The current path can compress very short lines to one patch, but not ordinary quote-sized lines.
+- `next_action`:
+  - Do not claim one-token quote reduction yet.
+  - If quote-to-single-token is a product requirement, the patch packer or representation target has to change rather than relying on the current `3 words / 18 chars` packer.

@@ -1,0 +1,49 @@
+label=primary-governance-adversarial
+startedAt=2026-05-08T04:06:08.647Z
+endedAt=2026-05-08T04:06:14.236Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-08-040602355z-v19-lock/reports/governance-adversarial-v19-validated-routed.json",
+  "routeId": "governance",
+  "candidateHead": "governance",
+  "selectedHead": "governance",
+  "reason": "candidate head passed validation",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "governance",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 3.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 2,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -1,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    },
+    {
+      "rank": 3,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -31,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 2.8333
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 3.5,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 49.5,
+  "avgPatchesPerEntry": 2.8333,
+  "allHeadsBinaryVsSourceRatio": 0.4933
+}

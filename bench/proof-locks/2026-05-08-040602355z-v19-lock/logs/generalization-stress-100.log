@@ -1,0 +1,49 @@
+label=generalization-stress-100
+startedAt=2026-05-08T04:06:34.927Z
+endedAt=2026-05-08T04:06:39.924Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-08-040602355z-v19-lock/generalization/stress-100-v19-validated-routed.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "default",
+  "reason": "candidate and fallback failed validation; preserving routed candidate for inspection",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -28.6444,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -28.8667,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -29.5222,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -28.6444,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 64.45,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 3.5608
+}

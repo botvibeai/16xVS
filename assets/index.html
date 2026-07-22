@@ -1,0 +1,172 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16xVS | Live AI Token Savings Lab</title>
+    <meta name="description" content="Run a live BPE vs 16xVS compression estimate, model AI token savings, and request a private compression audit for company workloads.">
+    <link rel="canonical" href="https://16xvs.com/">
+    <link rel="alternate" hreflang="en" href="https://16xvs.com/">
+    <link rel="alternate" hreflang="hi" href="https://16xvs.com/hindi/">
+    <link rel="alternate" hreflang="ru" href="https://16xvs.com/russian/">
+    <link rel="alternate" hreflang="ar" href="https://16xvs.com/arabic/">
+    <link rel="stylesheet" href="/site.css">
+  </head>
+  <body data-page="home">
+    <div class="site-noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="16xVS home">
+        <img src="/brand/16xvs-logo-lockup.png" alt="16xVS - Tokenization. Multiplied.">
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/live-compression-lab/">Live Lab</a>
+        <a href="/llm-token-saving-calculator/">Savings Calculator</a>
+        <a href="/hindi/">Hindi</a>
+        <a href="/proof/">Proof</a>
+        <a href="/poc/">POC</a>
+      </nav>
+      <a class="nav-cta" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Private Audit</a>
+    </header>
+
+    <main>
+      <section class="hero-grid section-pad">
+        <div class="hero-copy reveal">
+          <p class="section-label">Patent pending compression proof layer</p>
+          <h1>Run the live compression proof.</h1>
+          <p class="hero-lede">
+            Paste a prompt and compare a BPE-style token estimate against 16xVS root and residual tokens. Public results are conservative. Private audits verify exact savings on company workloads.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="/live-compression-lab/">Open Live Lab</a>
+            <a class="button ghost" href="/llm-token-saving-calculator/">Estimate Savings</a>
+          </div>
+          <div class="proof-strip" aria-label="Public positioning">
+            <span>Model 300x-400x scenarios</span>
+            <span>No raw prompt storage</span>
+            <span>Audit-ready reports</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1">
+          <img src="/brand/16xvs-chip-stack.png" alt="16xVS chip stack visual">
+          <div class="floating-meter">
+            <span>BPE estimate</span>
+            <strong id="hero-bpe">2,804</strong>
+            <span>16xVS equivalent</span>
+            <strong id="hero-vs">8</strong>
+            <small>Example: conservative public lab model</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-card section-pad compact-section" aria-labelledby="quick-lab-title">
+        <div class="section-head">
+          <p class="section-label">Try it here</p>
+          <h2 id="quick-lab-title">BPE to 16xVS live count</h2>
+          <p>Use a sample or paste your own prompt. Do not paste secrets, keys, private medical data, or customer records into the public lab.</p>
+        </div>
+        <div class="lab-shell">
+          <div class="input-panel">
+            <div class="example-bar" data-example-bar></div>
+            <label class="field-label" for="home-prompt">Prompt or document chunk</label>
+            <textarea id="home-prompt" data-lab-input placeholder="Paste text here to run a public compression estimate."></textarea>
+            <div class="tool-row">
+              <button class="button primary" type="button" data-run-lab>Run 16xVS Count</button>
+              <a class="button ghost" href="/live-compression-lab/">Open Full Lab</a>
+            </div>
+            <p class="fine-print">Public lab estimates are for screening. Paid audits use stricter workload-specific gates.</p>
+          </div>
+          <div class="result-panel" data-result-panel>
+            <p class="section-label">Result</p>
+            <div class="result-grid">
+              <div><span>BPE estimate</span><strong data-bpe-count>0</strong></div>
+              <div><span>16xVS equivalent</span><strong data-vs-count>0</strong></div>
+              <div><span>Reduction</span><strong data-reduction>0%</strong></div>
+              <div><span>Compression ratio</span><strong data-ratio>0x</strong></div>
+            </div>
+            <div class="risk-card" data-risk-card>Run a prompt to see route confidence and residual estimate.</div>
+            <a class="button primary full" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Run a Private Compression Audit</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="counter-band section-pad" aria-labelledby="counter-title">
+        <div>
+          <p class="section-label">World clock</p>
+          <h2 id="counter-title">All-time public lab counter</h2>
+          <p>Aggregate demo totals only. Raw prompts are not stored by the public lab counter.</p>
+        </div>
+        <div class="counter-grid" data-counter-grid>
+          <div><span>Total BPE tested</span><strong data-counter="totalBpeTokens">0</strong></div>
+          <div><span>Total 16xVS tokens</span><strong data-counter="total16xvsTokens">0</strong></div>
+          <div><span>Estimated tokens removed</span><strong data-counter="totalTokensReduced">0</strong></div>
+          <div><span>Average reduction</span><strong data-counter="averageReductionPercent">0%</strong></div>
+          <div><span>Tests run</span><strong data-counter="totalRuns">0</strong></div>
+          <div><span>Best ratio seen</span><strong data-counter="bestRatio">0x</strong></div>
+        </div>
+      </section>
+
+      <section class="section-pad">
+        <div class="section-head">
+          <p class="section-label">Language launch pages</p>
+          <h2>Hindi, Russian, and Arabic paths.</h2>
+          <p>Each page speaks to a specific market, keeps the public proof boundary clear, and routes serious buyers into private workload audits.</p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-card">
+            <span>India</span>
+            <h2>Hindi + Hinglish</h2>
+            <p>Launch path for Hindi, English, and Hinglish support, BPO, fintech, edtech, and chatbot workloads.</p>
+            <a class="button ghost full" href="/hindi/">Open Hindi Page</a>
+          </article>
+          <article class="proof-card">
+            <span>Cyrillic</span>
+            <h2>Russian</h2>
+            <p>Screen Russian and bilingual prompts while preserving dates, numbers, negation, and routing-sensitive details.</p>
+            <a class="button ghost full" href="/russian/">Open Russian Page</a>
+          </article>
+          <article class="proof-card">
+            <span>RTL</span>
+            <h2>Arabic</h2>
+            <p>Arabic and Arabic-English launch path with right-to-left layout support and audit-first claims.</p>
+            <a class="button ghost full" href="/arabic/">Open Arabic Page</a>
+          </article>
+          <article class="proof-card">
+            <span>Audit</span>
+            <h2>Private proof</h2>
+            <p>Public pages create attention. Private audits decide whether a company workload earns a production claim.</p>
+            <a class="button primary full" href="mailto:founder@botvibe.ai?subject=16xVS%20Multilingual%20Compression%20Audit">Request Audit</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad split-section">
+        <div>
+          <p class="section-label">Commercial path</p>
+          <h2>From viral proof to paid audit.</h2>
+        </div>
+        <div class="steps">
+          <article><span>01</span><h3>Run the public lab</h3><p>Anyone can paste a prompt and see a conservative BPE vs 16xVS estimate.</p></article>
+          <article><span>02</span><h3>Submit company workload</h3><p>Teams send real prompts, chatbot scripts, RAG chunks, or document samples through a private audit path.</p></article>
+          <article><span>03</span><h3>Receive a proof report</h3><p>The report shows BPE baseline, 16xVS equivalent count, reduction, residuals, correctness risk, and scale savings.</p></article>
+          <article><span>04</span><h3>Move to pilot</h3><p>If the audit passes, the buyer can move into private API, routing, or licensing discussions.</p></article>
+        </div>
+      </section>
+
+      <section class="cta-panel section-pad">
+        <div>
+          <p class="section-label">Company workloads</p>
+          <h2>Bring the expensive prompts.</h2>
+          <p>Private audits are built for AI operators, chatbot companies, RAG teams, and high-volume LLM workflows that need measured cost reduction.</p>
+        </div>
+        <a class="button primary" href="mailto:founder@botvibe.ai?subject=16xVS%20Private%20Compression%20Audit">Request Audit</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>16xVS by BotVibe AI LLC</span>
+      <span>Patent pending. Public lab estimates are not production guarantees.</span>
+    </footer>
+
+    <script type="module" src="/site.js"></script>
+  </body>
+</html>

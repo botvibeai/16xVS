@@ -1,0 +1,78 @@
+# EXP-2026-05-07-005 V11/V12 Targeted Merge Round
+
+- `id`: `EXP-2026-05-07-005`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`, plus the frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Ran a targeted v11 training round to support `control_book_root` and `audit_evidence_adversarial` while preserving hierarchical packing, then ran a v12 blend sweep from the v10 constrained hierarchical model to test whether blend weights could clear book-root, governance, and archive pressure without changing the packer.
+- `implementation_path`: `v11-targeted-bridge-audit-hierarchical-packer-v2` and `v12-blend-*hierarchical-packer-v2`
+- `baseline`: `v10-constrained-merge-hierarchical-packer-v2`
+- `metrics`:
+  - `v11.bookRoot.avgPatchesPerEntry`: `3`
+  - `v11.bookRoot.minMargin`: `-10`
+  - `v11.bookRoot.economics.margin`: `-10`
+  - `v11.bookRoot.systems.margin`: `23.5`
+  - `v11.bookRoot.control.margin`: `4.5`
+  - `v11.governanceAdversarial.avgPatchesPerEntry`: `2.8333`
+  - `v11.governanceAdversarial.minMargin`: `-7.5`
+  - `v11.governanceAdversarial.auditEvidence.margin`: `18.5`
+  - `v11.governanceAdversarial.legalHold.margin`: `-7.5`
+  - `v11.archivePressure.avgPatchesPerEntry`: `3`
+  - `v11.archivePressure.minMargin`: `-8.5`
+  - `v11.controlled_phrase.minMargin`: `3`
+  - `v11.controlled_multilingual.minMargin`: `-1.619`
+  - `v11.paraphrase_holdout.minMargin`: `5.2`
+  - `v11.blind_holdout.minMargin`: `-16.0833`
+  - `v11.stress_100.minMargin`: `-28`
+  - `v12.h04.bookRoot.minMargin`: `0.5`
+  - `v12.h04.governanceAdversarial.minMargin`: `6`
+  - `v12.h04.archivePressure.minMargin`: `-6.5`
+  - `v12.h05.bookRoot.minMargin`: `1.5`
+  - `v12.h05.governanceAdversarial.minMargin`: `7.5`
+  - `v12.h05.archivePressure.minMargin`: `0`
+  - `v12.h055.bookRoot.minMargin`: `2.5`
+  - `v12.h055.governanceAdversarial.minMargin`: `5.5`
+  - `v12.h055.archivePressure.minMargin`: `-0.5`
+  - `v12.h056.bookRoot.minMargin`: `1.5`
+  - `v12.h056.governanceAdversarial.minMargin`: `4.5`
+  - `v12.h056.archivePressure.minMargin`: `-2`
+  - `v12.h057.bookRoot.minMargin`: `-0.5`
+  - `v12.h057.governanceAdversarial.minMargin`: `2`
+  - `v12.h057.archivePressure.minMargin`: `-2`
+  - `v12.h058.bookRoot.minMargin`: `-3.5`
+  - `v12.h058.governanceAdversarial.minMargin`: `1`
+  - `v12.h058.archivePressure.minMargin`: `-1.5`
+  - `v12.h059.bookRoot.minMargin`: `-3`
+  - `v12.h059.governanceAdversarial.minMargin`: `0.5`
+  - `v12.h059.archivePressure.minMargin`: `0`
+  - `v12.allTargetedBlendVariants.avgPatchesPerEntry`: `book-root=3`, `governance=2.8333`, `archive=3`
+- `result_label`: `negative`
+- `claim_supported`:
+  - The explicit hierarchical packer preserved fold shape across all v11 and v12 targeted runs.
+  - v11 successfully repaired the two named target groups: `control_book_root` improved to `4.5` and `audit_evidence_adversarial` improved to `18.5`.
+  - The repair was not free: v11 broke adjacent semantic groups, especially economics, legal hold, archive retention governance, and multilingual.
+  - v12 proved the remaining conflict is narrow but real on this model surface. Lower heuristic blend values clear book-root and governance, but archive retention stays negative or zero. Higher heuristic values recover archive pressure only after book-root starts failing.
+  - `v12-h05` is the closest near miss: it keeps the fold, clears book-root and governance, and lands archive retention exactly at `0`, but the suite requires strictly positive separation.
+- `claim_not_supported`:
+  - Neither v11 nor any tested v12 blend should replace v10.
+  - The v11 targeted training approach is not safe as a baseline because it overfits the requested repair groups and damages adjacent groups.
+  - The v12 blend-only approach cannot clear book-root, governance, and archive pressure together under the current learned surface.
+  - These tests still do not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [v11 targeted training spec](data\training\embedding-training-spec-v9-targeted-bridge-audit.json)
+  - [v11 targeted training pairs](data\training\embedding-training-pairs-v9-targeted-bridge-audit.json)
+  - [v11 base model](models\learned-hybrid-prototype-v11-targeted-bridge-audit-base.json)
+  - [v11 hierarchical model](models\learned-hybrid-prototype-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 book-root report](bench\2026-05-07-book-root-benchmark-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 governance report](bench\2026-05-07-governance-adversarial-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 archive report](bench\2026-05-07-archive-pressure-v11-targeted-bridge-audit-hierarchical-packer-v2.json)
+  - [v11 frozen suite summary](bench\eval-suite-learned-hybrid-v11-targeted-bridge-audit-hierarchical-packer-v2\suite-summary.json)
+  - [v12 h05 book-root report](bench\2026-05-07-book-root-benchmark-v12-blend-h05-hierarchical-packer-v2.json)
+  - [v12 h05 governance report](bench\2026-05-07-governance-adversarial-v12-blend-h05-hierarchical-packer-v2.json)
+  - [v12 h05 archive report](bench\2026-05-07-archive-pressure-v12-blend-h05-hierarchical-packer-v2.json)
+- `notes`:
+  - v10 remains the best overall constrained merge candidate because it preserves the fold, passes archive pressure, and only narrowly misses `control_book_root` and `audit_evidence_adversarial`.
+  - v11 shows that simply adding supervision for the two failing groups is too blunt; it fixes those names while moving failures into neighboring concepts.
+  - v12 shows that scalar blend tuning alone is not enough. The next useful approach should be shape-preserving and group-aware, not a broader retrain or a simple blend sweep.
+- `next_action`:
+  - Keep `v3` as storage baseline, `v6` as governance/archive specialist, `v8` as bridge specialist, `v9` as semantic-merge proof, and `v10` as the best constrained merge candidate.
+  - The next round should test a small group-aware guard or calibration layer that protects `control_book_root`, `audit_evidence_adversarial`, and `retention_governance_pressure` together while keeping `packingMode: hierarchical`.

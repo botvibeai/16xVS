@@ -1,0 +1,37 @@
+# EXP-2026-04-25-002 Quote Paragraph Benchmark V3
+
+- `id`: `EXP-2026-04-25-002`
+- `date`: `2026-04-25`
+- `corpus`: `bench/quote-paragraph-corpus-2026-04-25.txt`
+- `method`: Ran a paragraph-scale benchmark against the current best local-only model `models/learned-hybrid-prototype-v3.json`, measured patch-count distribution, and checked labeled paragraph-theme separation using `bench/quote-paragraph-semantic-2026-04-25.json`.
+- `implementation_path`: `learned hybrid prototype v3`
+- `baseline`: `quote paragraph scaling question against the current best local-only model`
+- `metrics`:
+  - `entries`: `20`
+  - `tiktokenCount`: `339`
+  - `experimentalPatchCount`: `130`
+  - `avgExperimentalPatchesPerEntry`: `6.5`
+  - `experimentalPatchesPerToken`: `0.3835`
+  - `singlePatchCount`: `0`
+  - `singlePatchRate`: `0`
+  - `semantic.allMarginsPositive`: `false`
+  - `semantic.minMargin`: `-21.3333`
+  - `collapse.signatureCollapse`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The current best local-only model still compresses paragraph-style text below `tiktoken` token count.
+  - The current best local-only model does not trip collapse guardrails on this paragraph corpus.
+- `claim_not_supported`:
+  - The current best local-only model does not reduce paragraph-style quotes to a single visual patch.
+  - The current best local-only model does not show positive paragraph-theme separation on this corpus.
+  - This is not evidence that passage-level meaning is captured in one patch.
+- `artifacts`:
+  - [quote paragraph corpus](bench\quote-paragraph-corpus-2026-04-25.txt)
+  - [quote paragraph semantic groups](bench\quote-paragraph-semantic-2026-04-25.json)
+  - [quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
+- `notes`:
+  - The current patch packer still scales linearly on paragraph-style lines. Most entries landed in the `6` to `8` patch range.
+  - This test strengthens the conclusion from the shorter quote benchmark: the current path is not yet a one-token quote or one-token passage system.
+- `next_action`:
+  - If one-patch quotes or passages are required, the patch packer and representation target must change rather than relying on the current `3 words / 18 chars` packer.

@@ -1,0 +1,1794 @@
+{
+  "generatedAt": "2026-05-26T18:19:21.433Z",
+  "input": "bench\\paraphrase-holdout-2026-04-23.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 28,
+      "residualMaxCharsPerPatch": 180
+    },
+    "trainingSummary": {
+      "positivePairCount": 308,
+      "negativePairCount": 1696,
+      "averagePositiveSimilarity": 0.798461,
+      "averageNegativeSimilarity": 0.148425,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 30,
+    "words": 99,
+    "codepoints": 759,
+    "sourceBytes": 759,
+    "tiktokenCount": 117,
+    "fixtureGlyphCount": 759,
+    "fixtureBinaryBytes": 24288,
+    "experimentalPatchCount": 30,
+    "experimentalBinaryBytes": 960,
+    "avgTiktokenPerEntry": 3.9,
+    "avgGlyphsPerEntry": 25.3,
+    "avgExperimentalPatchesPerEntry": 1,
+    "glyphsPerToken": 6.4872,
+    "binaryBytesPerToken": 207.5897,
+    "binaryVsSourceRatio": 32,
+    "experimentalPatchesPerToken": 0.2564,
+    "experimentalBinaryBytesPerToken": 8.2051,
+    "experimentalBinaryVsSourceRatio": 1.2648
+  },
+  "semantic": {
+    "input": "bench\\paraphrase-holdout-semantic-2026-04-23.json",
+    "groups": [
+      {
+        "group": "launch_ops_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 58.4,
+        "avgTokenOverlap": 0.051,
+        "entries": [
+          {
+            "text": "deployment readiness checklist",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "release go-live review",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "production rollout prep",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "launch readiness steps",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "ship checklist for release",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "storage_resilience_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 65.2,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "three-copy retention policy",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "primary backup archive plan",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "redundant record storage",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "restore missing replicas",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "secondary vault replication",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "exact_retrieval_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 67.2,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "exact bit-distance query",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "binary pattern lookup",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "nearest signature match",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "hamming-style glyph search",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "precise code retrieval",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "planning_memory_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 66.6,
+        "avgTokenOverlap": 0.0343,
+        "entries": [
+          {
+            "text": "persistent execution outline",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "memory-led action plan",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "state-aware workflow plan",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "context-preserving task sequence",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "operational reasoning outline",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "cost_efficiency_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 65.6,
+        "avgTokenOverlap": 0,
+        "entries": [
+          {
+            "text": "reduce compute spending",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "pricing efficiency roadmap",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "improve margin on processing",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "lower storage expense",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "cost-optimized service plan",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "password_reset_paraphrase",
+        "size": 5,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 64.2,
+        "avgTokenOverlap": 0.0528,
+        "entries": [
+          {
+            "text": "reset my account password",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "recover access to my login",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "change the sign-in secret",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "help me restore account access",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "forgot password recovery",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "launch_ops_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 58.4,
+        "avgNearestOutsideSignatureDistance": 83.2,
+        "separationMargin": 24.8,
+        "examples": [
+          {
+            "text": "deployment readiness checklist",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 87
+            }
+          },
+          {
+            "text": "release go-live review",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 94
+            }
+          },
+          {
+            "text": "production rollout prep",
+            "nearestOutside": {
+              "text": "memory-led action plan",
+              "signatureDistance": 71
+            }
+          },
+          {
+            "text": "launch readiness steps",
+            "nearestOutside": {
+              "text": "memory-led action plan",
+              "signatureDistance": 77
+            }
+          },
+          {
+            "text": "ship checklist for release",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 87
+            }
+          }
+        ]
+      },
+      {
+        "group": "storage_resilience_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 65.2,
+        "avgNearestOutsideSignatureDistance": 86.4,
+        "separationMargin": 21.2,
+        "examples": [
+          {
+            "text": "three-copy retention policy",
+            "nearestOutside": {
+              "text": "forgot password recovery",
+              "signatureDistance": 88
+            }
+          },
+          {
+            "text": "primary backup archive plan",
+            "nearestOutside": {
+              "text": "precise code retrieval",
+              "signatureDistance": 92
+            }
+          },
+          {
+            "text": "redundant record storage",
+            "nearestOutside": {
+              "text": "forgot password recovery",
+              "signatureDistance": 87
+            }
+          },
+          {
+            "text": "restore missing replicas",
+            "nearestOutside": {
+              "text": "forgot password recovery",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "secondary vault replication",
+            "nearestOutside": {
+              "text": "forgot password recovery",
+              "signatureDistance": 96
+            }
+          }
+        ]
+      },
+      {
+        "group": "exact_retrieval_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 67.2,
+        "avgNearestOutsideSignatureDistance": 87.6,
+        "separationMargin": 20.4,
+        "examples": [
+          {
+            "text": "exact bit-distance query",
+            "nearestOutside": {
+              "text": "deployment readiness checklist",
+              "signatureDistance": 94
+            }
+          },
+          {
+            "text": "binary pattern lookup",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 84
+            }
+          },
+          {
+            "text": "nearest signature match",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 91
+            }
+          },
+          {
+            "text": "hamming-style glyph search",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 79
+            }
+          },
+          {
+            "text": "precise code retrieval",
+            "nearestOutside": {
+              "text": "restore missing replicas",
+              "signatureDistance": 90
+            }
+          }
+        ]
+      },
+      {
+        "group": "planning_memory_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 66.6,
+        "avgNearestOutsideSignatureDistance": 93,
+        "separationMargin": 26.4,
+        "examples": [
+          {
+            "text": "persistent execution outline",
+            "nearestOutside": {
+              "text": "production rollout prep",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "memory-led action plan",
+            "nearestOutside": {
+              "text": "production rollout prep",
+              "signatureDistance": 71
+            }
+          },
+          {
+            "text": "state-aware workflow plan",
+            "nearestOutside": {
+              "text": "deployment readiness checklist",
+              "signatureDistance": 91
+            }
+          },
+          {
+            "text": "context-preserving task sequence",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 97
+            }
+          },
+          {
+            "text": "operational reasoning outline",
+            "nearestOutside": {
+              "text": "launch readiness steps",
+              "signatureDistance": 104
+            }
+          }
+        ]
+      },
+      {
+        "group": "cost_efficiency_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 65.6,
+        "avgNearestOutsideSignatureDistance": 92.4,
+        "separationMargin": 26.8,
+        "examples": [
+          {
+            "text": "reduce compute spending",
+            "nearestOutside": {
+              "text": "redundant record storage",
+              "signatureDistance": 102
+            }
+          },
+          {
+            "text": "pricing efficiency roadmap",
+            "nearestOutside": {
+              "text": "memory-led action plan",
+              "signatureDistance": 97
+            }
+          },
+          {
+            "text": "improve margin on processing",
+            "nearestOutside": {
+              "text": "recover access to my login",
+              "signatureDistance": 85
+            }
+          },
+          {
+            "text": "lower storage expense",
+            "nearestOutside": {
+              "text": "redundant record storage",
+              "signatureDistance": 99
+            }
+          },
+          {
+            "text": "cost-optimized service plan",
+            "nearestOutside": {
+              "text": "change the sign-in secret",
+              "signatureDistance": 79
+            }
+          }
+        ]
+      },
+      {
+        "group": "password_reset_paraphrase",
+        "size": 5,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 64.2,
+        "avgNearestOutsideSignatureDistance": 81.4,
+        "separationMargin": 17.2,
+        "examples": [
+          {
+            "text": "reset my account password",
+            "nearestOutside": {
+              "text": "restore missing replicas",
+              "signatureDistance": 86
+            }
+          },
+          {
+            "text": "recover access to my login",
+            "nearestOutside": {
+              "text": "improve margin on processing",
+              "signatureDistance": 85
+            }
+          },
+          {
+            "text": "change the sign-in secret",
+            "nearestOutside": {
+              "text": "hamming-style glyph search",
+              "signatureDistance": 79
+            }
+          },
+          {
+            "text": "help me restore account access",
+            "nearestOutside": {
+              "text": "restore missing replicas",
+              "signatureDistance": 88
+            }
+          },
+          {
+            "text": "forgot password recovery",
+            "nearestOutside": {
+              "text": "restore missing replicas",
+              "signatureDistance": 69
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 30,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 54.5,
+    "avgNearestTokenOverlap": 0.0405,
+    "examples": [
+      {
+        "text": "deployment readiness checklist",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "production rollout prep",
+          "signatureDistance": 64,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "release go-live review",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "ship checklist for release",
+          "signatureDistance": 39,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1429
+        }
+      },
+      {
+        "text": "production rollout prep",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "launch readiness steps",
+          "signatureDistance": 52,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "launch readiness steps",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "release go-live review",
+          "signatureDistance": 43,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "ship checklist for release",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "release go-live review",
+          "signatureDistance": 39,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1429
+        }
+      },
+      {
+        "text": "three-copy retention policy",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "secondary vault replication",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "primary backup archive plan",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "secondary vault replication",
+          "signatureDistance": 61,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "redundant record storage",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "secondary vault replication",
+          "signatureDistance": 63,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "restore missing replicas",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "three-copy retention policy",
+          "signatureDistance": 63,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "secondary vault replication",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "three-copy retention policy",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "exact bit-distance query",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary pattern lookup",
+          "signatureDistance": 45,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "binary pattern lookup",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "exact bit-distance query",
+          "signatureDistance": 45,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "nearest signature match",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary pattern lookup",
+          "signatureDistance": 71,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "hamming-style glyph search",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary pattern lookup",
+          "signatureDistance": 53,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "precise code retrieval",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary pattern lookup",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "persistent execution outline",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "operational reasoning outline",
+          "signatureDistance": 42,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2
+        }
+      },
+      {
+        "text": "memory-led action plan",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "persistent execution outline",
+          "signatureDistance": 65,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "state-aware workflow plan",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "persistent execution outline",
+          "signatureDistance": 63,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "context-preserving task sequence",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "persistent execution outline",
+          "signatureDistance": 60,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "operational reasoning outline",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "persistent execution outline",
+          "signatureDistance": 42,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "deployment readiness checklist",
+      "words": 3,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 10,
+      "binaryBytesPerToken": 320,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "deployment readiness checklist"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.187323,
+      "experimentalSignatureHex": "5b87d63f89da28ea4871e4d7d07a3e87b4a545b7254583a6ef61a037d7d3a65d"
+    },
+    {
+      "text": "release go-live review",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "release go-live review"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.331985,
+      "experimentalSignatureHex": "5fa74727d85a0aeb5c6da093a262569fb697143544c5a18efa69b0771f8ab24b"
+    },
+    {
+      "text": "production rollout prep",
+      "words": 3,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.6667,
+      "binaryBytesPerToken": 245.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "production rollout prep"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.236144,
+      "experimentalSignatureHex": "f9a5c427895a4eebfcfdb293d25b168fb6a50437d4858b026b6db13673e3b64c"
+    },
+    {
+      "text": "launch readiness steps",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.3333,
+      "binaryBytesPerToken": 234.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "launch readiness steps"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.306018,
+      "experimentalSignatureHex": "5ba5472f9a5a0e6b7c79909382691e8db6f704b7c4c58b8e786ba0621ba0964f"
+    },
+    {
+      "text": "ship checklist for release",
+      "words": 4,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.5,
+      "binaryBytesPerToken": 208,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "ship checklist for release"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.312754,
+      "experimentalSignatureHex": "4da5c72798da2aeb5c7aa697c0685e8db6f72075c4c5a1aeba69a0711d829209"
+    },
+    {
+      "text": "three-copy retention policy",
+      "words": 3,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.75,
+      "binaryBytesPerToken": 216,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "three-copy retention policy"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.196693,
+      "experimentalSignatureHex": "4984c548525e146ae95e3e98567a28c9f2a7296fded1afba5e655161c5537319"
+    },
+    {
+      "text": "primary backup archive plan",
+      "words": 4,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.75,
+      "binaryBytesPerToken": 216,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "primary backup archive plan"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.099931,
+      "experimentalSignatureHex": "5826d219929c117bba3eba92d34aaaa9f3ab25bfd2e3fb9a2e6d11238f53a328"
+    },
+    {
+      "text": "redundant record storage",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4,
+      "binaryBytesPerToken": 128,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "redundant record storage"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.301374,
+      "experimentalSignatureHex": "5810d11912df916ba91f3b9a1f7a9a51f3ab213bd6e1a9f25eeddb22544ba169"
+    },
+    {
+      "text": "restore missing replicas",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 8,
+      "binaryBytesPerToken": 256,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "restore missing replicas"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.179179,
+      "experimentalSignatureHex": "69298d5912d61b5aa97e3895d36aea83b3bb2127f5c5a9b87e65196244436309"
+    },
+    {
+      "text": "secondary vault replication",
+      "words": 3,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 9,
+      "binaryBytesPerToken": 288,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "secondary vault replication"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.253775,
+      "experimentalSignatureHex": "8816c34d13cf1172c9762a9ad35eda8172ab21bf9dd1ebfa4e65116356532309"
+    },
+    {
+      "text": "exact bit-distance query",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6,
+      "binaryBytesPerToken": 192,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "exact bit-distance query"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.363091,
+      "experimentalSignatureHex": "e625df9699b30d613c69cf964e282ea78cbea1b3650f862ee8c1c05b82d872db"
+    },
+    {
+      "text": "binary pattern lookup",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7,
+      "binaryBytesPerToken": 224,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "binary pattern lookup"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.318275,
+      "experimentalSignatureHex": "ea24971e1bb02c6b28238f966ea82a2f9cb625a36587862ae861c07a81c07a1b"
+    },
+    {
+      "text": "nearest signature match",
+      "words": 3,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.6667,
+      "binaryBytesPerToken": 245.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "nearest signature match"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.250811,
+      "experimentalSignatureHex": "ec05961f9ab02ef97c66ef96565a0a1d95a6a1e7454684255cc5d21b82595816"
+    },
+    {
+      "text": "hamming-style glyph search",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2,
+      "binaryBytesPerToken": 166.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "hamming-style glyph search"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.251447,
+      "experimentalSignatureHex": "ee24551a5af01c6b2d628b92466b2a0588ba21b3f407a7a4e8e1846391c6f25b"
+    },
+    {
+      "text": "precise code retrieval",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "precise code retrieval"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.249784,
+      "experimentalSignatureHex": "de6497195b913c7b38658e9656ad1e8985b421a7f58f85086e61914b9041b30b"
+    },
+    {
+      "text": "persistent execution outline",
+      "words": 3,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 9.3333,
+      "binaryBytesPerToken": 298.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "persistent execution outline"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.291158,
+      "experimentalSignatureHex": "892ae98a8bc60c61e5b843127a4f76e394e2abe66be4ca5668ed997153d5a18c"
+    },
+    {
+      "text": "memory-led action plan",
+      "words": 3,
+      "codepoints": 22,
+      "sourceBytes": 22,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 22,
+      "fixtureBinaryBytes": 704,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.5,
+      "binaryBytesPerToken": 176,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "memory-led action plan"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.10246,
+      "experimentalSignatureHex": "a92cec068b4a9e6baca98232e249768536e389b6e4a58b3648e39960b3e1a18c"
+    },
+    {
+      "text": "state-aware workflow plan",
+      "words": 3,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.25,
+      "binaryBytesPerToken": 200,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "state-aware workflow plan"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.173109,
+      "experimentalSignatureHex": "0b8af0bb8bc68f6aacb0c210965e7ae594e2a8a66985cb962c6999f397610348"
+    },
+    {
+      "text": "context-preserving task sequence",
+      "words": 3,
+      "codepoints": 32,
+      "sourceBytes": 32,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 32,
+      "fixtureBinaryBytes": 1024,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.4,
+      "binaryBytesPerToken": 204.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1,
+      "experimentalPatches": [
+        "context-preserving task sequence"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.213919,
+      "experimentalSignatureHex": "8d2fddba8b1e0e6be5e8ab353e4d55cf94faeae2ed64db7258edd151d1c5510c"
+    },
+    {
+      "text": "operational reasoning outline",
+      "words": 3,
+      "codepoints": 29,
+      "sourceBytes": 29,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 29,
+      "fixtureBinaryBytes": 928,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.25,
+      "binaryBytesPerToken": 232,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.1034,
+      "experimentalPatches": [
+        "operational reasoning outline"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.239141,
+      "experimentalSignatureHex": "8d6ae89a8a460f7ba5b0c132364df6e197f2aab6c3e4cb7768a9bd7153e5a12c"
+    },
+    {
+      "text": "reduce compute spending",
+      "words": 3,
+      "codepoints": 23,
+      "sourceBytes": 23,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7.6667,
+      "binaryBytesPerToken": 245.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.3913,
+      "experimentalPatches": [
+        "reduce compute spending"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.186248,
+      "experimentalSignatureHex": "df4dde59d25aca3b6fbeb99566a990a183b5098b96021a626eaf5a0a4065d0ac"
+    },
+    {
+      "text": "pricing efficiency roadmap",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 8.6667,
+      "binaryBytesPerToken": 277.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "pricing efficiency roadmap"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.347691,
+      "experimentalSignatureHex": "484dd709e29aaa39ae9e99b7664d52a1a3a788a334226fa3458b491a91e1e8b5"
+    },
+    {
+      "text": "improve margin on processing",
+      "words": 4,
+      "codepoints": 28,
+      "sourceBytes": 28,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 28,
+      "fixtureBinaryBytes": 896,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.6,
+      "binaryBytesPerToken": 179.2,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.1429,
+      "experimentalPatches": [
+        "improve margin on processing"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.261414,
+      "experimentalSignatureHex": "432dd519d21e8e3f6eed9bb3665b5a2583b7807366c3e1a7668bc82aa1e1a2bd"
+    },
+    {
+      "text": "lower storage expense",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7,
+      "binaryBytesPerToken": 224,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "lower storage expense"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.185363,
+      "experimentalSignatureHex": "4a2dd635d29fa2676fb69ba6274dc28523b5c933b680baa0268b5a2a15e1e0b4"
+    },
+    {
+      "text": "cost-optimized service plan",
+      "words": 3,
+      "codepoints": 27,
+      "sourceBytes": 27,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 27,
+      "fixtureBinaryBytes": 864,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.4,
+      "binaryBytesPerToken": 172.8,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "cost-optimized service plan"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.296627,
+      "experimentalSignatureHex": "5a6dd715cb9eaa3b6ebf9ab326495287a3b70033f442d1a666eb090b95e3a6b5"
+    },
+    {
+      "text": "reset my account password",
+      "words": 4,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.25,
+      "binaryBytesPerToken": 200,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "reset my account password"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.326746,
+      "experimentalSignatureHex": "6b08d72f91d29e5b691e1b17125e3a57e5b1a033e645ba353665c1e221d75e3f"
+    },
+    {
+      "text": "recover access to my login",
+      "words": 5,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2,
+      "binaryBytesPerToken": 166.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "recover access to my login"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.269857,
+      "experimentalSignatureHex": "5b40cd3a125a1eff640e1b17525c1a47a7b5a3926645aca55662c0a271cf5e3b"
+    },
+    {
+      "text": "change the sign-in secret",
+      "words": 4,
+      "codepoints": 25,
+      "sourceBytes": 25,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 25,
+      "fixtureBinaryBytes": 800,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "change the sign-in secret"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.17295,
+      "experimentalSignatureHex": "da49d75f1a9e0a7b685a8f95165a728786b31ab2644581b7f46181e3a1d6d83b"
+    },
+    {
+      "text": "help me restore account access",
+      "words": 5,
+      "codepoints": 30,
+      "sourceBytes": 30,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 30,
+      "fixtureBinaryBytes": 960,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6,
+      "binaryBytesPerToken": 192,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.0667,
+      "experimentalPatches": [
+        "help me restore account access"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.334539,
+      "experimentalSignatureHex": "6b81c72fd2d29f7f485a5e37125c3a47e5b72512e7d5b4b5766481a275c75e3f"
+    },
+    {
+      "text": "forgot password recovery",
+      "words": 3,
+      "codepoints": 24,
+      "sourceBytes": 24,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 24,
+      "fixtureBinaryBytes": 768,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 8,
+      "binaryBytesPerToken": 256,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "forgot password recovery"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.224492,
+      "experimentalSignatureHex": "dd09cd0d12561e5b2c0e1b95125f7a17f3b301b7e449aba1346d9066b0c77a58"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.2564,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 6,
+      "groups": [
+        {
+          "group": "launch_ops_paraphrase",
+          "separationMargin": 24.8
+        },
+        {
+          "group": "storage_resilience_paraphrase",
+          "separationMargin": 21.2
+        },
+        {
+          "group": "exact_retrieval_paraphrase",
+          "separationMargin": 20.4
+        },
+        {
+          "group": "planning_memory_paraphrase",
+          "separationMargin": 26.4
+        },
+        {
+          "group": "cost_efficiency_paraphrase",
+          "separationMargin": 26.8
+        },
+        {
+          "group": "password_reset_paraphrase",
+          "separationMargin": 17.2
+        }
+      ],
+      "minSeparationMargin": 17.2,
+      "maxSeparationMargin": 26.8,
+      "allMarginsPositive": true,
+      "negativeGroups": []
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 54.5,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "Controlled labeled semantic groups are closer internally than to other labeled groups in this run.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  },
+  "validatedHeadCandidate": {
+    "headId": "bookRoot",
+    "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json"
+  },
+  "autoRoute": {
+    "routeId": "archive",
+    "candidateRouteId": "archive",
+    "lexicalSelectedHead": "governance",
+    "selectedHead": "bookRoot",
+    "scores": {
+      "bookRoot": 0,
+      "governance": 8,
+      "archive": 21
+    },
+    "ranked": [
+      {
+        "routeId": "archive",
+        "score": 21
+      },
+      {
+        "routeId": "governance",
+        "score": 8
+      },
+      {
+        "routeId": "bookRoot",
+        "score": 0
+      }
+    ],
+    "minimumScore": 6,
+    "confidenceGuard": {
+      "enabled": true,
+      "accepted": true,
+      "reason": "no corpus shape guard required",
+      "thresholds": {
+        "bookRootMinimumAverageWordsPerEntry": 240,
+        "bookRootMinimumMinWordsPerEntry": 220
+      },
+      "corpusShape": {
+        "entries": 30,
+        "totalWords": 99,
+        "averageWordsPerEntry": 3.3,
+        "minWordsPerEntry": 3,
+        "maxWordsPerEntry": 5
+      }
+    },
+    "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+    "selectionPolicy": "ranked-accepted-head"
+  },
+  "headValidation": {
+    "selectedHeadId": "bookRoot",
+    "policy": "ranked-accepted-head",
+    "reason": "best ranked accepted head selected over v19 route selection",
+    "candidateHeadId": "governance",
+    "fallbackHeadId": "default",
+    "legacySelection": {
+      "selectedHeadId": "governance",
+      "reason": "candidate head passed validation",
+      "candidateHeadId": "governance",
+      "fallbackHeadId": "default",
+      "candidateValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 7.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 57.6333,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      },
+      "fallbackValidation": {
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 8.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 58.0333,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      }
+    },
+    "selectedValidation": {
+      "accepted": true,
+      "reasons": [],
+      "metrics": {
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 17.2,
+        "signatureCollapse": false,
+        "avgNearestSignatureDistance": 54.5,
+        "ladderAllPositive": null,
+        "ladderMinMargin": null,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.2648
+      }
+    },
+    "fullHeadRanking": [
+      {
+        "rank": 1,
+        "headId": "bookRoot",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 17.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 54.5,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 17.2,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 54.5,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.2648
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "headId": "default",
+        "routeFitRole": "fallback",
+        "routeFitScore": 1,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 8.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 58.0333,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 8.4,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 58.0333,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.2648
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "headId": "governance",
+        "routeFitRole": "candidate",
+        "routeFitScore": 2,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 7.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 57.6333,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 7.4,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 57.6333,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.2648
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "headId": "booklikeRepair",
+        "routeFitRole": "other",
+        "routeFitScore": 0,
+        "accepted": true,
+        "reasons": [],
+        "metrics": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 0.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 56.1,
+          "ladderAllPositive": null,
+          "ladderMinMargin": null,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        },
+        "report": {
+          "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+          "summary": {
+            "resultLabel": "directional",
+            "semanticAllPositive": true,
+            "minSemanticMargin": 0.2,
+            "signatureCollapse": false,
+            "avgNearestSignatureDistance": 56.1,
+            "avgPatchesPerEntry": 1,
+            "experimentalBinaryVsSourceRatio": 1.2648
+          }
+        }
+      }
+    ],
+    "selectionPolicy": "ranked-accepted-head",
+    "reports": {
+      "governance": {
+        "model": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 7.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 57.6333,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      },
+      "default": {
+        "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 8.4,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 58.0333,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      },
+      "bookRoot": {
+        "model": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 17.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 54.5,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      },
+      "booklikeRepair": {
+        "model": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "summary": {
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 0.2,
+          "signatureCollapse": false,
+          "avgNearestSignatureDistance": 56.1,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.2648
+        }
+      }
+    }
+  },
+  "multiHeadStorage": {
+    "storedHeadCount": 4,
+    "codeBytesPerPatch": 32,
+    "selectedHeadBinaryBytes": 960,
+    "allHeadsBinaryBytes": 3840,
+    "selectedHeadBinaryVsSourceRatio": 1.2648,
+    "allHeadsBinaryVsSourceRatio": 5.0593
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "base": "launch checklist",
+    "variants": [
+      "launch checklists",
+      "release checklist",
+      "product launch checklist",
+      "go live checklist"
+    ]
+  },
+  {
+    "base": "repair degraded records",
+    "variants": [
+      "repair degraded record",
+      "repaired degraded records",
+      "fix degraded records",
+      "restore degraded records"
+    ]
+  },
+  {
+    "base": "binary visual search",
+    "variants": [
+      "binary image search",
+      "visual binary search",
+      "glyph search",
+      "exact visual search"
+    ]
+  },
+  {
+    "base": "cost control plan",
+    "variants": [
+      "cost controls plan",
+      "cost reduction plan",
+      "pricing control plan",
+      "margin control plan"
+    ]
+  }
+]

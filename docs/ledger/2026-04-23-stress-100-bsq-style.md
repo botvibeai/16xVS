@@ -1,0 +1,49 @@
+# EXP-2026-04-23-001 Stress 100 BSQ-Style Prototype
+
+- `id`: `EXP-2026-04-23-001`
+- `date`: `2026-04-23`
+- `corpus`: `bench/stress-100-phrases-2026-04-23.txt` with `bench/stress-100-groups-2026-04-23.json`
+- `method`: Built a 100-phrase stress corpus spanning natural language, repetition, symbols, multilingual text, code, number formats, mixed structure, edge cases, token-boundary variants, and AI prompts. Ran the frozen benchmark without changing tokenizer code. Used five grouped stress categories for category-level separation checks: repetition, multilingual greetings, code structures, token boundaries, and AI prompts.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `freeze_fingerprint`:
+  - `core/experimental-tokenizer.mjs`: `A982D583A0C3E545D2FFEA749BD160AB854D4F29CB9438AA26B59CEE72869D91`
+  - `core/evidence-assessment.mjs`: `CBCE72721EA03A405FF1873B29CE3F0195F232E611D2F359BBBE7F24317F24C3`
+  - `scripts/benchmark.mjs`: `16E8DA6BFCD1BF74170881E5D5F4BDC29A929279D456385137A0827F75489EE7`
+- `metrics`:
+  - `entries`: `100`
+  - `tiktokenCount`: `809`
+  - `experimentalPatchCount`: `185`
+  - `experimentalPatchesPerToken`: `0.2287`
+  - `experimentalBinaryVsSourceRatio`: `2.1958`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `81.37`
+  - `retrieval.avgNearestTokenOverlap`: `0.1713`
+  - `repetition_patterns.separationMargin`: `-1.2`
+  - `multilingual_greetings.separationMargin`: `-27.2222`
+  - `code_structures.separationMargin`: `-13.7778`
+  - `token_boundaries.separationMargin`: `-8.7`
+  - `ai_prompts.separationMargin`: `-17.4667`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.semanticSignal.allMarginsPositive`: `false`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The experimental core candidate uses far fewer patches than `tiktoken` tokens on this 100-phrase stress corpus.
+  - The signature space did not collapse under this larger mixed-format test.
+  - The tokenizer and benchmark hashes matched before and after the run.
+- `claim_not_supported`:
+  - The grouped stress categories do not stay separated under the current prototype.
+  - The current prototype does not generalize category-level grouping across multilingual, code, repetition, token-boundary, and AI-prompt slices.
+  - This does not prove target 16xVS BSQ behavior or broad tokenizer superiority.
+- `artifacts`:
+  - [2026-04-23-stress-100-bsq-style-report.json](bench\2026-04-23-stress-100-bsq-style-report.json)
+  - [stress-100-phrases-2026-04-23.txt](bench\stress-100-phrases-2026-04-23.txt)
+  - [stress-100-groups-2026-04-23.json](bench\stress-100-groups-2026-04-23.json)
+- `notes`:
+  - The JSON report's `evidenceAssessment.resultLabel` is `directional` because count compression and collapse checks pass. This ledger labels the run `failed` because the grouped-stress separation objective failed across all five groups.
+  - This is a broader stress test than the blind holdout and it reinforces the same conclusion: current heuristic embeddings compress well but do not generalize grouping behavior.
+  - These grouped categories are stress categories, not strict semantic-equivalence classes, so this result should be read as category-separation failure rather than pure semantic failure.
+- `next_action`:
+  - Keep this corpus for regression measurement and use it to evaluate any future learned embedding path without tuning against the same grouped labels.

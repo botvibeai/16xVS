@@ -1,0 +1,50 @@
+# EXP-2026-04-23-002 Paraphrase Holdout BSQ-Style Prototype
+
+- `id`: `EXP-2026-04-23-002`
+- `date`: `2026-04-23`
+- `corpus`: `bench/paraphrase-holdout-2026-04-23.txt` with `bench/paraphrase-holdout-semantic-2026-04-23.json`
+- `method`: Built a stricter same-meaning paraphrase holdout with mostly in-domain operational groups plus one out-of-domain password-reset group. Ran the frozen benchmark without changing tokenizer code and compared patch count, grouped separation margins, and collapse flags.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `freeze_fingerprint`:
+  - `core/experimental-tokenizer.mjs`: `A982D583A0C3E545D2FFEA749BD160AB854D4F29CB9438AA26B59CEE72869D91`
+  - `core/evidence-assessment.mjs`: `CBCE72721EA03A405FF1873B29CE3F0195F232E611D2F359BBBE7F24317F24C3`
+  - `scripts/benchmark.mjs`: `16E8DA6BFCD1BF74170881E5D5F4BDC29A929279D456385137A0827F75489EE7`
+- `metrics`:
+  - `entries`: `30`
+  - `tiktokenCount`: `117`
+  - `experimentalPatchCount`: `61`
+  - `experimentalPatchesPerToken`: `0.5214`
+  - `experimentalBinaryVsSourceRatio`: `2.5718`
+  - `retrieval.exactNeighborRate`: `0`
+  - `retrieval.lowDistanceRate`: `0`
+  - `retrieval.avgNearestSignatureDistance`: `89.2667`
+  - `retrieval.avgNearestTokenOverlap`: `0.0691`
+  - `launch_ops_paraphrase.separationMargin`: `-6.6`
+  - `storage_resilience_paraphrase.separationMargin`: `-21.6`
+  - `exact_retrieval_paraphrase.separationMargin`: `-1.6`
+  - `planning_memory_paraphrase.separationMargin`: `-15.8`
+  - `cost_efficiency_paraphrase.separationMargin`: `-8.4`
+  - `password_reset_paraphrase.separationMargin`: `-6`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.semanticSignal.allMarginsPositive`: `false`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The experimental core candidate still uses fewer patches than `tiktoken` tokens on this paraphrase holdout.
+  - The signature space did not collapse.
+  - The tokenizer and benchmark hashes matched before and after the run.
+- `claim_not_supported`:
+  - The current prototype does not keep same-meaning paraphrases closer than other labeled groups, even on mostly in-domain operational phrases.
+  - The controlled positive fixture results do not generalize to new paraphrase wording.
+  - This does not prove target 16xVS BSQ behavior or broad tokenizer superiority.
+- `artifacts`:
+  - [2026-04-23-paraphrase-holdout-bsq-style-report.json](bench\2026-04-23-paraphrase-holdout-bsq-style-report.json)
+  - [paraphrase-holdout-2026-04-23.txt](bench\paraphrase-holdout-2026-04-23.txt)
+  - [paraphrase-holdout-semantic-2026-04-23.json](bench\paraphrase-holdout-semantic-2026-04-23.json)
+- `notes`:
+  - This was a cleaner grouping test than the 100-phrase stress set because each group was intended to carry the same meaning across alternate wording.
+  - All six groups failed separation, including the in-domain launch, storage, retrieval, planning, and cost groups.
+  - The least-bad group was `exact_retrieval_paraphrase` at `-1.6`, which is still a failure under the same-meaning criterion.
+- `next_action`:
+  - Treat the current prototype as compression-first only until a learned or materially stronger embedding path can pass unseen paraphrase grouping.

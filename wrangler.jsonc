@@ -1,0 +1,51 @@
+{
+  "name": "16xvs-poc",
+  "main": "src/index.js",
+  "compatibility_date": "2026-04-09",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./assets",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "vars": {
+    "DEPLOYMENT_ROLE": "primary",
+    "DATA_STACK": "production",
+    "PROOF_BASELINE": "v30"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GLYPH_CATALOG",
+        "class_name": "GlyphCatalog"
+      }
+    ]
+  },
+  "r2_buckets": [
+    {
+      "binding": "LIVE_TOKENS",
+      "bucket_name": "16xvs-poc-live"
+    },
+    {
+      "binding": "FALLBACK_TOKENS",
+      "bucket_name": "16xvs-poc-fallback"
+    },
+    {
+      "binding": "VAULT_TOKENS",
+      "bucket_name": "16xvs-poc-vault"
+    }
+  ],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "GlyphCatalog"
+      ]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

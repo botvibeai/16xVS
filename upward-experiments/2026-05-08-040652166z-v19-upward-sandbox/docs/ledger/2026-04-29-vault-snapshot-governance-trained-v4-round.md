@@ -1,0 +1,35 @@
+# EXP-2026-04-29-006 Vault Snapshot Governance-Trained V4 Round
+
+- `id`: `EXP-2026-04-29-006`
+- `date`: `2026-04-29`
+- `corpus`: Repository evidence set after the governance-focused `v4` training and evaluation round
+- `method`: Created a hashed repo snapshot with `node ./scripts/create-vault-snapshot.mjs --label governance-trained-v4-round-2026-04-29`, compressed the snapshot directory into a local zip archive, then checked Cloudflare auth state before attempting any remote vault upload.
+- `implementation_path`: `vault snapshot/export flow`
+- `baseline`: `prior April 29 multilingual/archive local snapshot and earlier successful April 25 remote vault uploads`
+- `metrics`:
+  - `snapshotId`: `2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29`
+  - `fileCount`: `228`
+  - `totalBytes`: `135629783`
+  - `criticalArtifacts.count`: `34`
+  - `localZipBytes`: `42388845`
+  - `wranglerWhoami`: `failed`
+  - `cloudflareApiToken`: `missing`
+  - `remoteZipUpload`: `failed`
+  - `remoteManifestUpload`: `failed`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The repo can still produce a local file-hashed snapshot that includes the new governance-training artifacts and marks them as critical artifacts.
+  - A compressed local archive of this round now exists alongside the manifest.
+- `claim_not_supported`:
+  - This round is not fully backed up to the remote `16xvs-poc-vault` bucket from the current environment.
+  - The remote vault archive and manifest objects were not uploaded successfully in this session.
+- `artifacts`:
+  - [local snapshot manifest](vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29\manifest.json)
+  - [local snapshot zip](vault-snapshots\2026-04-29T07-09-19-108Z-governance-trained-v4-round-2026-04-29.zip)
+  - [governance-focused v4 round](docs\ledger\2026-04-29-governance-trained-v4-round.md)
+- `notes`:
+  - `npx wrangler whoami` returned `Not logged in` after a `401 Unauthorized` token fetch failure.
+  - `CLOUDFLARE_API_TOKEN` is missing in the current environment.
+  - Local preservation succeeded; remote preservation is blocked by auth state, not by the snapshot pipeline.
+- `next_action`:
+  - Restore Cloudflare auth, then upload the zip archive and manifest to the remote `16xvs-poc-vault` bucket.

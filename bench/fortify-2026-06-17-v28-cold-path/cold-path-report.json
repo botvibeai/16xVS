@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "v28-cold-path-proof-report-v1",
+  "generatedAt": "2026-06-17T12:02:41.171Z",
+  "claimLevel": "cold-path-proof",
+  "coldPath": {
+    "schemaVersion": "v28-cold-path-report-v1",
+    "sequenceAccepted": true,
+    "fallbackUsed": true,
+    "fallbackPatchIds": [
+      "patch-unknown"
+    ],
+    "coldPathHeadId": "highPrecisionFallback",
+    "patchDecisions": [
+      {
+        "patchId": "patch-governance",
+        "laneId": "governance-adversarial",
+        "headId": "governance",
+        "selectedHeadId": "governance",
+        "eligibleHeads": [
+          "governance",
+          "default"
+        ],
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "fallbackUsed": false
+      },
+      {
+        "patchId": "patch-unknown",
+        "laneId": "governance-adversarial",
+        "headId": "governance",
+        "selectedHeadId": "highPrecisionFallback",
+        "eligibleHeads": [
+          "governance",
+          "default"
+        ],
+        "confidence": 0.2083,
+        "accepted": false,
+        "rejectReason": "lane confidence below threshold",
+        "fallbackUsed": true
+      },
+      {
+        "patchId": "patch-quote",
+        "laneId": "quote",
+        "headId": "quoteRepair",
+        "selectedHeadId": "quoteRepair",
+        "eligibleHeads": [
+          "quoteRepair",
+          "quoteSplitV26",
+          "default"
+        ],
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "fallbackUsed": false
+      }
+    ]
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ]
+}

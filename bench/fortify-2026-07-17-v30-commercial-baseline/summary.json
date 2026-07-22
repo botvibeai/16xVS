@@ -1,0 +1,52 @@
+{
+  "title": "V30 Commercial Token-Reduction Baseline",
+  "generatedAt": "2026-07-17T17:22:20.198Z",
+  "outputDir": "bench/fortify-2026-07-17-v30-commercial-baseline",
+  "claimLevel": "local-commercial-stretch-proof",
+  "fixture": "bench/fortify-2026-07-17-v30-commercial-baseline/fixture.json",
+  "evaluation": "bench/fortify-2026-07-17-v30-commercial-baseline/evaluation.json",
+  "gapReport": "bench/fortify-2026-07-17-v30-commercial-baseline/commercial-gap-report.json",
+  "entryCount": 100,
+  "averageSourceBpe": 220.49,
+  "averageEquivalentOutputTokens": 1,
+  "averageCompressionRatio": 220.49,
+  "averageReductionPercent": 99.5465,
+  "correctness": {
+    "correct": 100,
+    "total": 100,
+    "rate": 1,
+    "tiedOrWrong": []
+  },
+  "targets": {
+    "P0": {
+      "label": "Beat commercial-safe 10x",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 20,
+      "requiredCorrect": 100,
+      "pass": true
+    },
+    "P1": {
+      "label": "Beat aggressive 20x",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 10,
+      "requiredCorrect": 100,
+      "pass": true
+    },
+    "P2": {
+      "label": "Stretch: true 220 BPE -> 1 local 16xVS fold token",
+      "sourceBpeTarget": 220,
+      "maxEquivalentOutputTokens": 1,
+      "requiredCorrect": 100,
+      "pass": true
+    }
+  },
+  "compresr226xMath": {
+    "sourceTokensForOneTokenToBeat": 227,
+    "sourceTokensForOneTokenToBeatBy10Percent": 249,
+    "sourceTokensForOneTokenToBeatBy20Percent": 272,
+    "target220To1Beats226x": false
+  },
+  "noDeploy": true,
+  "noExternalCalls": true,
+  "read": "V30 is a local commercial-baseline proof harness. It tests a 100-entry 200-240 BPE fixture, counts residual/cold-path tokens against compression, and reports the gap to 2x, 10x, 20x, and 226x references."
+}

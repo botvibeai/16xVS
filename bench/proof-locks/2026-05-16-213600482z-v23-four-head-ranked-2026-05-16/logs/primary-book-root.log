@@ -1,0 +1,59 @@
+label=primary-book-root
+startedAt=2026-05-16T21:36:01.989Z
+endedAt=2026-05-16T21:36:09.673Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-16-213600482z-v23-four-head-ranked-2026-05-16/reports/book-root-v23-four-head-ranked.json",
+  "routeId": "bookRoot",
+  "candidateHead": "bookRoot",
+  "selectedHead": "bookRoot",
+  "reason": "v19 selected head is also the best ranked accepted head",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "bookRoot",
+      "accepted": true,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": 8,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 2,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -2.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -3.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 4,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -13.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 8,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 73.6667,
+  "avgPatchesPerEntry": 3,
+  "allHeadsBinaryVsSourceRatio": 0.1935
+}

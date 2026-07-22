@@ -1,0 +1,234 @@
+{
+  "version": 4,
+  "description": "Mixed-objective training spec that preserves the broader v3 domain balance while adding governance concepts with targeted hard negatives instead of all-cross coupling.",
+  "negativeMode": "explicit",
+  "negativeSampleLimitPerPair": 18,
+  "groups": [
+    {
+      "id": "launch_training",
+      "domain": "launch",
+      "description": "Launch and deployment readiness phrasing with multilingual variants.",
+      "items": [
+        "release readiness checklist",
+        "deployment go-live plan",
+        "production rollout signoff",
+        "ship preparation review",
+        "launch approval steps",
+        "release gate review",
+        "lista de salida del producto",
+        "plan de mise en service",
+        "产品上线清单"
+      ]
+    },
+    {
+      "id": "storage_training",
+      "domain": "storage",
+      "description": "Storage durability, archive fallback, and preservation phrasing with multilingual variants and archive-pressure language.",
+      "items": [
+        "triple copy retention plan",
+        "durable archive recovery",
+        "restore degraded replicas",
+        "fallback vault preservation",
+        "redundant record storage",
+        "archive repair workflow",
+        "archive catalog repair sweep",
+        "replica reconciliation workflow",
+        "política de archivo durable",
+        "politique de réplication archive",
+        "存储保全策略"
+      ]
+    },
+    {
+      "id": "retrieval_training",
+      "domain": "retrieval",
+      "description": "Exact signature lookup and binary retrieval phrasing with multilingual variants and archive-pressure language.",
+      "items": [
+        "exact hamming retrieval",
+        "binary glyph lookup",
+        "nearest signature search",
+        "precise bit-distance query",
+        "exact code match retrieval",
+        "signature neighbor lookup",
+        "archive retrieval operations queue",
+        "search index refresh query",
+        "búsqueda binaria exacta",
+        "recherche signature binaire",
+        "二进制签名检索"
+      ]
+    },
+    {
+      "id": "planning_training",
+      "domain": "planning",
+      "description": "Memory-first planning and execution phrasing.",
+      "items": [
+        "stateful execution plan",
+        "memory first workflow outline",
+        "context preserving action plan",
+        "persistent reasoning sequence",
+        "operational planning scaffold",
+        "staged execution outline",
+        "rollout coordination map",
+        "context-aware task flow"
+      ]
+    },
+    {
+      "id": "finance_training",
+      "domain": "finance",
+      "description": "Cost control and pricing optimization phrasing.",
+      "items": [
+        "reduce compute cost",
+        "pricing efficiency plan",
+        "margin improvement roadmap",
+        "lower storage expense",
+        "cost optimized service model",
+        "processing budget control",
+        "pricing guardrail review",
+        "expense reduction plan"
+      ]
+    },
+    {
+      "id": "support_training",
+      "domain": "support",
+      "description": "Account recovery and access restoration phrasing.",
+      "items": [
+        "account access recovery",
+        "restore login credentials",
+        "reset sign-in access",
+        "unlock user profile",
+        "recover locked account",
+        "credential recovery workflow",
+        "help regain account access",
+        "access restoration request"
+      ]
+    },
+    {
+      "id": "retention_policy_training",
+      "domain": "governance",
+      "description": "Routine retention schedule and lifecycle phrasing.",
+      "items": [
+        "record retention schedule",
+        "archive lifecycle timetable",
+        "standard retention class review",
+        "ordinary record expiration policy",
+        "routine disposal schedule",
+        "retention duration matrix",
+        "scheduled archive review window",
+        "normal records retention rule"
+      ]
+    },
+    {
+      "id": "legal_hold_training",
+      "domain": "governance",
+      "description": "Preservation override and legal hold phrasing.",
+      "items": [
+        "legal hold preservation notice",
+        "suspend scheduled deletion",
+        "custodian preservation order",
+        "litigation hold release workflow",
+        "freeze disposal for dispute matter",
+        "preserve records under legal review",
+        "hold notice for archive evidence",
+        "do not destroy pending claim records"
+      ]
+    },
+    {
+      "id": "audit_evidence_training",
+      "domain": "governance",
+      "description": "Audit packet and proof-of-control phrasing.",
+      "items": [
+        "assemble audit evidence packet",
+        "control execution proof bundle",
+        "review logs and approval traces",
+        "timestamped audit artifact set",
+        "evidence package for examiner review",
+        "compliance proof collection",
+        "documented control trail",
+        "verifiable audit support record"
+      ]
+    },
+    {
+      "id": "access_review_training",
+      "domain": "governance",
+      "description": "Entitlement certification and archive access review phrasing.",
+      "items": [
+        "archive access certification review",
+        "recertify governed record permissions",
+        "remove stale archive privileges",
+        "manager entitlement approval cycle",
+        "review user evidence access scope",
+        "access recertification workflow",
+        "validate role based record access",
+        "narrow overbroad archive permissions"
+      ]
+    },
+    {
+      "id": "deletion_exception_training",
+      "domain": "governance",
+      "description": "Targeted deletion deferral and exception phrasing.",
+      "items": [
+        "deletion exception deferral",
+        "temporary disposal override",
+        "defer archive destruction for review",
+        "exception based retention extension",
+        "document a deletion block reason",
+        "follow up after disposal exception",
+        "hold deletion pending dependency",
+        "archive disposal exception record"
+      ]
+    },
+    {
+      "id": "compliance_attestation_training",
+      "domain": "governance",
+      "description": "Governance certification and attestation phrasing.",
+      "items": [
+        "compliance attestation statement",
+        "control owner certification memo",
+        "archive governance signoff",
+        "periodic compliance certification",
+        "formal program attestation",
+        "owners affirm control operation",
+        "signed governance review statement",
+        "attest archive obligations were reviewed"
+      ]
+    }
+  ],
+  "hardNegativeGroupPairs": [
+    ["launch_training", "storage_training"],
+    ["launch_training", "retrieval_training"],
+    ["launch_training", "planning_training"],
+    ["launch_training", "finance_training"],
+    ["launch_training", "support_training"],
+    ["storage_training", "retrieval_training"],
+    ["storage_training", "planning_training"],
+    ["storage_training", "finance_training"],
+    ["storage_training", "support_training"],
+    ["retrieval_training", "planning_training"],
+    ["retrieval_training", "finance_training"],
+    ["retrieval_training", "support_training"],
+    ["planning_training", "finance_training"],
+    ["planning_training", "support_training"],
+    ["finance_training", "support_training"],
+
+    ["retention_policy_training", "legal_hold_training"],
+    ["retention_policy_training", "audit_evidence_training"],
+    ["retention_policy_training", "deletion_exception_training"],
+    ["retention_policy_training", "compliance_attestation_training"],
+    ["retention_policy_training", "storage_training"],
+
+    ["legal_hold_training", "audit_evidence_training"],
+    ["legal_hold_training", "deletion_exception_training"],
+    ["legal_hold_training", "compliance_attestation_training"],
+    ["legal_hold_training", "support_training"],
+
+    ["audit_evidence_training", "access_review_training"],
+    ["audit_evidence_training", "compliance_attestation_training"],
+    ["audit_evidence_training", "retrieval_training"],
+
+    ["access_review_training", "compliance_attestation_training"],
+    ["access_review_training", "support_training"],
+
+    ["deletion_exception_training", "compliance_attestation_training"],
+    ["deletion_exception_training", "storage_training"],
+    ["deletion_exception_training", "retrieval_training"]
+  ]
+}

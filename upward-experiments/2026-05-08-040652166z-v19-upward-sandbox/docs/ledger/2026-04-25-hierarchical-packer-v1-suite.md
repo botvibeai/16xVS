@@ -1,0 +1,76 @@
+# EXP-2026-04-25-006 Hierarchical Packer V1 Suite
+
+- `id`: `EXP-2026-04-25-006`
+- `date`: `2026-04-25`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json` plus quote, quote-paragraph, and protocol-longform corpora
+- `method`: Derived a storage-focused hierarchical variant from `learned-hybrid-prototype-v3.json` by adding a macro-plus-residual patch config (`packingMode: hierarchical`), then ran the frozen suite, quote benchmarks, quote-paragraph benchmark, a new long-form protocol benchmark, and aggregate storage projection without retraining embedding weights.
+- `implementation_path`: `learned hybrid prototype v3 hierarchical packer v1`
+- `baseline`: `macro-packer-v1 derived variant`
+- `patch_config`:
+  - `packingMode`: `hierarchical`
+  - `maxEntryWordsForSinglePatch`: `96`
+  - `maxEntryCharsForSinglePatch`: `512`
+  - `maxWordsPerPatch`: `96`
+  - `maxCharsPerPatch`: `512`
+  - `maxResidualPatches`: `2`
+  - `residualMaxWordsPerPatch`: `28`
+  - `residualMaxCharsPerPatch`: `180`
+- `metrics`:
+  - `quote.singlePatchRate`: `1.0`
+  - `quote.avgPatchesPerEntry`: `1`
+  - `quote.semantic.minMargin`: `-18.8`
+  - `quoteParagraph.singlePatchRate`: `1.0`
+  - `quoteParagraph.avgPatchesPerEntry`: `1`
+  - `quoteParagraph.semantic.minMargin`: `-24.75`
+  - `protocolLongform.avgPatchesPerEntry`: `3`
+  - `protocolLongform.semantic.minMargin`: `7.5`
+  - `protocolLongform.patchesPerToken`: `0.0227`
+  - `macroBaseline.protocolLongform.avgPatchesPerEntry`: `9.5`
+  - `macroBaseline.protocolLongform.semantic.minMargin`: `8.5`
+  - `storage.rawBinaryVsSourceRatio`: `0.292089`
+  - `storage.rawReductionPercent`: `70.7911`
+  - `storage.inputGbNeededForTargetOutputGb`: `4.2795`
+  - `macroBaseline.storage.rawBinaryVsSourceRatio`: `0.472906`
+  - `macroBaseline.storage.rawReductionPercent`: `52.7094`
+  - `controlled_phrase.minMargin`: `11.4167`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_multilingual.minMargin`: `-4.7619`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-14.3333`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.minMargin`: `4`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `stress_100.minMargin`: `-29.2333`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `all collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can derive a hierarchical macro-plus-residual packer variant from the current best local-only semantic model without retraining.
+  - The hierarchical variant preserves one-patch results on the tested quote and tested quote-paragraph corpora.
+  - The hierarchical variant reduces the new long-form protocol corpus from `9.5` patches per entry under the macro baseline to `3` patches per entry.
+  - The hierarchical variant improves the aggregate tested raw-source storage projection from `52.7094%` reduction to `70.7911%` reduction across quotes, quote-paragraphs, and protocol-longform passages.
+  - The hierarchical variant extends the current tested `1.25 GB` target envelope from `2.6432 GB` input to `4.2795 GB` input.
+  - The hierarchical storage gain does not depend on hiding a signature-collapse problem; collapse checks stay clean.
+- `claim_not_supported`:
+  - The hierarchical variant does not pass the blind unseen-domain holdout.
+  - The hierarchical variant does not pass the mixed-format stress suite.
+  - The hierarchical variant does not restore the controlled multilingual suite.
+  - The hierarchical variant does not support the `99.99%` raw-storage reduction claim.
+  - The hierarchical variant does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [hierarchical packer model](models\learned-hybrid-prototype-v3-hierarchical-packer-v1.json)
+  - [hierarchical frozen suite summary](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v1\suite-summary.json)
+  - [hierarchical quote report](bench\2026-04-25-quote-benchmark-v3-hierarchical-packer-v1.json)
+  - [hierarchical quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3-hierarchical-packer-v1.json)
+  - [hierarchical protocol longform report](bench\2026-04-25-protocol-longform-benchmark-v3-hierarchical-packer-v1.json)
+  - [macro protocol longform baseline](bench\2026-04-25-protocol-longform-benchmark-v3-macro-packer-v1.json)
+  - [hierarchical storage projection](bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1.json)
+  - [macro longform storage projection baseline](bench\2026-04-25-storage-projection-v3-macro-packer-v1-longform.json)
+- `notes`:
+  - This is the first repo variant that materially reduces long-form entry patch count without losing the quote and quote-paragraph one-patch results.
+  - The gain is storage-side. The frozen semantic gate picture is effectively unchanged from the derived macro baseline.
+  - The protocol-longform benchmark is controlled and repo-local; it is not proof of broad institutional-corpus collapse.
+- `next_action`:
+  - Keep `v3` as the semantic baseline.
+  - Treat `hierarchical-packer-v1` as the current best storage-focused baseline for longer passages.
+  - If the next goal is storage economics, test longer corpora and residual-selection logic before making stronger corpus-collapse claims.

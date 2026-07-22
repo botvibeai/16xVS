@@ -1,0 +1,40 @@
+# EXP-2026-04-25-003 Storage Projection V3
+
+- `id`: `EXP-2026-04-25-003`
+- `date`: `2026-04-25`
+- `corpus`: `bench/2026-04-25-quote-benchmark-v3.json` and `bench/2026-04-25-quote-paragraph-benchmark-v3.json`
+- `method`: Aggregated current quote-style and paragraph-style benchmark reports from the `v3` model, computed raw-source byte ratio, projected output size per input gigabyte, and separated that result from a theoretical dense-vector-to-binary-code storage comparison.
+- `implementation_path`: `storage projection using current best local-only model reports`
+- `baseline`: `raw-source compression claim` and `dense vector storage claim`
+- `metrics`:
+  - `aggregate.entries`: `45`
+  - `aggregate.sourceBytes`: `2498`
+  - `aggregate.experimentalBinaryBytes`: `5888`
+  - `aggregate.avgPatchesPerEntry`: `4.0889`
+  - `aggregate.rawBinaryVsSourceRatio`: `2.357086`
+  - `aggregate.rawReductionPercent`: `-135.7086`
+  - `aggregate.inputGbNeededForTargetOutputGb`: `0.5303`
+  - `targetOutputGb`: `1.25`
+  - `denseVectorComparison.baselineVectorBytes`: `6144`
+  - `denseVectorComparison.binaryCodeBytes`: `32`
+  - `denseVectorComparison.reductionPercentPerCode`: `99.4792`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The repo can now compute storage projections directly from stored benchmark artifacts.
+  - A theoretical per-code comparison against a `1536`-float32 vector still shows a large byte reduction if one binary code replaces one dense vector.
+- `claim_not_supported`:
+  - Current raw-source benchmark results do not support a `99.99%` text-storage reduction claim.
+  - Current raw-source benchmark results do not support a `Library of Congress -> 1.25 GB` claim.
+  - Under the current aggregate ratio, any input corpus larger than `0.5303 GB` would exceed `1.25 GB` of binary output.
+  - The dense-vector reduction math is not proof of raw-text compression.
+- `artifacts`:
+  - [quote report](bench\2026-04-25-quote-benchmark-v3.json)
+  - [quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3.json)
+  - [storage projection report](bench\2026-04-25-storage-projection-v3.json)
+- `notes`:
+  - This result is specifically about raw-source storage under the current text-side prototype path.
+  - The current path expands quote-style and paragraph-style text in raw bytes because the packer emits multiple `32`-byte codes per line.
+  - The often-cited `99.99%` figure only makes sense as a storage-model comparison against very large dense-vector baselines, not as proof of current raw-text compression in this repo.
+- `next_action`:
+  - Keep raw-source compression claims out of proof docs until the representation changes enough to support them.
+  - If the product goal is corpus-size collapse, redesign the packer and the storage unit rather than treating the current packer as close enough.

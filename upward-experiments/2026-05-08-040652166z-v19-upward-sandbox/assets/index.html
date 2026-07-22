@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16xVS POC</title>
+    <meta
+      name="description"
+      content="Edge-native proof of concept for 16x16 binary glyph generation and exact Hamming-distance retrieval."
+    >
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+
+    <main class="shell">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">16xVS / Proof Of Concept</p>
+          <h1>Binary visual search, reduced to the smallest honest demo.</h1>
+          <p class="lede">
+            Upload an image, collapse it into a 16x16 binary glyph, store it in an isolated edge catalog,
+            then query the catalog using exact Hamming distance.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-label">Grid</span>
+            <strong>16 x 16</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Encoding</span>
+            <strong>256 bits</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Search</span>
+            <strong>Exact Hamming</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel action-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Input</p>
+              <h2>Prepare a source image</h2>
+            </div>
+            <div class="actions compact-actions">
+              <button id="repair-library" class="ghost-button" type="button">Repair degraded</button>
+              <button id="refresh-library" class="ghost-button" type="button">Refresh library</button>
+            </div>
+          </div>
+
+          <label class="upload-drop" for="source-file">
+            <input id="source-file" type="file" accept="image/*">
+            <span class="upload-title">Choose an image</span>
+            <span class="upload-copy">The browser downsamples it to 16x16 grayscale before the Worker generates the binary glyph.</span>
+          </label>
+
+          <div class="actions">
+            <button id="store-button" type="button" disabled>Tokenize and store</button>
+            <button id="search-button" class="ghost-button" type="button" disabled>Search similar glyphs</button>
+          </div>
+
+          <p id="status-line" class="status-line">Waiting for an image.</p>
+
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-head">
+                <p class="eyebrow">Source</p>
+                <span id="source-meta" class="mini-copy">No image loaded</span>
+              </div>
+              <img id="source-preview" class="source-preview" alt="Selected source preview">
+            </article>
+
+            <article class="preview-card">
+              <div class="preview-head">
+                <p class="eyebrow">Glyph</p>
+                <span id="glyph-meta" class="mini-copy">No glyph yet</span>
+              </div>
+              <div id="prepared-glyph" class="glyph-frame glyph-empty"></div>
+            </article>
+          </div>
+
+          <div class="fixture-panel">
+            <div class="preview-head">
+              <div>
+                <p class="eyebrow">Fixture Test</p>
+                <h2>Large prompt or book fragment</h2>
+              </div>
+              <span id="fixture-summary" class="mini-copy">Paste text to batch-ingest glyph fixtures.</span>
+            </div>
+
+            <textarea
+              id="fixture-text"
+              class="fixture-textarea"
+              placeholder="Paste a larger prompt or book fragment here for fixture-only storage tests."
+            ></textarea>
+
+            <div class="fixture-controls">
+              <label class="field">
+                <span>Label</span>
+                <input id="fixture-label" type="text" value="pasted-corpus">
+              </label>
+              <label class="field">
+                <span>Max glyphs</span>
+                <input id="fixture-limit" type="number" min="1" max="512" value="128">
+              </label>
+            </div>
+
+            <div class="actions">
+              <button id="fixture-batch-button" type="button">Batch store text fixtures</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel side-panel">
+          <p class="eyebrow">Runtime</p>
+          <h2>POC status</h2>
+          <dl class="status-list">
+            <div>
+              <dt>Service</dt>
+              <dd id="health-service">Loading</dd>
+            </div>
+            <div>
+              <dt>Storage policy</dt>
+              <dd id="health-policy">Loading</dd>
+            </div>
+            <div>
+              <dt>Stored glyphs</dt>
+              <dd id="health-count">0</dd>
+            </div>
+            <div>
+              <dt>Durability mix</dt>
+              <dd id="health-durability">0 triple / 0 double</dd>
+            </div>
+            <div>
+              <dt>Degraded</dt>
+              <dd id="health-degraded">0</dd>
+            </div>
+            <div>
+              <dt>Last digest</dt>
+              <dd id="health-digest">None</dd>
+            </div>
+          </dl>
+
+          <div class="callout">
+            <p class="callout-title">POC boundary</p>
+            <p>
+              This demo is intentionally isolated. No shared product code, no tenant wiring, and no external vector service.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="results">
+        <article class="panel results-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Search Output</p>
+              <h2>Nearest matches</h2>
+            </div>
+            <span id="matches-summary" class="mini-copy">Run a query to compare against the catalog.</span>
+          </div>
+          <div id="matches-list" class="card-grid empty-state">
+            <p>No matches yet.</p>
+          </div>
+        </article>
+
+        <article class="panel library-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Catalog</p>
+              <h2>Stored glyph library</h2>
+            </div>
+            <span id="library-summary" class="mini-copy">Library loading.</span>
+          </div>
+          <div id="library-list" class="card-grid empty-state">
+            <p>No glyphs stored.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

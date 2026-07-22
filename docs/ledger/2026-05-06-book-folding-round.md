@@ -1,0 +1,56 @@
+# EXP-2026-05-06-001 Book Folding Round
+
+- `id`: `EXP-2026-05-06-001`
+- `date`: `2026-05-06`
+- `corpus`: `bench/booklike-corpus-2026-04-25.txt` as the chapter baseline, `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json` as synthetic book roots, `bench/mega-book-corpus-2026-05-06.txt` as a single synthetic mega-book, plus aggregate storage projection across those three reports
+- `method`: Started from the existing chapter-style `booklike` corpus, concatenated each original chapter pair into one synthetic `book root`, then concatenated all twelve original chapter-style entries into one synthetic `mega-book` entry. Ran the current storage baseline `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` against the new corpora and compared the results against the existing chapter-level booklike baseline.
+- `implementation_path`: `learned-hybrid-prototype-v3-hierarchical-packer-v2`
+- `baseline`: `2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json`
+- `metrics`:
+  - `chapterBaseline.entries`: `12`
+  - `chapterBaseline.experimentalPatchCount`: `36`
+  - `chapterBaseline.avgPatchesPerEntry`: `3`
+  - `chapterBaseline.experimentalPatchesPerToken`: `0.017`
+  - `bookRoot.entries`: `6`
+  - `bookRoot.experimentalPatchCount`: `18`
+  - `bookRoot.avgPatchesPerEntry`: `3`
+  - `bookRoot.experimentalPatchesPerToken`: `0.0085`
+  - `bookRoot.semantic.minMargin`: `-3`
+  - `bookRoot.semantic.allPositive`: `false`
+  - `megaBook.entries`: `1`
+  - `megaBook.experimentalPatchCount`: `3`
+  - `megaBook.avgPatchesPerEntry`: `3`
+  - `megaBook.experimentalPatchesPerToken`: `0.0014`
+  - `foldRatio.chapterTotalToBookRootTotal`: `2`
+  - `foldRatio.chapterTotalToMegaBook`: `12`
+  - `foldRatio.bookRootTotalToMegaBook`: `6`
+  - `projection.aggregate.rawReductionPercent`: `94.8945`
+  - `projection.aggregate.inputGbNeededForTargetOutputGb`: `24.4833`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The current hierarchical storage baseline now shows explicit inward folding on a synthetic book-scale test rather than only chapter-scale compression.
+  - The patch budget stays flat at `3` per entry while moving from `12` chapter-style entries to `6` synthetic book roots and then to `1` synthetic mega-book entry.
+  - Count-side compression improves materially as the textual unit grows: `0.017` patches per token at chapter scale, `0.0085` at book-root scale, and `0.0014` at the synthetic mega-book scale.
+  - Across the chapter baseline plus the two new folded corpora, the current aggregate raw-source reduction improves to `94.8945%`.
+- `claim_not_supported`:
+  - This round does not prove semantic retention at book scale.
+  - The synthetic book-root semantic grouping remains slightly negative with a minimum separation margin of `-3`.
+  - The single-entry mega-book run cannot validate semantic grouping or retrieval-space behavior because it has no neighbor pool.
+  - The mega-book report trips the default collapse guardrail only because the one-entry corpus yields no nearest-neighbor distances; this is not evidence of a real signature collision.
+  - This round still does not support the `99.99%` raw-source reduction claim or the `Library of Congress -> 1.25 GB` claim.
+- `artifacts`:
+  - [chapter baseline report](bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-root corpus](bench\book-root-corpus-2026-05-06.txt)
+  - [book-root semantic groups](bench\book-root-semantic-2026-05-06.json)
+  - [book-root report](bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
+  - [mega-book corpus](bench\mega-book-corpus-2026-05-06.txt)
+  - [mega-book report](bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-fold storage projection](bench\2026-05-06-book-folding-storage-projection-v3-hierarchical-packer-v2.json)
+  - [booklike storage pressure test](docs\ledger\2026-04-25-booklike-storage-pressure.md)
+- `notes`:
+  - This is the cleanest repo evidence so far for the user's "book folds in on itself" idea.
+  - The fold is currently driven by the hierarchical packer cap rather than by a fully validated recursive token tree.
+  - That makes the count result real and useful, but it keeps the claim in the directional bucket until semantic retention at larger units improves.
+- `next_action`:
+  - Keep the new synthetic book-root and mega-book corpora frozen.
+  - Any next long-form round should measure whether the repo can preserve more book-root semantic separation without giving back the fold.

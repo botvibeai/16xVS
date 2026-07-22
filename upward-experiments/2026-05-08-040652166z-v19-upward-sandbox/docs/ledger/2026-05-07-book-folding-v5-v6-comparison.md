@@ -1,0 +1,50 @@
+# EXP-2026-05-07-001 Book Folding V5 V6 Comparison
+
+- `id`: `EXP-2026-05-07-001`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, plus `bench/mega-book-corpus-2026-05-06.txt`
+- `method`: Re-ran the new synthetic book-root and mega-book folding tests against the newer `v5` mixed-objective hierarchical model and the newer `v6` archive/governance hierarchical model, then compared them directly against the `v3-hierarchical-packer-v2` storage baseline.
+- `implementation_path`: `learned-hybrid-prototype-v5-mixed-objective-hierarchical-packer-v1` and `learned-hybrid-prototype-v6-legalhold-archive-hierarchical-packer-v1`
+- `baseline`: `2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json` and `2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json`
+- `metrics`:
+  - `bookRoot.v3.avgPatchesPerEntry`: `3`
+  - `bookRoot.v3.patchesPerToken`: `0.0085`
+  - `bookRoot.v3.semantic.minMargin`: `-3`
+  - `bookRoot.v5.avgPatchesPerEntry`: `3`
+  - `bookRoot.v5.patchesPerToken`: `0.0085`
+  - `bookRoot.v5.semantic.minMargin`: `-12`
+  - `bookRoot.v6.avgPatchesPerEntry`: `3`
+  - `bookRoot.v6.patchesPerToken`: `0.0085`
+  - `bookRoot.v6.semantic.minMargin`: `-9.5`
+  - `megaBook.v3.avgPatchesPerEntry`: `3`
+  - `megaBook.v3.patchesPerToken`: `0.0014`
+  - `megaBook.v5.avgPatchesPerEntry`: `3`
+  - `megaBook.v5.patchesPerToken`: `0.0014`
+  - `megaBook.v6.avgPatchesPerEntry`: `3`
+  - `megaBook.v6.patchesPerToken`: `0.0014`
+  - `comparisonProjection.aggregate.rawReductionPercent`: `97.1792`
+  - `comparisonProjection.aggregate.inputGbNeededForTargetOutputGb`: `44.3136`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The newer `v5` and `v6` models preserve the same count-side fold shape as the `v3-hierarchical-packer-v2` storage baseline on synthetic book-root and mega-book entries.
+  - The fold appears to be driven primarily by the hierarchical packer configuration rather than by the newer semantic-specialization rounds.
+- `claim_not_supported`:
+  - Neither `v5` nor `v6` improves synthetic book-root semantic retention relative to the `v3-hierarchical-packer-v2` baseline.
+  - `v5` is materially worse on the synthetic book-root semantic grouping with a minimum separation margin of `-12`.
+  - `v6` is also worse than the `v3` baseline on the synthetic book-root semantic grouping with a minimum separation margin of `-9.5`.
+  - These newer specialist models do not become better long-form folding baselines than `v3-hierarchical-packer-v2`.
+- `artifacts`:
+  - [book-root v3 baseline report](bench\2026-05-06-book-root-benchmark-v3-hierarchical-packer-v2.json)
+  - [mega-book v3 baseline report](bench\2026-05-06-mega-book-benchmark-v3-hierarchical-packer-v2.json)
+  - [book-root v5 report](bench\2026-05-07-book-root-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [mega-book v5 report](bench\2026-05-07-mega-book-benchmark-v5-mixed-objective-hierarchical-packer-v1.json)
+  - [book-root v6 report](bench\2026-05-07-book-root-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [mega-book v6 report](bench\2026-05-07-mega-book-benchmark-v6-legalhold-archive-hierarchical-packer-v1.json)
+  - [v5 v6 folding comparison projection](bench\2026-05-07-book-folding-comparison-projection-v5-v6.json)
+  - [book folding round](docs\ledger\2026-05-06-book-folding-round.md)
+- `notes`:
+  - This comparison is useful because it isolates the fold from the newer semantic-specialization work.
+  - On this synthetic book-scale shape, the newer models add no fold benefit and lose semantic ground.
+- `next_action`:
+  - Keep `v3-hierarchical-packer-v2` as the storage baseline for book-fold experiments.
+  - If the next round targets book-root semantics, it should start from the `v3` storage baseline or a direct descendant that preserves its long-form behavior.

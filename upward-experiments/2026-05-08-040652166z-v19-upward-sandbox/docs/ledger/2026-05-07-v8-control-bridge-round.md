@@ -1,0 +1,59 @@
+# EXP-2026-05-07-002 V8 Control Bridge Round
+
+- `id`: `EXP-2026-05-07-002`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/booklike-corpus-2026-04-25.txt` with `bench/booklike-semantic-2026-04-25.json`, `bench/mega-book-corpus-2026-05-06.txt`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, plus the frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Started from the original `v2`/`v3` training lineage again, preserved the synthetic book-root supervision introduced in `v7`, and added four narrow support groups: one `control_bridge` group that explicitly ties multilingual fairness to governance evidence, one storage-resilience support group to defend the paraphrase regression, and two multilingual support groups for storage and search across the scripts that were weak in the frozen suite. Trained a fresh base model with the original `v3` hyperparameters and seed, re-derived the same `hierarchical-packer-v2` storage configuration, and re-ran the targeted long-form and frozen-suite evaluations.
+- `implementation_path`: `learned hybrid prototype v8 control bridge hierarchical packer v2`
+- `baseline`: `learned-hybrid-prototype-v3-hierarchical-packer-v2` and `v7-book-root`
+- `metrics`:
+  - `bookRoot.avgPatchesPerEntry`: `3`
+  - `bookRoot.patchesPerToken`: `0.0085`
+  - `bookRoot.semantic.minMargin`: `8`
+  - `bookRoot.economics.margin`: `8`
+  - `bookRoot.systems.margin`: `20`
+  - `bookRoot.control.margin`: `17`
+  - `megaBook.avgPatchesPerEntry`: `3`
+  - `megaBook.patchesPerToken`: `0.0014`
+  - `booklike.avgPatchesPerEntry`: `3`
+  - `booklike.semantic.minMargin`: `-23.5`
+  - `governanceAdversarial.minMargin`: `-31`
+  - `controlled_phrase.minMargin`: `17`
+  - `controlled_multilingual.minMargin`: `2.8095`
+  - `paraphrase_holdout.minMargin`: `17.2`
+  - `blind_holdout.minMargin`: `-15.3333`
+  - `stress_100.minMargin`: `-28.8667`
+  - `projection.aggregate.rawReductionPercent`: `94.8945`
+  - `projection.aggregate.inputGbNeededForTargetOutputGb`: `24.4833`
+- `result_label`: `directional`
+- `claim_supported`:
+  - This is the first repo round that clears the synthetic `book-root` grouping while also keeping the controlled multilingual suite positive and restoring the paraphrase holdout.
+  - The full fold shape still holds: `3` patches per entry at chapter, synthetic book-root, and mega-book scale.
+  - The narrow `control_bridge` intervention appears to solve the specific `control_book_root` miss from `v7`, moving that grouped margin from `-0.5` to `17`.
+  - The multilingual defenses work on the frozen controlled suite: `launch_multilingual`, `storage_multilingual`, and `search_multilingual` all become positive.
+  - The storage-resilience defense works on the paraphrase holdout: `storage_resilience_paraphrase` moves from `-0.4` to `21.2`.
+- `claim_not_supported`:
+  - `v8` is not the new overall baseline because it regresses sharply on governance-adversarial separation, especially `legal_hold` at `-31`.
+  - `v8` is also not the better long-form general baseline because the older chapter-style `booklike` corpus worsens to `-23.5`.
+  - The blind holdout and stress suite still fail, so broad unseen-domain semantic generalization remains unresolved.
+  - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [training spec v7 control bridge](data\training\embedding-training-spec-v7-control-bridge.json)
+  - [training pairs v7 control bridge](data\training\embedding-training-pairs-v7-control-bridge.json)
+  - [v8 base model](models\learned-hybrid-prototype-v8-control-bridge-base.json)
+  - [v8 hierarchical model](models\learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json)
+  - [book-root v8 report](bench\2026-05-06-book-root-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [booklike v8 report](bench\2026-05-06-booklike-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [mega-book v8 report](bench\2026-05-06-mega-book-benchmark-v8-control-bridge-hierarchical-packer-v2.json)
+  - [book-fold storage projection v8](bench\2026-05-06-book-folding-storage-projection-v8-control-bridge-hierarchical-packer-v2.json)
+  - [governance adversarial v8 report](bench\2026-05-07-governance-adversarial-v8-control-bridge-hierarchical-packer-v2.json)
+  - [frozen suite summary v8](bench\eval-suite-learned-hybrid-v8-control-bridge-hierarchical-packer-v2\suite-summary.json)
+  - [v7 book-root round](docs\ledger\2026-05-06-v7-book-root-round.md)
+- `notes`:
+  - `v8` is the first convincing proof that the repo can explicitly train the userâ€™s multilingual-governance bridge idea without losing the fold.
+  - The cost of that bridge is a heavy governance-adversarial regression, especially around `legal_hold`, plus a broader chapter-style grouping regression on the older `booklike` corpus.
+  - This means the next merge problem is no longer vague: the repo now needs the `v8` bridge behavior and the `v6` governance boundary behavior in the same model.
+- `next_action`:
+  - Keep `v3-hierarchical-packer-v2` as the storage baseline.
+  - Preserve `v8` as the current best control-bridge specialization result.
+  - If another round is attempted, merge `v8` control-bridge gains with explicit `legal_hold` and chapter-style negative defenses rather than pushing the bridge harder.

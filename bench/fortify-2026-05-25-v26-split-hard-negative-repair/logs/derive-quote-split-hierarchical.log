@@ -1,0 +1,21 @@
+label=derive-quote-split-hierarchical
+startedAt=2026-05-25T18:51:20.295Z
+endedAt=2026-05-25T18:51:23.991Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "models/learned-hybrid-prototype-v26-quote-split-repair-base.json",
+  "output": "models/learned-hybrid-prototype-v26-quote-split-repair-hierarchical-packer-v2.json",
+  "variantName": "quote-split-hierarchical-packer-v2",
+  "patchConfig": {
+    "packingMode": "hierarchical",
+    "maxWordsPerPatch": 96,
+    "maxCharsPerPatch": 512,
+    "maxEntryWordsForSinglePatch": 96,
+    "maxEntryCharsForSinglePatch": 512,
+    "maxResidualPatches": 2,
+    "residualMaxWordsPerPatch": 28,
+    "residualMaxCharsPerPatch": 180
+  }
+}

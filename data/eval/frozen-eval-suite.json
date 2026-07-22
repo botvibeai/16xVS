@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "description": "Frozen evaluation suites for 16xVS encoder work. Do not train against holdouts or modify these labels during the learned-encoder spike.",
+  "suites": [
+    {
+      "id": "sample_baseline",
+      "label": "Sample Baseline",
+      "input": "bench/sample-corpus.txt",
+      "frozen": true
+    },
+    {
+      "id": "google_1000_count",
+      "label": "Google 1000 Count",
+      "input": "bench/google-10000-english-usa.txt",
+      "limit": 1000,
+      "frozen": true
+    },
+    {
+      "id": "controlled_phrase",
+      "label": "Controlled Phrase",
+      "input": "bench/phrase-corpus.txt",
+      "semantic": "bench/semantic-phrases.json",
+      "perturbation": "bench/perturbation-phrases.json",
+      "frozen": true
+    },
+    {
+      "id": "controlled_multilingual",
+      "label": "Controlled Multilingual",
+      "input": "bench/multilingual-phrases.txt",
+      "semantic": "bench/multilingual-semantic-phrases.json",
+      "frozen": true
+    },
+    {
+      "id": "blind_holdout",
+      "label": "Blind Holdout",
+      "input": "bench/blind-holdout-2026-04-20.txt",
+      "semantic": "bench/blind-holdout-semantic-2026-04-20.json",
+      "frozen": true
+    },
+    {
+      "id": "paraphrase_holdout",
+      "label": "Paraphrase Holdout",
+      "input": "bench/paraphrase-holdout-2026-04-23.txt",
+      "semantic": "bench/paraphrase-holdout-semantic-2026-04-23.json",
+      "frozen": true
+    },
+    {
+      "id": "stress_100",
+      "label": "Stress 100",
+      "input": "bench/stress-100-phrases-2026-04-23.txt",
+      "semantic": "bench/stress-100-groups-2026-04-23.json",
+      "frozen": true
+    }
+  ]
+}

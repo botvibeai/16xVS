@@ -1,0 +1,1123 @@
+{
+  "generatedAt": "2026-05-05T10:31:26.418Z",
+  "input": "bench\\multilingual-phrases.txt",
+  "modelEncoding": "cl100k_base",
+  "experimentalEncoder": {
+    "stage": "learned-hybrid-prototype",
+    "embeddingSource": "learned additive feature vectors trained from positive and hard-negative phrase pairs, blended with the heuristic experimental embedding as a fixed prior",
+    "normalization": "unit-length spherical normalization",
+    "quantization": "sign bit quantization to binary code",
+    "dimensions": 256,
+    "learnedBlendWeight": 1,
+    "heuristicBlendWeight": 0.6,
+    "prototypeLearningRate": 0.03,
+    "prototypeNegativeMargin": 0.25,
+    "patchConfig": {
+      "packingMode": "hierarchical",
+      "maxWordsPerPatch": 96,
+      "maxCharsPerPatch": 512,
+      "maxEntryWordsForSinglePatch": 96,
+      "maxEntryCharsForSinglePatch": 512,
+      "maxResidualPatches": 2,
+      "residualMaxWordsPerPatch": 28,
+      "residualMaxCharsPerPatch": 180
+    },
+    "trainingSummary": {
+      "positivePairCount": 463,
+      "negativePairCount": 1296,
+      "averagePositiveSimilarity": 0.757819,
+      "averageNegativeSimilarity": 0.199597,
+      "learnedBlendWeight": 1,
+      "heuristicBlendWeight": 0.6,
+      "prototypeLearningRate": 0.03,
+      "prototypeNegativeMargin": 0.25
+    }
+  },
+  "caution": "experimentalPatchCount still comes from the current patch packer. This hybrid prototype blends a learned embedding source with the existing heuristic experimental embedding before normalize -> sign, and it remains an experimental core candidate until the frozen holdouts pass.",
+  "summary": {
+    "entries": 21,
+    "words": 47,
+    "codepoints": 339,
+    "sourceBytes": 492,
+    "tiktokenCount": 146,
+    "fixtureGlyphCount": 339,
+    "fixtureBinaryBytes": 10848,
+    "experimentalPatchCount": 21,
+    "experimentalBinaryBytes": 672,
+    "avgTiktokenPerEntry": 6.9524,
+    "avgGlyphsPerEntry": 16.1429,
+    "avgExperimentalPatchesPerEntry": 1,
+    "glyphsPerToken": 2.3219,
+    "binaryBytesPerToken": 74.3014,
+    "binaryVsSourceRatio": 22.0488,
+    "experimentalPatchesPerToken": 0.1438,
+    "experimentalBinaryBytesPerToken": 4.6027,
+    "experimentalBinaryVsSourceRatio": 1.3659
+  },
+  "semantic": {
+    "input": "bench\\multilingual-semantic-phrases.json",
+    "groups": [
+      {
+        "group": "launch_multilingual",
+        "size": 7,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 77.1429,
+        "avgTokenOverlap": 0.1524,
+        "entries": [
+          {
+            "text": "launch checklist",
+            "tiktokenCount": 2,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "lista de lanzamiento",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "liste de lancement",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "startcheckliste",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "قائمة الإطلاق",
+            "tiktokenCount": 10,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "लॉन्च चेकलिस्ट",
+            "tiktokenCount": 15,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "产品发布清单",
+            "tiktokenCount": 4,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "storage_multilingual",
+        "size": 7,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 95.3333,
+        "avgTokenOverlap": 0.1508,
+        "entries": [
+          {
+            "text": "storage policy",
+            "tiktokenCount": 2,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "política de almacenamiento",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "politique de stockage",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "speicherrichtlinie",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "سياسة التخزين",
+            "tiktokenCount": 9,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "स्टोरेज नीति",
+            "tiktokenCount": 12,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "存储策略",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          }
+        ]
+      },
+      {
+        "group": "search_multilingual",
+        "size": 7,
+        "avgPatchDistance": 0,
+        "avgSignatureDistance": 84.6667,
+        "avgTokenOverlap": 0.1587,
+        "entries": [
+          {
+            "text": "binary visual search",
+            "tiktokenCount": 3,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "búsqueda visual binaria",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "recherche visuelle binaire",
+            "tiktokenCount": 6,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "binäre visuelle suche",
+            "tiktokenCount": 5,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "بحث بصري ثنائي",
+            "tiktokenCount": 13,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "बाइनरी विजुअल सर्च",
+            "tiktokenCount": 19,
+            "experimentalPatchCount": 1
+          },
+          {
+            "text": "二进制视觉搜索",
+            "tiktokenCount": 7,
+            "experimentalPatchCount": 1
+          }
+        ]
+      }
+    ],
+    "separation": [
+      {
+        "group": "launch_multilingual",
+        "size": 7,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 77.1429,
+        "avgNearestOutsideSignatureDistance": 73.8571,
+        "separationMargin": -3.2858,
+        "examples": [
+          {
+            "text": "launch checklist",
+            "nearestOutside": {
+              "text": "política de almacenamiento",
+              "signatureDistance": 68
+            }
+          },
+          {
+            "text": "lista de lanzamiento",
+            "nearestOutside": {
+              "text": "binäre visuelle suche",
+              "signatureDistance": 60
+            }
+          },
+          {
+            "text": "liste de lancement",
+            "nearestOutside": {
+              "text": "politique de stockage",
+              "signatureDistance": 66
+            }
+          },
+          {
+            "text": "startcheckliste",
+            "nearestOutside": {
+              "text": "binäre visuelle suche",
+              "signatureDistance": 62
+            }
+          },
+          {
+            "text": "قائمة الإطلاق",
+            "nearestOutside": {
+              "text": "speicherrichtlinie",
+              "signatureDistance": 86
+            }
+          },
+          {
+            "text": "लॉन्च चेकलिस्ट",
+            "nearestOutside": {
+              "text": "binäre visuelle suche",
+              "signatureDistance": 94
+            }
+          },
+          {
+            "text": "产品发布清单",
+            "nearestOutside": {
+              "text": "存储策略",
+              "signatureDistance": 81
+            }
+          }
+        ]
+      },
+      {
+        "group": "storage_multilingual",
+        "size": 7,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 95.3333,
+        "avgNearestOutsideSignatureDistance": 78.2857,
+        "separationMargin": -17.0476,
+        "examples": [
+          {
+            "text": "storage policy",
+            "nearestOutside": {
+              "text": "lista de lanzamiento",
+              "signatureDistance": 76
+            }
+          },
+          {
+            "text": "política de almacenamiento",
+            "nearestOutside": {
+              "text": "lista de lanzamiento",
+              "signatureDistance": 63
+            }
+          },
+          {
+            "text": "politique de stockage",
+            "nearestOutside": {
+              "text": "binäre visuelle suche",
+              "signatureDistance": 64
+            }
+          },
+          {
+            "text": "speicherrichtlinie",
+            "nearestOutside": {
+              "text": "liste de lancement",
+              "signatureDistance": 74
+            }
+          },
+          {
+            "text": "سياسة التخزين",
+            "nearestOutside": {
+              "text": "بحث بصري ثنائي",
+              "signatureDistance": 89
+            }
+          },
+          {
+            "text": "स्टोरेज नीति",
+            "nearestOutside": {
+              "text": "बाइनरी विजुअल सर्च",
+              "signatureDistance": 101
+            }
+          },
+          {
+            "text": "存储策略",
+            "nearestOutside": {
+              "text": "产品发布清单",
+              "signatureDistance": 81
+            }
+          }
+        ]
+      },
+      {
+        "group": "search_multilingual",
+        "size": 7,
+        "outsidePool": "labeled-other-groups",
+        "avgIntraSignatureDistance": 84.6667,
+        "avgNearestOutsideSignatureDistance": 78.5714,
+        "separationMargin": -6.0953,
+        "examples": [
+          {
+            "text": "binary visual search",
+            "nearestOutside": {
+              "text": "politique de stockage",
+              "signatureDistance": 78
+            }
+          },
+          {
+            "text": "búsqueda visual binaria",
+            "nearestOutside": {
+              "text": "startcheckliste",
+              "signatureDistance": 73
+            }
+          },
+          {
+            "text": "recherche visuelle binaire",
+            "nearestOutside": {
+              "text": "startcheckliste",
+              "signatureDistance": 69
+            }
+          },
+          {
+            "text": "binäre visuelle suche",
+            "nearestOutside": {
+              "text": "lista de lanzamiento",
+              "signatureDistance": 60
+            }
+          },
+          {
+            "text": "بحث بصري ثنائي",
+            "nearestOutside": {
+              "text": "startcheckliste",
+              "signatureDistance": 88
+            }
+          },
+          {
+            "text": "बाइनरी विजुअल सर्च",
+            "nearestOutside": {
+              "text": "startcheckliste",
+              "signatureDistance": 87
+            }
+          },
+          {
+            "text": "二进制视觉搜索",
+            "nearestOutside": {
+              "text": "存储策略",
+              "signatureDistance": 95
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "perturbation": null,
+  "retrieval": {
+    "entries": 21,
+    "exactNeighborRate": 0,
+    "lowDistanceRate": 0,
+    "avgNearestSignatureDistance": 63.7143,
+    "avgNearestTokenOverlap": 0.2794,
+    "examples": [
+      {
+        "text": "launch checklist",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "startcheckliste",
+          "signatureDistance": 33,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "lista de lanzamiento",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "launch checklist",
+          "signatureDistance": 39,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "liste de lancement",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "lista de lanzamiento",
+          "signatureDistance": 42,
+          "patchDistance": 0,
+          "tokenOverlap": 0.2
+        }
+      },
+      {
+        "text": "startcheckliste",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "launch checklist",
+          "signatureDistance": 33,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "قائمة الإطلاق",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "lista de lanzamiento",
+          "signatureDistance": 80,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "लॉन्च चेकलिस्ट",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "startcheckliste",
+          "signatureDistance": 84,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "产品发布清单",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "存储策略",
+          "signatureDistance": 81,
+          "patchDistance": 0,
+          "tokenOverlap": 1
+        }
+      },
+      {
+        "text": "storage policy",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "politique de stockage",
+          "signatureDistance": 52,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "política de almacenamiento",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "politique de stockage",
+          "signatureDistance": 59,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1667
+        }
+      },
+      {
+        "text": "politique de stockage",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "storage policy",
+          "signatureDistance": 52,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "speicherrichtlinie",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "politique de stockage",
+          "signatureDistance": 66,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "سياسة التخزين",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "بحث بصري ثنائي",
+          "signatureDistance": 89,
+          "patchDistance": 0,
+          "tokenOverlap": 1
+        }
+      },
+      {
+        "text": "स्टोरेज नीति",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "存储策略",
+          "signatureDistance": 97,
+          "patchDistance": 0,
+          "tokenOverlap": 1
+        }
+      },
+      {
+        "text": "存储策略",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "产品发布清单",
+          "signatureDistance": 81,
+          "patchDistance": 0,
+          "tokenOverlap": 1
+        }
+      },
+      {
+        "text": "binary visual search",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "recherche visuelle binaire",
+          "signatureDistance": 51,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "búsqueda visual binaria",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary visual search",
+          "signatureDistance": 53,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1667
+        }
+      },
+      {
+        "text": "recherche visuelle binaire",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binäre visuelle suche",
+          "signatureDistance": 43,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1667
+        }
+      },
+      {
+        "text": "binäre visuelle suche",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "recherche visuelle binaire",
+          "signatureDistance": 43,
+          "patchDistance": 0,
+          "tokenOverlap": 0.1667
+        }
+      },
+      {
+        "text": "بحث بصري ثنائي",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binary visual search",
+          "signatureDistance": 80,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      },
+      {
+        "text": "बाइनरी विजुअल सर्च",
+        "experimentalPatchCount": 1,
+        "nearestNeighbor": {
+          "text": "binäre visuelle suche",
+          "signatureDistance": 85,
+          "patchDistance": 0,
+          "tokenOverlap": 0
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "text": "launch checklist",
+      "words": 2,
+      "codepoints": 16,
+      "sourceBytes": 16,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 16,
+      "fixtureBinaryBytes": 512,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 8,
+      "binaryBytesPerToken": 256,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2,
+      "experimentalPatches": [
+        "launch checklist"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.299778,
+      "experimentalSignatureHex": "faa6e627b8da6aeb4c789a93c2495a86a6f784f1a485838cb96ba2b61baa920f"
+    },
+    {
+      "text": "lista de lanzamiento",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "lista de lanzamiento"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.306057,
+      "experimentalSignatureHex": "da62d6a3a8da6aeb6e68aa83c2495acee6f7ace38485a28cae61a32fbbaab20f"
+    },
+    {
+      "text": "liste de lancement",
+      "words": 3,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.5,
+      "binaryBytesPerToken": 144,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "liste de lancement"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.274198,
+      "experimentalSignatureHex": "da6cd8a3a8922a6b6a78a893c25f5a86a6f7a4e3a48583ace963a3ae33a094a7"
+    },
+    {
+      "text": "startcheckliste",
+      "words": 1,
+      "codepoints": 15,
+      "sourceBytes": 15,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 15,
+      "fixtureBinaryBytes": 480,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5,
+      "binaryBytesPerToken": 160,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 2.1333,
+      "experimentalPatches": [
+        "startcheckliste"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.26423,
+      "experimentalSignatureHex": "dea6f6a3aada286b6c788a83c2497aaca6b7a4a1a581c38ca96db3b63fa0920f"
+    },
+    {
+      "text": "قائمة الإطلاق",
+      "words": 2,
+      "codepoints": 13,
+      "sourceBytes": 25,
+      "tiktokenCount": 10,
+      "fixtureGlyphCount": 13,
+      "fixtureBinaryBytes": 416,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.3,
+      "binaryBytesPerToken": 41.6,
+      "binaryVsSourceRatio": 16.64,
+      "experimentalPatchesPerToken": 0.1,
+      "experimentalBinaryBytesPerToken": 3.2,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "قائمة الإطلاق"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.204102,
+      "experimentalSignatureHex": "fbeb468acad48e636cceba93c2380f967a6badf365c1c18c7be5b076b9a0a08f"
+    },
+    {
+      "text": "लॉन्च चेकलिस्ट",
+      "words": 2,
+      "codepoints": 14,
+      "sourceBytes": 40,
+      "tiktokenCount": 15,
+      "fixtureGlyphCount": 14,
+      "fixtureBinaryBytes": 448,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.9333,
+      "binaryBytesPerToken": 29.8667,
+      "binaryVsSourceRatio": 11.2,
+      "experimentalPatchesPerToken": 0.0667,
+      "experimentalBinaryBytesPerToken": 2.1333,
+      "experimentalBinaryVsSourceRatio": 0.8,
+      "experimentalPatches": [
+        "लॉन्च चेकलिस्ट"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.202885,
+      "experimentalSignatureHex": "a78556ab929a0eee2c16dab3316e5aa982f31821a5d1a2b82d36a2a7ad88a0a7"
+    },
+    {
+      "text": "产品发布清单",
+      "words": 1,
+      "codepoints": 6,
+      "sourceBytes": 18,
+      "tiktokenCount": 4,
+      "fixtureGlyphCount": 6,
+      "fixtureBinaryBytes": 192,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.5,
+      "binaryBytesPerToken": 48,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.25,
+      "experimentalBinaryBytesPerToken": 8,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "产品发布清单"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.208163,
+      "experimentalSignatureHex": "48a4474bdab8a9a764fe7a1bbaf0638762b3a4b5e5e7eceaeaf6223d1fbab613"
+    },
+    {
+      "text": "storage policy",
+      "words": 2,
+      "codepoints": 14,
+      "sourceBytes": 14,
+      "tiktokenCount": 2,
+      "fixtureGlyphCount": 14,
+      "fixtureBinaryBytes": 448,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 7,
+      "binaryBytesPerToken": 224,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.5,
+      "experimentalBinaryBytesPerToken": 16,
+      "experimentalBinaryVsSourceRatio": 2.2857,
+      "experimentalPatches": [
+        "storage policy"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.258168,
+      "experimentalSignatureHex": "58aa84b9825a5a6beb48bab0427bba8feba7ad63a483eca0666b0b2ea0e960ad"
+    },
+    {
+      "text": "política de almacenamiento",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 27,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 5.2,
+      "binaryBytesPerToken": 166.4,
+      "binaryVsSourceRatio": 30.8148,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.1852,
+      "experimentalPatches": [
+        "política de almacenamiento"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.21887,
+      "experimentalSignatureHex": "f2a6c6b0a2da4afbea6998b3ca69bb8ee6e740aba487aea2b6e38bb7b1a9a905"
+    },
+    {
+      "text": "politique de stockage",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 21,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2,
+      "binaryBytesPerToken": 134.4,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "politique de stockage"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.213313,
+      "experimentalSignatureHex": "6a6e95baaad24a79ea488a96427baa8ea6e7a9e3a497a6a2fc6b1aba22e9a02d"
+    },
+    {
+      "text": "speicherrichtlinie",
+      "words": 1,
+      "codepoints": 18,
+      "sourceBytes": 18,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 3,
+      "binaryBytesPerToken": 96,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.7778,
+      "experimentalPatches": [
+        "speicherrichtlinie"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.165066,
+      "experimentalSignatureHex": "da6ccc8a2ade4a6beb58d9976a69aeada5e7297be5a5a4e6686fa926a1a1e08f"
+    },
+    {
+      "text": "سياسة التخزين",
+      "words": 2,
+      "codepoints": 13,
+      "sourceBytes": 25,
+      "tiktokenCount": 9,
+      "fixtureGlyphCount": 13,
+      "fixtureBinaryBytes": 416,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.4444,
+      "binaryBytesPerToken": 46.2222,
+      "binaryVsSourceRatio": 16.64,
+      "experimentalPatchesPerToken": 0.1111,
+      "experimentalBinaryBytesPerToken": 3.5556,
+      "experimentalBinaryVsSourceRatio": 1.28,
+      "experimentalPatches": [
+        "سياسة التخزين"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.155096,
+      "experimentalSignatureHex": "8bae00e98a964be9e0addabcc276a9166a897efa76e3ac258ca5a8efa2868a4e"
+    },
+    {
+      "text": "स्टोरेज नीति",
+      "words": 2,
+      "codepoints": 12,
+      "sourceBytes": 34,
+      "tiktokenCount": 12,
+      "fixtureGlyphCount": 12,
+      "fixtureBinaryBytes": 384,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1,
+      "binaryBytesPerToken": 32,
+      "binaryVsSourceRatio": 11.2941,
+      "experimentalPatchesPerToken": 0.0833,
+      "experimentalBinaryBytesPerToken": 2.6667,
+      "experimentalBinaryVsSourceRatio": 0.9412,
+      "experimentalPatches": [
+        "स्टोरेज नीति"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.137202,
+      "experimentalSignatureHex": "633e149e10d0bb69e996c5b1b8adff29a9b014ad4c86a6a3bc2da923ad96eacb"
+    },
+    {
+      "text": "存储策略",
+      "words": 1,
+      "codepoints": 4,
+      "sourceBytes": 12,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 4,
+      "fixtureBinaryBytes": 128,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.5714,
+      "binaryBytesPerToken": 18.2857,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 2.6667,
+      "experimentalPatches": [
+        "存储策略"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.168406,
+      "experimentalSignatureHex": "69a407db1ad891e2e32c3b9ab8f4a44980a2b7bd846368e3de628a2fac922e52"
+    },
+    {
+      "text": "binary visual search",
+      "words": 3,
+      "codepoints": 20,
+      "sourceBytes": 20,
+      "tiktokenCount": 3,
+      "fixtureGlyphCount": 20,
+      "fixtureBinaryBytes": 640,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 6.6667,
+      "binaryBytesPerToken": 213.3333,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.3333,
+      "experimentalBinaryBytesPerToken": 10.6667,
+      "experimentalBinaryVsSourceRatio": 1.6,
+      "experimentalPatches": [
+        "binary visual search"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.285471,
+      "experimentalSignatureHex": "fa26971a3ab13df92863ae86422a2aae8eaca5a3e587e4a8ca6182bf81bc709b"
+    },
+    {
+      "text": "búsqueda visual binaria",
+      "words": 3,
+      "codepoints": 23,
+      "sourceBytes": 24,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 23,
+      "fixtureBinaryBytes": 736,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.6,
+      "binaryBytesPerToken": 147.2,
+      "binaryVsSourceRatio": 30.6667,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.3333,
+      "experimentalPatches": [
+        "búsqueda visual binaria"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.250445,
+      "experimentalSignatureHex": "ee28d63a3af12c693862afb6424f2a2f86b6a5a3e583868ce8e2c2d392a8b08f"
+    },
+    {
+      "text": "recherche visuelle binaire",
+      "words": 3,
+      "codepoints": 26,
+      "sourceBytes": 26,
+      "tiktokenCount": 6,
+      "fixtureGlyphCount": 26,
+      "fixtureBinaryBytes": 832,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.3333,
+      "binaryBytesPerToken": 138.6667,
+      "binaryVsSourceRatio": 32,
+      "experimentalPatchesPerToken": 0.1667,
+      "experimentalBinaryBytesPerToken": 5.3333,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "recherche visuelle binaire"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.249966,
+      "experimentalSignatureHex": "fba695ba3ad2287b686a8abe4a2d2aa58eada5a3a587c7acfa40e2f393eef01b"
+    },
+    {
+      "text": "binäre visuelle suche",
+      "words": 3,
+      "codepoints": 21,
+      "sourceBytes": 22,
+      "tiktokenCount": 5,
+      "fixtureGlyphCount": 21,
+      "fixtureBinaryBytes": 672,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 4.2,
+      "binaryBytesPerToken": 134.4,
+      "binaryVsSourceRatio": 30.5455,
+      "experimentalPatchesPerToken": 0.2,
+      "experimentalBinaryBytesPerToken": 6.4,
+      "experimentalBinaryVsSourceRatio": 1.4545,
+      "experimentalPatches": [
+        "binäre visuelle suche"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.225932,
+      "experimentalSignatureHex": "faa6d4baba9868792a6a8a960a0f2aada6f6ada3a587e7acee618267a3acd24b"
+    },
+    {
+      "text": "بحث بصري ثنائي",
+      "words": 3,
+      "codepoints": 14,
+      "sourceBytes": 26,
+      "tiktokenCount": 13,
+      "fixtureGlyphCount": 14,
+      "fixtureBinaryBytes": 448,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1.0769,
+      "binaryBytesPerToken": 34.4615,
+      "binaryVsSourceRatio": 17.2308,
+      "experimentalPatchesPerToken": 0.0769,
+      "experimentalBinaryBytesPerToken": 2.4615,
+      "experimentalBinaryVsSourceRatio": 1.2308,
+      "experimentalPatches": [
+        "بحث بصري ثنائي"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.246223,
+      "experimentalSignatureHex": "a3a54567ccf29ce92d62da06ca6e290e0e860db2e78360888aa5e0b7b3a4924b"
+    },
+    {
+      "text": "बाइनरी विजुअल सर्च",
+      "words": 3,
+      "codepoints": 18,
+      "sourceBytes": 50,
+      "tiktokenCount": 19,
+      "fixtureGlyphCount": 18,
+      "fixtureBinaryBytes": 576,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 0.9474,
+      "binaryBytesPerToken": 30.3158,
+      "binaryVsSourceRatio": 11.52,
+      "experimentalPatchesPerToken": 0.0526,
+      "experimentalBinaryBytesPerToken": 1.6842,
+      "experimentalBinaryVsSourceRatio": 0.64,
+      "experimentalPatches": [
+        "बाइनरी विजुअल सर्च"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.226079,
+      "experimentalSignatureHex": "e99f96023bda1a7b2c23eb8360a8aea5b9f418a3a78f910eed7510aa998ad24b"
+    },
+    {
+      "text": "二进制视觉搜索",
+      "words": 1,
+      "codepoints": 7,
+      "sourceBytes": 21,
+      "tiktokenCount": 7,
+      "fixtureGlyphCount": 7,
+      "fixtureBinaryBytes": 224,
+      "experimentalPatchCount": 1,
+      "experimentalBinaryBytes": 32,
+      "glyphsPerToken": 1,
+      "binaryBytesPerToken": 32,
+      "binaryVsSourceRatio": 10.6667,
+      "experimentalPatchesPerToken": 0.1429,
+      "experimentalBinaryBytesPerToken": 4.5714,
+      "experimentalBinaryVsSourceRatio": 1.5238,
+      "experimentalPatches": [
+        "二进制视觉搜索"
+      ],
+      "experimentalBsqDimensions": 256,
+      "experimentalEmbeddingNorm": 1.216979,
+      "experimentalSignatureHex": "eda59602797935a32424babea8adac2ba69606b056e2c95ac8164e68ce5ab262"
+    }
+  ],
+  "evidenceAssessment": {
+    "resultLabel": "directional",
+    "claimLayer": "experimental core candidate",
+    "countSignal": {
+      "experimentalPatchesPerToken": 0.1438,
+      "beatsTiktokenByPatchCount": true
+    },
+    "semanticSignal": {
+      "hasSemanticRun": true,
+      "outsidePool": "labeled-other-groups",
+      "groupCount": 3,
+      "groups": [
+        {
+          "group": "launch_multilingual",
+          "separationMargin": -3.2858
+        },
+        {
+          "group": "storage_multilingual",
+          "separationMargin": -17.0476
+        },
+        {
+          "group": "search_multilingual",
+          "separationMargin": -6.0953
+        }
+      ],
+      "minSeparationMargin": -17.0476,
+      "maxSeparationMargin": -3.2858,
+      "allMarginsPositive": false,
+      "negativeGroups": [
+        "launch_multilingual",
+        "storage_multilingual",
+        "search_multilingual"
+      ]
+    },
+    "collapseChecks": {
+      "exactNeighborRate": 0,
+      "lowDistanceRate": 0,
+      "avgNearestSignatureDistance": 63.7143,
+      "signatureCollapse": false,
+      "thresholds": {
+        "maxExactNeighborRate": 0.05,
+        "maxLowDistanceRate": 0.1,
+        "minAvgNearestSignatureDistance": 16
+      }
+    },
+    "claimSupported": [
+      "The experimental core candidate uses fewer patches than tiktoken tokens on this corpus.",
+      "The retrieval signature space did not trip exact-neighbor or low-distance collapse guardrails."
+    ],
+    "claimNotSupported": [
+      "This run does not support semantic superiority because at least one controlled group failed separation or the signature space collapsed.",
+      "This is not proof of target 16xVS BSQ performance because the embedding source is still a heuristic prototype.",
+      "This is not broad real-world proof that 16xVS beats regular tokenizers."
+    ]
+  }
+}

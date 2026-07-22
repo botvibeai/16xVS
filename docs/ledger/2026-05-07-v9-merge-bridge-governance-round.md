@@ -1,0 +1,61 @@
+# EXP-2026-05-07-003 V9 Merge Bridge Governance Round
+
+- `id`: `EXP-2026-05-07-003`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/booklike-corpus-2026-04-25.txt` with `bench/booklike-semantic-2026-04-25.json`, `bench/mega-book-corpus-2026-05-06.txt`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`, plus the frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Built a merge spec from the broader `v5` governance/archive training line, injected the synthetic `book-root` groups plus the `v8` bridge-support groups, and added explicit hard negatives between the bridge groups and the governance/archive groups that regressed under `v8`. Trained from the original `v3` hyperparameter line, re-derived the same `hierarchical-packer-v2` storage configuration, and re-ran the full long-form and frozen-suite comparison surface.
+- `implementation_path`: `learned hybrid prototype v9 merge bridge governance hierarchical packer v2`
+- `baseline`: `v6-legalhold-archive` and `v8-control-bridge`
+- `metrics`:
+  - `bookRoot.avgPatchesPerEntry`: `26.5`
+  - `bookRoot.patchesPerToken`: `0.0749`
+  - `bookRoot.semantic.minMargin`: `-4.5`
+  - `bookRoot.economics.margin`: `3`
+  - `bookRoot.systems.margin`: `10.5`
+  - `bookRoot.control.margin`: `-4.5`
+  - `booklike.avgPatchesPerEntry`: `13.25`
+  - `booklike.semantic.minMargin`: `-20`
+  - `megaBook.avgPatchesPerEntry`: `159`
+  - `governanceAdversarial.minMargin`: `4`
+  - `archivePressure.minMargin`: `-0.5`
+  - `controlled_phrase.minMargin`: `5.4167`
+  - `controlled_multilingual.minMargin`: `0.8095`
+  - `paraphrase_holdout.minMargin`: `8.4`
+  - `blind_holdout.minMargin`: `-15.5`
+  - `stress_100.minMargin`: `-28.6444`
+  - `projection.aggregate.rawReductionPercent`: `57.2748`
+  - `projection.aggregate.inputGbNeededForTargetOutputGb`: `2.9257`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The merge hypothesis is partly real: `v9` restores the full governance adversarial holdout to all-positive while also keeping the controlled multilingual suite and the paraphrase holdout positive.
+  - The archive-pressure corpus is almost recovered; only `retention_governance_pressure` stays slightly negative at `-0.5`.
+  - The retrieval signature space stays clean under collapse checks across the targeted corpora and the frozen suite.
+- `claim_not_supported`:
+  - `v9` is not a storage baseline or even a storage-side near-baseline because it destroys the fold shape. Synthetic book-root rises from `3` to `26.5` patches per entry, booklike rises from `3` to `13.25`, and the synthetic mega-book rises from `3` to `159`.
+  - `v9` does not keep the `v8` synthetic `book-root` success. `control_book_root` falls back negative at `-4.5`.
+  - `v9` does not recover the older chapter-style booklike corpus. Three grouped themes stay negative, including `multilingual_equity_booklike`, `hardware_edge_booklike`, and `governance_evidence_booklike`.
+  - `v9` still does not clear the blind holdout or the stress suite.
+  - The current round sharply weakens the current raw-source storage projection. The aggregate tested reduction falls from the prior fold rounds to `57.2748%`, and the current directional `1.25 GB` envelope falls to `2.9257 GB`.
+  - This round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [training spec v8 merge bridge governance](data\training\embedding-training-spec-v8-merge-bridge-governance.json)
+  - [training pairs v8 merge bridge governance](data\training\embedding-training-pairs-v8-merge-bridge-governance.json)
+  - [v9 base model](models\learned-hybrid-prototype-v9-merge-bridge-governance-base.json)
+  - [v9 hierarchical model](models\learned-hybrid-prototype-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [book-root v9 report](bench\2026-05-07-book-root-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [booklike v9 report](bench\2026-05-07-booklike-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [mega-book v9 report](bench\2026-05-07-mega-book-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [governance adversarial v9 report](bench\2026-05-07-governance-adversarial-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [archive pressure v9 report](bench\2026-05-07-archive-pressure-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [book-fold storage projection v9](bench\2026-05-07-book-folding-storage-projection-v9-merge-bridge-governance-hierarchical-packer-v2.json)
+  - [frozen suite summary v9](bench\eval-suite-learned-hybrid-v9-merge-bridge-governance-hierarchical-packer-v2\suite-summary.json)
+  - [v6 legalhold archive round](docs\ledger\2026-05-05-v6-legalhold-archive-round.md)
+  - [v8 control bridge round](docs\ledger\2026-05-07-v8-control-bridge-round.md)
+- `notes`:
+  - `v9` answers the merge question directly: the repo can hold the governance boundary and the multilingual-control bridge in one model, but the current merge path does it by over-segmenting long-form text.
+  - The storage failure is structural, not cosmetic. The packer falls back from the earlier `3`-patch book-fold shape to sentence-and-clause fragmentation across the long-form corpora.
+  - This makes `v9` a useful semantic merge proof and a failed storage merge.
+  - Follow-up correction: the `v9` hierarchical filename was misleading because the model was derived with `packingMode: "entry"`. The `v10` constrained merge round reuses the same merge weights with `packingMode: "hierarchical"` and is the fair fold-defended comparison.
+- `next_action`:
+  - Keep `v3-hierarchical-packer-v2` as the storage baseline, `v6` as the governance/archive specialist, and `v8` as the bridge specialist.
+  - If another merge is attempted, defend the fold explicitly by adding packer-shape constraints or book-root fold negatives rather than only adding more semantic supervision.

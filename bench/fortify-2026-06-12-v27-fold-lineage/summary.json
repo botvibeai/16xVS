@@ -1,0 +1,16 @@
+{
+  "label": "v27-fold-lineage-audit",
+  "generatedAt": "2026-06-12T20:19:41.926Z",
+  "outputDir": "bench/fortify-2026-06-12-v27-fold-lineage",
+  "model": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "claimLevel": "fold-lineage-proof",
+  "allMarginsPositive": true,
+  "minMargin": 9,
+  "avgMargin": 23.8571,
+  "cloudmersive": {
+    "enabled": false,
+    "note": "Cloudmersive perceptual image similarity remains optional external audit only; this probe makes no network calls."
+  },
+  "report": "bench/fortify-2026-06-12-v27-fold-lineage/fold-lineage-report.json",
+  "fixture": "bench/fortify-2026-06-12-v27-fold-lineage/fixture.json"
+}

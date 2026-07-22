@@ -1,0 +1,77 @@
+[
+  {
+    "group": "repetition_patterns",
+    "items": [
+      "ha ha ha ha ha ha ha ha ha ha",
+      "0000000000000000000000000000",
+      "abcabcabcabcabcabcabcabcabc",
+      "test_test_test_test_test_test",
+      "repeat repeat repeat repeat repeat",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "zzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+      "lol lol lol lol lol lol lol",
+      "same same same same same same",
+      "identical identical identical identical"
+    ]
+  },
+  {
+    "group": "multilingual_greetings",
+    "items": [
+      "Hola, ¿cómo estás?",
+      "Bonjour, comment ça va?",
+      "Guten Tag, wie geht’s?",
+      "こんにちは世界",
+      "你好，世界",
+      "Привет, как дела?",
+      "مرحبا كيف حالك",
+      "שלום עולם",
+      "नमस्ते दुनिया",
+      "สวัสดีโลก"
+    ]
+  },
+  {
+    "group": "code_structures",
+    "items": [
+      "function test() { return true; }",
+      "if(x > 10 && y < 5) { execute(); }",
+      "const data = { \"name\": \"AI\", \"type\": \"test\" };",
+      "SELECT * FROM users WHERE id = 1;",
+      "<html><body>Hello</body></html>",
+      "for(int i=0; i<100; i++){}",
+      "console.log(\"Hello, world!\");",
+      "def my_function(param): return param * 2",
+      "while(true){ break; }",
+      "try { something(); } catch(e) {}"
+    ]
+  },
+  {
+    "group": "token_boundaries",
+    "items": [
+      "tokenization-test-case",
+      "tokenization_test_case",
+      "tokenizationTestCase",
+      "TokenizationTestCASE123",
+      "split.this.correctly.now",
+      "word...break...test",
+      "edge-case---multiple---dashes",
+      "camelCaseVsSnake_case",
+      "PascalCaseTestExample",
+      "kebab-case-example"
+    ]
+  },
+  {
+    "group": "ai_prompts",
+    "items": [
+      "Write a Python function that calculates Fibonacci numbers.",
+      "Summarize the following text in one sentence.",
+      "Translate this into Spanish: “Hello world.”",
+      "Generate a marketing slogan for an AI startup.",
+      "Explain quantum computing in simple terms.",
+      "Build a REST API with authentication.",
+      "Optimize this SQL query for performance.",
+      "Create a chatbot that remembers context.",
+      "Design a scalable AI infrastructure system.",
+      "Reduce token usage without losing meaning."
+    ]
+  }
+]

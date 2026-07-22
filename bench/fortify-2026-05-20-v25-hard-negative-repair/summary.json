@@ -1,0 +1,752 @@
+{
+  "label": "v25-hard-negative-repair",
+  "generatedAt": "2026-05-20T11:26:30.136Z",
+  "outputDir": "bench/fortify-2026-05-20-v25-hard-negative-repair",
+  "artifacts": {
+    "spec": "data/training/embedding-training-spec-v25-hard-negative-repair.json",
+    "pairs": "data/training/embedding-training-pairs-v25-hard-negative-repair.json",
+    "baseModel": "models/learned-hybrid-prototype-v25-hard-negative-repair-base.json",
+    "model": "models/learned-hybrid-prototype-v25-hard-negative-repair-hierarchical-packer-v2.json"
+  },
+  "claimLevel": "negative-or-mixed-probe",
+  "v23BaselinePreserved": true,
+  "targetGates": {
+    "quote": {
+      "caseId": "quote",
+      "previousBestMargin": -12.8,
+      "singleHead": {
+        "input": "bench\\quote-corpus-2026-04-25.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -19,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\quote-corpus-2026-04-25.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -18.2,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1662,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -12.8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.2,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -18.2,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -18.4,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -19,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteRepair",
+      "bestRankedMargin": -12.8,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    },
+    "quote-paragraph": {
+      "caseId": "quote-paragraph",
+      "previousBestMargin": -10.3333,
+      "singleHead": {
+        "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -14.8333,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 0.3532,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\quote-paragraph-corpus-2026-04-25.txt",
+        "routeId": "archive",
+        "lexicalHead": "governance",
+        "selectedHead": "governance",
+        "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -20.25,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 0.3532,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -10.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -14.8333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -18.75,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -20.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -21.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteRepair",
+      "bestRankedMargin": -10.3333,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    },
+    "blind-holdout": {
+      "caseId": "blind-holdout",
+      "previousBestMargin": -15.5,
+      "singleHead": {
+        "input": "bench\\blind-holdout-2026-04-20.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -17.4167,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.5142,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\blind-holdout-2026-04-20.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -15.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.5142,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -14.6667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -15.3333,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -15.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.25,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -17.4167,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteRepair",
+      "bestRankedMargin": -14.6667,
+      "improvedBeyondPrevious": false,
+      "pass": false
+    },
+    "stress-100": {
+      "caseId": "stress-100",
+      "previousBestMargin": -28.6444,
+      "singleHead": {
+        "input": "bench\\stress-100-phrases-2026-04-23.txt",
+        "routeId": null,
+        "lexicalHead": null,
+        "selectedHead": null,
+        "selectedModel": null,
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -24.0667,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1869,
+        "fullHeadRanking": []
+      },
+      "ranked": {
+        "input": "bench\\stress-100-phrases-2026-04-23.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": false,
+        "minSemanticMargin": -28.6444,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 1,
+        "experimentalBinaryVsSourceRatio": 1.1869,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -24.0667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 2,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -28.6444,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 3,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -28.8667,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 4,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.5222,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 5,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.5556,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -29.8778,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 1
+          }
+        ]
+      },
+      "bestRankedHead": "quoteRepairV25",
+      "bestRankedMargin": -24.0667,
+      "improvedBeyondPrevious": true,
+      "pass": false
+    }
+  },
+  "primaryGates": {
+    "book-root": {
+      "caseId": "book-root",
+      "summary": {
+        "input": "bench\\book-root-corpus-2026-05-06.txt",
+        "routeId": "bookRoot",
+        "lexicalHead": "bookRoot",
+        "selectedHead": "bookRoot",
+        "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 8,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.0484,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "bookRoot",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -2.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -13.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "governance-adversarial": {
+      "caseId": "governance-adversarial",
+      "summary": {
+        "input": "bench\\governance-adversarial-holdout-2026-04-29.txt",
+        "routeId": "governance",
+        "lexicalHead": "governance",
+        "selectedHead": "governance",
+        "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 3.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 2.8333,
+        "experimentalBinaryVsSourceRatio": 0.1644,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "governance",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 3.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 2,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": -1,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 3,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 4,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 5,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -6.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          },
+          {
+            "rank": 6,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -31,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.8333
+          }
+        ]
+      },
+      "pass": true
+    },
+    "archive-pressure": {
+      "caseId": "archive-pressure",
+      "summary": {
+        "input": "bench\\archive-pressure-corpus-2026-04-29.txt",
+        "routeId": "archive",
+        "lexicalHead": "governance",
+        "selectedHead": "governance",
+        "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 8,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.1199,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "governance",
+            "accepted": true,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 8,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "default",
+            "accepted": true,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": 1.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "booklikeRepair",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 1,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -3,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "booklike": {
+      "caseId": "booklike",
+      "summary": {
+        "input": "bench\\booklike-corpus-2026-04-25.txt",
+        "routeId": "default",
+        "lexicalHead": "default",
+        "selectedHead": "booklikeRepair",
+        "selectedModel": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 7.5,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 3,
+        "experimentalBinaryVsSourceRatio": 0.0968,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "booklikeRepair",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 7.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 2,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -11,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 3,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -12.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 4,
+            "headId": "quoteRepairV25",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -16.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 5,
+            "headId": "default",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": -18.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          },
+          {
+            "rank": 6,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": -23.5,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 3
+          }
+        ]
+      },
+      "pass": true
+    },
+    "mega-book-ladder": {
+      "caseId": "mega-book-ladder",
+      "summary": {
+        "input": "bench\\mega-book-ladder-corpus-2026-05-07.txt",
+        "routeId": "bookRoot",
+        "lexicalHead": "bookRoot",
+        "selectedHead": "default",
+        "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+        "resultLabel": "directional",
+        "semanticAllPositive": true,
+        "minSemanticMargin": 31,
+        "signatureCollapse": false,
+        "avgPatchesPerEntry": 2.9167,
+        "experimentalBinaryVsSourceRatio": 0.0337,
+        "fullHeadRanking": [
+          {
+            "rank": 1,
+            "headId": "default",
+            "accepted": true,
+            "routeFitRole": "fallback",
+            "minSemanticMargin": 31,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 2,
+            "headId": "quoteRepairV25",
+            "accepted": true,
+            "routeFitRole": "other",
+            "minSemanticMargin": 27.4167,
+            "signatureCollapse": false,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 3,
+            "headId": "bookRoot",
+            "accepted": false,
+            "routeFitRole": "candidate",
+            "minSemanticMargin": 33.0833,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 4,
+            "headId": "governance",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 31.25,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 5,
+            "headId": "booklikeRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 28.1667,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          },
+          {
+            "rank": 6,
+            "headId": "quoteRepair",
+            "accepted": false,
+            "routeFitRole": "other",
+            "minSemanticMargin": 26.25,
+            "signatureCollapse": true,
+            "avgPatchesPerEntry": 2.9167
+          }
+        ]
+      },
+      "pass": true
+    }
+  },
+  "read": "V25 does not replace v23. Treat it as repair evidence only; mined failure pairs mean the target surfaces are no longer independent blind proof.",
+  "claimsNotAllowed": [
+    "V25 as the locked baseline unless all target gates pass and independent holdout verification is added.",
+    "Production proof from mined failure-pair repair.",
+    "Broad tokenizer superiority, 99.99% raw-source reduction, or 1.25 GB corpus-collapse claims."
+  ]
+}

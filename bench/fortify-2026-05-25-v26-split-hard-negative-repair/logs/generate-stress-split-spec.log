@@ -1,0 +1,16 @@
+{
+  "probeId": "stress-split",
+  "headId": "stressSplitV26",
+  "baseSpec": "data/training/embedding-training-spec-v13-balanced-triad.json",
+  "spec": "data/training/embedding-training-spec-v26-stress-split-repair.json",
+  "minedReports": [
+    {
+      "sourceId": "stress-100",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/stress-100-v24-quote-repair.json",
+      "pairCount": 9
+    }
+  ],
+  "groupCount": 26,
+  "explicitNegativePairCount": 9,
+  "minedGroupCount": 5
+}

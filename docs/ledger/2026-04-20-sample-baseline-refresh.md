@@ -1,0 +1,29 @@
+# EXP-2026-04-20-003 Sample Baseline Guardrail Refresh
+
+- `id`: `EXP-2026-04-20-003`
+- `date`: `2026-04-20`
+- `corpus`: `bench/sample-corpus.txt`
+- `method`: Regenerated the sample baseline with the BSQ-style prototype and embedded evidence guardrails.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `40`
+  - `tiktokenCount`: `85`
+  - `experimentalPatchCount`: `50`
+  - `experimentalPatchesPerToken`: `0.5882`
+  - `evidenceAssessment.resultLabel`: `directional`
+  - `evidenceAssessment.collapseChecks.signatureCollapse`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate uses fewer patches than `tiktoken` tokens on the sample corpus.
+  - The refreshed report includes machine-readable evidence guardrails.
+- `claim_not_supported`:
+  - No semantic fixture was included, so this run does not support semantic behavior claims.
+  - This does not prove target 16xVS BSQ performance.
+- `artifacts`:
+  - [2026-04-20-sample-baseline-report.json](bench\2026-04-20-sample-baseline-report.json)
+  - [latest-report.json](bench\latest-report.json)
+- `notes`:
+  - This refresh keeps the original sample benchmark role but adds the current evidence-assessment schema.
+- `next_action`:
+  - Keep this as a smoke benchmark; use semantic fixtures for semantic claims.

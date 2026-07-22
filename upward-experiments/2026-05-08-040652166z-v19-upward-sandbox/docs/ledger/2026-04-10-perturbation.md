@@ -1,0 +1,28 @@
+# EXP-2026-04-10-005 Perturbation Stability
+
+- `id`: `EXP-2026-04-10-005`
+- `date`: `2026-04-10`
+- `corpus`: `bench/phrase-corpus.txt` with `bench/perturbation-phrases.json`
+- `method`: Compare base phrases against edited variants and track patch distance, token delta, and overlap.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `cases`: `4`
+  - `launch checklist -> release checklist`: `patchDistance=0`
+  - `launch checklist -> product launch checklist`: `patchDistance=1`
+  - older perturbation report lacks signature-distance output
+- `result_label`: `directional`
+- `claim_supported`:
+  - The benchmark harness can capture variant stability for selected phrase edits.
+  - Some close edits remain compact under the experimental core candidate.
+- `claim_not_supported`:
+  - Perturbation coverage is still too thin to support general stability claims.
+  - This does not demonstrate semantic robustness.
+- `artifacts`:
+  - [perturbation-report.json](bench\perturbation-report.json)
+  - [phrase-semantic-report.json](bench\phrase-semantic-report.json)
+- `notes`:
+  - This report is useful, but the richer perturbation interpretation now lives inside the phrase semantic run.
+  - Future perturbation tests should use denser variant sets.
+- `next_action`:
+  - Expand perturbation corpora before using this benchmark as evidence beyond directional stability.

@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "v27-fold-lineage-fixture-v1",
+  "nodes": [
+    {
+      "id": "lineage-cluster-orbit",
+      "level": "mega",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": null,
+      "childIds": [
+        "orbit-cost-book",
+        "orbit-routing-book"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-mega lineage-cluster-orbit Orbit visual-token economics folds book roots into a higher root handle while books and chapters remain navigable lineage-level-book lineage-cluster-orbit orbit-cost-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-book lineage-cluster-orbit orbit-routing-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book",
+      "level": "book",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "lineage-cluster-orbit",
+      "childIds": [
+        "orbit-cost-book-chapter-1",
+        "orbit-cost-book-chapter-2"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-book lineage-cluster-orbit orbit-cost-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book",
+      "level": "book",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "lineage-cluster-orbit",
+      "childIds": [
+        "orbit-routing-book-chapter-1",
+        "orbit-routing-book-chapter-2"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-book lineage-cluster-orbit orbit-routing-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-1",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book",
+      "childIds": [
+        "orbit-cost-book-chapter-1-patch-1",
+        "orbit-cost-book-chapter-1-patch-2",
+        "orbit-cost-book-chapter-1-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-2",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book",
+      "childIds": [
+        "orbit-cost-book-chapter-2-patch-1",
+        "orbit-cost-book-chapter-2-patch-2",
+        "orbit-cost-book-chapter-2-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-1",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book",
+      "childIds": [
+        "orbit-routing-book-chapter-1-patch-1",
+        "orbit-routing-book-chapter-1-patch-2",
+        "orbit-routing-book-chapter-1-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-2",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book",
+      "childIds": [
+        "orbit-routing-book-chapter-2-patch-1",
+        "orbit-routing-book-chapter-2-patch-2",
+        "orbit-routing-book-chapter-2-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-1-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-1-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-1-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-2-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-2-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-cost-book-chapter-2-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-cost-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-cost-book orbit-cost-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-1-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-1-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-1-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-2-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-2-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "orbit-routing-book-chapter-2-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-orbit",
+      "parentId": "orbit-routing-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-orbit orbit-routing-book orbit-routing-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "lineage-cluster-harbor",
+      "level": "mega",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": null,
+      "childIds": [
+        "harbor-audit-book",
+        "harbor-retention-book"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-mega lineage-cluster-harbor Harbor governance archive folds book roots into a higher root handle while books and chapters remain navigable lineage-level-book lineage-cluster-harbor harbor-audit-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-book lineage-cluster-harbor harbor-retention-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book",
+      "level": "book",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "lineage-cluster-harbor",
+      "childIds": [
+        "harbor-audit-book-chapter-1",
+        "harbor-audit-book-chapter-2"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-book lineage-cluster-harbor harbor-audit-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book",
+      "level": "book",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "lineage-cluster-harbor",
+      "childIds": [
+        "harbor-retention-book-chapter-1",
+        "harbor-retention-book-chapter-2"
+      ],
+      "residualCount": 2,
+      "text": "lineage-level-book lineage-cluster-harbor harbor-retention-book folds chapter roots into a book routing handle with child traversal still available lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-1",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book",
+      "childIds": [
+        "harbor-audit-book-chapter-1-patch-1",
+        "harbor-audit-book-chapter-1-patch-2",
+        "harbor-audit-book-chapter-1-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-2",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book",
+      "childIds": [
+        "harbor-audit-book-chapter-2-patch-1",
+        "harbor-audit-book-chapter-2-patch-2",
+        "harbor-audit-book-chapter-2-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-1",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book",
+      "childIds": [
+        "harbor-retention-book-chapter-1-patch-1",
+        "harbor-retention-book-chapter-1-patch-2",
+        "harbor-retention-book-chapter-1-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-2",
+      "level": "chapter",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book",
+      "childIds": [
+        "harbor-retention-book-chapter-2-patch-1",
+        "harbor-retention-book-chapter-2-patch-2",
+        "harbor-retention-book-chapter-2-patch-3"
+      ],
+      "residualCount": 1,
+      "text": "lineage-level-chapter lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 folds patch children into a chapter root while residual detail protects local distinctions lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-1-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-1-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-1-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-2-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-2-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-audit-book-chapter-2-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-audit-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-audit-book harbor-audit-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-1-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-1-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-1-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-1",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-1 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-2-patch-1",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-1 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-2-patch-2",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-2 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    },
+    {
+      "id": "harbor-retention-book-chapter-2-patch-3",
+      "level": "patch",
+      "lineageId": "lineage-cluster-harbor",
+      "parentId": "harbor-retention-book-chapter-2",
+      "childIds": [],
+      "residualCount": 0,
+      "text": "lineage-level-patch lineage-cluster-harbor harbor-retention-book harbor-retention-book-chapter-2 patch-3 keeps local wording below a folded parent token instead of pretending the parent is lossless"
+    }
+  ]
+}

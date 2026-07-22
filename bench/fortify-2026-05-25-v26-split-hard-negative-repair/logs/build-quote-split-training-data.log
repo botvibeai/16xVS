@@ -1,0 +1,19 @@
+label=build-quote-split-training-data
+startedAt=2026-05-25T18:47:37.426Z
+endedAt=2026-05-25T18:47:37.649Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-spec-v26-quote-split-repair.json",
+  "output": "data/training/embedding-training-pairs-v26-quote-split-repair.json",
+  "summary": {
+    "groupCount": 36,
+    "itemCount": 270,
+    "positivePairCount": 1031,
+    "negativePairCount": 1481,
+    "explicitNegativePairCount": 17,
+    "totalPairCount": 2512,
+    "negativeMode": "explicit"
+  }
+}

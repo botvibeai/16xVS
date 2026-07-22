@@ -1,0 +1,60 @@
+# EXP-2026-04-25-005 Macro Trained V1 Suite
+
+- `id`: `EXP-2026-04-25-005`
+- `date`: `2026-04-25`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json` plus quote and quote-paragraph corpora
+- `method`: Trained a macro-packer-specific model directly on `data/training/embedding-training-pairs-v2.json` using entry-level patch config during training and evaluation, then ran the frozen suite, quote benchmarks, and storage projection against the trained model.
+- `implementation_path`: `learned hybrid prototype v3 macro trained v1`
+- `baseline`: `macro-packer-v1 derived variant`
+- `patch_config`:
+  - `packingMode`: `entry`
+  - `maxEntryWordsForSinglePatch`: `96`
+  - `maxEntryCharsForSinglePatch`: `512`
+  - `maxWordsPerPatch`: `96`
+  - `maxCharsPerPatch`: `512`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.827372`
+  - `training.averageNegativeSimilarity`: `0.187048`
+  - `quote.singlePatchRate`: `1.0`
+  - `quote.semantic.minMargin`: `-19.6`
+  - `quoteParagraph.singlePatchRate`: `1.0`
+  - `quoteParagraph.semantic.minMargin`: `-23.75`
+  - `storage.rawBinaryVsSourceRatio`: `0.576461`
+  - `storage.rawReductionPercent`: `42.3539`
+  - `controlled_phrase.minMargin`: `11`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_multilingual.minMargin`: `-3.0952`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-17.8333`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.minMargin`: `8`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `stress_100.minMargin`: `-27.4667`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `all collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can train a macro-packer-specific model directly rather than only deriving a patch-config variant after training.
+  - The trained macro model preserves the one-patch result on the tested quote and tested quote-paragraph corpora.
+  - The trained macro model preserves the same storage ratio as the derived macro variant on those tested corpora.
+  - The trained macro model improves controlled multilingual and paraphrase margins relative to the derived macro variant.
+- `claim_not_supported`:
+  - The trained macro model still does not pass the blind unseen-domain holdout.
+  - The trained macro model does not outperform the derived macro variant on the blind holdout.
+  - The trained macro model still does not pass the mixed-format stress suite.
+  - The trained macro model still does not support the `99.99%` raw-storage reduction claim.
+  - The trained macro model still does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [macro trained model](models\learned-hybrid-prototype-v3-macro-trained-v1.json)
+  - [macro trained frozen suite summary](bench\eval-suite-learned-hybrid-v3-macro-trained-v1\suite-summary.json)
+  - [macro trained quote report](bench\2026-04-25-quote-benchmark-v3-macro-trained-v1.json)
+  - [macro trained quote paragraph report](bench\2026-04-25-quote-paragraph-benchmark-v3-macro-trained-v1.json)
+  - [macro trained storage projection](bench\2026-04-25-storage-projection-v3-macro-trained-v1.json)
+  - [derived macro baseline](docs\ledger\2026-04-25-macro-packer-v1-suite.md)
+- `notes`:
+  - Training in macro mode did not buy the key thing we needed: a better blind unseen-domain result.
+  - It made the storage-focused line slightly more coherent on paraphrase and multilingual fixtures, but the real gate remains closed.
+  - For now, the macro line should be treated as a storage experiment, not as the new semantic baseline.
+- `next_action`:
+  - Keep the base semantic `v3` model as the main semantic baseline.
+  - Keep the macro variants as storage-focused experiments until an unseen-domain gain appears.

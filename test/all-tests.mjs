@@ -1,0 +1,26 @@
+import "./auto-route.test.mjs";
+import "./benchmark-evidence.test.mjs";
+import "./cloudflare-topology.test.mjs";
+import "./head-validator.test.mjs";
+import "./learned-encoder.test.mjs";
+import "./mega-book-ladder.test.mjs";
+import "./multi-head-routing.test.mjs";
+import "./package-hygiene.test.mjs";
+import "./proof-gates.test.mjs";
+import "./public-site-lab.test.mjs";
+import "./training-pipeline.test.mjs";
+import "./v23-proof-package.test.mjs";
+import "./v25-hard-negative-repair.test.mjs";
+import "./v26-split-repair.test.mjs";
+import "./v27-fold-lineage.test.mjs";
+import "./v27-route-gate.test.mjs";
+import "./v28-runtime-governance.test.mjs";
+import "./v29-report-gap-audit.test.mjs";
+import "./v30-commercial-baseline.test.mjs";
+import "./v30-pressure-cooker.test.mjs";
+import "./v31-book-fold-attack.test.mjs";
+import "./v32-707-stabilization.test.mjs";
+import "./v33-707-hammer.test.mjs";
+import "./v33-testing-worker-1000.test.mjs";
+import "./vault-snapshot.test.mjs";
+

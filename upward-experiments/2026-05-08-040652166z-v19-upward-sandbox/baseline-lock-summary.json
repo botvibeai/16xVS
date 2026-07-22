@@ -1,0 +1,637 @@
+{
+  "label": "v19-lock",
+  "generatedAt": "2026-05-08T04:06:02.355Z",
+  "lockDir": "bench/proof-locks/2026-05-08-040602355z-v19-lock",
+  "claimLevel": "directional-proof-lock",
+  "gates": {
+    "unitTests": {
+      "passed": true,
+      "skipped": false,
+      "label": "unit-tests",
+      "args": [
+        "./test/all-tests.mjs"
+      ],
+      "log": "bench/proof-locks/2026-05-08-040602355z-v19-lock/logs/unit-tests.log",
+      "exitCode": 0,
+      "startedAt": "2026-05-08T04:06:02.378Z",
+      "endedAt": "2026-05-08T04:06:03.582Z"
+    },
+    "primary": {
+      "book-root": {
+        "caseId": "book-root",
+        "gate": "primary-directional-lock",
+        "passed": true,
+        "summary": {
+          "input": "bench\\book-root-corpus-2026-05-06.txt",
+          "routeId": "bookRoot",
+          "lexicalHead": "bookRoot",
+          "selectedHead": "bookRoot",
+          "selectedModel": "models/learned-hybrid-prototype-v8-control-bridge-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 8,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0484,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "bookRoot",
+              "accepted": true,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": 8,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 2,
+              "headId": "default",
+              "accepted": false,
+              "routeFitRole": "fallback",
+              "minSemanticMargin": -2.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 3,
+              "headId": "governance",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -3.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "route id",
+            "passed": true,
+            "actual": "bookRoot",
+            "expected": "bookRoot"
+          },
+          {
+            "name": "lexical head",
+            "passed": true,
+            "actual": "bookRoot",
+            "expected": "bookRoot"
+          },
+          {
+            "name": "selected head",
+            "passed": true,
+            "actual": "bookRoot",
+            "expected": "bookRoot"
+          },
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "fold shape",
+            "passed": true,
+            "actual": 3,
+            "expected": "<= 3"
+          },
+          {
+            "name": "full head ranking present",
+            "passed": true,
+            "actual": 3,
+            "expected": ">= 3"
+          },
+          {
+            "name": "semantic direction",
+            "passed": true,
+            "actual": {
+              "semanticAllPositive": true,
+              "minSemanticMargin": 8
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      },
+      "governance-adversarial": {
+        "caseId": "governance-adversarial",
+        "gate": "primary-directional-lock",
+        "passed": true,
+        "summary": {
+          "input": "bench\\governance-adversarial-holdout-2026-04-29.txt",
+          "routeId": "governance",
+          "lexicalHead": "governance",
+          "selectedHead": "governance",
+          "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 3.5,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 2.8333,
+          "experimentalBinaryVsSourceRatio": 0.1644,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "governance",
+              "accepted": true,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": 3.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 2.8333
+            },
+            {
+              "rank": 2,
+              "headId": "default",
+              "accepted": false,
+              "routeFitRole": "fallback",
+              "minSemanticMargin": -1,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 2.8333
+            },
+            {
+              "rank": 3,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -31,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 2.8333
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "route id",
+            "passed": true,
+            "actual": "governance",
+            "expected": "governance"
+          },
+          {
+            "name": "lexical head",
+            "passed": true,
+            "actual": "governance",
+            "expected": "governance"
+          },
+          {
+            "name": "selected head",
+            "passed": true,
+            "actual": "governance",
+            "expected": "governance"
+          },
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "fold shape",
+            "passed": true,
+            "actual": 2.8333,
+            "expected": "<= 3"
+          },
+          {
+            "name": "full head ranking present",
+            "passed": true,
+            "actual": 3,
+            "expected": ">= 3"
+          },
+          {
+            "name": "semantic direction",
+            "passed": true,
+            "actual": {
+              "semanticAllPositive": true,
+              "minSemanticMargin": 3.5
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      },
+      "archive-pressure": {
+        "caseId": "archive-pressure",
+        "gate": "primary-directional-lock",
+        "passed": true,
+        "summary": {
+          "input": "bench\\archive-pressure-corpus-2026-04-29.txt",
+          "routeId": "archive",
+          "lexicalHead": "governance",
+          "selectedHead": "governance",
+          "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 8,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.1199,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "governance",
+              "accepted": true,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": 8,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 2,
+              "headId": "default",
+              "accepted": true,
+              "routeFitRole": "fallback",
+              "minSemanticMargin": 1.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 3,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -11,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "route id",
+            "passed": true,
+            "actual": "archive",
+            "expected": "archive"
+          },
+          {
+            "name": "lexical head",
+            "passed": true,
+            "actual": "governance",
+            "expected": "governance"
+          },
+          {
+            "name": "selected head",
+            "passed": true,
+            "actual": "governance",
+            "expected": "governance"
+          },
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "fold shape",
+            "passed": true,
+            "actual": 3,
+            "expected": "<= 3"
+          },
+          {
+            "name": "full head ranking present",
+            "passed": true,
+            "actual": 3,
+            "expected": ">= 3"
+          },
+          {
+            "name": "semantic direction",
+            "passed": true,
+            "actual": {
+              "semanticAllPositive": true,
+              "minSemanticMargin": 8
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      },
+      "booklike": {
+        "caseId": "booklike",
+        "gate": "primary-directional-lock",
+        "passed": true,
+        "summary": {
+          "input": "bench\\booklike-corpus-2026-04-25.txt",
+          "routeId": "default",
+          "lexicalHead": "default",
+          "selectedHead": "default",
+          "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -18.5,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 3,
+          "experimentalBinaryVsSourceRatio": 0.0968,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "governance",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -12.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 2,
+              "headId": "default",
+              "accepted": false,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": -18.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            },
+            {
+              "rank": 3,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -23.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 3
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "route id",
+            "passed": true,
+            "actual": "default",
+            "expected": "default"
+          },
+          {
+            "name": "lexical head",
+            "passed": true,
+            "actual": "default",
+            "expected": "default"
+          },
+          {
+            "name": "selected head",
+            "passed": true,
+            "actual": "default",
+            "expected": "default"
+          },
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "fold shape",
+            "passed": true,
+            "actual": 3,
+            "expected": "<= 3"
+          },
+          {
+            "name": "full head ranking present",
+            "passed": true,
+            "actual": 3,
+            "expected": ">= 3"
+          },
+          {
+            "name": "known semantic failure preserved",
+            "passed": true,
+            "actual": {
+              "semanticAllPositive": false,
+              "minSemanticMargin": -18.5
+            },
+            "expected": "negative semantic margin remains visible"
+          }
+        ]
+      },
+      "mega-book-ladder": {
+        "caseId": "mega-book-ladder",
+        "gate": "primary-directional-lock",
+        "passed": true,
+        "summary": {
+          "input": "bench\\mega-book-ladder-corpus-2026-05-07.txt",
+          "routeId": "bookRoot",
+          "lexicalHead": "bookRoot",
+          "selectedHead": "default",
+          "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": true,
+          "minSemanticMargin": 31,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 2.9167,
+          "experimentalBinaryVsSourceRatio": 0.0337,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "default",
+              "accepted": true,
+              "routeFitRole": "fallback",
+              "minSemanticMargin": 31,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 2.9167
+            },
+            {
+              "rank": 2,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": 33.0833,
+              "signatureCollapse": true,
+              "avgPatchesPerEntry": 2.9167
+            },
+            {
+              "rank": 3,
+              "headId": "governance",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": 31.25,
+              "signatureCollapse": true,
+              "avgPatchesPerEntry": 2.9167
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "route id",
+            "passed": true,
+            "actual": "bookRoot",
+            "expected": "bookRoot"
+          },
+          {
+            "name": "lexical head",
+            "passed": true,
+            "actual": "bookRoot",
+            "expected": "bookRoot"
+          },
+          {
+            "name": "selected head",
+            "passed": true,
+            "actual": "default",
+            "expected": "default"
+          },
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "fold shape",
+            "passed": true,
+            "actual": 2.9167,
+            "expected": "<= 3"
+          },
+          {
+            "name": "full head ranking present",
+            "passed": true,
+            "actual": 3,
+            "expected": ">= 3"
+          },
+          {
+            "name": "semantic direction",
+            "passed": true,
+            "actual": {
+              "semanticAllPositive": true,
+              "minSemanticMargin": 31
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      }
+    },
+    "generalization": {
+      "blind-holdout": {
+        "caseId": "blind-holdout",
+        "gate": "production-generalization",
+        "requiredForDirectionalLock": false,
+        "requiredForProductionLock": true,
+        "passed": false,
+        "summary": {
+          "input": "bench\\blind-holdout-2026-04-20.txt",
+          "routeId": "default",
+          "lexicalHead": "default",
+          "selectedHead": "default",
+          "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -15.5,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.5142,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -15.3333,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            },
+            {
+              "rank": 2,
+              "headId": "default",
+              "accepted": false,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": -15.5,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            },
+            {
+              "rank": 3,
+              "headId": "governance",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -17.25,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "semantic generalization",
+            "passed": false,
+            "actual": {
+              "semanticAllPositive": false,
+              "minSemanticMargin": -15.5
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      },
+      "stress-100": {
+        "caseId": "stress-100",
+        "gate": "production-generalization",
+        "requiredForDirectionalLock": false,
+        "requiredForProductionLock": true,
+        "passed": false,
+        "summary": {
+          "input": "bench\\stress-100-phrases-2026-04-23.txt",
+          "routeId": "default",
+          "lexicalHead": "default",
+          "selectedHead": "default",
+          "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+          "resultLabel": "directional",
+          "semanticAllPositive": false,
+          "minSemanticMargin": -28.6444,
+          "signatureCollapse": false,
+          "avgPatchesPerEntry": 1,
+          "experimentalBinaryVsSourceRatio": 1.1869,
+          "fullHeadRanking": [
+            {
+              "rank": 1,
+              "headId": "default",
+              "accepted": false,
+              "routeFitRole": "candidate",
+              "minSemanticMargin": -28.6444,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            },
+            {
+              "rank": 2,
+              "headId": "bookRoot",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -28.8667,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            },
+            {
+              "rank": 3,
+              "headId": "governance",
+              "accepted": false,
+              "routeFitRole": "other",
+              "minSemanticMargin": -29.5222,
+              "signatureCollapse": false,
+              "avgPatchesPerEntry": 1
+            }
+          ]
+        },
+        "checks": [
+          {
+            "name": "no signature collapse",
+            "passed": true,
+            "actual": false,
+            "expected": false
+          },
+          {
+            "name": "semantic generalization",
+            "passed": false,
+            "actual": {
+              "semanticAllPositive": false,
+              "minSemanticMargin": -28.6444
+            },
+            "expected": "all margins positive"
+          }
+        ]
+      }
+    }
+  },
+  "claimsAllowed": [
+    "v19 is locked as a reproducible directional proof baseline.",
+    "Known book-root, governance, archive, and mega-book ladder routes preserve fold shape without signature collapse.",
+    "Full-head ranking is recorded for the configured v19 heads."
+  ],
+  "claimsNotAllowed": [
+    "Production router proof.",
+    "Broad tokenizer superiority over current tokenizers.",
+    "Blind/stress semantic generalization unless the generalization gates pass.",
+    "99.99% raw-source reduction or Library of Congress to 1.25 GB claims."
+  ]
+}

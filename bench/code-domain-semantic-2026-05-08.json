@@ -1,0 +1,30 @@
+[
+  {
+    "group": "worker_routing_code",
+    "items": [
+      "TypeScript Worker routing code: export default { async fetch(request, env) { const url = new URL(request.url); if (url.pathname === \"/api/health\") return Response.json({ ok: true, records: await env.CATALOG.count() }); if (url.pathname === \"/api/search\") return env.SEARCH.fetch(request); return new Response(\"not found\", { status: 404 }); } }; This snippet tests request routing, JSON health output, service binding handoff, and explicit fallback behavior.",
+      "Cloudflare Worker dispatch code: async function handleRequest(request, env) { const path = new URL(request.url).pathname; switch (path) { case \"/api/health\": return Response.json({ ok: true, records: await env.CATALOG.count() }); case \"/api/search\": return env.SEARCH.fetch(request); default: return new Response(\"not found\", { status: 404 }); } } This snippet describes the same routing intent with switch dispatch, service binding handoff, and 404 fallback behavior."
+    ]
+  },
+  {
+    "group": "proof_gate_code",
+    "items": [
+      "Proof gate validation code: function evaluateGate(report) { const semanticOk = report.evidenceAssessment.semanticSignal.allMarginsPositive === true; const collapseOk = report.evidenceAssessment.collapseChecks.signatureCollapse === false; const foldOk = report.summary.avgExperimentalPatchesPerEntry <= 3; return { passed: semanticOk && collapseOk && foldOk, semanticOk, collapseOk, foldOk }; } This code checks semantic margin, collapse safety, and fold shape before allowing a lock.",
+      "Acceptance gate test code: test(\"proof gate rejects collapsed reports\", () => { const report = makeReport({ allMarginsPositive: true, signatureCollapse: true, avgPatchesPerEntry: 3 }); const gate = evaluateGate(report); assert.equal(gate.passed, false); assert.equal(gate.collapseOk, false); }); This code tests that semantic success alone is not enough when the collapse guard fails."
+    ]
+  },
+  {
+    "group": "database_persistence_code",
+    "items": [
+      "SQL migration code: CREATE TABLE proof_runs (id TEXT PRIMARY KEY, generated_at TEXT NOT NULL, claim_level TEXT NOT NULL, summary_json TEXT NOT NULL); CREATE INDEX proof_runs_claim_level_idx ON proof_runs (claim_level); This migration stores proof package runs, generated timestamps, claim levels, and serialized summaries for audit lookup.",
+      "Database persistence code: async function saveProofRun(db, run) { await db.prepare(\"INSERT INTO proof_runs (id, generated_at, claim_level, summary_json) VALUES (?, ?, ?, ?)\").bind(run.id, run.generatedAt, run.claimLevel, JSON.stringify(run.summary)).run(); } This function writes proof package metadata into the same audit table created by the migration."
+    ]
+  },
+  {
+    "group": "selector_test_code",
+    "items": [
+      "Unit test code: test(\"ranked selector chooses strongest passing head\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"governance\", fallbackHeadId: \"default\", reportsByHead }); assert.equal(selected.selectedHeadId, \"bookRoot\"); assert.match(selected.reason, /best ranked accepted head/); }); This test verifies head selection, accepted ranking, and route override behavior.",
+      "Regression test code: test(\"ranked selector preserves inspection when all heads fail\", () => { const selected = selectRankedValidatedHead({ candidateHeadId: \"default\", fallbackHeadId: \"default\", reportsByHead: failingReports }); assert.equal(selected.selectedHeadId, \"default\"); assert.match(selected.reason, /no ranked head passed/); }); This test preserves failure visibility instead of hiding bad semantic margins."
+    ]
+  }
+]

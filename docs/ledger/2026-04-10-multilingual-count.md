@@ -1,0 +1,38 @@
+# EXP-2026-04-10-003 Multilingual Count Signal
+
+- `id`: `EXP-2026-04-10-003`
+- `date`: `2026-04-10`
+- `corpus`: `bench/multilingual-phrases.txt`
+- `method`: Compare `tiktoken`, current fixture path, and experimental core candidate on multilingual phrase variants.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken` using `cl100k_base`
+- `metrics`:
+  - `entries`: `21`
+  - `tiktokenCount`: `146`
+  - `experimentalPatchCount`: `28`
+  - `experimentalPatchesPerToken`: `0.1918`
+  - `retrieval.avgNearestSignatureDistance`: `88.9524`
+  - `retrieval.avgNearestTokenOverlap`: `0.3841`
+  - `launch_multilingual.separationMargin`: `-3.381`
+  - `storage_multilingual.separationMargin`: `-3.0476`
+  - `search_multilingual.separationMargin`: `4.8096`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The experimental core candidate shows strong count compression relative to `tiktoken` on this multilingual phrase set.
+  - The benchmark surface can expose multilingual token count disparities directly.
+  - The current BSQ-style prototype now produces a positive multilingual separation margin for the `search` group.
+- `claim_not_supported`:
+  - The result does not prove multilingual semantic equivalence.
+  - The result does not prove the full multilingual equity claim.
+  - The result does not prove the final visual tokenizer architecture.
+  - Cross-language grouping is improving, but it is still not strong enough overall to support semantic multilingual claims.
+- `artifacts`:
+  - [multilingual-report.json](bench\multilingual-report.json)
+- `notes`:
+  - The multilingual fixture source was corrected to clean UTF-8 and the report was regenerated on `2026-04-10T18:53:04.503Z`.
+  - The top-line count metrics remained unchanged after the fixture cleanup, which increases confidence that the count signal is real for this corpus.
+  - Some terminals may still render non-Latin output poorly, but the source fixture file is now correct.
+  - A follow-up semantic-group run was added against `bench/multilingual-semantic-phrases.json`, and the multilingual `search` group is now positive while `launch` and `storage` remain slightly negative.
+  - Retrieval codes now come from a BSQ-style prototype path with semantic anchors and bundle features, which materially improved multilingual grouping without producing an overall win.
+- `next_action`:
+  - Keep multilingual count claims as directional only until all major multilingual semantic groups are consistently positive.

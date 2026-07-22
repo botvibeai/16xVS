@@ -1,0 +1,24 @@
+label=single-quote-paragraph-quoteSplitV26
+startedAt=2026-05-25T19:01:05.554Z
+endedAt=2026-05-25T19:01:06.560Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "bench/quote-paragraph-corpus-2026-04-25.txt",
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/single-head/quote-paragraph-v26-quoteSplitV26-single-head.json",
+  "encoderModel": "models/learned-hybrid-prototype-v26-quote-split-repair-hierarchical-packer-v2.json",
+  "entries": 20,
+  "patchesPerToken": 0.059,
+  "avgPatchesPerEntry": 1,
+  "singlePatchCount": 20,
+  "singlePatchRate": 1,
+  "patchHistogram": [
+    {
+      "patchCount": 1,
+      "entries": 20
+    }
+  ],
+  "semanticAllPositive": false,
+  "minSemanticMargin": -15
+}

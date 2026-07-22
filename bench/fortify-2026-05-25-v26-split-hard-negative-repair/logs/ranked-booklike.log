@@ -1,0 +1,95 @@
+label=ranked-booklike
+startedAt=2026-05-25T19:01:34.141Z
+endedAt=2026-05-25T19:01:41.618Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-25-v26-split-hard-negative-repair/eight-head-ranked/booklike-v26-split-ranked.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "booklikeRepair",
+  "reason": "best ranked accepted head selected over v19 route selection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "booklikeRepair",
+      "accepted": true,
+      "routeFitRole": "other",
+      "minSemanticMargin": 7.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 2,
+      "headId": "quoteSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 3,
+      "headId": "stressSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -7.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 4,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -11,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 5,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -12.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 6,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -18.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 7,
+      "headId": "blindSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -19.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    },
+    {
+      "rank": 8,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -23.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 3
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v22-governance-evidence-booklike-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": 7.5,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 52.6667,
+  "avgPatchesPerEntry": 3,
+  "allHeadsBinaryVsSourceRatio": 0.7743
+}

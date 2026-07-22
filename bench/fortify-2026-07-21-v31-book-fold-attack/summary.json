@@ -1,0 +1,797 @@
+{
+  "schemaVersion": "v31-book-fold-attack-summary-v1",
+  "generatedAt": "2026-07-21T05:38:08.998Z",
+  "claimLevel": "v31-testing-only-synthetic-book-fold-proof",
+  "noDeploy": true,
+  "noExternalCalls": true,
+  "testingWorkerOnly": true,
+  "v30Regression": {
+    "averageSourceBpe": 220.49,
+    "averageEquivalentOutputTokens": 1,
+    "correctness": {
+      "correct": 100,
+      "total": 100,
+      "rate": 1,
+      "tiedOrWrong": []
+    },
+    "pass": true
+  },
+  "noMarkerSuites": {
+    "249": {
+      "schemaVersion": "v31-no-marker-suite-v1",
+      "targetBpe": 249,
+      "entryCount": 100,
+      "claimLevel": "v31-testing-local-root-handle-proof",
+      "summary": {
+        "averageSourceBpe": 250.4,
+        "averageEquivalentOutputTokens": 1,
+        "averageCompressionRatio": 250.4,
+        "averageReductionPercent": 99.6006,
+        "correct": 100,
+        "total": 100,
+        "tiedOrWrongCount": 0,
+        "allMagicMarkerFree": true,
+        "allRootHandleOnly": true,
+        "passed": true,
+        "ultraReductionPassed": false
+      }
+    },
+    "500": {
+      "schemaVersion": "v31-no-marker-suite-v1",
+      "targetBpe": 500,
+      "entryCount": 100,
+      "claimLevel": "v31-testing-local-root-handle-proof",
+      "summary": {
+        "averageSourceBpe": 501.2,
+        "averageEquivalentOutputTokens": 1,
+        "averageCompressionRatio": 501.2,
+        "averageReductionPercent": 99.8005,
+        "correct": 100,
+        "total": 100,
+        "tiedOrWrongCount": 0,
+        "allMagicMarkerFree": true,
+        "allRootHandleOnly": true,
+        "passed": true,
+        "ultraReductionPassed": false
+      }
+    },
+    "707": {
+      "schemaVersion": "v31-no-marker-suite-v1",
+      "targetBpe": 707,
+      "entryCount": 100,
+      "claimLevel": "v31-testing-local-root-handle-proof",
+      "summary": {
+        "averageSourceBpe": 707.5,
+        "averageEquivalentOutputTokens": 1,
+        "averageCompressionRatio": 707.5,
+        "averageReductionPercent": 99.8587,
+        "correct": 100,
+        "total": 100,
+        "tiedOrWrongCount": 0,
+        "allMagicMarkerFree": true,
+        "allRootHandleOnly": true,
+        "passed": true,
+        "ultraReductionPassed": false
+      }
+    }
+  },
+  "bookFold": {
+    "schemaVersion": "v31-book-fold-report-v1",
+    "generatedAt": "2026-07-21T05:38:08.995Z",
+    "summary": {
+      "nodeCount": 60,
+      "parentCount": 28,
+      "allMarginsPositive": true,
+      "minMargin": 12,
+      "bookRootCount": 4,
+      "minBookSourceBpe": 10000,
+      "ultraReductionPassed": true
+    },
+    "checks": [
+      {
+        "level": "paragraph",
+        "parentId": "mountain-evacuation-book-chapter-1-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "mountain-evacuation-book-chapter-1-paragraph-1-sentence-1",
+          "mountain-evacuation-book-chapter-1-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 33,
+        "farthestOwnDistance": 34,
+        "nearestOutsideDistance": 60,
+        "margin": 26,
+        "sourceBpe": 90,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8889,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "mountain-evacuation-book-chapter-1-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "mountain-evacuation-book-chapter-1-paragraph-2-sentence-1",
+          "mountain-evacuation-book-chapter-1-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 28,
+        "farthestOwnDistance": 29,
+        "nearestOutsideDistance": 48,
+        "margin": 19,
+        "sourceBpe": 90,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8889,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "mountain-evacuation-book-chapter-2-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "mountain-evacuation-book-chapter-2-paragraph-1-sentence-1",
+          "mountain-evacuation-book-chapter-2-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 31,
+        "farthestOwnDistance": 36,
+        "nearestOutsideDistance": 48,
+        "margin": 12,
+        "sourceBpe": 90,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8889,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "mountain-evacuation-book-chapter-2-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "mountain-evacuation-book-chapter-2-paragraph-2-sentence-1",
+          "mountain-evacuation-book-chapter-2-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 24,
+        "farthestOwnDistance": 29,
+        "nearestOutsideDistance": 52,
+        "margin": 23,
+        "sourceBpe": 90,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8889,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "mountain-evacuation-book-chapter-1",
+        "childLevel": "paragraph",
+        "childIds": [
+          "mountain-evacuation-book-chapter-1-paragraph-1",
+          "mountain-evacuation-book-chapter-1-paragraph-2"
+        ],
+        "nearestOwnDistance": 20,
+        "farthestOwnDistance": 24,
+        "nearestOutsideDistance": 51,
+        "margin": 27,
+        "sourceBpe": 193,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4819,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "mountain-evacuation-book-chapter-2",
+        "childLevel": "paragraph",
+        "childIds": [
+          "mountain-evacuation-book-chapter-2-paragraph-1",
+          "mountain-evacuation-book-chapter-2-paragraph-2"
+        ],
+        "nearestOwnDistance": 20,
+        "farthestOwnDistance": 24,
+        "nearestOutsideDistance": 51,
+        "margin": 27,
+        "sourceBpe": 193,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4819,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "book",
+        "parentId": "mountain-evacuation-book",
+        "childLevel": "chapter",
+        "childIds": [
+          "mountain-evacuation-book-chapter-1",
+          "mountain-evacuation-book-chapter-2"
+        ],
+        "nearestOwnDistance": 12,
+        "farthestOwnDistance": 14,
+        "nearestOutsideDistance": 51,
+        "margin": 37,
+        "sourceBpe": 10000,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.99,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "rural-telehealth-book-chapter-1-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "rural-telehealth-book-chapter-1-paragraph-1-sentence-1",
+          "rural-telehealth-book-chapter-1-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 19,
+        "farthestOwnDistance": 28,
+        "nearestOutsideDistance": 52,
+        "margin": 24,
+        "sourceBpe": 98,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9796,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "rural-telehealth-book-chapter-1-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "rural-telehealth-book-chapter-1-paragraph-2-sentence-1",
+          "rural-telehealth-book-chapter-1-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 27,
+        "farthestOwnDistance": 28,
+        "nearestOutsideDistance": 51,
+        "margin": 23,
+        "sourceBpe": 97,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9691,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "rural-telehealth-book-chapter-2-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "rural-telehealth-book-chapter-2-paragraph-1-sentence-1",
+          "rural-telehealth-book-chapter-2-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 18,
+        "farthestOwnDistance": 23,
+        "nearestOutsideDistance": 48,
+        "margin": 25,
+        "sourceBpe": 97,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9691,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "rural-telehealth-book-chapter-2-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "rural-telehealth-book-chapter-2-paragraph-2-sentence-1",
+          "rural-telehealth-book-chapter-2-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 23,
+        "farthestOwnDistance": 23,
+        "nearestOutsideDistance": 47,
+        "margin": 24,
+        "sourceBpe": 96,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9583,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "rural-telehealth-book-chapter-1",
+        "childLevel": "paragraph",
+        "childIds": [
+          "rural-telehealth-book-chapter-1-paragraph-1",
+          "rural-telehealth-book-chapter-1-paragraph-2"
+        ],
+        "nearestOwnDistance": 16,
+        "farthestOwnDistance": 19,
+        "nearestOutsideDistance": 52,
+        "margin": 33,
+        "sourceBpe": 210,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.5238,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "rural-telehealth-book-chapter-2",
+        "childLevel": "paragraph",
+        "childIds": [
+          "rural-telehealth-book-chapter-2-paragraph-1",
+          "rural-telehealth-book-chapter-2-paragraph-2"
+        ],
+        "nearestOwnDistance": 15,
+        "farthestOwnDistance": 16,
+        "nearestOutsideDistance": 51,
+        "margin": 35,
+        "sourceBpe": 208,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.5192,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "book",
+        "parentId": "rural-telehealth-book",
+        "childLevel": "chapter",
+        "childIds": [
+          "rural-telehealth-book-chapter-1",
+          "rural-telehealth-book-chapter-2"
+        ],
+        "nearestOwnDistance": 16,
+        "farthestOwnDistance": 17,
+        "nearestOutsideDistance": 54,
+        "margin": 37,
+        "sourceBpe": 10000,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.99,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "audit-retention-book-chapter-1-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "audit-retention-book-chapter-1-paragraph-1-sentence-1",
+          "audit-retention-book-chapter-1-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 22,
+        "farthestOwnDistance": 25,
+        "nearestOutsideDistance": 46,
+        "margin": 21,
+        "sourceBpe": 89,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8764,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "audit-retention-book-chapter-1-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "audit-retention-book-chapter-1-paragraph-2-sentence-1",
+          "audit-retention-book-chapter-1-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 27,
+        "farthestOwnDistance": 32,
+        "nearestOutsideDistance": 48,
+        "margin": 16,
+        "sourceBpe": 89,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8764,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "audit-retention-book-chapter-2-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "audit-retention-book-chapter-2-paragraph-1-sentence-1",
+          "audit-retention-book-chapter-2-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 21,
+        "farthestOwnDistance": 25,
+        "nearestOutsideDistance": 50,
+        "margin": 25,
+        "sourceBpe": 89,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8764,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "audit-retention-book-chapter-2-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "audit-retention-book-chapter-2-paragraph-2-sentence-1",
+          "audit-retention-book-chapter-2-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 29,
+        "farthestOwnDistance": 30,
+        "nearestOutsideDistance": 48,
+        "margin": 18,
+        "sourceBpe": 89,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.8764,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "audit-retention-book-chapter-1",
+        "childLevel": "paragraph",
+        "childIds": [
+          "audit-retention-book-chapter-1-paragraph-1",
+          "audit-retention-book-chapter-1-paragraph-2"
+        ],
+        "nearestOwnDistance": 8,
+        "farthestOwnDistance": 16,
+        "nearestOutsideDistance": 45,
+        "margin": 29,
+        "sourceBpe": 192,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4792,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "audit-retention-book-chapter-2",
+        "childLevel": "paragraph",
+        "childIds": [
+          "audit-retention-book-chapter-2-paragraph-1",
+          "audit-retention-book-chapter-2-paragraph-2"
+        ],
+        "nearestOwnDistance": 13,
+        "farthestOwnDistance": 17,
+        "nearestOutsideDistance": 50,
+        "margin": 33,
+        "sourceBpe": 192,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4792,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "book",
+        "parentId": "audit-retention-book",
+        "childLevel": "chapter",
+        "childIds": [
+          "audit-retention-book-chapter-1",
+          "audit-retention-book-chapter-2"
+        ],
+        "nearestOwnDistance": 5,
+        "farthestOwnDistance": 10,
+        "nearestOutsideDistance": 50,
+        "margin": 40,
+        "sourceBpe": 10006,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.99,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "bilingual-curriculum-book-chapter-1-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-1-paragraph-1-sentence-1",
+          "bilingual-curriculum-book-chapter-1-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 34,
+        "farthestOwnDistance": 35,
+        "nearestOutsideDistance": 59,
+        "margin": 24,
+        "sourceBpe": 91,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9011,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "bilingual-curriculum-book-chapter-1-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-1-paragraph-2-sentence-1",
+          "bilingual-curriculum-book-chapter-1-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 37,
+        "farthestOwnDistance": 39,
+        "nearestOutsideDistance": 60,
+        "margin": 21,
+        "sourceBpe": 91,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9011,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "bilingual-curriculum-book-chapter-2-paragraph-1",
+        "childLevel": "sentence",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-2-paragraph-1-sentence-1",
+          "bilingual-curriculum-book-chapter-2-paragraph-1-sentence-2"
+        ],
+        "nearestOwnDistance": 26,
+        "farthestOwnDistance": 33,
+        "nearestOutsideDistance": 58,
+        "margin": 25,
+        "sourceBpe": 91,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9011,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "paragraph",
+        "parentId": "bilingual-curriculum-book-chapter-2-paragraph-2",
+        "childLevel": "sentence",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-2-paragraph-2-sentence-1",
+          "bilingual-curriculum-book-chapter-2-paragraph-2-sentence-2"
+        ],
+        "nearestOwnDistance": 24,
+        "farthestOwnDistance": 31,
+        "nearestOutsideDistance": 57,
+        "margin": 26,
+        "sourceBpe": 91,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 98.9011,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "bilingual-curriculum-book-chapter-1",
+        "childLevel": "paragraph",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-1-paragraph-1",
+          "bilingual-curriculum-book-chapter-1-paragraph-2"
+        ],
+        "nearestOwnDistance": 17,
+        "farthestOwnDistance": 18,
+        "nearestOutsideDistance": 54,
+        "margin": 36,
+        "sourceBpe": 195,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4872,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "chapter",
+        "parentId": "bilingual-curriculum-book-chapter-2",
+        "childLevel": "paragraph",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-2-paragraph-1",
+          "bilingual-curriculum-book-chapter-2-paragraph-2"
+        ],
+        "nearestOwnDistance": 20,
+        "farthestOwnDistance": 20,
+        "nearestOutsideDistance": 52,
+        "margin": 32,
+        "sourceBpe": 195,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.4872,
+        "rootHandleOnly": true,
+        "pass": true
+      },
+      {
+        "level": "book",
+        "parentId": "bilingual-curriculum-book",
+        "childLevel": "chapter",
+        "childIds": [
+          "bilingual-curriculum-book-chapter-1",
+          "bilingual-curriculum-book-chapter-2"
+        ],
+        "nearestOwnDistance": 15,
+        "farthestOwnDistance": 23,
+        "nearestOutsideDistance": 56,
+        "margin": 33,
+        "sourceBpe": 10000,
+        "patchCount": 1,
+        "residualCount": 0,
+        "coldPathCount": 0,
+        "supportTokenCount": 0,
+        "equivalentOutputTokens": 1,
+        "reductionPercent": 99.99,
+        "rootHandleOnly": true,
+        "pass": true
+      }
+    ]
+  },
+  "purification": {
+    "schemaVersion": "v31-meaning-purification-audit-v1",
+    "generatedAt": "2026-07-21T05:38:08.998Z",
+    "summary": {
+      "caseCount": 2,
+      "localPurificationPassed": true,
+      "bartEvaluated": false,
+      "bartPassed": true
+    },
+    "results": [
+      {
+        "id": "noisy-book-route",
+        "sourceAnchors": {
+          "names": true,
+          "numbers": true,
+          "negation": true,
+          "causality": true,
+          "quoteAttribution": true,
+          "routeLineage": true
+        },
+        "purified": {
+          "text": "Nora said at 04:21 that chapter 6 is not safe because the parent child route lineage would fold into the wrong book root unless the rescue number 17 stays attached.",
+          "anchors": {
+            "names": true,
+            "numbers": true,
+            "negation": true,
+            "causality": true,
+            "quoteAttribution": true,
+            "routeLineage": true
+          },
+          "missingAnchors": [],
+          "pass": true
+        },
+        "bart": {
+          "text": null,
+          "anchors": null,
+          "missingAnchors": [],
+          "pass": null
+        }
+      },
+      {
+        "id": "noisy-quote-causality",
+        "sourceAnchors": {
+          "names": true,
+          "numbers": true,
+          "negation": true,
+          "causality": true,
+          "quoteAttribution": true,
+          "routeLineage": true
+        },
+        "purified": {
+          "text": "Maya quoted Owen and said the clinic should not close because 42 patients need the telehealth chapter route to keep the child records with the right book.",
+          "anchors": {
+            "names": true,
+            "numbers": true,
+            "negation": true,
+            "causality": true,
+            "quoteAttribution": true,
+            "routeLineage": true
+          },
+          "missingAnchors": [],
+          "pass": true
+        },
+        "bart": {
+          "text": null,
+          "anchors": null,
+          "missingAnchors": [],
+          "pass": null
+        }
+      }
+    ]
+  },
+  "gates": {
+    "v30Regression": true,
+    "commercialOvermatch249": true,
+    "stretch500": true,
+    "stretch707": true,
+    "bookFold": true,
+    "ultraReduction9999": true,
+    "meaningPurification": true
+  },
+  "ok": true,
+  "claimsNotAllowed": [
+    "lossless unfolding",
+    "production tokenizer superiority",
+    "production 99.99% raw-source reduction",
+    "primary or secondary Worker promotion"
+  ]
+}

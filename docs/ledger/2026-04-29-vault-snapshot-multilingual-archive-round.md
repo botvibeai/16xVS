@@ -1,0 +1,31 @@
+# EXP-2026-04-29-003 Vault Snapshot Multilingual Archive Round
+
+- `id`: `EXP-2026-04-29-003`
+- `date`: `2026-04-29`
+- `corpus`: Repository evidence set after the multilingual long-form and archive-pressure April 29 round
+- `method`: Created a hashed repo snapshot with `npm run vault:snapshot -- --label multilingual-archive-round-2026-04-29`, compressed the snapshot directory, then attempted to upload both the zip archive and manifest to the remote `16xvs-poc-vault` R2 bucket with Wrangler.
+- `implementation_path`: `vault snapshot/export flow`
+- `baseline`: `previous remote vault snapshots from earlier rounds`
+- `metrics`:
+  - `snapshotId`: `2026-04-29T05-41-17-137Z-multilingual-archive-round-2026-04-29`
+  - `fileCount`: `207`
+  - `totalBytes`: `89589846`
+  - `criticalArtifacts.count`: `26`
+  - `remoteZipUpload`: `failed`
+  - `remoteManifestUpload`: `failed`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The repo can still produce a local file-hashed snapshot that includes the April 29 reports, ledgers, and current docs.
+  - The snapshot manifest correctly marks the new April 29 artifacts as critical artifacts.
+- `claim_not_supported`:
+  - This round is not fully backed up to the remote vault bucket from the current environment.
+  - The remote vault archive and manifest objects were not uploaded successfully in this session.
+- `artifacts`:
+  - [local snapshot manifest](vault-snapshots\2026-04-29T05-41-17-137Z-multilingual-archive-round-2026-04-29\manifest.json)
+  - [multilingual longform ledger](docs\ledger\2026-04-29-multilingual-longform-holdout.md)
+  - [archive pressure ledger](docs\ledger\2026-04-29-archive-pressure.md)
+- `notes`:
+  - The local snapshot succeeded.
+  - The remote Wrangler session failed with an invalid access token state and no `CLOUDFLARE_API_TOKEN` available in the current environment, so the vault upload could not complete from this run.
+- `next_action`:
+  - Restore a valid Cloudflare auth state, then re-run the two `wrangler r2 object put` commands for the zip archive and manifest.

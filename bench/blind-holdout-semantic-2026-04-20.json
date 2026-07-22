@@ -1,0 +1,47 @@
+[
+  {
+    "group": "cooking_holdout",
+    "items": [
+      "sourdough starter feeding",
+      "knead bread dough",
+      "cast iron skillet",
+      "simmer tomato sauce"
+    ]
+  },
+  {
+    "group": "weather_holdout",
+    "items": [
+      "coastal fog forecast",
+      "thunderstorm warning",
+      "barometric pressure drop",
+      "humid afternoon breeze"
+    ]
+  },
+  {
+    "group": "music_holdout",
+    "items": [
+      "jazz chord progression",
+      "violin tuning peg",
+      "drum rhythm pattern",
+      "concert hall acoustics"
+    ]
+  },
+  {
+    "group": "gardening_holdout",
+    "items": [
+      "tomato seedling transplant",
+      "compost soil amendment",
+      "prune rose bushes",
+      "irrigation drip line"
+    ]
+  },
+  {
+    "group": "astronomy_holdout",
+    "items": [
+      "lunar eclipse shadow",
+      "telescope mirror alignment",
+      "orbital debris tracking",
+      "spectral redshift measurement"
+    ]
+  }
+]

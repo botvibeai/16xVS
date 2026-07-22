@@ -1,0 +1,71 @@
+# EXP-2026-05-07-006 V13/V14 Balanced Triad Round
+
+- `id`: `EXP-2026-05-07-006`
+- `date`: `2026-05-07`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, and `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`
+- `method`: Created a v13 balanced-triad training spec from v8, adding small support for `control_book_root`, `audit_evidence`, and retention-governance groups while preserving existing hard-negative boundaries. Because v13 passed governance/archive but missed book-root, created one v14 book-root-balance probe from v13 with additional matched support for economics and control book-root groups.
+- `implementation_path`: `v13-balanced-triad-hierarchical-packer-v2` and `v14-book-root-balance-hierarchical-packer-v2`
+- `baseline`: `v10-constrained-merge-hierarchical-packer-v2`
+- `metrics`:
+  - `v13.training.positivePairCount`: `751`
+  - `v13.training.negativePairCount`: `2080`
+  - `v13.training.averagePositiveSimilarity`: `0.750393`
+  - `v13.training.averageNegativeSimilarity`: `0.187703`
+  - `v13.bookRoot.avgPatchesPerEntry`: `3`
+  - `v13.bookRoot.minMargin`: `-3.5`
+  - `v13.bookRoot.economics.margin`: `-1.5`
+  - `v13.bookRoot.systems.margin`: `10.5`
+  - `v13.bookRoot.control.margin`: `-3.5`
+  - `v13.governanceAdversarial.avgPatchesPerEntry`: `2.8333`
+  - `v13.governanceAdversarial.minMargin`: `3.5`
+  - `v13.governanceAdversarial.auditEvidence.margin`: `3.5`
+  - `v13.governanceAdversarial.legalHold.margin`: `10`
+  - `v13.archivePressure.avgPatchesPerEntry`: `3`
+  - `v13.archivePressure.minMargin`: `8`
+  - `v13.archivePressure.retentionGovernance.margin`: `8`
+  - `v14.training.positivePairCount`: `865`
+  - `v14.training.negativePairCount`: `2088`
+  - `v14.training.averagePositiveSimilarity`: `0.753811`
+  - `v14.training.averageNegativeSimilarity`: `0.192775`
+  - `v14.bookRoot.avgPatchesPerEntry`: `3`
+  - `v14.bookRoot.minMargin`: `-8`
+  - `v14.governanceAdversarial.avgPatchesPerEntry`: `2.8333`
+  - `v14.governanceAdversarial.minMargin`: `-2.5`
+  - `v14.archivePressure.avgPatchesPerEntry`: `3`
+  - `v14.archivePressure.minMargin`: `4`
+- `result_label`: `negative`
+- `claim_supported`:
+  - Both v13 and v14 preserved the fold shape under the explicit hierarchical packer: `3` patches per book-root entry, `2.8333` patches per governance entry, and `3` patches per archive-pressure entry.
+  - v13 is the strongest governance/archive specialist tested in this round: governance adversarial cleared with min margin `3.5`, and archive pressure cleared with min margin `8`.
+  - v13 repairs the v10 `audit_evidence_adversarial` miss while also strengthening `retention_governance_pressure`.
+  - The v13/v14 comparison confirms that the remaining conflict is not only a blend problem. Adding more book-root support can damage adjacent governance boundaries.
+- `claim_not_supported`:
+  - v13 does not replace v10 because book-root still fails: `economics_book_root=-1.5` and `control_book_root=-3.5`.
+  - v14 does not replace v10 or v13 because it worsened book-root and re-broke governance via `legal_hold_adversarial=-2.5`.
+  - Additional broad support phrases are not a safe route by themselves; they can overfit or smear the semantic boundary.
+  - These tests still do not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [v13 spec generator](scripts\generate-v13-balanced-triad-spec.mjs)
+  - [v13 training spec](data\training\embedding-training-spec-v13-balanced-triad.json)
+  - [v13 training pairs](data\training\embedding-training-pairs-v13-balanced-triad.json)
+  - [v13 base model](models\learned-hybrid-prototype-v13-balanced-triad-base.json)
+  - [v13 hierarchical model](models\learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 book-root report](bench\2026-05-07-book-root-benchmark-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 governance report](bench\2026-05-07-governance-adversarial-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v13 archive report](bench\2026-05-07-archive-pressure-v13-balanced-triad-hierarchical-packer-v2.json)
+  - [v14 spec generator](scripts\generate-v14-book-root-balance-spec.mjs)
+  - [v14 training spec](data\training\embedding-training-spec-v14-book-root-balance.json)
+  - [v14 training pairs](data\training\embedding-training-pairs-v14-book-root-balance.json)
+  - [v14 base model](models\learned-hybrid-prototype-v14-book-root-balance-base.json)
+  - [v14 hierarchical model](models\learned-hybrid-prototype-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 book-root report](bench\2026-05-07-book-root-benchmark-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 governance report](bench\2026-05-07-governance-adversarial-v14-book-root-balance-hierarchical-packer-v2.json)
+  - [v14 archive report](bench\2026-05-07-archive-pressure-v14-book-root-balance-hierarchical-packer-v2.json)
+- `notes`:
+  - v13 is useful as a governance/archive specialist candidate, but it is not the best overall model.
+  - v14 demonstrates that adding more book-root phrases is not enough and can degrade nearby legal-hold boundaries.
+  - v10 remains the best combined constrained-merge candidate because it preserves the fold and keeps the overall failure surface narrower.
+- `next_action`:
+  - Do not promote v13 or v14.
+  - Preserve v13 as evidence that governance/archive can clear under the fold.
+  - The next serious approach should avoid broader phrase injection and instead test a smaller group-aware calibration/guard that can protect book-root economics/control without moving legal-hold and archive-retention boundaries.

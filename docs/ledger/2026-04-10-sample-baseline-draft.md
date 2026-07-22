@@ -1,0 +1,28 @@
+# EXP-2026-04-10-SAMPLE_BASELINE_DRAFT Sample Baseline Draft
+
+- `id`: `EXP-2026-04-10-SAMPLE_BASELINE_DRAFT`
+- `date`: `2026-04-10`
+- `corpus`: `bench/sample-corpus.txt`
+- `method`: Review the linked report and replace this sentence with the exact benchmark method used for the run.
+- `implementation_path`: `experimental core candidate`
+- `baseline`: `tiktoken using cl100k_base`
+- `metrics`:
+  - `entries`: `40`
+  - `tiktokenCount`: `85`
+  - `fixtureGlyphCount`: `501`
+  - `experimentalPatchCount`: `50`
+  - `experimentalPatchesPerToken`: `0.5882`
+  - `binaryVsSourceRatio`: `32`
+  - `experimentalBinaryVsSourceRatio`: `3.1936`
+- `result_label`: `directional`
+- `claim_supported`:
+  - Replace these bullets with claim-backed statements supported by this report.
+- `claim_not_supported`:
+  - Replace these bullets with the limits or failed claims exposed by this report.
+- `artifacts`:
+  - [latest-report.json](bench\latest-report.json)
+- `notes`:
+  - Generated from `bench/latest-report.json`.
+  - Review this draft before using it in a proof document.
+- `next_action`:
+  - Review the draft ledger entry, tighten the claims, and update any proof or failure docs if the evidence status changed.

@@ -1,0 +1,49 @@
+label=unit-tests
+startedAt=2026-05-08T04:18:25.326Z
+endedAt=2026-05-08T04:18:26.870Z
+exitCode=0
+
+✔ inferRouteIdForText chooses bookRoot for tokenizer and book-scale folding language (5.0505ms)
+✔ inferRouteIdForText separates governance and archive operations (0.6668ms)
+✔ inferRouteIdForCorpus falls back to default for weak route evidence (1.0643ms)
+✔ inferRouteIdForCorpus keeps folded book-root entries on the bookRoot specialist (2.2685ms)
+✔ inferRouteIdForCorpus rejects split booklike entries as unsafe for the bookRoot specialist (6.2516ms)
+✔ marks a non-collapsed positive semantic run as directional evidence (1.3693ms)
+✔ marks a collapsed signature run as failed even when margins are positive (0.6383ms)
+✔ validateHeadReport accepts a non-collapsed positive semantic report (2.3802ms)
+✔ validateHeadReport rejects collapse even when semantic margins are positive (0.6774ms)
+✔ selectValidatedHead falls back when the routed specialist fails validation (0.9419ms)
+✔ selectValidatedHead keeps the routed specialist when it passes validation (0.5195ms)
+✔ rankValidatedHeads ranks all configured heads by safety before route fit (1.6ms)
+✔ rankValidatedHeads keeps route fit as metadata when candidate also passes (0.6713ms)
+✔ selectRankedValidatedHead can switch to a stronger accepted non-route head (1.4587ms)
+✔ selectRankedValidatedHead preserves v19 behavior when every head fails (1.115ms)
+✔ trainLearnedEncoder improves seen positive similarity over seen negative similarity (203.1665ms)
+✔ runBenchmark can evaluate a learned encoder adapter (458.3459ms)
+✔ createLearnedEncoderAdapter marks hybrid mode when heuristic blending is enabled (55.5718ms)
+✔ tokenizeExperimentalVisualPatches can collapse an entry into one patch in entry mode (1.1856ms)
+✔ model patchConfig changes learned patch count without breaking signatures (80.6761ms)
+✔ tokenizeExperimentalVisualPatches can use hierarchical packing for longer entries (6.0037ms)
+✔ buildMegaBookLadderFixture creates folded book roots with chapter evidence groups (11.4678ms)
+✔ evaluateMegaBookLadder measures root-to-own-chapter separation against outside chapters (4.5768ms)
+✔ resolveRouteHead selects deterministic specialist heads with default fallback (0.5804ms)
+✔ computeMultiHeadStorage estimates stored multi-head signature overhead (0.5734ms)
+✔ evaluatePrimaryGate accepts the book-root directional lock shape (2.7985ms)
+✔ evaluatePrimaryGate treats booklike as a preserved known semantic failure (0.8947ms)
+✔ evaluateGeneralizationGate fails semantic generalization cleanly (0.9032ms)
+✔ buildProofSummary locks directionally without production generalization (1.6893ms)
+✔ buildTrainingDataset creates positive pairs and explicit hard negatives (3.1153ms)
+✔ buildTrainingDataset rejects duplicate group ids (2.4287ms)
+✔ buildTrainingDataset can generate all cross-group negatives with deterministic sampling (2.5498ms)
+✔ buildSuitePlan resolves output files for each frozen benchmark suite (1.0604ms)
+✔ buildSuitePlan rejects duplicate suite ids (0.7702ms)
+✔ collectSnapshotFiles returns stable relative paths (123.6995ms)
+✔ createVaultSnapshot copies files and records hashes (103.8424ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1166.6221

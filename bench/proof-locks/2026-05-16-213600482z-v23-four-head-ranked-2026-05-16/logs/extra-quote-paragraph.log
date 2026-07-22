@@ -1,0 +1,59 @@
+label=extra-quote-paragraph
+startedAt=2026-05-16T21:37:15.662Z
+endedAt=2026-05-16T21:37:19.702Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/proof-locks/2026-05-16-213600482z-v23-four-head-ranked-2026-05-16/reports/quote-paragraph-v23-four-head-ranked.json",
+  "routeId": "archive",
+  "candidateHead": "governance",
+  "selectedHead": "governance",
+  "reason": "no ranked head passed; preserving v19 selection for inspection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -18.75,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -20.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "fallback",
+      "minSemanticMargin": -21.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v13-balanced-triad-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -20.25,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 79.9,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 1.4128
+}

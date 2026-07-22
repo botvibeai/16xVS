@@ -1,0 +1,67 @@
+# EXP-2026-04-24-002 Learned Hybrid Prototype V3 Suite
+
+- `id`: `EXP-2026-04-24-002`
+- `date`: `2026-04-24`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Built `data/training/embedding-training-pairs-v2.json` from an expanded training spec with broader domain coverage, multilingual examples, and all cross-group negatives, trained a hybrid learned encoder with centroid-style prototype regularization, then ran the trained model through the unchanged frozen evaluation suite.
+- `implementation_path`: `learned hybrid prototype v3`
+- `baseline`: `experimental core candidate`, `learned feature prototype`, and `learned hybrid prototype v2`
+- `training_config`:
+  - `trainingSpec`: `data/training/embedding-training-spec-v2.json`
+  - `groupCount`: `6`
+  - `itemCount`: `51`
+  - `positivePairCount`: `192`
+  - `negativePairCount`: `720`
+  - `negativeMode`: `all-cross`
+  - `dimensions`: `256`
+  - `epochs`: `40`
+  - `learningRate`: `0.05`
+  - `negativeMargin`: `0.15`
+  - `seed`: `19`
+  - `learnedBlendWeight`: `1`
+  - `heuristicBlendWeight`: `0.6`
+  - `prototypeLearningRate`: `0.03`
+  - `prototypeNegativeMargin`: `0.25`
+- `metrics`:
+  - `training.averagePositiveSimilarity`: `0.823585`
+  - `training.averageNegativeSimilarity`: `0.187133`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_phrase.minMargin`: `12.25`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `controlled_multilingual.minMargin`: `-5.3334`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.minMargin`: `-13.3333`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `paraphrase_holdout.minMargin`: `2`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `stress_100.minMargin`: `-28.7889`
+  - `all suite collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The repo can train and evaluate a broader hybrid learned encoder against the unchanged frozen suite.
+  - The `v3` hybrid path restored and improved the controlled phrase suite relative to baseline and `v2`.
+  - The `v3` hybrid path passed the phrase-unseen paraphrase holdout with all labeled group margins positive.
+  - The `v3` hybrid path improved the blind holdout minimum margin relative to baseline, `v1`, and `v2`, though it still failed the gate.
+  - The `v3` hybrid path improved the multilingual regression substantially relative to `v1` and `v2`, leaving only one negative multilingual group.
+  - Count compression remained unchanged and collapse checks stayed clean.
+- `claim_not_supported`:
+  - The `v3` hybrid path did not pass the blind unseen-domain holdout.
+  - The `v3` hybrid path did not pass the mixed-format stress suite.
+  - The `v3` hybrid path did not fully restore the controlled multilingual suite.
+  - This is not broad proof that the learned path beats regular tokenizers in real-world use.
+  - This is still not target BSQ implementation proof.
+- `artifacts`:
+  - [expanded training spec](data\training\embedding-training-spec-v2.json)
+  - [expanded training pairs](data\training\embedding-training-pairs-v2.json)
+  - [learned hybrid v3 model](models\learned-hybrid-prototype-v3.json)
+  - [hybrid v3 suite summary](bench\eval-suite-learned-hybrid-v3\suite-summary.json)
+  - [hybrid v2 suite summary](bench\eval-suite-learned-hybrid-v2\suite-summary.json)
+  - [baseline suite summary](bench\eval-suite-latest\suite-summary.json)
+- `notes`:
+  - This is the first learned path in the repo that clears the paraphrase holdout while keeping the frozen blind holdout unchanged.
+  - The phrase holdout is now phrase-unseen rather than domain-unseen because the expanded training set includes a support domain. The blind holdout remains the real unseen-domain gate.
+  - The remaining wall is clear: unseen-domain generalization and broad mixed-format robustness.
+- `next_action`:
+  - Preserve this run as the current best local-only learned result.
+  - Do not market this as a broad semantic win while the blind holdout and stress suite still fail.
+  - The next serious improvement should target unseen-domain semantics, not more phrase-level tuning.

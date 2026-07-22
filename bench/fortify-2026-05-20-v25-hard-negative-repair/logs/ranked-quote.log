@@ -1,0 +1,77 @@
+label=ranked-quote
+startedAt=2026-05-20T11:25:50.302Z
+endedAt=2026-05-20T11:25:58.821Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-05-20-v25-hard-negative-repair/six-head-ranked/quote-v25-six-head-ranked.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "default",
+  "reason": "no ranked head passed; preserving v19 selection for inspection",
+  "selectionPolicy": "ranked-accepted-head",
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -12.8,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.2,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -18.2,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 5,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -18.4,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 6,
+      "headId": "quoteRepairV25",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -19,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -18.2,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 64.52,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 6.9971
+}

@@ -1,0 +1,32 @@
+{
+  "title": "V28 Cold-Path Fallback Probe",
+  "mode": "cold-path",
+  "generatedAt": "2026-06-17T12:02:41.171Z",
+  "outputDir": "bench/fortify-2026-06-17-v28-cold-path",
+  "claimLevel": "cold-path-proof",
+  "report": "bench/fortify-2026-06-17-v28-cold-path/cold-path-report.json",
+  "schemaPreview": {
+    "laneId": "governance-adversarial",
+    "eligibleHeads": [
+      "governance",
+      "default"
+    ],
+    "confidence": 1,
+    "accepted": true,
+    "fallbackUsed": true,
+    "fallbackPatchIds": [
+      "patch-unknown"
+    ],
+    "temperatureSchedule": [],
+    "driftBefore": null,
+    "driftAfter": null
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ],
+  "read": "This proves fallback is patch-local and does not fail the whole sequence."
+}

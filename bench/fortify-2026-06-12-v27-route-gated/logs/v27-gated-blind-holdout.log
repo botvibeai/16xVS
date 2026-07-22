@@ -1,0 +1,117 @@
+label=v27-gated-blind-holdout
+startedAt=2026-06-12T20:19:21.362Z
+endedAt=2026-06-12T20:19:28.714Z
+exitCode=0
+
+{
+  "ok": true,
+  "output": "bench/fortify-2026-06-12-v27-route-gated/v27-gated-ranked/blind-holdout-v27-route-gated.json",
+  "routeId": "default",
+  "candidateHead": "default",
+  "selectedHead": "default",
+  "reason": "no eligible head passed; preserving gated fallback for inspection",
+  "selectionPolicy": "v27-route-gated-ranked",
+  "laneId": "blind-holdout",
+  "routeGate": {
+    "laneId": "blind-holdout",
+    "eligibleHeads": [
+      "blindSplitV26",
+      "default"
+    ],
+    "configuredEligibleHeads": [
+      "blindSplitV26",
+      "default"
+    ],
+    "blockedHeads": [
+      "bookRoot",
+      "governance",
+      "booklikeRepair",
+      "quoteRepair",
+      "quoteSplitV26",
+      "stressSplitV26"
+    ],
+    "gatedCandidateHeadId": "default",
+    "gatedFallbackHeadId": "default"
+  },
+  "fullHeadRanking": [
+    {
+      "rank": 1,
+      "headId": "quoteSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -13.5833,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 2,
+      "headId": "stressSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -14.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 3,
+      "headId": "quoteRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -14.6667,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 4,
+      "headId": "bookRoot",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 5,
+      "headId": "booklikeRepair",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -15.3333,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 6,
+      "headId": "default",
+      "accepted": false,
+      "routeFitRole": "candidate",
+      "minSemanticMargin": -15.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 7,
+      "headId": "governance",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.25,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    },
+    {
+      "rank": 8,
+      "headId": "blindSplitV26",
+      "accepted": false,
+      "routeFitRole": "other",
+      "minSemanticMargin": -17.5,
+      "signatureCollapse": false,
+      "avgPatchesPerEntry": 1
+    }
+  ],
+  "selectedModel": "models/learned-hybrid-prototype-v10-constrained-merge-hierarchical-packer-v2.json",
+  "selectedResult": "directional",
+  "selectedMinSemanticMargin": -15.5,
+  "selectedSignatureCollapse": false,
+  "selectedAvgNearestSignatureDistance": 68.2667,
+  "avgPatchesPerEntry": 1,
+  "allHeadsBinaryVsSourceRatio": 12.1136
+}

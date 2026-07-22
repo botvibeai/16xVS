@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "v28-ste-proof-report-v1",
+  "generatedAt": "2026-06-17T12:02:40.052Z",
+  "claimLevel": "ste-stability-proof",
+  "ste": {
+    "schemaVersion": "v28-ste-temperature-decay-report-v1",
+    "temperatureSchedule": [
+      2,
+      1,
+      0.5,
+      0.25
+    ],
+    "driftBefore": 2,
+    "driftAfter": 0,
+    "accepted": true,
+    "finalBits": [
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ]
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ]
+}

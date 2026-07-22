@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-05-07T04:19:34.556Z",
+  "reports": [
+    {
+      "report": "bench/2026-05-07-book-root-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json",
+      "input": "bench\\book-root-corpus-2026-05-06.txt",
+      "entries": 6,
+      "sourceBytes": 11909,
+      "experimentalBinaryBytes": 5088,
+      "experimentalPatchCount": 159,
+      "avgExperimentalPatchesPerEntry": 26.5,
+      "experimentalPatchesPerToken": 0.0749,
+      "experimentalBinaryVsSourceRatio": 0.4272,
+      "binaryCodeBytes": 32
+    },
+    {
+      "report": "bench/2026-05-07-booklike-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json",
+      "input": "bench\\booklike-corpus-2026-04-25.txt",
+      "entries": 12,
+      "sourceBytes": 11903,
+      "experimentalBinaryBytes": 5088,
+      "experimentalPatchCount": 159,
+      "avgExperimentalPatchesPerEntry": 13.25,
+      "experimentalPatchesPerToken": 0.0749,
+      "experimentalBinaryVsSourceRatio": 0.4275,
+      "binaryCodeBytes": 32
+    },
+    {
+      "report": "bench/2026-05-07-mega-book-benchmark-v9-merge-bridge-governance-hierarchical-packer-v2.json",
+      "input": "bench\\mega-book-corpus-2026-05-06.txt",
+      "entries": 1,
+      "sourceBytes": 11914,
+      "experimentalBinaryBytes": 5088,
+      "experimentalPatchCount": 159,
+      "avgExperimentalPatchesPerEntry": 159,
+      "experimentalPatchesPerToken": 0.0749,
+      "experimentalBinaryVsSourceRatio": 0.4271,
+      "binaryCodeBytes": 32
+    }
+  ],
+  "aggregate": {
+    "entries": 19,
+    "sourceBytes": 35726,
+    "sourceGb": 0.00003327,
+    "experimentalBinaryBytes": 15264,
+    "experimentalBinaryGb": 0.00001422,
+    "experimentalPatchCount": 477,
+    "avgPatchesPerEntry": 25.1053,
+    "rawBinaryVsSourceRatio": 0.427252,
+    "rawReductionPercent": 57.2748,
+    "rawCompressionAssessment": "directional",
+    "projectedOutputGbPerInputGb": 0.427252,
+    "inputGbNeededForTargetOutputGb": 2.9257,
+    "targetOutputGb": 1.25
+  },
+  "denseVectorComparison": {
+    "baselineVectorBytes": 6144,
+    "binaryCodeBytes": 32,
+    "reductionPercentPerCode": 99.4792,
+    "assessment": "directional",
+    "caution": "This compares one 256-bit binary code to one dense float32 vector. It is not the same claim as raw-source compression."
+  },
+  "claims": {
+    "rawTextCompression99_99Percent": {
+      "assessment": "failed",
+      "note": "Using current reports, raw-source storage does not approach 99.99% reduction."
+    },
+    "rawTextTo1_25Gb": {
+      "assessment": "directional",
+      "note": "At the current aggregate ratio, an input corpus larger than 2.9257 GB would exceed 1.25 GB of binary output."
+    },
+    "denseVectorStorageReduction": {
+      "assessment": "directional",
+      "note": "If a storage layer can replace one 1536-float32 vector with one 256-bit code, the byte reduction is large, but this remains a theoretical storage-model comparison in this repo."
+    }
+  }
+}

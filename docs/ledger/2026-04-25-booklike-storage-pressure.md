@@ -1,0 +1,48 @@
+# EXP-2026-04-25-008 Booklike Storage Pressure Test
+
+- `id`: `EXP-2026-04-25-008`
+- `date`: `2026-04-25`
+- `corpus`: `bench/booklike-corpus-2026-04-25.txt` with `bench/booklike-semantic-2026-04-25.json`, plus aggregate storage projection across quote, quote-paragraph, protocol-longform, and booklike corpora
+- `method`: Ran the existing storage-focused macro baseline and the current hierarchical variant against a larger chapter-style corpus, then recomputed aggregate storage projections across the currently tested long-form set.
+- `implementation_path`: `macro packer v1` vs `hierarchical packer v1`
+- `baseline`: `hierarchical packer v1 protocol-longform-only result`
+- `metrics`:
+  - `macro.booklike.avgPatchesPerEntry`: `13.25`
+  - `macro.booklike.patchesPerToken`: `0.0749`
+  - `macro.booklike.semantic.minMargin`: `-12`
+  - `hierarchical.booklike.avgPatchesPerEntry`: `3`
+  - `hierarchical.booklike.patchesPerToken`: `0.017`
+  - `hierarchical.booklike.semantic.minMargin`: `-11.5`
+  - `hierarchical.booklike.retrieval.avgNearestSignatureDistance`: `67.75`
+  - `hierarchical.booklike.collapseFlags`: `false`
+  - `macro.aggregate.rawReductionPercent`: `55.5863`
+  - `macro.aggregate.inputGbNeededForTargetOutputGb`: `2.8144`
+  - `hierarchical.aggregate.rawReductionPercent`: `83.1534`
+  - `hierarchical.aggregate.inputGbNeededForTargetOutputGb`: `7.4199`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The larger chapter-style corpus strengthens the storage-side case for the hierarchical packer.
+  - On the new book-like corpus, the hierarchical variant reduces average patch count from `13.25` under the macro baseline to `3`.
+  - Across the currently tested quote, quote-paragraph, protocol-longform, and booklike corpora, the hierarchical variant improves aggregate raw-source reduction to `83.1534%`.
+  - Across that same tested set, the current directional `1.25 GB` envelope extends to `7.4199 GB` of input before exceeding `1.25 GB` of binary output.
+  - The larger corpus did not trigger signature-collapse guardrails.
+- `claim_not_supported`:
+  - The larger chapter-style corpus does not convert the hierarchical packer into a broad semantic win.
+  - Grouped semantic separation on the book-like corpus still fails under both the macro and hierarchical variants.
+  - The repo still does not support the `99.99%` raw-storage reduction claim.
+  - The repo still does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [booklike corpus](bench\booklike-corpus-2026-04-25.txt)
+  - [booklike semantic groups](bench\booklike-semantic-2026-04-25.json)
+  - [macro booklike report](bench\2026-04-25-booklike-benchmark-v3-macro-packer-v1.json)
+  - [hierarchical booklike report](bench\2026-04-25-booklike-benchmark-v3-hierarchical-packer-v1.json)
+  - [macro booklike storage projection](bench\2026-04-25-storage-projection-v3-macro-packer-v1-booklike.json)
+  - [hierarchical booklike storage projection](bench\2026-04-25-storage-projection-v3-hierarchical-packer-v1-booklike.json)
+  - [hierarchical baseline suite ledger](docs\ledger\2026-04-25-hierarchical-packer-v1-suite.md)
+- `notes`:
+  - The book-like corpus is a stronger storage pressure test than the earlier six-entry protocol-longform set because it broadens thematic coverage and increases total long-form bytes.
+  - The semantic failure is informative: storage improvements are carrying farther than semantic grouping improvements on longer entries.
+  - This round makes the storage line more interesting, but it still does not justify institutional-corpus collapse claims.
+- `next_action`:
+  - Keep the hierarchical packer as the storage baseline.
+  - Improve residual selection or learned long-form structure if the goal is to preserve more semantics without losing the storage gain.

@@ -1,0 +1,346 @@
+{
+  "schemaVersion": "v28-runtime-hardening-report-v1",
+  "generatedAt": "2026-06-17T12:02:38.835Z",
+  "claimLevel": "runtime-governance-proof",
+  "routeLeakageBlocked": true,
+  "targetQuarantinePreserved": true,
+  "contracts": [
+    {
+      "schemaVersion": "v28-runtime-policy-contract-v1",
+      "laneId": "governance-adversarial",
+      "classifiedLaneId": "governance-adversarial",
+      "headId": "governance",
+      "eligibleHeads": [
+        "governance",
+        "default"
+      ],
+      "confidence": 1,
+      "accepted": true,
+      "rejectReason": null,
+      "classifier": {
+        "laneId": "governance-adversarial",
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "minimumConfidence": 0.32,
+        "ranked": [
+          {
+            "laneId": "governance-adversarial",
+            "confidence": 1,
+            "exactHits": 11,
+            "bloomHits": 11,
+            "tagCount": 11
+          },
+          {
+            "laneId": "archive-pressure",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "blind-holdout",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 6
+          },
+          {
+            "laneId": "book-root",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "booklike",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "mega-book-ladder",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "quote",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "quote-paragraph",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "stress-100",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 7
+          }
+        ]
+      }
+    },
+    {
+      "schemaVersion": "v28-runtime-policy-contract-v1",
+      "laneId": "governance-adversarial",
+      "classifiedLaneId": "governance-adversarial",
+      "headId": "stressSplitV26",
+      "eligibleHeads": [
+        "governance",
+        "default"
+      ],
+      "confidence": 1,
+      "accepted": false,
+      "rejectReason": "head not eligible for lane",
+      "classifier": {
+        "laneId": "governance-adversarial",
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "minimumConfidence": 0.32,
+        "ranked": [
+          {
+            "laneId": "governance-adversarial",
+            "confidence": 1,
+            "exactHits": 11,
+            "bloomHits": 11,
+            "tagCount": 11
+          },
+          {
+            "laneId": "archive-pressure",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "blind-holdout",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 6
+          },
+          {
+            "laneId": "book-root",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "booklike",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "mega-book-ladder",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "quote",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "quote-paragraph",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          },
+          {
+            "laneId": "stress-100",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 7
+          }
+        ]
+      }
+    },
+    {
+      "schemaVersion": "v28-runtime-policy-contract-v1",
+      "laneId": "quote",
+      "classifiedLaneId": "quote",
+      "headId": "quoteRepair",
+      "eligibleHeads": [
+        "quoteRepair",
+        "quoteSplitV26",
+        "default"
+      ],
+      "confidence": 1,
+      "accepted": true,
+      "rejectReason": null,
+      "classifier": {
+        "laneId": "quote",
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "minimumConfidence": 0.32,
+        "ranked": [
+          {
+            "laneId": "quote",
+            "confidence": 1,
+            "exactHits": 7,
+            "bloomHits": 7,
+            "tagCount": 8
+          },
+          {
+            "laneId": "quote-paragraph",
+            "confidence": 1,
+            "exactHits": 7,
+            "bloomHits": 7,
+            "tagCount": 8
+          },
+          {
+            "laneId": "booklike",
+            "confidence": 0.1875,
+            "exactHits": 1,
+            "bloomHits": 2,
+            "tagCount": 8
+          },
+          {
+            "laneId": "stress-100",
+            "confidence": 0.1786,
+            "exactHits": 1,
+            "bloomHits": 1,
+            "tagCount": 7
+          },
+          {
+            "laneId": "archive-pressure",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "blind-holdout",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 6
+          },
+          {
+            "laneId": "book-root",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 10
+          },
+          {
+            "laneId": "governance-adversarial",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 11
+          },
+          {
+            "laneId": "mega-book-ladder",
+            "confidence": 0,
+            "exactHits": 0,
+            "bloomHits": 0,
+            "tagCount": 8
+          }
+        ]
+      }
+    }
+  ],
+  "coldPath": {
+    "schemaVersion": "v28-cold-path-report-v1",
+    "sequenceAccepted": true,
+    "fallbackUsed": true,
+    "fallbackPatchIds": [
+      "patch-unknown"
+    ],
+    "coldPathHeadId": "highPrecisionFallback",
+    "patchDecisions": [
+      {
+        "patchId": "patch-governance",
+        "laneId": "governance-adversarial",
+        "headId": "governance",
+        "selectedHeadId": "governance",
+        "eligibleHeads": [
+          "governance",
+          "default"
+        ],
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "fallbackUsed": false
+      },
+      {
+        "patchId": "patch-unknown",
+        "laneId": "governance-adversarial",
+        "headId": "governance",
+        "selectedHeadId": "highPrecisionFallback",
+        "eligibleHeads": [
+          "governance",
+          "default"
+        ],
+        "confidence": 0.2083,
+        "accepted": false,
+        "rejectReason": "lane confidence below threshold",
+        "fallbackUsed": true
+      },
+      {
+        "patchId": "patch-quote",
+        "laneId": "quote",
+        "headId": "quoteRepair",
+        "selectedHeadId": "quoteRepair",
+        "eligibleHeads": [
+          "quoteRepair",
+          "quoteSplitV26",
+          "default"
+        ],
+        "confidence": 1,
+        "accepted": true,
+        "rejectReason": null,
+        "fallbackUsed": false
+      }
+    ]
+  },
+  "ste": {
+    "schemaVersion": "v28-ste-temperature-decay-report-v1",
+    "temperatureSchedule": [
+      2,
+      1,
+      0.5,
+      0.25
+    ],
+    "driftBefore": 2,
+    "driftAfter": 0,
+    "accepted": true,
+    "finalBits": [
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1
+    ]
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ]
+}

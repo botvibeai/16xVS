@@ -1,0 +1,21 @@
+{
+  "probeId": "quote-split",
+  "headId": "quoteSplitV26",
+  "baseSpec": "data/training/embedding-training-spec-v24-quote-repair.json",
+  "spec": "data/training/embedding-training-spec-v26-quote-split-repair.json",
+  "minedReports": [
+    {
+      "sourceId": "quote",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-v24-quote-repair.json",
+      "pairCount": 9
+    },
+    {
+      "sourceId": "quote-paragraph",
+      "report": "bench/fortify-2026-05-16-v24-quote-repair/quote-paragraph-v24-quote-repair.json",
+      "pairCount": 8
+    }
+  ],
+  "groupCount": 36,
+  "explicitNegativePairCount": 17,
+  "minedGroupCount": 10
+}

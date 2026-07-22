@@ -1,0 +1,37 @@
+{
+  "title": "V28 Runtime-Governance Hardening Probe",
+  "mode": "runtime",
+  "generatedAt": "2026-06-17T12:02:38.835Z",
+  "outputDir": "bench/fortify-2026-06-17-v28-runtime",
+  "claimLevel": "runtime-governance-proof",
+  "report": "bench/fortify-2026-06-17-v28-runtime/runtime-report.json",
+  "schemaPreview": {
+    "laneId": "governance-adversarial",
+    "eligibleHeads": [
+      "governance",
+      "default"
+    ],
+    "confidence": 1,
+    "accepted": true,
+    "fallbackUsed": true,
+    "fallbackPatchIds": [
+      "patch-unknown"
+    ],
+    "temperatureSchedule": [
+      2,
+      1,
+      0.5,
+      0.25
+    ],
+    "driftBefore": 2,
+    "driftAfter": 0
+  },
+  "deferredLayers": [
+    "BART",
+    "Wasm SIMD",
+    "Durable Object sharding",
+    "QJL",
+    "Cloudmersive"
+  ],
+  "read": "V28 proves local runtime governance only: hard lane contracts, patch-local cold fallback, and STE temperature-decay simulation. It is not a deployment or production runtime."
+}

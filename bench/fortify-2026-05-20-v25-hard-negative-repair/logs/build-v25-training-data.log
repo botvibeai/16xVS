@@ -1,0 +1,19 @@
+label=build-v25-training-data
+startedAt=2026-05-20T11:11:02.498Z
+endedAt=2026-05-20T11:11:02.809Z
+exitCode=0
+
+{
+  "ok": true,
+  "input": "data/training/embedding-training-spec-v25-hard-negative-repair.json",
+  "output": "data/training/embedding-training-pairs-v25-hard-negative-repair.json",
+  "summary": {
+    "groupCount": 46,
+    "itemCount": 310,
+    "positivePairCount": 1091,
+    "negativePairCount": 1738,
+    "explicitNegativePairCount": 34,
+    "totalPairCount": 2829,
+    "negativeMode": "explicit"
+  }
+}

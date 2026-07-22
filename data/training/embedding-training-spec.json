@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "description": "Training-only phrase groups for the first learned embedding spike. These are not evaluation holdouts.",
+  "groups": [
+    {
+      "id": "launch_training",
+      "domain": "launch",
+      "description": "Launch and deployment readiness phrasing.",
+      "items": [
+        "release readiness checklist",
+        "deployment go-live plan",
+        "ship preparation review",
+        "launch approval checklist",
+        "production release steps"
+      ]
+    },
+    {
+      "id": "storage_training",
+      "domain": "storage",
+      "description": "Storage durability and recovery phrasing.",
+      "items": [
+        "live fallback vault policy",
+        "triple copy retention plan",
+        "repair degraded storage replicas",
+        "secondary archive replication",
+        "durable record preservation"
+      ]
+    },
+    {
+      "id": "retrieval_training",
+      "domain": "retrieval",
+      "description": "Exact binary retrieval and lookup phrasing.",
+      "items": [
+        "exact hamming retrieval",
+        "binary glyph lookup",
+        "nearest signature search",
+        "bit distance query",
+        "precise retrieval match"
+      ]
+    },
+    {
+      "id": "planning_training",
+      "domain": "planning",
+      "description": "Memory-first planning and execution phrasing.",
+      "items": [
+        "stateful execution plan",
+        "memory first workflow outline",
+        "context preserving action plan",
+        "persistent reasoning sequence",
+        "operational planning scaffold"
+      ]
+    },
+    {
+      "id": "finance_training",
+      "domain": "finance",
+      "description": "Cost and pricing optimization phrasing.",
+      "items": [
+        "reduce compute cost",
+        "pricing efficiency plan",
+        "margin improvement roadmap",
+        "lower storage expense",
+        "cost optimized service model"
+      ]
+    }
+  ],
+  "hardNegativeGroupPairs": [
+    ["launch_training", "planning_training"],
+    ["storage_training", "finance_training"],
+    ["storage_training", "retrieval_training"],
+    ["retrieval_training", "planning_training"],
+    ["planning_training", "finance_training"]
+  ]
+}

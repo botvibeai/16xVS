@@ -1,0 +1,40 @@
+hello
+world
+cloud
+token
+binary
+search
+memory
+launch
+worker
+storage
+repair
+visual
+english
+common
+signal
+ranking
+semantic
+retrieve
+catalog
+archive
+hello world
+visual search
+binary glyph
+edge storage
+exact hamming distance
+repair degraded records
+tokenize and store
+small common word list
+launch checklist
+cost control plan
+stateful execution
+memory first planning
+english word baseline
+upload an image
+run a corpus test
+cloudflare worker
+live fallback vault
+compare against tiktoken
+how well is this working
+is this beating regular tokenizers

@@ -1,0 +1,55 @@
+# EXP-2026-05-06-002 V7 Book Root Round
+
+- `id`: `EXP-2026-05-06-002`
+- `date`: `2026-05-06`
+- `corpus`: `bench/book-root-corpus-2026-05-06.txt` with `bench/book-root-semantic-2026-05-06.json`, `bench/mega-book-corpus-2026-05-06.txt`, `bench/booklike-corpus-2026-04-25.txt` with `bench/booklike-semantic-2026-04-25.json`, plus the frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Built a direct `v2`-lineage training spec that keeps the exact dataset ancestry of the original `learned-hybrid-prototype-v3` line and adds three synthetic `book-root` groups derived from the frozen book-root benchmark. Trained a fresh base model with the original `v3` hyperparameters and seed, re-derived the same `hierarchical-packer-v2` storage configuration, then re-ran the synthetic book-root, mega-book, booklike, and frozen-suite evaluations.
+- `implementation_path`: `learned hybrid prototype v7 book root hierarchical packer v2`
+- `baseline`: `learned-hybrid-prototype-v3-hierarchical-packer-v2` book-folding and frozen-suite baselines
+- `metrics`:
+  - `bookRoot.avgPatchesPerEntry`: `3`
+  - `bookRoot.patchesPerToken`: `0.0085`
+  - `bookRoot.semantic.minMargin`: `-0.5`
+  - `bookRoot.economics.margin`: `2`
+  - `bookRoot.systems.margin`: `18.5`
+  - `bookRoot.control.margin`: `-0.5`
+  - `megaBook.avgPatchesPerEntry`: `3`
+  - `megaBook.patchesPerToken`: `0.0014`
+  - `booklike.avgPatchesPerEntry`: `3`
+  - `booklike.patchesPerToken`: `0.017`
+  - `booklike.semantic.minMargin`: `-18.5`
+  - `controlled_phrase.minMargin`: `10.8333`
+  - `controlled_multilingual.minMargin`: `-8`
+  - `blind_holdout.minMargin`: `-17.9167`
+  - `paraphrase_holdout.minMargin`: `-0.4`
+  - `stress_100.minMargin`: `-29.3333`
+  - `projection.aggregate.rawReductionPercent`: `94.8945`
+  - `projection.aggregate.inputGbNeededForTargetOutputGb`: `24.4833`
+- `result_label`: `directional`
+- `claim_supported`:
+  - A direct descendant of the original `v3` training lineage can improve the synthetic book-root grouped-separation result from `-3` to `-0.5` without changing the current fold shape.
+  - The storage-side fold remains unchanged under the new model: `3` patches per entry at chapter, synthetic book-root, and mega-book scale.
+  - The broader fold storage projection remains the same tested `94.8945%` aggregate raw-source reduction across the chapter, book-root, and mega-book corpora.
+- `claim_not_supported`:
+  - The round still does not clear the synthetic book-root semantic gate because `control_book_root` remains slightly negative at `-0.5`.
+  - The round is not a better general long-form baseline than `v3-hierarchical-packer-v2` because the older chapter-style `booklike` minimum margin regresses from `-11.5` to `-18.5`.
+  - The round regresses the frozen suite relative to the current `v3-hierarchical-packer-v2` baseline: paraphrase falls from positive to `-0.4`, controlled multilingual worsens from `-4.7619` to `-8`, and blind holdout worsens from `-14.3333` to `-17.9167`.
+  - The round still does not support `99.99%` raw-source reduction or `Library of Congress -> 1.25 GB` claims.
+- `artifacts`:
+  - [training spec v6 book root](data\training\embedding-training-spec-v6-book-root.json)
+  - [training pairs v6 book root](data\training\embedding-training-pairs-v6-book-root.json)
+  - [v7 base model](models\learned-hybrid-prototype-v7-book-root-base.json)
+  - [v7 hierarchical model](models\learned-hybrid-prototype-v7-book-root-hierarchical-packer-v2.json)
+  - [book-root v7 report](bench\2026-05-06-book-root-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [mega-book v7 report](bench\2026-05-06-mega-book-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [booklike v7 report](bench\2026-05-06-booklike-benchmark-v7-book-root-hierarchical-packer-v2.json)
+  - [book-fold storage projection v7](bench\2026-05-06-book-folding-storage-projection-v7-book-root-hierarchical-packer-v2.json)
+  - [frozen suite summary v7](bench\eval-suite-learned-hybrid-v7-book-root-hierarchical-packer-v2\suite-summary.json)
+  - [book folding round baseline](docs\ledger\2026-05-06-book-folding-round.md)
+- `notes`:
+  - The remaining synthetic book-root failure is concentrated in the `control_book_root` pair, which blends multilingual equity and governance evidence language.
+  - This is a useful signal because it suggests the next book-root attempt should target the control-layer bridge rather than pushing harder on economics or systems.
+  - The round is best treated as a targeted near-miss, not as a replacement for the current storage baseline.
+- `next_action`:
+  - Keep `learned-hybrid-prototype-v3-hierarchical-packer-v2` as the storage baseline for book-fold experiments.
+  - If another round is attempted, target the `control_book_root` bridge specifically while defending paraphrase and multilingual behavior.

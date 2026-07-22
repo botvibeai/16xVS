@@ -1,0 +1,47 @@
+[
+  {
+    "group": "launch",
+    "items": [
+      "launch checklist",
+      "product launch checklist",
+      "release checklist",
+      "go live plan"
+    ]
+  },
+  {
+    "group": "storage",
+    "items": [
+      "live fallback vault",
+      "triple storage policy",
+      "durable token storage",
+      "repair degraded records"
+    ]
+  },
+  {
+    "group": "search",
+    "items": [
+      "exact hamming distance",
+      "binary visual search",
+      "glyph similarity lookup",
+      "nearest glyph retrieval"
+    ]
+  },
+  {
+    "group": "planning",
+    "items": [
+      "stateful execution plan",
+      "memory first planning",
+      "execution strategy",
+      "operational launch plan"
+    ]
+  },
+  {
+    "group": "finance",
+    "items": [
+      "cost control plan",
+      "reduce storage cost",
+      "margin improvement strategy",
+      "pricing optimization"
+    ]
+  }
+]

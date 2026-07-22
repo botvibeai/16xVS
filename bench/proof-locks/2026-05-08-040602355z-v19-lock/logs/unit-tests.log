@@ -1,0 +1,47 @@
+label=unit-tests
+startedAt=2026-05-08T04:06:02.378Z
+endedAt=2026-05-08T04:06:03.582Z
+exitCode=0
+
+✔ inferRouteIdForText chooses bookRoot for tokenizer and book-scale folding language (4.4512ms)
+✔ inferRouteIdForText separates governance and archive operations (0.6039ms)
+✔ inferRouteIdForCorpus falls back to default for weak route evidence (0.9137ms)
+✔ inferRouteIdForCorpus keeps folded book-root entries on the bookRoot specialist (2.0576ms)
+✔ inferRouteIdForCorpus rejects split booklike entries as unsafe for the bookRoot specialist (2.3455ms)
+✔ marks a non-collapsed positive semantic run as directional evidence (0.9451ms)
+✔ marks a collapsed signature run as failed even when margins are positive (0.5305ms)
+✔ validateHeadReport accepts a non-collapsed positive semantic report (1.9679ms)
+✔ validateHeadReport rejects collapse even when semantic margins are positive (0.5042ms)
+✔ selectValidatedHead falls back when the routed specialist fails validation (0.7168ms)
+✔ selectValidatedHead keeps the routed specialist when it passes validation (0.423ms)
+✔ rankValidatedHeads ranks all configured heads by safety before route fit (1.4797ms)
+✔ rankValidatedHeads keeps route fit as metadata when candidate also passes (1.417ms)
+✔ trainLearnedEncoder improves seen positive similarity over seen negative similarity (117.6568ms)
+✔ runBenchmark can evaluate a learned encoder adapter (527.9909ms)
+✔ createLearnedEncoderAdapter marks hybrid mode when heuristic blending is enabled (44.0926ms)
+✔ tokenizeExperimentalVisualPatches can collapse an entry into one patch in entry mode (0.655ms)
+✔ model patchConfig changes learned patch count without breaking signatures (39.8541ms)
+✔ tokenizeExperimentalVisualPatches can use hierarchical packing for longer entries (6.8281ms)
+✔ buildMegaBookLadderFixture creates folded book roots with chapter evidence groups (5.429ms)
+✔ evaluateMegaBookLadder measures root-to-own-chapter separation against outside chapters (4.1662ms)
+✔ resolveRouteHead selects deterministic specialist heads with default fallback (0.5846ms)
+✔ computeMultiHeadStorage estimates stored multi-head signature overhead (1.2699ms)
+✔ evaluatePrimaryGate accepts the book-root directional lock shape (2.5855ms)
+✔ evaluatePrimaryGate treats booklike as a preserved known semantic failure (0.7544ms)
+✔ evaluateGeneralizationGate fails semantic generalization cleanly (0.5717ms)
+✔ buildProofSummary locks directionally without production generalization (1.5072ms)
+✔ buildTrainingDataset creates positive pairs and explicit hard negatives (2.0959ms)
+✔ buildTrainingDataset rejects duplicate group ids (1.2669ms)
+✔ buildTrainingDataset can generate all cross-group negatives with deterministic sampling (1.1436ms)
+✔ buildSuitePlan resolves output files for each frozen benchmark suite (0.8114ms)
+✔ buildSuitePlan rejects duplicate suite ids (0.4968ms)
+✔ collectSnapshotFiles returns stable relative paths (44.4572ms)
+✔ createVaultSnapshot copies files and records hashes (38.4463ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 894.5384

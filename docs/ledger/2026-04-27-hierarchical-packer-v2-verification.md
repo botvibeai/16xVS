@@ -1,0 +1,51 @@
+# EXP-2026-04-27-001 Hierarchical Packer V2 Verification Rerun
+
+- `id`: `EXP-2026-04-27-001`
+- `date`: `2026-04-27`
+- `corpus`: Frozen suite manifest at `data/eval/frozen-eval-suite.json`
+- `method`: Re-ran the frozen evaluation suite against `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` without changing code, training data, or benchmark labels, then re-ran the repo test suite to verify the harness remained clean.
+- `implementation_path`: `learned hybrid prototype v3 hierarchical packer v2`
+- `baseline`: `last recorded hierarchical-packer-v2 suite state from 2026-04-25`
+- `metrics`:
+  - `repoTests.passCount`: `15`
+  - `repoTests.failCount`: `0`
+  - `controlled_phrase.patchesPerToken`: `0.3226`
+  - `controlled_phrase.minMargin`: `11.4167`
+  - `controlled_phrase.allSemanticMarginsPositive`: `true`
+  - `controlled_multilingual.patchesPerToken`: `0.1438`
+  - `controlled_multilingual.minMargin`: `-4.7619`
+  - `controlled_multilingual.allSemanticMarginsPositive`: `false`
+  - `blind_holdout.patchesPerToken`: `0.2381`
+  - `blind_holdout.minMargin`: `-14.3333`
+  - `blind_holdout.allSemanticMarginsPositive`: `false`
+  - `paraphrase_holdout.patchesPerToken`: `0.2564`
+  - `paraphrase_holdout.minMargin`: `4`
+  - `paraphrase_holdout.allSemanticMarginsPositive`: `true`
+  - `stress_100.patchesPerToken`: `0.1236`
+  - `stress_100.minMargin`: `-29.2333`
+  - `stress_100.allSemanticMarginsPositive`: `false`
+  - `all collapse flags`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - The current `hierarchical-packer-v2` benchmark state is reproducible on a later verification run.
+  - The repo test harness still passes `15/15`.
+  - The verification rerun did not trip signature-collapse guardrails.
+  - The verification rerun preserves the same gate picture as the last recorded `hierarchical-packer-v2` state: controlled phrase and paraphrase holdout pass, while controlled multilingual, blind holdout, and stress suite fail.
+- `claim_not_supported`:
+  - This rerun does not turn the storage-focused baseline into a broad semantic win.
+  - This rerun does not support the `99.99%` raw-source reduction claim.
+  - This rerun does not support the `Library of Congress -> 1.25 GB` raw-source claim.
+- `artifacts`:
+  - [verification suite summary](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\suite-summary.json)
+  - [controlled phrase report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_phrase-report.json)
+  - [controlled multilingual report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\controlled_multilingual-report.json)
+  - [blind holdout report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\blind_holdout-report.json)
+  - [paraphrase holdout report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\paraphrase_holdout-report.json)
+  - [stress 100 report](bench\eval-suite-learned-hybrid-v3-hierarchical-packer-v2-2026-04-27\stress_100-report.json)
+  - [prior residual-selection ledger](docs\ledger\2026-04-25-hierarchical-packer-v2-residual-selection.md)
+- `notes`:
+  - This was a verification rerun, not a modeling change.
+  - The result is useful because it confirms no drift in the current storage-focused baseline between the earlier record and the April 27, 2026 rerun.
+- `next_action`:
+  - If the goal is progress rather than verification, move to a new semantic or long-form storage experiment.
+  - If the goal is preservation, snapshot this rerun into the vault.

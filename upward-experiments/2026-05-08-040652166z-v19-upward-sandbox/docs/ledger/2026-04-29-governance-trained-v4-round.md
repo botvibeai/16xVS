@@ -1,0 +1,68 @@
+# EXP-2026-04-29-005 Governance-Focused V4 Round
+
+- `id`: `EXP-2026-04-29-005`
+- `date`: `2026-04-29`
+- `corpus`: `data/training/embedding-training-spec-v3.json` for training, evaluated against `data/eval/frozen-eval-suite.json`, `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`, and `bench/archive-pressure-corpus-2026-04-29.txt` with `bench/archive-pressure-semantic-2026-04-29.json`
+- `method`: Built an expanded governance-focused training set with six added governance concept groups, trained a new learned-hybrid candidate with the same `v3`-line hyperparameters and hierarchical packing prior, then derived a storage-shaped hierarchical variant and ran it against the frozen suite plus the two April 29 governance-heavy long-form corpora.
+- `implementation_path`: `learned hybrid prototype v4 governance hierarchical packer v1`
+- `baseline`: `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` and the prior governance-adversarial failure on the same day
+- `metrics`:
+  - `training.groupCount`: `12`
+  - `training.itemCount`: `99`
+  - `training.positivePairCount`: `360`
+  - `training.negativePairCount`: `2376`
+  - `training.averagePositiveSimilarity`: `0.780416`
+  - `training.averageNegativeSimilarity`: `0.142019`
+  - `governance.avgPatchesPerEntry`: `2.8333`
+  - `governance.patchesPerToken`: `0.0297`
+  - `governance.semantic.minMargin`: `0.5`
+  - `governance.semantic.allPositive`: `true`
+  - `governance.retention_policy.margin`: `16.5`
+  - `governance.legal_hold.margin`: `0.5`
+  - `governance.audit_evidence.margin`: `1.5`
+  - `governance.access_review.margin`: `13`
+  - `governance.deletion_exception.margin`: `11.5`
+  - `governance.compliance_attestation.margin`: `42`
+  - `governance.retrieval.avgNearestSignatureDistance`: `67.0833`
+  - `governance.collapseFlags`: `false`
+  - `archivePressure.avgPatchesPerEntry`: `3`
+  - `archivePressure.patchesPerToken`: `0.0214`
+  - `archivePressure.semantic.minMargin`: `-4`
+  - `archivePressure.semantic.allPositive`: `false`
+  - `archivePressure.negativeGroups`: `retention_governance_pressure, retrieval_operations_pressure`
+  - `suite.controlled_phrase.minMargin`: `7.0833`
+  - `suite.controlled_phrase.allPositive`: `true`
+  - `suite.controlled_multilingual.minMargin`: `-9.4762`
+  - `suite.controlled_multilingual.allPositive`: `false`
+  - `suite.blind_holdout.minMargin`: `-18.4167`
+  - `suite.blind_holdout.allPositive`: `false`
+  - `suite.paraphrase_holdout.minMargin`: `-2.6`
+  - `suite.paraphrase_holdout.allPositive`: `false`
+  - `suite.stress_100.minMargin`: `-28.1667`
+  - `suite.stress_100.allPositive`: `false`
+- `result_label`: `directional`
+- `claim_supported`:
+  - Governance-targeted training can clear the frozen governance-only adversarial holdout without changing the compact hierarchical storage shape on that corpus.
+  - The governance-specific weakness is trainable in a narrow sense: legal hold, retention policy, audit evidence, deletion exception, access review, and compliance attestation all turn non-negative in the targeted holdout.
+  - The training and evaluation system can now run specialization rounds against an isolated semantic wall and measure the tradeoff explicitly.
+- `claim_not_supported`:
+  - This governance-focused round does not become the new overall semantic baseline.
+  - The broader frozen suite does not improve overall: controlled multilingual regresses, the paraphrase holdout loses its all-positive state, and the blind holdout gets worse.
+  - The archive-pressure corpus still does not become a full pass under this candidate.
+  - This run does not support broad tokenizer-superiority claims.
+- `artifacts`:
+  - [training spec v3](data\training\embedding-training-spec-v3.json)
+  - [training pairs v3](data\training\embedding-training-pairs-v3.json)
+  - [v4 governance base model](models\learned-hybrid-prototype-v4-governance-base.json)
+  - [v4 governance hierarchical model](models\learned-hybrid-prototype-v4-governance-hierarchical-packer-v1.json)
+  - [v4 frozen suite summary](bench\eval-suite-learned-hybrid-v4-governance-hierarchical-packer-v1\suite-summary.json)
+  - [v4 governance adversarial report](bench\2026-04-29-governance-adversarial-v4-governance-hierarchical-packer-v1.json)
+  - [v4 archive pressure report](bench\2026-04-29-archive-pressure-v4-governance-hierarchical-packer-v1.json)
+  - [prior governance adversarial failure](docs\ledger\2026-04-29-governance-adversarial-holdout.md)
+- `notes`:
+  - This is a useful specialization result, not a broad win.
+  - The model appears to trade generality for governance-specific separation.
+  - The current overall storage-focused baseline should remain `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` until a candidate improves the governance wall without reopening other gates.
+- `next_action`:
+  - Treat governance-specific training as a promising tool, but require it to preserve or improve paraphrase, multilingual, and blind holdout behavior before adopting it as the new baseline.
+  - If governance-specific gains keep causing cross-domain regressions, split specialization experiments from the main baseline line rather than merging them.

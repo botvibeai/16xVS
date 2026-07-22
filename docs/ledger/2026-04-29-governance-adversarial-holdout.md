@@ -1,0 +1,54 @@
+# EXP-2026-04-29-004 Governance Adversarial Holdout
+
+- `id`: `EXP-2026-04-29-004`
+- `date`: `2026-04-29`
+- `corpus`: `bench/governance-adversarial-holdout-2026-04-29.txt` with `bench/governance-adversarial-semantic-2026-04-29.json`
+- `method`: Ran a new governance-only adversarial holdout against both the current storage-focused baseline `learned-hybrid-prototype-v3-hierarchical-packer-v2.json` and the macro baseline `learned-hybrid-prototype-v3-macro-packer-v1.json`. The passages were intentionally written to use highly overlapping governance vocabulary while preserving distinct intents around retention policy, legal hold, audit evidence, access review, deletion exception, and compliance attestation.
+- `implementation_path`: `hierarchical packer v2` vs `macro packer v1`
+- `baseline`: `April 29 archive-pressure corpus and prior booklike long-form governance-style evidence`
+- `metrics`:
+  - `hierarchical.avgPatchesPerEntry`: `2.8333`
+  - `hierarchical.patchesPerToken`: `0.0297`
+  - `hierarchical.semantic.minMargin`: `-18`
+  - `hierarchical.semantic.allPositive`: `false`
+  - `hierarchical.retention_policy.margin`: `-1`
+  - `hierarchical.legal_hold.margin`: `-18`
+  - `hierarchical.audit_evidence.margin`: `-5.5`
+  - `hierarchical.access_review.margin`: `4.5`
+  - `hierarchical.deletion_exception.margin`: `-6`
+  - `hierarchical.compliance_attestation.margin`: `5`
+  - `hierarchical.retrieval.avgNearestSignatureDistance`: `67.0833`
+  - `hierarchical.collapseFlags`: `false`
+  - `macro.avgPatchesPerEntry`: `10.1667`
+  - `macro.patchesPerToken`: `0.1066`
+  - `macro.semantic.minMargin`: `-20`
+  - `macro.semantic.allPositive`: `false`
+  - `macro.retention_policy.margin`: `1.5`
+  - `macro.legal_hold.margin`: `-20`
+  - `macro.audit_evidence.margin`: `-6`
+  - `macro.access_review.margin`: `8`
+  - `macro.deletion_exception.margin`: `-9.5`
+  - `macro.compliance_attestation.margin`: `1.5`
+  - `macro.retrieval.avgNearestSignatureDistance`: `67.1667`
+  - `macro.collapseFlags`: `false`
+- `result_label`: `failed`
+- `claim_supported`:
+  - The governance weakness is real and reproducible under a more adversarial policy-only corpus.
+  - The current `hierarchical-packer-v2` line remains materially better on storage shape than the macro baseline on this corpus.
+  - The current failure is concentrated in governance concepts that are semantically adjacent in real enterprise archives, especially legal hold, deletion exception, audit evidence, and retention policy.
+- `claim_not_supported`:
+  - The current storage-focused baseline does not yet separate governance-heavy long-form passages reliably enough for a broad semantic win.
+  - The current macro baseline does not solve the governance failure and is materially worse on patch count.
+  - This run does not support broad tokenizer-superiority claims.
+- `artifacts`:
+  - [governance adversarial corpus](bench\governance-adversarial-holdout-2026-04-29.txt)
+  - [governance adversarial groups](bench\governance-adversarial-semantic-2026-04-29.json)
+  - [hierarchical governance report](bench\2026-04-29-governance-adversarial-v3-hierarchical-packer-v2.json)
+  - [macro governance report](bench\2026-04-29-governance-adversarial-v3-macro-packer-v1.json)
+  - [archive pressure longform test](docs\ledger\2026-04-29-archive-pressure.md)
+- `notes`:
+  - This is the cleanest negative evidence so far for the current semantic wall because the corpus isolates governance concepts that are close in wording but distinct in operational meaning.
+  - The hierarchical line did not collapse and still preserved a compact storage shape, so the failure is semantic separation rather than retrieval-space collapse.
+- `next_action`:
+  - Treat governance-heavy policy separation as the highest-priority semantic gap.
+  - Build any next semantic experiment around legal hold vs retention vs deletion exception distinctions rather than broader mixed-domain corpora.
